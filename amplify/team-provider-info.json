@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-faniplay-staging-c3a54-authRole",
+      "UnauthRoleArn": "arn:aws:iam::851725178195:role/amplify-faniplay-staging-c3a54-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::851725178195:role/amplify-faniplay-staging-c3a54-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-faniplay-staging-c3a54-deployment",
+      "UnauthRoleName": "amplify-faniplay-staging-c3a54-unauthRole",
+      "StackName": "amplify-faniplay-staging-c3a54",
+      "StackId": "arn:aws:cloudformation:us-east-1:851725178195:stack/amplify-faniplay-staging-c3a54/df178da0-f522-11ee-950b-127c0c12c7e9",
+      "AmplifyAppId": "dj461y8mtl9qp"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dj461y8mtl9qp",
+          "type": "manual"
+        }
+      },
+      "api": {
+        "faniplay": {}
+      }
+    }
+  }
+}

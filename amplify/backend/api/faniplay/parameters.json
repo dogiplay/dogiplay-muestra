@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "faniplay",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}

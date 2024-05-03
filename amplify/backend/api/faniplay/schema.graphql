@@ -1,0 +1,159 @@
+type StatsJugadores @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idjugador: ID
+  idpartido: ID
+  iddeporte: ID
+  idtorneo: ID
+  tipocuenta: Int
+  futgoles: Int
+  bascanastas: Int
+  baspuntos: Int
+  beicarrerashechas: Int
+  beiponches: Int
+  beihr: Int
+  beihits: Int
+  beifly: Int
+  beirolas: Int
+  futasisgol: Int
+  beicarrerasproducidas: Int
+  futtarjetasamarillas: Int
+  futtarjetasrojas: Int
+}
+
+type Jugadores @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  iddeporte: ID
+  idequipo: ID
+  nombre: String
+  idjugador: ID
+  idtorneo: ID
+  deporte: String
+  user: String
+  perfil: String
+  posicion: String
+  edad: Int
+  numero: Int
+  equipo: String
+  foto: AWSURL
+  alias: String
+  tipocuenta: Int
+  futgoles: Int
+  futasisgol: Int
+  futtarjetasallas: Int
+  futtarjetasrojas: Int
+  beiponches: Int
+  beicarrerashechas: Int
+  beicarrerasproducid: Int
+  beihr: Int
+  beihits: Int
+  beifly: Int
+  beirolas: Int
+  beiporcentajebateo: Float
+  mvp: Int
+  beipitentradaslanzadas: Int
+  beipitcarreraslimpias: Int
+  beipithitstotales: Int
+  beipitponchestotales: Int
+  beipitera: Float
+  beipitjuegosganados: Int
+  beipitjuegosperdidos: Int
+}
+
+type Torneos @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idliga: ID
+  iddeporte: ID
+  idtorneo: Int
+  nombretorneo: String
+  nombredeporte: String
+}
+
+type Presidentes @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idliga: ID
+  nombre: String
+  alias: String
+  user: String
+  clave: String
+  telefono: AWSPhone
+  foto: AWSURL
+  notorneos: Int
+}
+
+type Ligas @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idliga: ID
+  idpresidente: ID
+  clave: String
+  foto: AWSURL
+  descripcion: String
+  nombre: String
+}
+
+type Statsequipo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idtorneo: ID
+  idequipo: ID
+  partidosg: Int
+  partidosp: Int
+  partidose: Int
+  puntos: Int
+  partigosj: Int
+  posiciontabla: Int
+}
+
+type Partidos @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idequipo: ID
+  equipo1: String
+  equipo2: String
+  hora: String
+  resultado_equipo1: Int
+  resultado_equipo2: Int
+  lugar: String
+  observaciones: String
+  jugador_partido: String
+  jornada: Int
+  fecha: AWSDate
+}
+
+type Equipos @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idliga: ID
+  idtorneo: ID
+  club: String
+  categoria: String
+  torneo: String
+  nombre: String
+  logo: AWSURL
+  idmanager: ID
+  idcategoria: Int
+  manager: String
+  futgolesfavor: Int
+  futgolescontra: Int
+  partidosjugados: Int
+  partidosganados: Int
+  partidosperdidos: Int
+  partidosempatados: Int
+  puntos: Int
+  posiciontabla: Int
+  patrocinador: String
+  beicarreras: Int
+  beihr: Int
+}
+
+type Managers @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  idliga: ID
+  idmanager: ID
+  idequipo: ID
+  alias: String
+  foto: AWSURL
+  deporte: String
+  telefono: AWSPhone
+  clave: String
+  usuario: String
+  nombre: String
+  idtorneo: ID
+}
+ 

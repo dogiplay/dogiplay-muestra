@@ -1,0 +1,229 @@
+body{
+  background-color: rgb(32, 8, 77);
+
+}
+
+.logo{
+  margin-left: 360px;
+  
+}
+
+*{
+  margin: 0px;
+  
+}
+
+.contenedor-inicio{
+  align-items: center;
+  display:grid;
+  grid-template-rows:  500px;
+  width: 100%;
+  background-color: rgb(32, 8, 77);
+  padding: 1px;
+ 
+}
+
+.contenedorInicioDeportes {
+  background-color: white;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.DropDownMenu{
+  position: absolute;
+  top:4.5rem;
+  right: 2rem;
+  width: 120px;
+  padding: 2px;
+  padding-top: 5px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid grey;
+}
+
+.DropDownMenu::before{
+  content: '';
+  position: absolute;
+  top:-0.7rem;
+  right: 5rem;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: #ffffff;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+}
+
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+}
+
+.contenedor-vacio{
+  content: '';
+  position: absolute;
+  height: 200px;
+  background-color: black;
+}
+
+.header nav{
+  display: flex;
+  height: 70px;
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  align-items: center;
+  border: 2px solid rgb(156, 8, 8);
+  
+}
+
+.header nav a{
+  color: rgb(133, 5, 1);
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.header nav a:hover{
+  color:rgb(69, 35, 219)
+}
+
+.header ul{
+  flex-basis: 5%;
+  justify-content: flex-end;
+  display: flex;
+  list-style: none;
+  
+}
+.grid-layout{
+  display:grid;
+  grid-template-rows:  75px 42px 430px 40px 48px 1090px 40px 595px 40px 460px;
+  width: 100%;
+  background-color: rgb(32, 8, 77);
+  padding: 1px;
+ 
+}
+
+
+
+.flebox-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -387%)
+}
+.flebox-container2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-67%, -34%)
+}
+.flebox-container3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(97%, -37%)
+}
+
+
+.cajaBarraFigma{
+  display: flex;
+  height: 55px;
+  align-items: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.cajaBarra nav{
+  display: flex;
+  height: 30px;
+  background-color: rgb(133, 5, 1);
+  margin-top: 0px;
+  margin-bottom: 1px;
+  align-items: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.cajaBarra ul{
+  width: 100%;
+  flex-basis: 99%;
+  justify-content: center;
+  display: flex;
+  list-style: none;
+}
+
+.cajaBarra nav a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.cajaJugadores{
+  width: 97%;
+  height: 540px;
+  margin: 5px auto;
+  padding-bottom: 25px;
+  background-color: rgb(32, 8, 77);
+
+  
+
+}
+.cajaEquipos{
+  width: 96%;
+  height: 380px;
+  margin: 0 auto;
+  background-color: rgb(32, 8, 77);
+  
+  
+
+}
+.caja{
+  width: 99%;
+  height: 100px;
+  margin: 1px;
+  background-color: #00ff00;
+ 
+}
+
+
+/* styles.css */
+.amplify-pagination {
+  --amplify-components-pagination-current-background-color: var(
+    --amplify-colors-white
+  );
+  --amplify-components-pagination-current-color: var(
+    --amplify-colors-black
+  );
+  --amplify-components-pagination-button-color: var(
+    --amplify-colors-white
+  );
+  --amplify-components-pagination-ellipsis-padding-inline-start:115px;
+
+ }
+
+ .amplify-searchfield {
+  
+  --amplify-components-collection-search-button-active-background-color:
+   var(--amplify-components-searchfield-button-active-border-color-purple);
+
+   --amplify-components-collection-search-input-color:
+   var(--amplify-components-searchfield-color-black);
+   
+}
+
+.amplify-textfield {
+  --amplify-components-input-color: rgb(255, 255, 255);
+  --amplify-components-collection-search-input-color:rgb(255, 254, 254);
+  --amplify-components-textfield-color:rgb(255, 255, 255);
+  --amplify-components-input-focus-border-color:rgb(255, 255, 255);
+  --amplify-components-input-color:rgb(255, 255, 255);
+}
+
