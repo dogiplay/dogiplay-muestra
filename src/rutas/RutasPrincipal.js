@@ -26,7 +26,7 @@ export const RutasPrincipal = () => {
           
           </ul>
      
-          <strong class='derecha'>Todas las ligas serias de México están en DOGIPLAY</strong>
+          <strong class='derecha'>Las ligas serias de México están en DOGIPLAY</strong>
       </nav>
     </header>
    
