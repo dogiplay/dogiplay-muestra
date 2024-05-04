@@ -15,6 +15,7 @@ export const RutasPrincipal = () => {
     <header className='header'>
          
       <nav>
+      <Logodogiplay className='logo'/>  
       <ul>
       <li>
             <NavLink to="/"><strong>Inicio</strong></NavLink>
@@ -22,9 +23,10 @@ export const RutasPrincipal = () => {
           <li>
             <NavLink to="/"><strong>Contacto</strong></NavLink>
           </li>  
+          
           </ul>
-      <Logodogiplay className='logo'/>  
- 
+     
+          <strong class='derecha'>Todas las ligas serias de México están en DOGIPLAY</strong>
       </nav>
     </header>
    

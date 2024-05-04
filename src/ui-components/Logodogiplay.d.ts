@@ -50,9 +50,15 @@ export declare type LogodogiplayOverridesProps = {
     "Vector 57"?: PrimitiveOverrideProps<IconProps>;
     "Group 15"?: PrimitiveOverrideProps<ViewProps>;
     "Group 5"?: PrimitiveOverrideProps<ViewProps>;
-    "Star 21851944"?: PrimitiveOverrideProps<IconProps>;
+    "Star 22533046"?: PrimitiveOverrideProps<IconProps>;
     "Group 7"?: PrimitiveOverrideProps<ViewProps>;
-    "Star 21851946"?: PrimitiveOverrideProps<IconProps>;
+    "Star 22533048"?: PrimitiveOverrideProps<IconProps>;
+    "Polygon 22563051"?: PrimitiveOverrideProps<IconProps>;
+    "Polygon 4"?: PrimitiveOverrideProps<IconProps>;
+    "Polygon 5"?: PrimitiveOverrideProps<IconProps>;
+    "Polygon 3"?: PrimitiveOverrideProps<IconProps>;
+    "Polygon 22563053"?: PrimitiveOverrideProps<IconProps>;
+    "Polygon 1"?: PrimitiveOverrideProps<IconProps>;
 } & EscapeHatchProps;
 export declare type LogodogiplayProps = React.PropsWithChildren<Partial<ViewProps> & {
     overrides?: LogodogiplayOverridesProps | undefined | null;

@@ -4,9 +4,10 @@ body{
 }
 
 .logo{
-  margin-left: 360px;
+  margin-left: 60px;
   
 }
+
 
 *{
   margin: 0px;
@@ -59,17 +60,13 @@ body{
   border-top: 1px solid grey;
 }
 
+.derecha{
+  margin-left: 400px;
+}
 .header{
   position: fixed;
   width: 100%;
   z-index: 200;
-}
-
-.contenedor-vacio{
-  content: '';
-  position: absolute;
-  height: 200px;
-  background-color: black;
 }
 
 .header nav{
@@ -79,11 +76,13 @@ body{
   margin-top: 0px;
   margin-bottom: 4px;
   align-items: center;
-  border: 2px solid rgb(156, 8, 8);
+  border-bottom: 2px solid rgb(156, 8, 8);
+  border-top: 2px solid rgb(156, 8, 8);
   
 }
 
 .header nav a{
+  
   color: rgb(133, 5, 1);
   text-decoration: none;
   margin-right: 10px;

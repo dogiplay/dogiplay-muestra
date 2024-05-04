@@ -43,7 +43,7 @@ export default function Partidos(props) {
       <Text
         fontFamily="Inter"
         fontSize="11px"
-        fontWeight="600"
+        fontWeight="800"
         color="rgba(39,139,210,1)"
         fontStyle="italic"
         lineHeight="16.5px"
@@ -68,9 +68,8 @@ export default function Partidos(props) {
       <Text
         fontFamily="Inter"
         fontSize="10px"
-        fontWeight="600"
+        fontWeight="500"
         color="rgba(0,0,0,1)"
-        fontStyle="italic"
         lineHeight="15px"
         textAlign="right"
         display="block"
@@ -93,9 +92,8 @@ export default function Partidos(props) {
       <Text
         fontFamily="Inter"
         fontSize="10px"
-        fontWeight="600"
+        fontWeight="500"
         color="rgba(0,0,0,1)"
-        fontStyle="italic"
         lineHeight="15px"
         textAlign="left"
         display="block"
