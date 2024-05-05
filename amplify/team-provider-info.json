@@ -22,5 +22,53 @@
         "faniplay": {}
       }
     }
+  },
+  "pruebacmd": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-faniplay-pruebacmd-9896a-authRole",
+      "UnauthRoleArn": "arn:aws:iam::851725178195:role/amplify-faniplay-pruebacmd-9896a-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::851725178195:role/amplify-faniplay-pruebacmd-9896a-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-faniplay-pruebacmd-9896a-deployment",
+      "UnauthRoleName": "amplify-faniplay-pruebacmd-9896a-unauthRole",
+      "StackName": "amplify-faniplay-pruebacmd-9896a",
+      "StackId": "arn:aws:cloudformation:eu-central-1:851725178195:stack/amplify-faniplay-pruebacmd-9896a/d93da910-0a6b-11ef-adbf-0a0589d40351",
+      "AmplifyAppId": "d3c1ls4ckh06os"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3c1ls4ckh06os",
+          "type": "manual"
+        }
+      },
+      "api": {
+        "faniplay": {}
+      }
+    }
+  },
+  "muestracmd": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-faniplay-muestracmd-c7d6c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::851725178195:role/amplify-faniplay-muestracmd-c7d6c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::851725178195:role/amplify-faniplay-muestracmd-c7d6c-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-faniplay-muestracmd-c7d6c-deployment",
+      "UnauthRoleName": "amplify-faniplay-muestracmd-c7d6c-unauthRole",
+      "StackName": "amplify-faniplay-muestracmd-c7d6c",
+      "StackId": "arn:aws:cloudformation:us-east-1:851725178195:stack/amplify-faniplay-muestracmd-c7d6c/4791a670-0a6f-11ef-9220-0afff8584381",
+      "AmplifyAppId": "dj461y8mtl9qp"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dj461y8mtl9qp",
+          "type": "manual"
+        }
+      },
+      "api": {
+        "faniplay": {}
+      }
+    }
   }
 }

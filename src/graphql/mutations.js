@@ -1,7 +1,462 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-
+export const createStatsJugadores = /* GraphQL */ `
+  mutation CreateStatsJugadores(
+    $input: CreateStatsJugadoresInput!
+    $condition: ModelStatsJugadoresConditionInput
+  ) {
+    createStatsJugadores(input: $input, condition: $condition) {
+      id
+      idjugador
+      idpartido
+      iddeporte
+      idtorneo
+      tipocuenta
+      futgoles
+      bascanastas
+      baspuntos
+      beicarrerashechas
+      beiponches
+      beihr
+      beihits
+      beifly
+      beirolas
+      futasisgol
+      beicarrerasproducidas
+      futtarjetasamarillas
+      futtarjetasrojas
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const updateStatsJugadores = /* GraphQL */ `
+  mutation UpdateStatsJugadores(
+    $input: UpdateStatsJugadoresInput!
+    $condition: ModelStatsJugadoresConditionInput
+  ) {
+    updateStatsJugadores(input: $input, condition: $condition) {
+      id
+      idjugador
+      idpartido
+      iddeporte
+      idtorneo
+      tipocuenta
+      futgoles
+      bascanastas
+      baspuntos
+      beicarrerashechas
+      beiponches
+      beihr
+      beihits
+      beifly
+      beirolas
+      futasisgol
+      beicarrerasproducidas
+      futtarjetasamarillas
+      futtarjetasrojas
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const deleteStatsJugadores = /* GraphQL */ `
+  mutation DeleteStatsJugadores(
+    $input: DeleteStatsJugadoresInput!
+    $condition: ModelStatsJugadoresConditionInput
+  ) {
+    deleteStatsJugadores(input: $input, condition: $condition) {
+      id
+      idjugador
+      idpartido
+      iddeporte
+      idtorneo
+      tipocuenta
+      futgoles
+      bascanastas
+      baspuntos
+      beicarrerashechas
+      beiponches
+      beihr
+      beihits
+      beifly
+      beirolas
+      futasisgol
+      beicarrerasproducidas
+      futtarjetasamarillas
+      futtarjetasrojas
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const createJugadores = /* GraphQL */ `
+  mutation CreateJugadores(
+    $input: CreateJugadoresInput!
+    $condition: ModelJugadoresConditionInput
+  ) {
+    createJugadores(input: $input, condition: $condition) {
+      id
+      iddeporte
+      idequipo
+      nombre
+      idjugador
+      idtorneo
+      deporte
+      user
+      perfil
+      posicion
+      edad
+      numero
+      equipo
+      foto
+      alias
+      tipocuenta
+      futgoles
+      futasisgol
+      futtarjetasallas
+      futtarjetasrojas
+      beiponches
+      beicarrerashechas
+      beicarrerasproducid
+      beihr
+      beihits
+      beifly
+      beirolas
+      beiporcentajebateo
+      mvp
+      beipitentradaslanzadas
+      beipitcarreraslimpias
+      beipithitstotales
+      beipitponchestotales
+      beipitera
+      beipitjuegosganados
+      beipitjuegosperdidos
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const updateJugadores = /* GraphQL */ `
+  mutation UpdateJugadores(
+    $input: UpdateJugadoresInput!
+    $condition: ModelJugadoresConditionInput
+  ) {
+    updateJugadores(input: $input, condition: $condition) {
+      id
+      iddeporte
+      idequipo
+      nombre
+      idjugador
+      idtorneo
+      deporte
+      user
+      perfil
+      posicion
+      edad
+      numero
+      equipo
+      foto
+      alias
+      tipocuenta
+      futgoles
+      futasisgol
+      futtarjetasallas
+      futtarjetasrojas
+      beiponches
+      beicarrerashechas
+      beicarrerasproducid
+      beihr
+      beihits
+      beifly
+      beirolas
+      beiporcentajebateo
+      mvp
+      beipitentradaslanzadas
+      beipitcarreraslimpias
+      beipithitstotales
+      beipitponchestotales
+      beipitera
+      beipitjuegosganados
+      beipitjuegosperdidos
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const deleteJugadores = /* GraphQL */ `
+  mutation DeleteJugadores(
+    $input: DeleteJugadoresInput!
+    $condition: ModelJugadoresConditionInput
+  ) {
+    deleteJugadores(input: $input, condition: $condition) {
+      id
+      iddeporte
+      idequipo
+      nombre
+      idjugador
+      idtorneo
+      deporte
+      user
+      perfil
+      posicion
+      edad
+      numero
+      equipo
+      foto
+      alias
+      tipocuenta
+      futgoles
+      futasisgol
+      futtarjetasallas
+      futtarjetasrojas
+      beiponches
+      beicarrerashechas
+      beicarrerasproducid
+      beihr
+      beihits
+      beifly
+      beirolas
+      beiporcentajebateo
+      mvp
+      beipitentradaslanzadas
+      beipitcarreraslimpias
+      beipithitstotales
+      beipitponchestotales
+      beipitera
+      beipitjuegosganados
+      beipitjuegosperdidos
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const createTorneos = /* GraphQL */ `
+  mutation CreateTorneos(
+    $input: CreateTorneosInput!
+    $condition: ModelTorneosConditionInput
+  ) {
+    createTorneos(input: $input, condition: $condition) {
+      id
+      idliga
+      iddeporte
+      idtorneo
+      nombretorneo
+      nombredeporte
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const updateTorneos = /* GraphQL */ `
+  mutation UpdateTorneos(
+    $input: UpdateTorneosInput!
+    $condition: ModelTorneosConditionInput
+  ) {
+    updateTorneos(input: $input, condition: $condition) {
+      id
+      idliga
+      iddeporte
+      idtorneo
+      nombretorneo
+      nombredeporte
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const deleteTorneos = /* GraphQL */ `
+  mutation DeleteTorneos(
+    $input: DeleteTorneosInput!
+    $condition: ModelTorneosConditionInput
+  ) {
+    deleteTorneos(input: $input, condition: $condition) {
+      id
+      idliga
+      iddeporte
+      idtorneo
+      nombretorneo
+      nombredeporte
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const createPresidentes = /* GraphQL */ `
+  mutation CreatePresidentes(
+    $input: CreatePresidentesInput!
+    $condition: ModelPresidentesConditionInput
+  ) {
+    createPresidentes(input: $input, condition: $condition) {
+      id
+      idliga
+      nombre
+      alias
+      user
+      clave
+      telefono
+      foto
+      notorneos
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const updatePresidentes = /* GraphQL */ `
+  mutation UpdatePresidentes(
+    $input: UpdatePresidentesInput!
+    $condition: ModelPresidentesConditionInput
+  ) {
+    updatePresidentes(input: $input, condition: $condition) {
+      id
+      idliga
+      nombre
+      alias
+      user
+      clave
+      telefono
+      foto
+      notorneos
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const deletePresidentes = /* GraphQL */ `
+  mutation DeletePresidentes(
+    $input: DeletePresidentesInput!
+    $condition: ModelPresidentesConditionInput
+  ) {
+    deletePresidentes(input: $input, condition: $condition) {
+      id
+      idliga
+      nombre
+      alias
+      user
+      clave
+      telefono
+      foto
+      notorneos
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const createLigas = /* GraphQL */ `
+  mutation CreateLigas(
+    $input: CreateLigasInput!
+    $condition: ModelLigasConditionInput
+  ) {
+    createLigas(input: $input, condition: $condition) {
+      id
+      idliga
+      idpresidente
+      clave
+      foto
+      descripcion
+      nombre
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const updateLigas = /* GraphQL */ `
+  mutation UpdateLigas(
+    $input: UpdateLigasInput!
+    $condition: ModelLigasConditionInput
+  ) {
+    updateLigas(input: $input, condition: $condition) {
+      id
+      idliga
+      idpresidente
+      clave
+      foto
+      descripcion
+      nombre
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
+export const deleteLigas = /* GraphQL */ `
+  mutation DeleteLigas(
+    $input: DeleteLigasInput!
+    $condition: ModelLigasConditionInput
+  ) {
+    deleteLigas(input: $input, condition: $condition) {
+      id
+      idliga
+      idpresidente
+      clave
+      foto
+      descripcion
+      nombre
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;
 export const createStatsequipo = /* GraphQL */ `
   mutation CreateStatsequipo(
     $input: CreateStatsequipoInput!
@@ -19,6 +474,9 @@ export const createStatsequipo = /* GraphQL */ `
       posiciontabla
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -40,6 +498,9 @@ export const updateStatsequipo = /* GraphQL */ `
       posiciontabla
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -61,6 +522,9 @@ export const deleteStatsequipo = /* GraphQL */ `
       posiciontabla
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -73,17 +537,21 @@ export const createPartidos = /* GraphQL */ `
     createPartidos(input: $input, condition: $condition) {
       id
       idequipo
-      rival
-      fecha
+      equipo1
+      equipo2
       hora
-      resultado_equipo
-      resultado_rival
+      resultado_equipo1
+      resultado_equipo2
       lugar
       observaciones
       jugador_partido
       jornada
+      fecha
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -96,17 +564,21 @@ export const updatePartidos = /* GraphQL */ `
     updatePartidos(input: $input, condition: $condition) {
       id
       idequipo
-      rival
-      fecha
+      equipo1
+      equipo2
       hora
-      resultado_equipo
-      resultado_rival
+      resultado_equipo1
+      resultado_equipo2
       lugar
       observaciones
       jugador_partido
       jornada
+      fecha
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -119,17 +591,21 @@ export const deletePartidos = /* GraphQL */ `
     deletePartidos(input: $input, condition: $condition) {
       id
       idequipo
-      rival
-      fecha
+      equipo1
+      equipo2
       hora
-      resultado_equipo
-      resultado_rival
+      resultado_equipo1
+      resultado_equipo2
       lugar
       observaciones
       jugador_partido
       jornada
+      fecha
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -141,14 +617,32 @@ export const createEquipos = /* GraphQL */ `
   ) {
     createEquipos(input: $input, condition: $condition) {
       id
-      nombre
-      torneo
-      logo
+      idliga
+      idtorneo
+      club
       categoria
+      torneo
+      nombre
+      logo
       idmanager
-      idjugador
+      idcategoria
+      manager
+      futgolesfavor
+      futgolescontra
+      partidosjugados
+      partidosganados
+      partidosperdidos
+      partidosempatados
+      puntos
+      posiciontabla
+      patrocinador
+      beicarreras
+      beihr
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -160,14 +654,32 @@ export const updateEquipos = /* GraphQL */ `
   ) {
     updateEquipos(input: $input, condition: $condition) {
       id
-      nombre
-      torneo
-      logo
+      idliga
+      idtorneo
+      club
       categoria
+      torneo
+      nombre
+      logo
       idmanager
-      idjugador
+      idcategoria
+      manager
+      futgolesfavor
+      futgolescontra
+      partidosjugados
+      partidosganados
+      partidosperdidos
+      partidosempatados
+      puntos
+      posiciontabla
+      patrocinador
+      beicarreras
+      beihr
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -179,14 +691,32 @@ export const deleteEquipos = /* GraphQL */ `
   ) {
     deleteEquipos(input: $input, condition: $condition) {
       id
-      nombre
-      torneo
-      logo
+      idliga
+      idtorneo
+      club
       categoria
+      torneo
+      nombre
+      logo
       idmanager
-      idjugador
+      idcategoria
+      manager
+      futgolesfavor
+      futgolescontra
+      partidosjugados
+      partidosganados
+      partidosperdidos
+      partidosempatados
+      puntos
+      posiciontabla
+      patrocinador
+      beicarreras
+      beihr
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -198,15 +728,22 @@ export const createManagers = /* GraphQL */ `
   ) {
     createManagers(input: $input, condition: $condition) {
       id
-      usuario
-      clave
-      nombre
+      idliga
+      idmanager
+      idequipo
       alias
       foto
       deporte
       telefono
+      clave
+      usuario
+      nombre
+      idtorneo
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -218,15 +755,22 @@ export const updateManagers = /* GraphQL */ `
   ) {
     updateManagers(input: $input, condition: $condition) {
       id
-      usuario
-      clave
-      nombre
+      idliga
+      idmanager
+      idequipo
       alias
       foto
       deporte
       telefono
+      clave
+      usuario
+      nombre
+      idtorneo
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -238,15 +782,22 @@ export const deleteManagers = /* GraphQL */ `
   ) {
     deleteManagers(input: $input, condition: $condition) {
       id
-      usuario
-      clave
-      nombre
+      idliga
+      idmanager
+      idequipo
       alias
       foto
       deporte
       telefono
+      clave
+      usuario
+      nombre
+      idtorneo
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
