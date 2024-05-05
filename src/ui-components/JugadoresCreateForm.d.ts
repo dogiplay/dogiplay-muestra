@@ -50,6 +50,13 @@ export declare type JugadoresCreateFormInputValues = {
     beirolas?: number;
     beiporcentajebateo?: number;
     mvp?: number;
+    beipitentradaslanzadas?: number;
+    beipitcarreraslimpias?: number;
+    beipithitstotales?: number;
+    beipitponchestotales?: number;
+    beipitera?: number;
+    beipitjuegosganados?: number;
+    beipitjuegosperdidos?: number;
 };
 export declare type JugadoresCreateFormValidationValues = {
     iddeporte?: ValidationFunction<string>;
@@ -80,6 +87,13 @@ export declare type JugadoresCreateFormValidationValues = {
     beirolas?: ValidationFunction<number>;
     beiporcentajebateo?: ValidationFunction<number>;
     mvp?: ValidationFunction<number>;
+    beipitentradaslanzadas?: ValidationFunction<number>;
+    beipitcarreraslimpias?: ValidationFunction<number>;
+    beipithitstotales?: ValidationFunction<number>;
+    beipitponchestotales?: ValidationFunction<number>;
+    beipitera?: ValidationFunction<number>;
+    beipitjuegosganados?: ValidationFunction<number>;
+    beipitjuegosperdidos?: ValidationFunction<number>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type JugadoresCreateFormOverridesProps = {
@@ -112,6 +126,13 @@ export declare type JugadoresCreateFormOverridesProps = {
     beirolas?: PrimitiveOverrideProps<TextFieldProps>;
     beiporcentajebateo?: PrimitiveOverrideProps<TextFieldProps>;
     mvp?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitentradaslanzadas?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitcarreraslimpias?: PrimitiveOverrideProps<TextFieldProps>;
+    beipithitstotales?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitponchestotales?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitera?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitjuegosganados?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitjuegosperdidos?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type JugadoresCreateFormProps = React.PropsWithChildren<{
     overrides?: JugadoresCreateFormOverridesProps | undefined | null;

@@ -7,10 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Jugadores } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { createJugadores as createJugadoresMutations} from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function JugadoresCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -51,6 +50,13 @@ export default function JugadoresCreateForm(props) {
     beirolas: "",
     beiporcentajebateo: "",
     mvp: "",
+    beipitentradaslanzadas: "",
+    beipitcarreraslimpias: "",
+    beipithitstotales: "",
+    beipitponchestotales: "",
+    beipitera: "",
+    beipitjuegosganados: "",
+    beipitjuegosperdidos: "",
   };
   const [iddeporte, setIddeporte] = React.useState(initialValues.iddeporte);
   const [idequipo, setIdequipo] = React.useState(initialValues.idequipo);
@@ -90,6 +96,25 @@ export default function JugadoresCreateForm(props) {
     initialValues.beiporcentajebateo
   );
   const [mvp, setMvp] = React.useState(initialValues.mvp);
+  const [beipitentradaslanzadas, setBeipitentradaslanzadas] = React.useState(
+    initialValues.beipitentradaslanzadas
+  );
+  const [beipitcarreraslimpias, setBeipitcarreraslimpias] = React.useState(
+    initialValues.beipitcarreraslimpias
+  );
+  const [beipithitstotales, setBeipithitstotales] = React.useState(
+    initialValues.beipithitstotales
+  );
+  const [beipitponchestotales, setBeipitponchestotales] = React.useState(
+    initialValues.beipitponchestotales
+  );
+  const [beipitera, setBeipitera] = React.useState(initialValues.beipitera);
+  const [beipitjuegosganados, setBeipitjuegosganados] = React.useState(
+    initialValues.beipitjuegosganados
+  );
+  const [beipitjuegosperdidos, setBeipitjuegosperdidos] = React.useState(
+    initialValues.beipitjuegosperdidos
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setIddeporte(initialValues.iddeporte);
@@ -120,6 +145,13 @@ export default function JugadoresCreateForm(props) {
     setBeirolas(initialValues.beirolas);
     setBeiporcentajebateo(initialValues.beiporcentajebateo);
     setMvp(initialValues.mvp);
+    setBeipitentradaslanzadas(initialValues.beipitentradaslanzadas);
+    setBeipitcarreraslimpias(initialValues.beipitcarreraslimpias);
+    setBeipithitstotales(initialValues.beipithitstotales);
+    setBeipitponchestotales(initialValues.beipitponchestotales);
+    setBeipitera(initialValues.beipitera);
+    setBeipitjuegosganados(initialValues.beipitjuegosganados);
+    setBeipitjuegosperdidos(initialValues.beipitjuegosperdidos);
     setErrors({});
   };
   const validations = {
@@ -151,6 +183,13 @@ export default function JugadoresCreateForm(props) {
     beirolas: [],
     beiporcentajebateo: [],
     mvp: [],
+    beipitentradaslanzadas: [],
+    beipitcarreraslimpias: [],
+    beipithitstotales: [],
+    beipitponchestotales: [],
+    beipitera: [],
+    beipitjuegosganados: [],
+    beipitjuegosperdidos: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -206,6 +245,13 @@ export default function JugadoresCreateForm(props) {
           beirolas,
           beiporcentajebateo,
           mvp,
+          beipitentradaslanzadas,
+          beipitcarreraslimpias,
+          beipithitstotales,
+          beipitponchestotales,
+          beipitera,
+          beipitjuegosganados,
+          beipitjuegosperdidos,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -235,14 +281,7 @@ export default function JugadoresCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: createJugadores.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(new Jugadores(modelFields));
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -251,8 +290,7 @@ export default function JugadoresCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}
@@ -296,6 +334,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.iddeporte ?? value;
@@ -347,6 +392,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.idequipo ?? value;
@@ -398,6 +450,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -449,6 +508,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.idjugador ?? value;
@@ -500,6 +566,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.idtorneo ?? value;
@@ -551,6 +624,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.deporte ?? value;
@@ -602,6 +682,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.user ?? value;
@@ -653,6 +740,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.perfil ?? value;
@@ -704,6 +798,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.posicion ?? value;
@@ -759,6 +860,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -814,6 +922,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.numero ?? value;
@@ -865,6 +980,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.equipo ?? value;
@@ -916,6 +1038,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -967,6 +1096,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.alias ?? value;
@@ -1022,6 +1158,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.tipocuenta ?? value;
@@ -1077,6 +1220,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.futgoles ?? value;
@@ -1132,6 +1282,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.futasisgol ?? value;
@@ -1187,6 +1344,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasallas ?? value;
@@ -1242,6 +1406,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasrojas ?? value;
@@ -1297,6 +1468,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beiponches ?? value;
@@ -1352,6 +1530,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerashechas ?? value;
@@ -1409,6 +1594,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerasproducid ?? value;
@@ -1466,6 +1658,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beihr ?? value;
@@ -1521,6 +1720,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beihits ?? value;
@@ -1576,6 +1782,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beifly ?? value;
@@ -1631,6 +1844,13 @@ export default function JugadoresCreateForm(props) {
               beirolas: value,
               beiporcentajebateo,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beirolas ?? value;
@@ -1686,6 +1906,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo: value,
               mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.beiporcentajebateo ?? value;
@@ -1743,6 +1970,13 @@ export default function JugadoresCreateForm(props) {
               beirolas,
               beiporcentajebateo,
               mvp: value,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
             };
             const result = onChange(modelFields);
             value = result?.mvp ?? value;
@@ -1756,6 +1990,452 @@ export default function JugadoresCreateForm(props) {
         errorMessage={errors.mvp?.errorMessage}
         hasError={errors.mvp?.hasError}
         {...getOverrideProps(overrides, "mvp")}
+      ></TextField>
+      <TextField
+        label="Beipitentradaslanzadas"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitentradaslanzadas}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              beipitentradaslanzadas: value,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitentradaslanzadas ?? value;
+          }
+          if (errors.beipitentradaslanzadas?.hasError) {
+            runValidationTasks("beipitentradaslanzadas", value);
+          }
+          setBeipitentradaslanzadas(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beipitentradaslanzadas", beipitentradaslanzadas)
+        }
+        errorMessage={errors.beipitentradaslanzadas?.errorMessage}
+        hasError={errors.beipitentradaslanzadas?.hasError}
+        {...getOverrideProps(overrides, "beipitentradaslanzadas")}
+      ></TextField>
+      <TextField
+        label="Beipitcarreraslimpias"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitcarreraslimpias}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias: value,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitcarreraslimpias ?? value;
+          }
+          if (errors.beipitcarreraslimpias?.hasError) {
+            runValidationTasks("beipitcarreraslimpias", value);
+          }
+          setBeipitcarreraslimpias(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beipitcarreraslimpias", beipitcarreraslimpias)
+        }
+        errorMessage={errors.beipitcarreraslimpias?.errorMessage}
+        hasError={errors.beipitcarreraslimpias?.hasError}
+        {...getOverrideProps(overrides, "beipitcarreraslimpias")}
+      ></TextField>
+      <TextField
+        label="Beipithitstotales"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipithitstotales}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales: value,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipithitstotales ?? value;
+          }
+          if (errors.beipithitstotales?.hasError) {
+            runValidationTasks("beipithitstotales", value);
+          }
+          setBeipithitstotales(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beipithitstotales", beipithitstotales)
+        }
+        errorMessage={errors.beipithitstotales?.errorMessage}
+        hasError={errors.beipithitstotales?.hasError}
+        {...getOverrideProps(overrides, "beipithitstotales")}
+      ></TextField>
+      <TextField
+        label="Beipitponchestotales"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitponchestotales}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales: value,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitponchestotales ?? value;
+          }
+          if (errors.beipitponchestotales?.hasError) {
+            runValidationTasks("beipitponchestotales", value);
+          }
+          setBeipitponchestotales(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beipitponchestotales", beipitponchestotales)
+        }
+        errorMessage={errors.beipitponchestotales?.errorMessage}
+        hasError={errors.beipitponchestotales?.hasError}
+        {...getOverrideProps(overrides, "beipitponchestotales")}
+      ></TextField>
+      <TextField
+        label="Beipitera"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitera}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera: value,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitera ?? value;
+          }
+          if (errors.beipitera?.hasError) {
+            runValidationTasks("beipitera", value);
+          }
+          setBeipitera(value);
+        }}
+        onBlur={() => runValidationTasks("beipitera", beipitera)}
+        errorMessage={errors.beipitera?.errorMessage}
+        hasError={errors.beipitera?.hasError}
+        {...getOverrideProps(overrides, "beipitera")}
+      ></TextField>
+      <TextField
+        label="Beipitjuegosganados"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitjuegosganados}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados: value,
+              beipitjuegosperdidos,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitjuegosganados ?? value;
+          }
+          if (errors.beipitjuegosganados?.hasError) {
+            runValidationTasks("beipitjuegosganados", value);
+          }
+          setBeipitjuegosganados(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beipitjuegosganados", beipitjuegosganados)
+        }
+        errorMessage={errors.beipitjuegosganados?.errorMessage}
+        hasError={errors.beipitjuegosganados?.hasError}
+        {...getOverrideProps(overrides, "beipitjuegosganados")}
+      ></TextField>
+      <TextField
+        label="Beipitjuegosperdidos"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitjuegosperdidos}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitjuegosperdidos ?? value;
+          }
+          if (errors.beipitjuegosperdidos?.hasError) {
+            runValidationTasks("beipitjuegosperdidos", value);
+          }
+          setBeipitjuegosperdidos(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beipitjuegosperdidos", beipitjuegosperdidos)
+        }
+        errorMessage={errors.beipitjuegosperdidos?.errorMessage}
+        hasError={errors.beipitjuegosperdidos?.hasError}
+        {...getOverrideProps(overrides, "beipitjuegosperdidos")}
       ></TextField>
       <Flex
         justifyContent="space-between"
