@@ -1,7 +1,10 @@
 import React from 'react'
+import { CardContacto } from '../ui-components'
 
 export const Contacto = () => {
   return (
-    <div>Contacto</div>
+    <div class="contenedor-inicio" >
+    <div class="contenedorInicioDeportes"><CardContacto/></div>
+</div>
   )
 }

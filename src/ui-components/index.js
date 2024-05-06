@@ -4,6 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as CardContacto } from "./CardContacto";
 export { default as Cardequipo } from "./Cardequipo";
 export { default as CardequipoBeisbolCollection } from "./CardequipoBeisbolCollection";
 export { default as Cardjugadorbeisbol } from "./Cardjugadorbeisbol";

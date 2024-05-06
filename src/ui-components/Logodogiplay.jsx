@@ -1027,7 +1027,7 @@ export default function Logodogiplay(props) {
         justifyContent="unset"
         position="absolute"
         top="26.02px"
-        left="-9px"
+        left="-8px"
         transformOrigin="top left"
         transform="rotate(-65deg)"
         {...getOverrideProps(overrides, "Polygon 1")}

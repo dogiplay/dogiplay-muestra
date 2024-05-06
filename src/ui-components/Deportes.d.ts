@@ -27,7 +27,8 @@ export declare type DeportesOverridesProps = {
     "Jugador que se respeta debe estar aqu\u00ED"?: PrimitiveOverrideProps<TextProps>;
     botonFutbol?: PrimitiveOverrideProps<FlexProps>;
     Futbol?: PrimitiveOverrideProps<TextProps>;
-    "Estad\u00EDsticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho m\u00E1s."?: PrimitiveOverrideProps<TextProps>;
+    "Estad\u00EDsticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho m\u00E1s.20012073"?: PrimitiveOverrideProps<TextProps>;
+    "Estad\u00EDsticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho m\u00E1s.26133"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type DeportesProps = React.PropsWithChildren<Partial<ViewProps> & {
     overrides?: DeportesOverridesProps | undefined | null;

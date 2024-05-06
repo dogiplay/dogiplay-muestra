@@ -4,6 +4,7 @@ import { NayaritBeisbolLiga1 } from '../NayaritBeisbolLiga1';
 import { RegistroPresidente } from '../componentes/RegistroPresidente';
 import { RegistroManager } from '../componentes/RegistroManager';
 import { Inicio } from '../Inicio';
+import { Contacto } from '../componentes/Contacto';
 import { Logodogiplay, Rol } from '../ui-components';
 // import { usePDF } from 'react-to-pdf';
 
@@ -21,7 +22,7 @@ export const RutasPrincipal = () => {
             <NavLink to="/"><strong>Inicio</strong></NavLink>
           </li> 
           <li>
-            <NavLink to="/"><strong>Contacto</strong></NavLink>
+            <NavLink to="/contacto"><strong>Contacto</strong></NavLink>
           </li>  
           
           </ul>
@@ -34,6 +35,7 @@ export const RutasPrincipal = () => {
         <Routes>
             <Route path='/' element={<Inicio/>}/>
             <Route path='/Inicio' element={<Inicio/>}/>
+            <Route path='/Contacto' element={<Contacto/>}/>
             <Route path='/nayaritbeisbolliga1' element={<NayaritBeisbolLiga1/>}/>
             <Route path='/registro' element={<Rol/>}/>
             <Route path='/registropresidente' element={<RegistroPresidente/>}/>

@@ -227,7 +227,35 @@ export default function Deportes(props) {
         children="Estadísticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho más."
         {...getOverrideProps(
           overrides,
-          "Estad\u00EDsticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho m\u00E1s."
+          "Estad\u00EDsticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho m\u00E1s.20012073"
+        )}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="22px"
+        fontWeight="600"
+        color="rgba(149,148,133,1)"
+        lineHeight="33px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="-0.07px"
+        width="562px"
+        height="117px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="12.14%"
+        bottom="57.62%"
+        left="9.66%"
+        right="10.51%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Estadísticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho más."
+        {...getOverrideProps(
+          overrides,
+          "Estad\u00EDsticas por equipo y jugador, tablas de posiciones, lider de goleo, lider de HR, y mucho m\u00E1s.26133"
         )}
       ></Text>
     </View>
