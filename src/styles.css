@@ -17,7 +17,7 @@ body{
 .contenedor-inicio{
   align-items: center;
   display:grid;
-  grid-template-rows:  500px;
+  grid-template-rows:  700px;
   width: 100%;
   background-color: rgb(32, 8, 77);
   padding: 1px;
@@ -26,7 +26,9 @@ body{
 
 .contenedorInicioDeportes {
   background-color: white;
-  height: 400px;
+  height: 600px;
+  padding-top: 20px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
 }
@@ -61,7 +63,7 @@ body{
 }
 
 .derecha{
-  margin-left: 400px;
+  margin-left: 450px;
 }
 .header{
   position: fixed;
