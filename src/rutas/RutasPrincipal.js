@@ -1,12 +1,13 @@
 import React from 'react'
 import {Routes, Route, BrowserRouter, NavLink} from 'react-router-dom';
-import { NayaritBeisbolLiga1 } from '../NayaritBeisbolLiga1';
+import NayaritBeisbolLiga1 from '../NayaritBeisbolLiga1';
 import { RegistroPresidente } from '../componentes/RegistroPresidente';
 import { RegistroManager } from '../componentes/RegistroManager';
 import { Inicio } from '../Inicio';
 import { Contacto } from '../componentes/Contacto';
 import { Logodogiplay, Rol } from '../ui-components';
-// import { usePDF } from 'react-to-pdf';
+import ShippingLabel from '../ShippingLabel';
+
 
 
 export const RutasPrincipal = () => {
@@ -34,6 +35,7 @@ export const RutasPrincipal = () => {
         <Routes>
             <Route path='/' element={<Inicio/>}/>
             <Route path='/Inicio' element={<Inicio/>}/>
+            <Route path='/pdf' element={<ShippingLabel/>}/>
             <Route path='/Contacto' element={<Contacto/>}/>
             <Route path='/nayaritbeisbolliga1' element={<NayaritBeisbolLiga1/>}/>
             <Route path='/registropresidente' element={<RegistroPresidente/>}/>

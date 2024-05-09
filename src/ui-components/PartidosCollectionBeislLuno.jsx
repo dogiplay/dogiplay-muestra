@@ -30,10 +30,10 @@ export default function PartidosCollectionBeislLuno(props) {
   return (
     <Collection
       type="list"
-      isSearchable={true}
+      isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Buscar..."
-      itemsPerPage={6}
+      itemsPerPage={15}
       direction="column"
       justifyContent="left"
       items={items || []}

@@ -32,7 +32,7 @@ export default function TablabeisbolCollectionPosciones(props) {
       type="list"
       isPaginated={true}
       searchPlaceholder="Search..."
-      itemsPerPage={5}
+      itemsPerPage={10}
       direction="column"
       justifyContent="left"
       items={items || []}

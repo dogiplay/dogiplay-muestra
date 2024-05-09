@@ -14,10 +14,23 @@ body{
   
 }
 
+.botonPDF{
+width: 450px;
+height: 40px;
+margin-left: 440px;
+background-color: rgb(0, 102, 255);
+-webkit-text-fill-color: #ffffff;
+}
+
+.posiciones{
+  height: 1px;
+  visibility: hidden;
+}
+
 .contenedor-inicio{
   align-items: center;
   display:grid;
-  grid-template-rows:  700px;
+  grid-template-rows:  1000px;
   width: 100%;
   background-color: rgb(32, 8, 77);
   padding: 1px;
@@ -25,7 +38,7 @@ body{
 }
 
 .contenedorInicioDeportes {
-  background-color: white;
+  background-color: rgb(32, 8, 77);
   height: 600px;
   padding-top: 20px;
   margin-top: 80px;
@@ -104,13 +117,12 @@ body{
 }
 .grid-layout{
   display:grid;
-  grid-template-rows:  75px 42px 430px 40px 48px 1090px 40px 595px 40px 460px;
+  grid-template-rows:  76px 830px 60px 48px 1100px 50px 600px 59px 550px;
   width: 100%;
   background-color: rgb(32, 8, 77);
   padding: 1px;
  
 }
-
 
 
 .flebox-container {
@@ -119,15 +131,15 @@ body{
   left: 50%;
   transform: translate(-50%, -387%)
 }
-.flebox-container2 {
+.flebox-tabla-posiciones{
   position: absolute;
-  top: 50%;
+  top: 67%;
   left: 50%;
   transform: translate(-67%, -34%)
 }
 .flebox-container3 {
   position: absolute;
-  top: 50%;
+  top: 72%;
   left: 50%;
   transform: translate(97%, -37%)
 }
@@ -136,6 +148,7 @@ body{
 .cajaBarraFigma{
   display: flex;
   height: 55px;
+  margin-top: 11px;
   align-items: center;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
@@ -179,7 +192,7 @@ body{
 }
 .cajaEquipos{
   width: 96%;
-  height: 380px;
+  height: 100%;
   margin: 0 auto;
   background-color: rgb(32, 8, 77);
   
