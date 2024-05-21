@@ -24,7 +24,7 @@ export default function Encabezadotablabeisbol(props) {
       {...rest}
     >
       <View
-        width="929px"
+        width="928px"
         height="52px"
         display="block"
         gap="unset"
@@ -34,17 +34,16 @@ export default function Encabezadotablabeisbol(props) {
         top="0%"
         bottom="0%"
         left="0%"
-        right="25.68%"
+        right="25.76%"
         padding="0px 0px 0px 0px"
-        backgroundImage="linear-gradient(0deg, rgba(0,82,141,1), rgba(170,0,0,1))"
-        {...getOverrideProps(overrides, "Rectangle 11")}
+        backgroundImage="linear-gradient(0deg, rgba(203,0,0,1), rgba(0,82,141,1))"
+        {...getOverrideProps(overrides, "Rectangle 21")}
       ></View>
       <Text
         fontFamily="Inter"
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -57,8 +56,8 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="19.23%"
         bottom="17.31%"
-        left="7.44%"
-        right="85.84%"
+        left="5.28%"
+        right="88%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="EQUIPO"
@@ -69,7 +68,6 @@ export default function Encabezadotablabeisbol(props) {
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -94,7 +92,6 @@ export default function Encabezadotablabeisbol(props) {
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -107,19 +104,18 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="19.23%"
         bottom="17.31%"
-        left="38.48%"
+        left="39.44%"
         right="58.08%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="C.T."
-        {...getOverrideProps(overrides, "C.T.")}
+        children="CT"
+        {...getOverrideProps(overrides, "CT")}
       ></Text>
       <Text
         fontFamily="Inter"
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -132,19 +128,18 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="19.23%"
         bottom="17.31%"
-        left="43.52%"
+        left="44.4%"
         right="51.92%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="HR T."
-        {...getOverrideProps(overrides, "HR T.")}
+        children="HRT"
+        {...getOverrideProps(overrides, "HRT")}
       ></Text>
       <Text
         fontFamily="Inter"
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -157,19 +152,18 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="19.23%"
         bottom="17.31%"
-        left="49.68%"
+        left="50.64%"
         right="48.32%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="PJ"
-        {...getOverrideProps(overrides, "PJ")}
+        children="J"
+        {...getOverrideProps(overrides, "J")}
       ></Text>
       <Text
         fontFamily="Inter"
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -182,19 +176,18 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="19.23%"
         bottom="17.31%"
-        left="54%"
+        left="55.12%"
         right="43.52%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="PG"
-        {...getOverrideProps(overrides, "PG")}
+        children="G"
+        {...getOverrideProps(overrides, "G")}
       ></Text>
       <Text
         fontFamily="Inter"
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -207,19 +200,18 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="19.23%"
         bottom="17.31%"
-        left="58.24%"
+        left="59.36%"
         right="39.44%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="PP"
-        {...getOverrideProps(overrides, "PP")}
+        children="P"
+        {...getOverrideProps(overrides, "P")}
       ></Text>
       <Text
         fontFamily="Inter"
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -232,19 +224,18 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="19.23%"
         bottom="17.31%"
-        left="62.16%"
+        left="63.28%"
         right="35.6%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="PE"
-        {...getOverrideProps(overrides, "PE")}
+        children="E"
+        {...getOverrideProps(overrides, "E")}
       ></Text>
       <Text
         fontFamily="Inter"
         fontSize="22px"
         fontWeight="600"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="33px"
         textAlign="right"
         display="block"
@@ -286,9 +277,17 @@ export default function Encabezadotablabeisbol(props) {
         right="96.16%"
         {...getOverrideProps(overrides, "Star 3")}
       ></Icon>
-      <View
+      <Icon
         width="324px"
         height="52px"
+        viewBox={{ minX: 0, minY: 0, width: 324, height: 52 }}
+        paths={[
+          {
+            d: "M0 0L324 0L324 52L0 52L0 0Z",
+            fill: "rgba(0,82,141,1)",
+            fillRule: "nonzero",
+          },
+        ]}
         display="block"
         gap="unset"
         alignItems="unset"
@@ -298,16 +297,13 @@ export default function Encabezadotablabeisbol(props) {
         bottom="0%"
         left="76.4%"
         right="-2.32%"
-        padding="0px 0px 0px 0px"
-        backgroundColor="rgba(0,82,141,1)"
         {...getOverrideProps(overrides, "Rectangle 13")}
-      ></View>
+      ></Icon>
       <Text
         fontFamily="Inter"
         fontSize="20px"
-        fontWeight="600"
+        fontWeight="500"
         color="rgba(255,255,255,1)"
-        fontStyle="italic"
         lineHeight="30px"
         textAlign="right"
         display="block"
@@ -320,7 +316,7 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="13.46%"
         bottom="28.85%"
-        left="83.84%"
+        left="84%"
         right="5.6%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
@@ -374,9 +370,8 @@ export default function Encabezadotablabeisbol(props) {
       <Text
         fontFamily="Inter"
         fontSize="8px"
-        fontWeight="600"
+        fontWeight="500"
         color="rgba(255,252,252,1)"
-        fontStyle="italic"
         lineHeight="12px"
         textAlign="right"
         display="block"
@@ -389,7 +384,7 @@ export default function Encabezadotablabeisbol(props) {
         position="absolute"
         top="65.38%"
         bottom="11.54%"
-        left="85.52%"
+        left="85.6%"
         right="7.12%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"

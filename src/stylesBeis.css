@@ -1,0 +1,309 @@
+
+body{
+  background-color: rgb(32, 8, 77);
+
+}
+
+.logo{
+  margin-left: 60px;
+  
+}
+
+.colorBlanco{
+  color: #ffffff;
+}
+*{
+  margin: 0px;
+  
+}
+
+.botones{
+  flex-direction: column;
+}
+.espacio{
+  height:15px;
+  color: #595959;
+  background-color: rgb(40, 6, 104) ;
+}
+
+.pos{
+  background-color: rgb(255, 255, 255);
+
+  border: 2px solid #595959;
+  
+}
+
+table , td, th {
+  margin-left: 5px;
+  margin-top: 7px;
+  padding: 5px;
+  
+
+	border-collapse: collapse;
+  
+}
+td, th {
+  text-align: center;
+	padding: 13px;
+	width: 53px;
+	height: 55px;
+}
+th {
+	background: #f0e6cc;
+}
+.even {
+	background: #fbf8f0;
+}
+.odd {
+	background: #fefcf9;
+}
+
+.botonPDF{
+width: 450px;
+height: 40px;
+margin-left: 330px;
+background-color: rgb(0, 102, 255);
+-webkit-text-fill-color: #ffffff;
+}
+
+.botonLiguilla{
+  width: 250px;
+  height: 40px;
+
+  background-color: rgb(250, 142, 0);
+  -webkit-text-fill-color: #ffffff;
+  }
+
+.posiciones{
+  height: 1px;
+  visibility: hidden;
+}
+
+.contenedor-inicio{
+  align-items: center;
+  display:grid;
+  grid-template-rows:  100px;
+  width: 99%;
+  background-color: rgb(32, 8, 77);
+  padding: 1px;
+ 
+}
+
+.contenedorInicioDeportes {
+  background-color: rgb(32, 8, 77);
+  height: 600px;
+  padding-top: 0px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.DropDownMenu{
+  position: absolute;
+  top:4.5rem;
+  right: 2rem;
+  width: 120px;
+  padding: 2px;
+  padding-top: 5px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid grey;
+}
+
+.DropDownMenu::before{
+  content: '';
+  position: absolute;
+  top:-0.7rem;
+  right: 5rem;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: #ffffff;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+}
+
+.derecha{
+  margin-left: 450px;
+}
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+}
+
+.header nav{
+  display: flex;
+  height: 70px;
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  align-items: center;
+  border-bottom: 2px solid rgb(156, 8, 8);
+  border-top: 2px solid rgb(156, 8, 8);
+  
+}
+
+.header nav a{
+  
+  color: rgb(133, 5, 1);
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.header nav a:hover{
+  color:rgb(69, 35, 219)
+}
+
+.header ul{
+  flex-basis: 5%;
+  justify-content: flex-end;
+  display: flex;
+  list-style: none;
+  
+}
+.grid-layout-beis{
+  display:grid;
+  grid-template-rows:  80px 855px 80px  50px 610px 40px 1758px 60px 570px 50px 330px;
+  width: 100%;
+  background-color: rgb(32, 8, 77);
+  padding: 1px;
+ 
+}
+
+.flebox-container {
+  position: absolute;
+  top: 52%;
+  left: 51%;
+  transform: translate(-50%, -387%)
+}
+.flebox-tabla-posiciones{
+  position: absolute;
+  top: 68%;
+  left: 51%;
+  transform: translate(-67%, -34%)
+}
+.flebox-container3 {
+  position: absolute;
+  top: 72%;
+  left: 51%;
+  transform: translate(97%, -37%)
+}
+
+
+.cajaBarraFigma{
+  display: flex;
+  height: 55px;
+  margin-top: 11px;
+  align-items: center;
+ margin: 0px;
+ border: 0px;
+}
+
+.cajaBarra-goleo{
+  display: flex;
+  height: 30px;
+  background-color: rgb(133, 5, 1);
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.cajaBarra-beis nav{
+  display: flex;
+  height: 30px;
+  background-color: rgb(133, 5, 1);
+  margin-top: 0px;
+  margin-bottom: 1px;
+  align-items: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.cajaBarra-beis ul{
+  width: 95%;
+  flex-basis: 99%;
+  justify-content: center;
+  display: flex;
+  list-style: none;
+}
+
+.cajaBarra-beis nav a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+.cajaJugadores-fut{
+  width: 95%;
+  height: 40px;
+  margin: -10px;
+  padding-bottom: 5px;
+  background-color: rgb(32, 8, 77);
+
+  
+
+}
+.cajaEquipos-fut{
+  width: 96%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: rgb(32, 8, 77);
+  
+  
+
+}
+.caja{
+  width: 99%;
+  height: 100px;
+  margin-left: 7px;
+
+}
+
+
+/* styles.css */
+.amplify-pagination {
+  --amplify-components-pagination-current-background-color: var(
+    --amplify-colors-white
+  );
+  --amplify-components-pagination-current-color: var(
+    --amplify-colors-black
+  );
+  --amplify-components-pagination-button-color: var(
+    --amplify-colors-white
+  );
+  --amplify-components-pagination-ellipsis-padding-inline-start:115px;
+
+ }
+
+ .amplify-searchfield {
+  
+  --amplify-components-collection-search-button-active-background-color:
+   var(--amplify-components-searchfield-button-active-border-color-purple);
+
+   --amplify-components-collection-search-input-color:
+   var(--amplify-components-searchfield-color-black);
+   
+}
+
+.amplify-textfield {
+  --amplify-components-input-color: rgb(255, 255, 255);
+  --amplify-components-collection-search-input-color:rgb(255, 254, 254);
+  --amplify-components-textfield-color:rgb(255, 255, 255);
+  --amplify-components-input-focus-border-color:rgb(255, 255, 255);
+  --amplify-components-input-color:rgb(255, 255, 255);
+}
+
+
+

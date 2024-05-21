@@ -1,10 +1,15 @@
 import React from 'react'
-import { Deportes } from './ui-components'
+import LigasFutbol from './LigasFutbol';
+import './stylesLigas.css'
+
 
 export const Inicio = () => {
   return (
-    <div class="contenedor-inicio" >
-              <div class="contenedorInicioDeportes"><Deportes/></div>
+    
+    <div class="contenedor-inicio-ligas" >
+      
+              <div class="contenedorInicioDeportes"><LigasFutbol/></div>
     </div>
+
   )
 }

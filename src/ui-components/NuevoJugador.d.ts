@@ -45,6 +45,7 @@ export declare type NuevoJugadorInputValues = {
     beirolas?: number;
     beiporcentajebateo?: number;
     mvp?: number;
+    futgoleadorsemana?: number;
     beipitentradaslanzadas?: number;
     beipitcarreraslimpias?: number;
     beipithitstotales?: number;
@@ -52,6 +53,7 @@ export declare type NuevoJugadorInputValues = {
     beipitera?: number;
     beipitjuegosganados?: number;
     beipitjuegosperdidos?: number;
+    clave_liga?: string;
 };
 export declare type NuevoJugadorValidationValues = {
     iddeporte?: ValidationFunction<string>;
@@ -77,6 +79,7 @@ export declare type NuevoJugadorValidationValues = {
     beirolas?: ValidationFunction<number>;
     beiporcentajebateo?: ValidationFunction<number>;
     mvp?: ValidationFunction<number>;
+    futgoleadorsemana?: ValidationFunction<number>;
     beipitentradaslanzadas?: ValidationFunction<number>;
     beipitcarreraslimpias?: ValidationFunction<number>;
     beipithitstotales?: ValidationFunction<number>;
@@ -84,6 +87,7 @@ export declare type NuevoJugadorValidationValues = {
     beipitera?: ValidationFunction<number>;
     beipitjuegosganados?: ValidationFunction<number>;
     beipitjuegosperdidos?: ValidationFunction<number>;
+    clave_liga?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NuevoJugadorOverridesProps = {
@@ -111,6 +115,7 @@ export declare type NuevoJugadorOverridesProps = {
     beirolas?: PrimitiveOverrideProps<TextFieldProps>;
     beiporcentajebateo?: PrimitiveOverrideProps<TextFieldProps>;
     mvp?: PrimitiveOverrideProps<TextFieldProps>;
+    futgoleadorsemana?: PrimitiveOverrideProps<TextFieldProps>;
     beipitentradaslanzadas?: PrimitiveOverrideProps<TextFieldProps>;
     beipitcarreraslimpias?: PrimitiveOverrideProps<TextFieldProps>;
     beipithitstotales?: PrimitiveOverrideProps<TextFieldProps>;
@@ -118,6 +123,7 @@ export declare type NuevoJugadorOverridesProps = {
     beipitera?: PrimitiveOverrideProps<TextFieldProps>;
     beipitjuegosganados?: PrimitiveOverrideProps<TextFieldProps>;
     beipitjuegosperdidos?: PrimitiveOverrideProps<TextFieldProps>;
+    clave_liga?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type NuevoJugadorProps = React.PropsWithChildren<{
     overrides?: NuevoJugadorOverridesProps | undefined | null;

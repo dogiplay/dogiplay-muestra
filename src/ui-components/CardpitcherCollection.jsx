@@ -12,6 +12,7 @@ import {
   getOverrideProps,
   useDataStoreBinding,
 } from "./utils";
+import { SortDirection } from "@aws-amplify/datastore";
 import Cardpitcher from "./Cardpitcher";
 import { Collection } from "@aws-amplify/ui-react";
 export default function CardpitcherCollection(props) {
@@ -22,11 +23,13 @@ export default function CardpitcherCollection(props) {
     operator: "eq",
   };
   const itemsFilter = createDataStorePredicate(itemsFilterObj);
+  const itemsPagination = { sort: (s) => s.beipitera(SortDirection.ASCENDING) };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Jugadores,
     criteria: itemsFilter,
+    pagination: itemsPagination,
   }).items;
   React.useEffect(() => {
     if (itemsProp !== undefined) {
@@ -38,7 +41,10 @@ export default function CardpitcherCollection(props) {
   return (
     <Collection
       type="grid"
+      isSearchable={true}
+      isPaginated={true}
       searchPlaceholder="Search..."
+      itemsPerPage={5}
       templateColumns="1fr 1fr 1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"

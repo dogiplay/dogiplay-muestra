@@ -49,6 +49,8 @@ export default function NuevoEquipo(props) {
     patrocinador: "",
     beicarreras: "",
     beihr: "",
+    clave_liga: "",
+    futdifgoles: "",
   };
   const [nombre, setNombre] = React.useState(initialValues.nombre);
   const [torneo, setTorneo] = React.useState(initialValues.torneo);
@@ -90,6 +92,10 @@ export default function NuevoEquipo(props) {
     initialValues.beicarreras
   );
   const [beihr, setBeihr] = React.useState(initialValues.beihr);
+  const [clave_liga, setClave_liga] = React.useState(initialValues.clave_liga);
+  const [futdifgoles, setFutdifgoles] = React.useState(
+    initialValues.futdifgoles
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setNombre(initialValues.nombre);
@@ -112,6 +118,8 @@ export default function NuevoEquipo(props) {
     setPatrocinador(initialValues.patrocinador);
     setBeicarreras(initialValues.beicarreras);
     setBeihr(initialValues.beihr);
+    setClave_liga(initialValues.clave_liga);
+    setFutdifgoles(initialValues.futdifgoles);
     setErrors({});
   };
   const validations = {
@@ -135,6 +143,8 @@ export default function NuevoEquipo(props) {
     patrocinador: [],
     beicarreras: [],
     beihr: [],
+    clave_liga: [],
+    futdifgoles: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -182,6 +192,8 @@ export default function NuevoEquipo(props) {
           patrocinador,
           beicarreras,
           beihr,
+          clave_liga,
+          futdifgoles,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -264,6 +276,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -307,6 +321,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.torneo ?? value;
@@ -350,6 +366,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.logo ?? value;
@@ -393,6 +411,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.categoria ?? value;
@@ -436,6 +456,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.idliga ?? value;
@@ -479,6 +501,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.idtorneo ?? value;
@@ -522,6 +546,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.club ?? value;
@@ -569,6 +595,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.idcategoria ?? value;
@@ -612,6 +640,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.manager ?? value;
@@ -659,6 +689,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.futgolesfavor ?? value;
@@ -706,6 +738,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.futgolescontra ?? value;
@@ -753,6 +787,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.partidosjugados ?? value;
@@ -800,6 +836,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.partidosganados ?? value;
@@ -847,6 +885,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.partidosperdidos ?? value;
@@ -894,6 +934,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.partidosempatados ?? value;
@@ -943,6 +985,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.puntos ?? value;
@@ -990,6 +1034,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.posiciontabla ?? value;
@@ -1033,6 +1079,8 @@ export default function NuevoEquipo(props) {
               patrocinador: value,
               beicarreras,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.patrocinador ?? value;
@@ -1080,6 +1128,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras: value,
               beihr,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.beicarreras ?? value;
@@ -1127,6 +1177,8 @@ export default function NuevoEquipo(props) {
               patrocinador,
               beicarreras,
               beihr: value,
+              clave_liga,
+              futdifgoles,
             };
             const result = onChange(modelFields);
             value = result?.beihr ?? value;
@@ -1140,6 +1192,100 @@ export default function NuevoEquipo(props) {
         errorMessage={errors.beihr?.errorMessage}
         hasError={errors.beihr?.hasError}
         {...getOverrideProps(overrides, "beihr")}
+      ></TextField>
+      <TextField
+        label="Clave liga"
+        isRequired={false}
+        isReadOnly={false}
+        value={clave_liga}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              torneo,
+              logo,
+              categoria,
+              idliga,
+              idtorneo,
+              club,
+              idcategoria,
+              manager,
+              futgolesfavor,
+              futgolescontra,
+              partidosjugados,
+              partidosganados,
+              partidosperdidos,
+              partidosempatados,
+              puntos,
+              posiciontabla,
+              patrocinador,
+              beicarreras,
+              beihr,
+              clave_liga: value,
+              futdifgoles,
+            };
+            const result = onChange(modelFields);
+            value = result?.clave_liga ?? value;
+          }
+          if (errors.clave_liga?.hasError) {
+            runValidationTasks("clave_liga", value);
+          }
+          setClave_liga(value);
+        }}
+        onBlur={() => runValidationTasks("clave_liga", clave_liga)}
+        errorMessage={errors.clave_liga?.errorMessage}
+        hasError={errors.clave_liga?.hasError}
+        {...getOverrideProps(overrides, "clave_liga")}
+      ></TextField>
+      <TextField
+        label="Futdifgoles"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={futdifgoles}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              torneo,
+              logo,
+              categoria,
+              idliga,
+              idtorneo,
+              club,
+              idcategoria,
+              manager,
+              futgolesfavor,
+              futgolescontra,
+              partidosjugados,
+              partidosganados,
+              partidosperdidos,
+              partidosempatados,
+              puntos,
+              posiciontabla,
+              patrocinador,
+              beicarreras,
+              beihr,
+              clave_liga,
+              futdifgoles: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.futdifgoles ?? value;
+          }
+          if (errors.futdifgoles?.hasError) {
+            runValidationTasks("futdifgoles", value);
+          }
+          setFutdifgoles(value);
+        }}
+        onBlur={() => runValidationTasks("futdifgoles", futdifgoles)}
+        errorMessage={errors.futdifgoles?.errorMessage}
+        hasError={errors.futdifgoles?.hasError}
+        {...getOverrideProps(overrides, "futdifgoles")}
       ></TextField>
       <Flex
         justifyContent="space-between"

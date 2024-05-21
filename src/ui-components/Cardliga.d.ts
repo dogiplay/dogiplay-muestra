@@ -5,7 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { Ligas } from "../models";
+import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,23 +19,31 @@ export declare type Variant = {
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type CardligaOverridesProps = {
+    "30"?: PrimitiveOverrideProps<TextProps>;
+    "3117436503"?: PrimitiveOverrideProps<TextProps>;
     Cardliga?: PrimitiveOverrideProps<ViewProps>;
-    "Product Info"?: PrimitiveOverrideProps<FlexProps>;
-    "Product info"?: PrimitiveOverrideProps<FlexProps>;
-    "Product name"?: PrimitiveOverrideProps<TextProps>;
-    " Subheading51664"?: PrimitiveOverrideProps<TextProps>;
-    " Subheading52688"?: PrimitiveOverrideProps<TextProps>;
-    Price51665?: PrimitiveOverrideProps<TextProps>;
-    Description?: PrimitiveOverrideProps<TextProps>;
-    Price51667?: PrimitiveOverrideProps<TextProps>;
-    Button?: PrimitiveOverrideProps<FlexProps>;
-    "Ver equipos"?: PrimitiveOverrideProps<TextProps>;
-    Carousel?: PrimitiveOverrideProps<FlexProps>;
-    Image?: PrimitiveOverrideProps<ViewProps>;
     Header?: PrimitiveOverrideProps<ViewProps>;
-    Liga?: PrimitiveOverrideProps<TextProps>;
+    "LIGA MUNICIPAL DE FUTBOL"?: PrimitiveOverrideProps<TextProps>;
+    " Subheading"?: PrimitiveOverrideProps<TextProps>;
+    "Product name52677"?: PrimitiveOverrideProps<TextProps>;
+    "Product name1921953"?: PrimitiveOverrideProps<TextProps>;
+    "Product name1921950"?: PrimitiveOverrideProps<TextProps>;
+    "Product name1921949"?: PrimitiveOverrideProps<TextProps>;
+    logoequipo?: PrimitiveOverrideProps<ImageProps>;
+    Nayarit?: PrimitiveOverrideProps<TextProps>;
+    Xalisco?: PrimitiveOverrideProps<TextProps>;
+    FUTBOL?: PrimitiveOverrideProps<TextProps>;
+    Contacto?: PrimitiveOverrideProps<TextProps>;
+    buttonLiga?: PrimitiveOverrideProps<FlexProps>;
+    "Ver liga"?: PrimitiveOverrideProps<TextProps>;
+    Deporte?: PrimitiveOverrideProps<TextProps>;
+    Categoria?: PrimitiveOverrideProps<TextProps>;
+    Primera?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardligaProps = React.PropsWithChildren<Partial<ViewProps> & {
+    ligas?: Ligas;
+    nayaritfutbolliga1?: String;
+} & {
     overrides?: CardligaOverridesProps | undefined | null;
 }>;
 export default function Cardliga(props: CardligaProps): React.ReactElement;

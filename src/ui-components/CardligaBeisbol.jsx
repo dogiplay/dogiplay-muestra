@@ -1,0 +1,491 @@
+/***************************************************************************
+ * The contents of this file were generated with Amplify Studio.           *
+ * Please refrain from making any modifications to this file.              *
+ * Any changes to this file will be overwritten when running amplify pull. *
+ **************************************************************************/
+
+/* eslint-disable */
+import * as React from "react";
+import { getOverrideProps, useNavigateAction } from "./utils";
+import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
+export default function CardligaBeisbol(props) {
+  const { ligas, overrides, ...rest } = props;
+  const zeroZeroPrimarybuttonOnClick = useNavigateAction({
+    type: "url",
+    url: "ligasbeisbol",
+  });
+  return (
+    <View
+      width="309px"
+      height="213px"
+      display="block"
+      gap="unset"
+      alignItems="unset"
+      justifyContent="unset"
+      position="relative"
+      border="2px SOLID rgba(203,0,0,1)"
+      borderRadius="11px"
+      padding="0px 0px 0px 0px"
+      {...getOverrideProps(overrides, "CardligaBeisbol")}
+      {...rest}
+    >
+      <View
+        width="309px"
+        height="213px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="0%"
+        bottom="0%"
+        left="0%"
+        right="0%"
+        border="1px SOLID rgba(203,0,0,1)"
+        borderRadius="11px"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(255,255,255,1)"
+        {...getOverrideProps(overrides, "Rectangle 23")}
+      ></View>
+      <Flex
+        gap="8px"
+        direction="row"
+        width="unset"
+        height="40px"
+        justifyContent="center"
+        alignItems="center"
+        position="absolute"
+        top="76.06%"
+        bottom="5.16%"
+        left="63.92%"
+        right="5.02%"
+        borderRadius="8px"
+        padding="0px 16px 0px 16px"
+        backgroundColor="rgba(191,14,14,1)"
+        onClick={() => {
+          zeroZeroPrimarybuttonOnClick();
+        }}
+        {...getOverrideProps(overrides, "00 Primary button")}
+      >
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="700"
+          color="rgba(255,255,255,1)"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Ver Liga"
+          {...getOverrideProps(overrides, "Ver Liga")}
+        ></Text>
+      </Flex>
+      <Image
+        width="37.86%"
+        height="52.11%"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="19.25%"
+        bottom="28.64%"
+        left="60.52%"
+        right="1.62%"
+        border="2px SOLID rgba(0,82,141,1)"
+        borderRadius="55px"
+        padding="0px 0px 0px 0px"
+        objectFit="cover"
+        src={ligas?.foto}
+        {...getOverrideProps(overrides, "logoequipo")}
+      ></Image>
+      <View
+        width="290px"
+        height="20px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        overflow="hidden"
+        position="absolute"
+        top="5.16%"
+        bottom="85.45%"
+        left="2.27%"
+        right="3.88%"
+        borderRadius="2px"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(0,82,141,1)"
+        {...getOverrideProps(overrides, "Header")}
+      >
+        <Text
+          fontFamily="Inter"
+          fontSize="14px"
+          fontWeight="600"
+          color="rgba(255,253,253,1)"
+          lineHeight="19.600000381469727px"
+          textAlign="center"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          letterSpacing="-0.13px"
+          width="290px"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          position="absolute"
+          top="calc(50% - 10px - 0px)"
+          left="0px"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={ligas?.nombre}
+          {...getOverrideProps(overrides, "LIGA MUNICIPAL DE BEISBOL")}
+        ></Text>
+      </View>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="600"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.799999237060547px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="76.06%"
+        bottom="15.96%"
+        left="3.88%"
+        right="80.58%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Deporte"
+        {...getOverrideProps(overrides, "Deporte")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="11px"
+        fontWeight="600"
+        color="rgba(0,0,0,1)"
+        lineHeight="15.399999618530273px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="86.85%"
+        bottom="6.1%"
+        left="3.88%"
+        right="78.96%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Categoria"
+        {...getOverrideProps(overrides, "Categoria")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="600"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.799999237060547px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="54px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="65.26%"
+        bottom="26.76%"
+        left="3.88%"
+        right="78.64%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Clave"
+        {...getOverrideProps(overrides, " Subheading")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="600"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.799999237060547px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="84px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="54.93%"
+        bottom="37.09%"
+        left="3.88%"
+        right="68.93%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Municipio"
+        {...getOverrideProps(overrides, "Product name303119")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="600"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.799999237060547px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="92px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="44.6%"
+        bottom="47.42%"
+        left="3.88%"
+        right="66.34%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Estado"
+        {...getOverrideProps(overrides, "Product name303118")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="600"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.799999237060547px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="70px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="24.88%"
+        bottom="67.14%"
+        left="3.88%"
+        right="73.46%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Presidente"
+        {...getOverrideProps(overrides, "Product name303117")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="16px"
+        fontWeight="600"
+        color="rgba(203,0,0,1)"
+        lineHeight="22.399999618530273px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="74.65%"
+        bottom="15.02%"
+        left="26.54%"
+        right="51.78%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="BEISBOL"
+        {...getOverrideProps(overrides, "BEISBOL")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="16px"
+        fontWeight="600"
+        color="rgba(203,0,0,1)"
+        lineHeight="22.399999618530273px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="63.85%"
+        bottom="25.82%"
+        left="26.54%"
+        right="66.34%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={ligas?.clave}
+        {...getOverrideProps(overrides, "30")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="14px"
+        fontWeight="600"
+        color="rgba(203,0,0,1)"
+        lineHeight="19.600000381469727px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="53.99%"
+        bottom="36.62%"
+        left="26.54%"
+        right="57.28%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={ligas?.municipio}
+        {...getOverrideProps(overrides, "Xalisco")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="14px"
+        fontWeight="600"
+        color="rgba(203,0,0,1)"
+        lineHeight="19.600000381469727px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="85.92%"
+        bottom="4.69%"
+        left="26.54%"
+        right="56.31%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={ligas?.categoria}
+        {...getOverrideProps(overrides, "Primera")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="600"
+        color="rgba(0,82,141,1)"
+        lineHeight="16.799999237060547px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="105px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="34.27%"
+        bottom="57.75%"
+        left="26.54%"
+        right="39.48%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={ligas?.telefono}
+        {...getOverrideProps(overrides, "3117436503")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="600"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.799999237060547px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="34.27%"
+        bottom="57.75%"
+        left="3.88%"
+        right="78.64%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Contacto"
+        {...getOverrideProps(overrides, "Contacto")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="10px"
+        fontWeight="600"
+        color="rgba(0,82,141,1)"
+        lineHeight="14px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="105px"
+        height="15px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="25.82%"
+        bottom="67.14%"
+        left="26.54%"
+        right="39.48%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={ligas?.presidente}
+        {...getOverrideProps(overrides, "Product name303110")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="14px"
+        fontWeight="600"
+        color="rgba(203,0,0,1)"
+        lineHeight="19.600000381469727px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="106px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="43.66%"
+        bottom="46.95%"
+        left="26.54%"
+        right="39.16%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={ligas?.estado}
+        {...getOverrideProps(overrides, "Nayarit")}
+      ></Text>
+    </View>
+  );
+}

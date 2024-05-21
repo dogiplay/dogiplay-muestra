@@ -34,6 +34,7 @@ export declare type PartidosUpdateFormInputValues = {
     jugador_partido?: string;
     jornada?: number;
     fecha?: string;
+    clave_liga?: string;
 };
 export declare type PartidosUpdateFormValidationValues = {
     idequipo?: ValidationFunction<string>;
@@ -47,6 +48,7 @@ export declare type PartidosUpdateFormValidationValues = {
     jugador_partido?: ValidationFunction<string>;
     jornada?: ValidationFunction<number>;
     fecha?: ValidationFunction<string>;
+    clave_liga?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type PartidosUpdateFormOverridesProps = {
@@ -62,6 +64,7 @@ export declare type PartidosUpdateFormOverridesProps = {
     jugador_partido?: PrimitiveOverrideProps<TextFieldProps>;
     jornada?: PrimitiveOverrideProps<TextFieldProps>;
     fecha?: PrimitiveOverrideProps<TextFieldProps>;
+    clave_liga?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type PartidosUpdateFormProps = React.PropsWithChildren<{
     overrides?: PartidosUpdateFormOverridesProps | undefined | null;

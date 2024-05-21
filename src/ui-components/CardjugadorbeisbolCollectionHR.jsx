@@ -7,17 +7,28 @@
 /* eslint-disable */
 import * as React from "react";
 import { Jugadores } from "../models";
+import {
+  createDataStorePredicate,
+  getOverrideProps,
+  useDataStoreBinding,
+} from "./utils";
 import { SortDirection } from "@aws-amplify/datastore";
-import { getOverrideProps, useDataStoreBinding } from "./utils";
 import Cardjugadorbeisbol from "./Cardjugadorbeisbol";
 import { Collection } from "@aws-amplify/ui-react";
 export default function CardjugadorbeisbolCollectionHR(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
+  const itemsFilterObj = {
+    field: "deporte",
+    operand: "beisbol",
+    operator: "eq",
+  };
+  const itemsFilter = createDataStorePredicate(itemsFilterObj);
   const itemsPagination = { sort: (s) => s.beihr(SortDirection.DESCENDING) };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Jugadores,
+    criteria: itemsFilter,
     pagination: itemsPagination,
   }).items;
   React.useEffect(() => {

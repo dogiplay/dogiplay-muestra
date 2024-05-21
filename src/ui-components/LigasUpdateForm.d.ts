@@ -29,6 +29,13 @@ export declare type LigasUpdateFormInputValues = {
     foto?: string;
     descripcion?: string;
     nombre?: string;
+    estado?: string;
+    municipio?: string;
+    telefono?: string;
+    equipos?: number;
+    presidente?: string;
+    deporte?: string;
+    categoria?: string;
 };
 export declare type LigasUpdateFormValidationValues = {
     idliga?: ValidationFunction<string>;
@@ -37,6 +44,13 @@ export declare type LigasUpdateFormValidationValues = {
     foto?: ValidationFunction<string>;
     descripcion?: ValidationFunction<string>;
     nombre?: ValidationFunction<string>;
+    estado?: ValidationFunction<string>;
+    municipio?: ValidationFunction<string>;
+    telefono?: ValidationFunction<string>;
+    equipos?: ValidationFunction<number>;
+    presidente?: ValidationFunction<string>;
+    deporte?: ValidationFunction<string>;
+    categoria?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type LigasUpdateFormOverridesProps = {
@@ -47,6 +61,13 @@ export declare type LigasUpdateFormOverridesProps = {
     foto?: PrimitiveOverrideProps<TextFieldProps>;
     descripcion?: PrimitiveOverrideProps<TextFieldProps>;
     nombre?: PrimitiveOverrideProps<TextFieldProps>;
+    estado?: PrimitiveOverrideProps<TextFieldProps>;
+    municipio?: PrimitiveOverrideProps<TextFieldProps>;
+    telefono?: PrimitiveOverrideProps<TextFieldProps>;
+    equipos?: PrimitiveOverrideProps<TextFieldProps>;
+    presidente?: PrimitiveOverrideProps<TextFieldProps>;
+    deporte?: PrimitiveOverrideProps<TextFieldProps>;
+    categoria?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type LigasUpdateFormProps = React.PropsWithChildren<{
     overrides?: LigasUpdateFormOverridesProps | undefined | null;

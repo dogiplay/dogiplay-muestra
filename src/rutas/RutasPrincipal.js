@@ -1,17 +1,21 @@
 import React from 'react'
 import {Routes, Route, BrowserRouter, NavLink} from 'react-router-dom';
 import NayaritBeisbolLiga1 from '../NayaritBeisbolLiga1';
+import NayaritFutbolLiga1 from '../NayaritFutbolLiga1';
 import { RegistroPresidente } from '../componentes/RegistroPresidente';
 import { RegistroManager } from '../componentes/RegistroManager';
 import { Inicio } from '../Inicio';
 import { Contacto } from '../componentes/Contacto';
-import { Logodogiplay, Rol } from '../ui-components';
+import {CardjugadorfutbolCollectionLigaNayUno, Logodogiplay} from '../ui-components';
 import ShippingLabel from '../ShippingLabel';
-
+import LigasFutbol from '../LigasFutbol';
+import {EjemploContexto} from '../EjemploContexto';
 
 
 export const RutasPrincipal = () => {
+  
   return (
+  
     <BrowserRouter>
     <header className='header'>
          
@@ -32,19 +36,23 @@ export const RutasPrincipal = () => {
     </header>
    
       <section className='content'>
-        <Routes>
+        <Routes>          
             <Route path='/' element={<Inicio/>}/>
             <Route path='/Inicio' element={<Inicio/>}/>
             <Route path='/pdf' element={<ShippingLabel/>}/>
             <Route path='/Contacto' element={<Contacto/>}/>
             <Route path='/nayaritbeisbolliga1' element={<NayaritBeisbolLiga1/>}/>
+            <Route path='/ligasdefutbol' element={<NayaritFutbolLiga1/>}/>
+            <Route path='/ligasbeisbol' element={<NayaritBeisbolLiga1/>}/>
+            <Route path='/futbol' element={<LigasFutbol/>}/>
+            <Route path='/futbol' element={<CardjugadorfutbolCollectionLigaNayUno/>}/>
             <Route path='/registropresidente' element={<RegistroPresidente/>}/>
             <Route path='/registromanager' element={<RegistroManager/>}/>
+            <Route path='/contexto' element={<EjemploContexto/>}/>
         </Routes>
       </section>
       
     </BrowserRouter>
-    
-    
+
   )
 }

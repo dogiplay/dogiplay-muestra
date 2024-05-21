@@ -6,6 +6,48 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
+type EagerCampeonatos = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Campeonatos, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly clave_liga?: string | null;
+  readonly equipo?: string | null;
+  readonly logo?: string | null;
+  readonly manager?: string | null;
+  readonly temporada?: string | null;
+  readonly numero_campeonato?: number | null;
+  readonly categoria?: string | null;
+  readonly anoc?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyCampeonatos = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Campeonatos, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly clave_liga?: string | null;
+  readonly equipo?: string | null;
+  readonly logo?: string | null;
+  readonly manager?: string | null;
+  readonly temporada?: string | null;
+  readonly numero_campeonato?: number | null;
+  readonly categoria?: string | null;
+  readonly anoc?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Campeonatos = LazyLoading extends LazyLoadingDisabled ? EagerCampeonatos : LazyCampeonatos
+
+export declare const Campeonatos: (new (init: ModelInit<Campeonatos>) => Campeonatos) & {
+  copyOf(source: Campeonatos, mutator: (draft: MutableModel<Campeonatos>) => MutableModel<Campeonatos> | void): Campeonatos;
+}
+
 type EagerStatsJugadores = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<StatsJugadores, 'id'>;
@@ -93,14 +135,14 @@ type EagerJugadores = {
   readonly futasisgol?: number | null;
   readonly futtarjetasallas?: number | null;
   readonly futtarjetasrojas?: number | null;
-  readonly beiponches?: number | null;
+  readonly futgoleadorsemana?: number | null;
   readonly beicarrerashechas?: number | null;
   readonly beicarrerasproducid?: number | null;
   readonly beihr?: number | null;
   readonly beihits?: number | null;
   readonly beifly?: number | null;
   readonly beirolas?: number | null;
-  readonly beiporcentajebateo?: number | null;
+  readonly beiponches?: number | null;
   readonly mvp?: number | null;
   readonly beipitentradaslanzadas?: number | null;
   readonly beipitcarreraslimpias?: number | null;
@@ -109,6 +151,8 @@ type EagerJugadores = {
   readonly beipitera?: number | null;
   readonly beipitjuegosganados?: number | null;
   readonly beipitjuegosperdidos?: number | null;
+  readonly beiporcentajebateo?: number | null;
+  readonly clave_liga?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -138,14 +182,14 @@ type LazyJugadores = {
   readonly futasisgol?: number | null;
   readonly futtarjetasallas?: number | null;
   readonly futtarjetasrojas?: number | null;
-  readonly beiponches?: number | null;
+  readonly futgoleadorsemana?: number | null;
   readonly beicarrerashechas?: number | null;
   readonly beicarrerasproducid?: number | null;
   readonly beihr?: number | null;
   readonly beihits?: number | null;
   readonly beifly?: number | null;
   readonly beirolas?: number | null;
-  readonly beiporcentajebateo?: number | null;
+  readonly beiponches?: number | null;
   readonly mvp?: number | null;
   readonly beipitentradaslanzadas?: number | null;
   readonly beipitcarreraslimpias?: number | null;
@@ -154,6 +198,8 @@ type LazyJugadores = {
   readonly beipitera?: number | null;
   readonly beipitjuegosganados?: number | null;
   readonly beipitjuegosperdidos?: number | null;
+  readonly beiporcentajebateo?: number | null;
+  readonly clave_liga?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -254,6 +300,13 @@ type EagerLigas = {
   readonly foto?: string | null;
   readonly descripcion?: string | null;
   readonly nombre?: string | null;
+  readonly estado?: string | null;
+  readonly municipio?: string | null;
+  readonly telefono?: string | null;
+  readonly equipos?: number | null;
+  readonly presidente?: string | null;
+  readonly deporte?: string | null;
+  readonly categoria?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -270,6 +323,13 @@ type LazyLigas = {
   readonly foto?: string | null;
   readonly descripcion?: string | null;
   readonly nombre?: string | null;
+  readonly estado?: string | null;
+  readonly municipio?: string | null;
+  readonly telefono?: string | null;
+  readonly equipos?: number | null;
+  readonly presidente?: string | null;
+  readonly deporte?: string | null;
+  readonly categoria?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -339,6 +399,7 @@ type EagerPartidos = {
   readonly jugador_partido?: string | null;
   readonly jornada?: number | null;
   readonly fecha?: string | null;
+  readonly clave_liga?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -360,6 +421,7 @@ type LazyPartidos = {
   readonly jugador_partido?: string | null;
   readonly jornada?: number | null;
   readonly fecha?: string | null;
+  readonly clave_liga?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -397,6 +459,8 @@ type EagerEquipos = {
   readonly patrocinador?: string | null;
   readonly beicarreras?: number | null;
   readonly beihr?: number | null;
+  readonly clave_liga?: string | null;
+  readonly futdifgoles?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -428,6 +492,8 @@ type LazyEquipos = {
   readonly patrocinador?: string | null;
   readonly beicarreras?: number | null;
   readonly beihr?: number | null;
+  readonly clave_liga?: string | null;
+  readonly futdifgoles?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

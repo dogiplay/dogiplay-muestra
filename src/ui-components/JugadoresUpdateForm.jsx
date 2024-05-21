@@ -42,14 +42,14 @@ export default function JugadoresUpdateForm(props) {
     futasisgol: "",
     futtarjetasallas: "",
     futtarjetasrojas: "",
-    beiponches: "",
+    futgoleadorsemana: "",
     beicarrerashechas: "",
     beicarrerasproducid: "",
     beihr: "",
     beihits: "",
     beifly: "",
     beirolas: "",
-    beiporcentajebateo: "",
+    beiponches: "",
     mvp: "",
     beipitentradaslanzadas: "",
     beipitcarreraslimpias: "",
@@ -58,6 +58,8 @@ export default function JugadoresUpdateForm(props) {
     beipitera: "",
     beipitjuegosganados: "",
     beipitjuegosperdidos: "",
+    beiporcentajebateo: "",
+    clave_liga: "",
   };
   const [iddeporte, setIddeporte] = React.useState(initialValues.iddeporte);
   const [idequipo, setIdequipo] = React.useState(initialValues.idequipo);
@@ -82,7 +84,9 @@ export default function JugadoresUpdateForm(props) {
   const [futtarjetasrojas, setFuttarjetasrojas] = React.useState(
     initialValues.futtarjetasrojas
   );
-  const [beiponches, setBeiponches] = React.useState(initialValues.beiponches);
+  const [futgoleadorsemana, setFutgoleadorsemana] = React.useState(
+    initialValues.futgoleadorsemana
+  );
   const [beicarrerashechas, setBeicarrerashechas] = React.useState(
     initialValues.beicarrerashechas
   );
@@ -93,9 +97,7 @@ export default function JugadoresUpdateForm(props) {
   const [beihits, setBeihits] = React.useState(initialValues.beihits);
   const [beifly, setBeifly] = React.useState(initialValues.beifly);
   const [beirolas, setBeirolas] = React.useState(initialValues.beirolas);
-  const [beiporcentajebateo, setBeiporcentajebateo] = React.useState(
-    initialValues.beiporcentajebateo
-  );
+  const [beiponches, setBeiponches] = React.useState(initialValues.beiponches);
   const [mvp, setMvp] = React.useState(initialValues.mvp);
   const [beipitentradaslanzadas, setBeipitentradaslanzadas] = React.useState(
     initialValues.beipitentradaslanzadas
@@ -116,6 +118,10 @@ export default function JugadoresUpdateForm(props) {
   const [beipitjuegosperdidos, setBeipitjuegosperdidos] = React.useState(
     initialValues.beipitjuegosperdidos
   );
+  const [beiporcentajebateo, setBeiporcentajebateo] = React.useState(
+    initialValues.beiporcentajebateo
+  );
+  const [clave_liga, setClave_liga] = React.useState(initialValues.clave_liga);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = jugadoresRecord
@@ -140,14 +146,14 @@ export default function JugadoresUpdateForm(props) {
     setFutasisgol(cleanValues.futasisgol);
     setFuttarjetasallas(cleanValues.futtarjetasallas);
     setFuttarjetasrojas(cleanValues.futtarjetasrojas);
-    setBeiponches(cleanValues.beiponches);
+    setFutgoleadorsemana(cleanValues.futgoleadorsemana);
     setBeicarrerashechas(cleanValues.beicarrerashechas);
     setBeicarrerasproducid(cleanValues.beicarrerasproducid);
     setBeihr(cleanValues.beihr);
     setBeihits(cleanValues.beihits);
     setBeifly(cleanValues.beifly);
     setBeirolas(cleanValues.beirolas);
-    setBeiporcentajebateo(cleanValues.beiporcentajebateo);
+    setBeiponches(cleanValues.beiponches);
     setMvp(cleanValues.mvp);
     setBeipitentradaslanzadas(cleanValues.beipitentradaslanzadas);
     setBeipitcarreraslimpias(cleanValues.beipitcarreraslimpias);
@@ -156,6 +162,8 @@ export default function JugadoresUpdateForm(props) {
     setBeipitera(cleanValues.beipitera);
     setBeipitjuegosganados(cleanValues.beipitjuegosganados);
     setBeipitjuegosperdidos(cleanValues.beipitjuegosperdidos);
+    setBeiporcentajebateo(cleanValues.beiporcentajebateo);
+    setClave_liga(cleanValues.clave_liga);
     setErrors({});
   };
   const [jugadoresRecord, setJugadoresRecord] =
@@ -190,14 +198,14 @@ export default function JugadoresUpdateForm(props) {
     futasisgol: [],
     futtarjetasallas: [],
     futtarjetasrojas: [],
-    beiponches: [],
+    futgoleadorsemana: [],
     beicarrerashechas: [],
     beicarrerasproducid: [],
     beihr: [],
     beihits: [],
     beifly: [],
     beirolas: [],
-    beiporcentajebateo: [],
+    beiponches: [],
     mvp: [],
     beipitentradaslanzadas: [],
     beipitcarreraslimpias: [],
@@ -206,6 +214,8 @@ export default function JugadoresUpdateForm(props) {
     beipitera: [],
     beipitjuegosganados: [],
     beipitjuegosperdidos: [],
+    beiporcentajebateo: [],
+    clave_liga: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -252,14 +262,14 @@ export default function JugadoresUpdateForm(props) {
           futasisgol,
           futtarjetasallas,
           futtarjetasrojas,
-          beiponches,
+          futgoleadorsemana,
           beicarrerashechas,
           beicarrerasproducid,
           beihr,
           beihits,
           beifly,
           beirolas,
-          beiporcentajebateo,
+          beiponches,
           mvp,
           beipitentradaslanzadas,
           beipitcarreraslimpias,
@@ -268,6 +278,8 @@ export default function JugadoresUpdateForm(props) {
           beipitera,
           beipitjuegosganados,
           beipitjuegosperdidos,
+          beiporcentajebateo,
+          clave_liga,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -342,14 +354,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -358,6 +370,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.iddeporte ?? value;
@@ -400,14 +414,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -416,6 +430,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.idequipo ?? value;
@@ -458,14 +474,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -474,6 +490,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -516,14 +534,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -532,6 +550,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.idjugador ?? value;
@@ -574,14 +594,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -590,6 +610,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.idtorneo ?? value;
@@ -632,14 +654,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -648,6 +670,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.deporte ?? value;
@@ -690,14 +714,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -706,6 +730,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.user ?? value;
@@ -748,14 +774,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -764,6 +790,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.perfil ?? value;
@@ -806,14 +834,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -822,6 +850,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.posicion ?? value;
@@ -868,14 +898,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -884,6 +914,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -930,14 +962,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -946,6 +978,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.numero ?? value;
@@ -988,14 +1022,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1004,6 +1038,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.equipo ?? value;
@@ -1046,14 +1082,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1062,6 +1098,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -1104,14 +1142,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1120,6 +1158,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.alias ?? value;
@@ -1166,14 +1206,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1182,6 +1222,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.tipocuenta ?? value;
@@ -1228,14 +1270,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1244,6 +1286,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.futgoles ?? value;
@@ -1290,14 +1334,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol: value,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1306,6 +1350,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.futasisgol ?? value;
@@ -1352,14 +1398,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas: value,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1368,6 +1414,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasallas ?? value;
@@ -1414,14 +1462,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas: value,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1430,6 +1478,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasrojas ?? value;
@@ -1445,12 +1495,12 @@ export default function JugadoresUpdateForm(props) {
         {...getOverrideProps(overrides, "futtarjetasrojas")}
       ></TextField>
       <TextField
-        label="Beiponches"
+        label="Futgoleadorsemana"
         isRequired={false}
         isReadOnly={false}
         type="number"
         step="any"
-        value={beiponches}
+        value={futgoleadorsemana}
         onChange={(e) => {
           let value = isNaN(parseInt(e.target.value))
             ? e.target.value
@@ -1476,14 +1526,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches: value,
+              futgoleadorsemana: value,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1492,19 +1542,23 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
-            value = result?.beiponches ?? value;
+            value = result?.futgoleadorsemana ?? value;
           }
-          if (errors.beiponches?.hasError) {
-            runValidationTasks("beiponches", value);
+          if (errors.futgoleadorsemana?.hasError) {
+            runValidationTasks("futgoleadorsemana", value);
           }
-          setBeiponches(value);
+          setFutgoleadorsemana(value);
         }}
-        onBlur={() => runValidationTasks("beiponches", beiponches)}
-        errorMessage={errors.beiponches?.errorMessage}
-        hasError={errors.beiponches?.hasError}
-        {...getOverrideProps(overrides, "beiponches")}
+        onBlur={() =>
+          runValidationTasks("futgoleadorsemana", futgoleadorsemana)
+        }
+        errorMessage={errors.futgoleadorsemana?.errorMessage}
+        hasError={errors.futgoleadorsemana?.hasError}
+        {...getOverrideProps(overrides, "futgoleadorsemana")}
       ></TextField>
       <TextField
         label="Beicarrerashechas"
@@ -1538,14 +1592,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas: value,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1554,6 +1608,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerashechas ?? value;
@@ -1602,14 +1658,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid: value,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1618,6 +1674,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerasproducid ?? value;
@@ -1666,14 +1724,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr: value,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1682,6 +1740,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beihr ?? value;
@@ -1728,14 +1788,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits: value,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1744,6 +1804,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beihits ?? value;
@@ -1790,14 +1852,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly: value,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1806,6 +1868,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beifly ?? value;
@@ -1852,14 +1916,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas: value,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1868,6 +1932,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beirolas ?? value;
@@ -1883,16 +1949,16 @@ export default function JugadoresUpdateForm(props) {
         {...getOverrideProps(overrides, "beirolas")}
       ></TextField>
       <TextField
-        label="Beiporcentajebateo"
+        label="Beiponches"
         isRequired={false}
         isReadOnly={false}
         type="number"
         step="any"
-        value={beiporcentajebateo}
+        value={beiponches}
         onChange={(e) => {
-          let value = isNaN(parseFloat(e.target.value))
+          let value = isNaN(parseInt(e.target.value))
             ? e.target.value
-            : parseFloat(e.target.value);
+            : parseInt(e.target.value);
           if (onChange) {
             const modelFields = {
               iddeporte,
@@ -1914,14 +1980,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo: value,
+              beiponches: value,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1930,21 +1996,21 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
-            value = result?.beiporcentajebateo ?? value;
+            value = result?.beiponches ?? value;
           }
-          if (errors.beiporcentajebateo?.hasError) {
-            runValidationTasks("beiporcentajebateo", value);
+          if (errors.beiponches?.hasError) {
+            runValidationTasks("beiponches", value);
           }
-          setBeiporcentajebateo(value);
+          setBeiponches(value);
         }}
-        onBlur={() =>
-          runValidationTasks("beiporcentajebateo", beiporcentajebateo)
-        }
-        errorMessage={errors.beiporcentajebateo?.errorMessage}
-        hasError={errors.beiporcentajebateo?.hasError}
-        {...getOverrideProps(overrides, "beiporcentajebateo")}
+        onBlur={() => runValidationTasks("beiponches", beiponches)}
+        errorMessage={errors.beiponches?.errorMessage}
+        hasError={errors.beiponches?.hasError}
+        {...getOverrideProps(overrides, "beiponches")}
       ></TextField>
       <TextField
         label="Mvp"
@@ -1978,14 +2044,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp: value,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -1994,6 +2060,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.mvp ?? value;
@@ -2040,14 +2108,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas: value,
               beipitcarreraslimpias,
@@ -2056,6 +2124,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitentradaslanzadas ?? value;
@@ -2104,14 +2174,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias: value,
@@ -2120,6 +2190,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitcarreraslimpias ?? value;
@@ -2168,14 +2240,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -2184,6 +2256,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipithitstotales ?? value;
@@ -2232,14 +2306,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -2248,6 +2322,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitponchestotales ?? value;
@@ -2296,14 +2372,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -2312,6 +2388,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera: value,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitera ?? value;
@@ -2358,14 +2436,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -2374,6 +2452,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados: value,
               beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosganados ?? value;
@@ -2422,14 +2502,14 @@ export default function JugadoresUpdateForm(props) {
               futasisgol,
               futtarjetasallas,
               futtarjetasrojas,
-              beiponches,
+              futgoleadorsemana,
               beicarrerashechas,
               beicarrerasproducid,
               beihr,
               beihits,
               beifly,
               beirolas,
-              beiporcentajebateo,
+              beiponches,
               mvp,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
@@ -2438,6 +2518,8 @@ export default function JugadoresUpdateForm(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos: value,
+              beiporcentajebateo,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosperdidos ?? value;
@@ -2453,6 +2535,132 @@ export default function JugadoresUpdateForm(props) {
         errorMessage={errors.beipitjuegosperdidos?.errorMessage}
         hasError={errors.beipitjuegosperdidos?.hasError}
         {...getOverrideProps(overrides, "beipitjuegosperdidos")}
+      ></TextField>
+      <TextField
+        label="Beiporcentajebateo"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beiporcentajebateo}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo: value,
+              clave_liga,
+            };
+            const result = onChange(modelFields);
+            value = result?.beiporcentajebateo ?? value;
+          }
+          if (errors.beiporcentajebateo?.hasError) {
+            runValidationTasks("beiporcentajebateo", value);
+          }
+          setBeiporcentajebateo(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beiporcentajebateo", beiporcentajebateo)
+        }
+        errorMessage={errors.beiporcentajebateo?.errorMessage}
+        hasError={errors.beiporcentajebateo?.hasError}
+        {...getOverrideProps(overrides, "beiporcentajebateo")}
+      ></TextField>
+      <TextField
+        label="Clave liga"
+        isRequired={false}
+        isReadOnly={false}
+        value={clave_liga}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.clave_liga ?? value;
+          }
+          if (errors.clave_liga?.hasError) {
+            runValidationTasks("clave_liga", value);
+          }
+          setClave_liga(value);
+        }}
+        onBlur={() => runValidationTasks("clave_liga", clave_liga)}
+        errorMessage={errors.clave_liga?.errorMessage}
+        hasError={errors.clave_liga?.hasError}
+        {...getOverrideProps(overrides, "clave_liga")}
       ></TextField>
       <Flex
         justifyContent="space-between"

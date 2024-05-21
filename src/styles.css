@@ -1,3 +1,4 @@
+
 body{
   background-color: rgb(32, 8, 77);
 
@@ -8,19 +9,70 @@ body{
   
 }
 
-
+.colorBlanco{
+  color: #ffffff;
+}
 *{
   margin: 0px;
   
 }
 
+.botones{
+  flex-direction: column;
+}
+.espacio{
+  height:15px;
+  color: #595959;
+  background-color: rgb(40, 6, 104) ;
+}
+
+.pos{
+  background-color: rgb(255, 255, 255);
+
+  border: 2px solid #595959;
+  
+}
+
+table , td, th {
+  margin-left: 5px;
+  margin-top: 7px;
+  padding: 5px;
+  
+
+	border-collapse: collapse;
+  
+}
+td, th {
+  text-align: center;
+	padding: 13px;
+	width: 53px;
+	height: 55px;
+}
+th {
+	background: #f0e6cc;
+}
+.even {
+	background: #fbf8f0;
+}
+.odd {
+	background: #fefcf9;
+}
+
 .botonPDF{
 width: 450px;
 height: 40px;
-margin-left: 440px;
+margin-left: 330px;
 background-color: rgb(0, 102, 255);
 -webkit-text-fill-color: #ffffff;
 }
+
+.botonLiguilla{
+  width: 250px;
+  height: 40px;
+
+  background-color: rgb(250, 142, 0);
+  -webkit-text-fill-color: #ffffff;
+  }
 
 .posiciones{
   height: 1px;
@@ -115,32 +167,31 @@ background-color: rgb(0, 102, 255);
   list-style: none;
   
 }
-.grid-layout{
+.grid-layout-fut{
   display:grid;
-  grid-template-rows:  76px 830px 60px 48px 1100px 50px 600px 59px 550px;
+  grid-template-rows:  80px 855px 80px  50px 540px 40px 1758px 60px;
   width: 100%;
   background-color: rgb(32, 8, 77);
   padding: 1px;
  
 }
 
-
 .flebox-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 52%;
+  left: 51%;
   transform: translate(-50%, -387%)
 }
 .flebox-tabla-posiciones{
   position: absolute;
-  top: 67%;
-  left: 50%;
+  top: 68%;
+  left: 51%;
   transform: translate(-67%, -34%)
 }
 .flebox-container3 {
   position: absolute;
   top: 72%;
-  left: 50%;
+  left: 51%;
   transform: translate(97%, -37%)
 }
 
@@ -150,11 +201,24 @@ background-color: rgb(0, 102, 255);
   height: 55px;
   margin-top: 11px;
   align-items: center;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+ margin: 0px;
+ border: 0px;
 }
 
-.cajaBarra nav{
+.cajaBarra-goleo{
+  display: flex;
+  height: 30px;
+  background-color: rgb(133, 5, 1);
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.cajaBarra-fut nav{
   display: flex;
   height: 30px;
   background-color: rgb(133, 5, 1);
@@ -165,32 +229,33 @@ background-color: rgb(0, 102, 255);
   border-bottom: 1px solid white;
 }
 
-.cajaBarra ul{
-  width: 100%;
+.cajaBarra-fut ul{
+  width: 95%;
   flex-basis: 99%;
   justify-content: center;
   display: flex;
   list-style: none;
 }
 
-.cajaBarra nav a{
+.cajaBarra-fut nav a{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-right: 10px;
   margin-left: 10px;
 }
 
-.cajaJugadores{
-  width: 97%;
-  height: 540px;
-  margin: 5px auto;
-  padding-bottom: 25px;
+
+.cajaJugadores-fut{
+  width: 95%;
+  height: 40px;
+  margin: -10px;
+  padding-bottom: 5px;
   background-color: rgb(32, 8, 77);
 
   
 
 }
-.cajaEquipos{
+.cajaEquipos-fut{
   width: 96%;
   height: 100%;
   margin: 0 auto;
@@ -202,9 +267,8 @@ background-color: rgb(0, 102, 255);
 .caja{
   width: 99%;
   height: 100px;
-  margin: 1px;
-  background-color: #00ff00;
- 
+  margin-left: 7px;
+
 }
 
 
@@ -240,4 +304,6 @@ background-color: rgb(0, 102, 255);
   --amplify-components-input-focus-border-color:rgb(255, 255, 255);
   --amplify-components-input-color:rgb(255, 255, 255);
 }
+
+
 

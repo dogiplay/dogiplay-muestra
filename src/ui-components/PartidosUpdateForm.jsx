@@ -34,6 +34,7 @@ export default function PartidosUpdateForm(props) {
     jugador_partido: "",
     jornada: "",
     fecha: "",
+    clave_liga: "",
   };
   const [idequipo, setIdequipo] = React.useState(initialValues.idequipo);
   const [equipo1, setEquipo1] = React.useState(initialValues.equipo1);
@@ -54,6 +55,7 @@ export default function PartidosUpdateForm(props) {
   );
   const [jornada, setJornada] = React.useState(initialValues.jornada);
   const [fecha, setFecha] = React.useState(initialValues.fecha);
+  const [clave_liga, setClave_liga] = React.useState(initialValues.clave_liga);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = partidosRecord
@@ -70,6 +72,7 @@ export default function PartidosUpdateForm(props) {
     setJugador_partido(cleanValues.jugador_partido);
     setJornada(cleanValues.jornada);
     setFecha(cleanValues.fecha);
+    setClave_liga(cleanValues.clave_liga);
     setErrors({});
   };
   const [partidosRecord, setPartidosRecord] = React.useState(partidosModelProp);
@@ -95,6 +98,7 @@ export default function PartidosUpdateForm(props) {
     jugador_partido: [],
     jornada: [],
     fecha: [],
+    clave_liga: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -133,6 +137,7 @@ export default function PartidosUpdateForm(props) {
           jugador_partido,
           jornada,
           fecha,
+          clave_liga,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -199,6 +204,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.idequipo ?? value;
@@ -233,6 +239,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.equipo1 ?? value;
@@ -267,6 +274,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.equipo2 ?? value;
@@ -301,6 +309,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.hora ?? value;
@@ -339,6 +348,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.resultado_equipo1 ?? value;
@@ -379,6 +389,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.resultado_equipo2 ?? value;
@@ -415,6 +426,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.lugar ?? value;
@@ -449,6 +461,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.observaciones ?? value;
@@ -483,6 +496,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido: value,
               jornada,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.jugador_partido ?? value;
@@ -521,6 +535,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada: value,
               fecha,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.jornada ?? value;
@@ -556,6 +571,7 @@ export default function PartidosUpdateForm(props) {
               jugador_partido,
               jornada,
               fecha: value,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.fecha ?? value;
@@ -569,6 +585,41 @@ export default function PartidosUpdateForm(props) {
         errorMessage={errors.fecha?.errorMessage}
         hasError={errors.fecha?.hasError}
         {...getOverrideProps(overrides, "fecha")}
+      ></TextField>
+      <TextField
+        label="Clave liga"
+        isRequired={false}
+        isReadOnly={false}
+        value={clave_liga}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              idequipo,
+              equipo1,
+              equipo2,
+              hora,
+              resultado_equipo1,
+              resultado_equipo2,
+              lugar,
+              observaciones,
+              jugador_partido,
+              jornada,
+              fecha,
+              clave_liga: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.clave_liga ?? value;
+          }
+          if (errors.clave_liga?.hasError) {
+            runValidationTasks("clave_liga", value);
+          }
+          setClave_liga(value);
+        }}
+        onBlur={() => runValidationTasks("clave_liga", clave_liga)}
+        errorMessage={errors.clave_liga?.errorMessage}
+        hasError={errors.clave_liga?.hasError}
+        {...getOverrideProps(overrides, "clave_liga")}
       ></TextField>
       <Flex
         justifyContent="space-between"

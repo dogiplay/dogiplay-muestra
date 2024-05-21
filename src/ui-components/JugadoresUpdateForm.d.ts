@@ -42,14 +42,14 @@ export declare type JugadoresUpdateFormInputValues = {
     futasisgol?: number;
     futtarjetasallas?: number;
     futtarjetasrojas?: number;
-    beiponches?: number;
+    futgoleadorsemana?: number;
     beicarrerashechas?: number;
     beicarrerasproducid?: number;
     beihr?: number;
     beihits?: number;
     beifly?: number;
     beirolas?: number;
-    beiporcentajebateo?: number;
+    beiponches?: number;
     mvp?: number;
     beipitentradaslanzadas?: number;
     beipitcarreraslimpias?: number;
@@ -58,6 +58,8 @@ export declare type JugadoresUpdateFormInputValues = {
     beipitera?: number;
     beipitjuegosganados?: number;
     beipitjuegosperdidos?: number;
+    beiporcentajebateo?: number;
+    clave_liga?: string;
 };
 export declare type JugadoresUpdateFormValidationValues = {
     iddeporte?: ValidationFunction<string>;
@@ -79,14 +81,14 @@ export declare type JugadoresUpdateFormValidationValues = {
     futasisgol?: ValidationFunction<number>;
     futtarjetasallas?: ValidationFunction<number>;
     futtarjetasrojas?: ValidationFunction<number>;
-    beiponches?: ValidationFunction<number>;
+    futgoleadorsemana?: ValidationFunction<number>;
     beicarrerashechas?: ValidationFunction<number>;
     beicarrerasproducid?: ValidationFunction<number>;
     beihr?: ValidationFunction<number>;
     beihits?: ValidationFunction<number>;
     beifly?: ValidationFunction<number>;
     beirolas?: ValidationFunction<number>;
-    beiporcentajebateo?: ValidationFunction<number>;
+    beiponches?: ValidationFunction<number>;
     mvp?: ValidationFunction<number>;
     beipitentradaslanzadas?: ValidationFunction<number>;
     beipitcarreraslimpias?: ValidationFunction<number>;
@@ -95,6 +97,8 @@ export declare type JugadoresUpdateFormValidationValues = {
     beipitera?: ValidationFunction<number>;
     beipitjuegosganados?: ValidationFunction<number>;
     beipitjuegosperdidos?: ValidationFunction<number>;
+    beiporcentajebateo?: ValidationFunction<number>;
+    clave_liga?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type JugadoresUpdateFormOverridesProps = {
@@ -118,14 +122,14 @@ export declare type JugadoresUpdateFormOverridesProps = {
     futasisgol?: PrimitiveOverrideProps<TextFieldProps>;
     futtarjetasallas?: PrimitiveOverrideProps<TextFieldProps>;
     futtarjetasrojas?: PrimitiveOverrideProps<TextFieldProps>;
-    beiponches?: PrimitiveOverrideProps<TextFieldProps>;
+    futgoleadorsemana?: PrimitiveOverrideProps<TextFieldProps>;
     beicarrerashechas?: PrimitiveOverrideProps<TextFieldProps>;
     beicarrerasproducid?: PrimitiveOverrideProps<TextFieldProps>;
     beihr?: PrimitiveOverrideProps<TextFieldProps>;
     beihits?: PrimitiveOverrideProps<TextFieldProps>;
     beifly?: PrimitiveOverrideProps<TextFieldProps>;
     beirolas?: PrimitiveOverrideProps<TextFieldProps>;
-    beiporcentajebateo?: PrimitiveOverrideProps<TextFieldProps>;
+    beiponches?: PrimitiveOverrideProps<TextFieldProps>;
     mvp?: PrimitiveOverrideProps<TextFieldProps>;
     beipitentradaslanzadas?: PrimitiveOverrideProps<TextFieldProps>;
     beipitcarreraslimpias?: PrimitiveOverrideProps<TextFieldProps>;
@@ -134,6 +138,8 @@ export declare type JugadoresUpdateFormOverridesProps = {
     beipitera?: PrimitiveOverrideProps<TextFieldProps>;
     beipitjuegosganados?: PrimitiveOverrideProps<TextFieldProps>;
     beipitjuegosperdidos?: PrimitiveOverrideProps<TextFieldProps>;
+    beiporcentajebateo?: PrimitiveOverrideProps<TextFieldProps>;
+    clave_liga?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type JugadoresUpdateFormProps = React.PropsWithChildren<{
     overrides?: JugadoresUpdateFormOverridesProps | undefined | null;

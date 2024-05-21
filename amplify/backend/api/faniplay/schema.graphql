@@ -1,3 +1,15 @@
+type Campeonatos @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  clave_liga: String
+  equipo: String
+  logo: String
+  manager: String
+  temporada: String
+  numero_campeonato: Int
+  categoria: String
+  anoc: Int
+}
+
 type StatsJugadores @model @auth(rules: [{allow: public}]) {
   id: ID!
   idjugador: ID
@@ -41,14 +53,14 @@ type Jugadores @model @auth(rules: [{allow: public}]) {
   futasisgol: Int
   futtarjetasallas: Int
   futtarjetasrojas: Int
-  beiponches: Int
+  futgoleadorsemana: Int
   beicarrerashechas: Int
   beicarrerasproducid: Int
   beihr: Int
   beihits: Int
   beifly: Int
   beirolas: Int
-  beiporcentajebateo: Float
+  beiponches: Int
   mvp: Int
   beipitentradaslanzadas: Int
   beipitcarreraslimpias: Int
@@ -57,6 +69,8 @@ type Jugadores @model @auth(rules: [{allow: public}]) {
   beipitera: Float
   beipitjuegosganados: Int
   beipitjuegosperdidos: Int
+  beiporcentajebateo: Float
+  clave_liga: String
 }
 
 type Torneos @model @auth(rules: [{allow: public}]) {
@@ -88,6 +102,13 @@ type Ligas @model @auth(rules: [{allow: public}]) {
   foto: AWSURL
   descripcion: String
   nombre: String
+  estado: String
+  municipio: String
+  telefono: String
+  equipos: Int
+  presidente: String
+  deporte: String
+  categoria: String
 }
 
 type Statsequipo @model @auth(rules: [{allow: public}]) {
@@ -115,6 +136,7 @@ type Partidos @model @auth(rules: [{allow: public}]) {
   jugador_partido: String
   jornada: Int
   fecha: AWSDate
+  clave_liga: String
 }
 
 type Equipos @model @auth(rules: [{allow: public}]) {
@@ -140,6 +162,8 @@ type Equipos @model @auth(rules: [{allow: public}]) {
   patrocinador: String
   beicarreras: Int
   beihr: Int
+  clave_liga: String
+  futdifgoles: Int
 }
 
 type Managers @model @auth(rules: [{allow: public}]) {

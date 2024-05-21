@@ -1,5 +1,113 @@
 export const schema = {
     "models": {
+        "Campeonatos": {
+            "name": "Campeonatos",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "clave_liga": {
+                    "name": "clave_liga",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "equipo": {
+                    "name": "equipo",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "logo": {
+                    "name": "logo",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "manager": {
+                    "name": "manager",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "temporada": {
+                    "name": "temporada",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "numero_campeonato": {
+                    "name": "numero_campeonato",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "categoria": {
+                    "name": "categoria",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "anoc": {
+                    "name": "anoc",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Campeonatos",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "StatsJugadores": {
             "name": "StatsJugadores",
             "fields": {
@@ -321,8 +429,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "beiponches": {
-                    "name": "beiponches",
+                "futgoleadorsemana": {
+                    "name": "futgoleadorsemana",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
@@ -370,10 +478,10 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "beiporcentajebateo": {
-                    "name": "beiporcentajebateo",
+                "beiponches": {
+                    "name": "beiponches",
                     "isArray": false,
-                    "type": "Float",
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -430,6 +538,20 @@ export const schema = {
                     "name": "beipitjuegosperdidos",
                     "isArray": false,
                     "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "beiporcentajebateo": {
+                    "name": "beiporcentajebateo",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "clave_liga": {
+                    "name": "clave_liga",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -722,6 +844,55 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "estado": {
+                    "name": "estado",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "municipio": {
+                    "name": "municipio",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "telefono": {
+                    "name": "telefono",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "equipos": {
+                    "name": "equipos",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "presidente": {
+                    "name": "presidente",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "deporte": {
+                    "name": "deporte",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "categoria": {
+                    "name": "categoria",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -959,6 +1130,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "clave_liga": {
+                    "name": "clave_liga",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -1158,6 +1336,20 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "clave_liga": {
+                    "name": "clave_liga",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "futdifgoles": {
+                    "name": "futdifgoles",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -1333,5 +1525,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "72ec33aa99fffc280cf7668c7cd458bf"
+    "version": "fe92a6fe3a204cc9a386616c1913c03b"
 };

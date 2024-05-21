@@ -42,6 +42,8 @@ export declare type NuevoEquipoInputValues = {
     patrocinador?: string;
     beicarreras?: number;
     beihr?: number;
+    clave_liga?: string;
+    futdifgoles?: number;
 };
 export declare type NuevoEquipoValidationValues = {
     nombre?: ValidationFunction<string>;
@@ -64,6 +66,8 @@ export declare type NuevoEquipoValidationValues = {
     patrocinador?: ValidationFunction<string>;
     beicarreras?: ValidationFunction<number>;
     beihr?: ValidationFunction<number>;
+    clave_liga?: ValidationFunction<string>;
+    futdifgoles?: ValidationFunction<number>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NuevoEquipoOverridesProps = {
@@ -90,6 +94,8 @@ export declare type NuevoEquipoOverridesProps = {
     patrocinador?: PrimitiveOverrideProps<TextFieldProps>;
     beicarreras?: PrimitiveOverrideProps<TextFieldProps>;
     beihr?: PrimitiveOverrideProps<TextFieldProps>;
+    clave_liga?: PrimitiveOverrideProps<TextFieldProps>;
+    futdifgoles?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type NuevoEquipoProps = React.PropsWithChildren<{
     overrides?: NuevoEquipoOverridesProps | undefined | null;

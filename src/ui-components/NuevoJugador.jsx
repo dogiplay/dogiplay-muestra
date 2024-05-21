@@ -45,6 +45,7 @@ export default function NuevoJugador(props) {
     beirolas: "",
     beiporcentajebateo: "",
     mvp: "",
+    futgoleadorsemana: "",
     beipitentradaslanzadas: "",
     beipitcarreraslimpias: "",
     beipithitstotales: "",
@@ -52,6 +53,7 @@ export default function NuevoJugador(props) {
     beipitera: "",
     beipitjuegosganados: "",
     beipitjuegosperdidos: "",
+    clave_liga: "",
   };
   const [iddeporte, setIddeporte] = React.useState(initialValues.iddeporte);
   const [idequipo, setIdequipo] = React.useState(initialValues.idequipo);
@@ -82,6 +84,9 @@ export default function NuevoJugador(props) {
     initialValues.beiporcentajebateo
   );
   const [mvp, setMvp] = React.useState(initialValues.mvp);
+  const [futgoleadorsemana, setFutgoleadorsemana] = React.useState(
+    initialValues.futgoleadorsemana
+  );
   const [beipitentradaslanzadas, setBeipitentradaslanzadas] = React.useState(
     initialValues.beipitentradaslanzadas
   );
@@ -101,6 +106,7 @@ export default function NuevoJugador(props) {
   const [beipitjuegosperdidos, setBeipitjuegosperdidos] = React.useState(
     initialValues.beipitjuegosperdidos
   );
+  const [clave_liga, setClave_liga] = React.useState(initialValues.clave_liga);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setIddeporte(initialValues.iddeporte);
@@ -126,6 +132,7 @@ export default function NuevoJugador(props) {
     setBeirolas(initialValues.beirolas);
     setBeiporcentajebateo(initialValues.beiporcentajebateo);
     setMvp(initialValues.mvp);
+    setFutgoleadorsemana(initialValues.futgoleadorsemana);
     setBeipitentradaslanzadas(initialValues.beipitentradaslanzadas);
     setBeipitcarreraslimpias(initialValues.beipitcarreraslimpias);
     setBeipithitstotales(initialValues.beipithitstotales);
@@ -133,6 +140,7 @@ export default function NuevoJugador(props) {
     setBeipitera(initialValues.beipitera);
     setBeipitjuegosganados(initialValues.beipitjuegosganados);
     setBeipitjuegosperdidos(initialValues.beipitjuegosperdidos);
+    setClave_liga(initialValues.clave_liga);
     setErrors({});
   };
   const validations = {
@@ -159,6 +167,7 @@ export default function NuevoJugador(props) {
     beirolas: [],
     beiporcentajebateo: [],
     mvp: [],
+    futgoleadorsemana: [],
     beipitentradaslanzadas: [],
     beipitcarreraslimpias: [],
     beipithitstotales: [],
@@ -166,6 +175,7 @@ export default function NuevoJugador(props) {
     beipitera: [],
     beipitjuegosganados: [],
     beipitjuegosperdidos: [],
+    clave_liga: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -216,6 +226,7 @@ export default function NuevoJugador(props) {
           beirolas,
           beiporcentajebateo,
           mvp,
+          futgoleadorsemana,
           beipitentradaslanzadas,
           beipitcarreraslimpias,
           beipithitstotales,
@@ -223,6 +234,7 @@ export default function NuevoJugador(props) {
           beipitera,
           beipitjuegosganados,
           beipitjuegosperdidos,
+          clave_liga,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -300,6 +312,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -307,6 +320,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.iddeporte ?? value;
@@ -353,6 +367,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -360,6 +375,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.idequipo ?? value;
@@ -406,6 +422,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -413,6 +430,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -459,6 +477,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -466,6 +485,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.idjugador ?? value;
@@ -512,6 +532,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -519,6 +540,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.idtorneo ?? value;
@@ -565,6 +587,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -572,6 +595,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.deporte ?? value;
@@ -618,6 +642,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -625,6 +650,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.user ?? value;
@@ -671,6 +697,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -678,6 +705,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.perfil ?? value;
@@ -724,6 +752,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -731,6 +760,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.posicion ?? value;
@@ -781,6 +811,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -788,6 +819,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -838,6 +870,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -845,6 +878,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.numero ?? value;
@@ -891,6 +925,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -898,6 +933,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.equipo ?? value;
@@ -944,6 +980,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -951,6 +988,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -997,6 +1035,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1004,6 +1043,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.alias ?? value;
@@ -1054,6 +1094,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1061,6 +1102,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beiponches ?? value;
@@ -1111,6 +1153,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1118,6 +1161,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerashechas ?? value;
@@ -1170,6 +1214,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1177,6 +1222,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerasproducid ?? value;
@@ -1229,6 +1275,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1236,6 +1283,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beihr ?? value;
@@ -1286,6 +1334,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1293,6 +1342,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beihits ?? value;
@@ -1343,6 +1393,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1350,6 +1401,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beifly ?? value;
@@ -1400,6 +1452,7 @@ export default function NuevoJugador(props) {
               beirolas: value,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1407,6 +1460,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beirolas ?? value;
@@ -1457,6 +1511,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo: value,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1464,6 +1519,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beiporcentajebateo ?? value;
@@ -1516,6 +1572,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp: value,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1523,6 +1580,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.mvp ?? value;
@@ -1536,6 +1594,67 @@ export default function NuevoJugador(props) {
         errorMessage={errors.mvp?.errorMessage}
         hasError={errors.mvp?.hasError}
         {...getOverrideProps(overrides, "mvp")}
+      ></TextField>
+      <TextField
+        label="Futgoleadorsemana"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={futgoleadorsemana}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              futgoleadorsemana: value,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              clave_liga,
+            };
+            const result = onChange(modelFields);
+            value = result?.futgoleadorsemana ?? value;
+          }
+          if (errors.futgoleadorsemana?.hasError) {
+            runValidationTasks("futgoleadorsemana", value);
+          }
+          setFutgoleadorsemana(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("futgoleadorsemana", futgoleadorsemana)
+        }
+        errorMessage={errors.futgoleadorsemana?.errorMessage}
+        hasError={errors.futgoleadorsemana?.hasError}
+        {...getOverrideProps(overrides, "futgoleadorsemana")}
       ></TextField>
       <TextField
         label="Beipitentradaslanzadas"
@@ -1573,6 +1692,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas: value,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1580,6 +1700,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitentradaslanzadas ?? value;
@@ -1632,6 +1753,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias: value,
               beipithitstotales,
@@ -1639,6 +1761,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitcarreraslimpias ?? value;
@@ -1691,6 +1814,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales: value,
@@ -1698,6 +1822,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipithitstotales ?? value;
@@ -1750,6 +1875,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1757,6 +1883,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitponchestotales ?? value;
@@ -1809,6 +1936,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1816,6 +1944,7 @@ export default function NuevoJugador(props) {
               beipitera: value,
               beipitjuegosganados,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitera ?? value;
@@ -1866,6 +1995,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1873,6 +2003,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados: value,
               beipitjuegosperdidos,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosganados ?? value;
@@ -1925,6 +2056,7 @@ export default function NuevoJugador(props) {
               beirolas,
               beiporcentajebateo,
               mvp,
+              futgoleadorsemana,
               beipitentradaslanzadas,
               beipitcarreraslimpias,
               beipithitstotales,
@@ -1932,6 +2064,7 @@ export default function NuevoJugador(props) {
               beipitera,
               beipitjuegosganados,
               beipitjuegosperdidos: value,
+              clave_liga,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosperdidos ?? value;
@@ -1947,6 +2080,61 @@ export default function NuevoJugador(props) {
         errorMessage={errors.beipitjuegosperdidos?.errorMessage}
         hasError={errors.beipitjuegosperdidos?.hasError}
         {...getOverrideProps(overrides, "beipitjuegosperdidos")}
+      ></TextField>
+      <TextField
+        label="Clave liga"
+        isRequired={false}
+        isReadOnly={false}
+        value={clave_liga}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              futgoleadorsemana,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              clave_liga: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.clave_liga ?? value;
+          }
+          if (errors.clave_liga?.hasError) {
+            runValidationTasks("clave_liga", value);
+          }
+          setClave_liga(value);
+        }}
+        onBlur={() => runValidationTasks("clave_liga", clave_liga)}
+        errorMessage={errors.clave_liga?.errorMessage}
+        hasError={errors.clave_liga?.hasError}
+        {...getOverrideProps(overrides, "clave_liga")}
       ></TextField>
       <Flex
         justifyContent="space-between"

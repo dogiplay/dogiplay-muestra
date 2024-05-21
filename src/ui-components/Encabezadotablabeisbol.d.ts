@@ -19,18 +19,18 @@ export declare type Variant = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type EncabezadotablabeisbolOverridesProps = {
     Encabezadotablabeisbol?: PrimitiveOverrideProps<ViewProps>;
-    "Rectangle 11"?: PrimitiveOverrideProps<ViewProps>;
+    "Rectangle 21"?: PrimitiveOverrideProps<ViewProps>;
     EQUIPO?: PrimitiveOverrideProps<TextProps>;
     MANAGER?: PrimitiveOverrideProps<TextProps>;
-    "C.T."?: PrimitiveOverrideProps<TextProps>;
-    "HR T."?: PrimitiveOverrideProps<TextProps>;
-    PJ?: PrimitiveOverrideProps<TextProps>;
-    PG?: PrimitiveOverrideProps<TextProps>;
-    PP?: PrimitiveOverrideProps<TextProps>;
-    PE?: PrimitiveOverrideProps<TextProps>;
+    CT?: PrimitiveOverrideProps<TextProps>;
+    HRT?: PrimitiveOverrideProps<TextProps>;
+    J?: PrimitiveOverrideProps<TextProps>;
+    G?: PrimitiveOverrideProps<TextProps>;
+    P?: PrimitiveOverrideProps<TextProps>;
+    E?: PrimitiveOverrideProps<TextProps>;
     PUNTOS?: PrimitiveOverrideProps<TextProps>;
     "Star 3"?: PrimitiveOverrideProps<IconProps>;
-    "Rectangle 13"?: PrimitiveOverrideProps<ViewProps>;
+    "Rectangle 13"?: PrimitiveOverrideProps<IconProps>;
     RESULTADOS?: PrimitiveOverrideProps<TextProps>;
     "Star 6"?: PrimitiveOverrideProps<IconProps>;
     "Star 7"?: PrimitiveOverrideProps<IconProps>;

@@ -1,0 +1,19 @@
+.contenedor-inicio-ligas{
+margin-top: 0px;
+align-items: center;
+display:grid;
+grid-template-rows:  650px;
+width: 100%;
+background-color: rgb(32, 8, 77);
+padding: 0px;
+}
+
+.grid-layout{
+    display:grid;
+    grid-template-rows:  410px 500px 60px 600px;
+    width: 100%;
+    background-color: rgb(32, 8, 77);
+    padding: 1px;
+    margin: 20px;
+   
+  }

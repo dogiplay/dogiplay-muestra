@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { StatsJugadores, Jugadores } from "../models";
-import { CardjugadorbeisbolProps } from "./Cardjugadorbeisbol";
+import { Jugadores } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -20,15 +19,25 @@ export declare type Variant = {
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type CardjugadorfutbolOverridesProps = {
+    "4"?: PrimitiveOverrideProps<TextProps>;
+    "3267381"?: PrimitiveOverrideProps<TextProps>;
+    "3267382"?: PrimitiveOverrideProps<TextProps>;
     Cardjugadorfutbol?: PrimitiveOverrideProps<ViewProps>;
-    cardjugadorfutbol?: CardjugadorbeisbolProps;
+    Headerf?: PrimitiveOverrideProps<ViewProps>;
+    Arturo?: PrimitiveOverrideProps<TextProps>;
+    "Product info"?: PrimitiveOverrideProps<FlexProps>;
+    "Product name267443"?: PrimitiveOverrideProps<TextProps>;
+    "Product name267444"?: PrimitiveOverrideProps<TextProps>;
+    " Subheading"?: PrimitiveOverrideProps<TextProps>;
     "Group 2"?: PrimitiveOverrideProps<ViewProps>;
     "mp200220_guillermo_pulido_02 (1) 1"?: PrimitiveOverrideProps<ImageProps>;
     Pill?: PrimitiveOverrideProps<FlexProps>;
     "7 Goles anotados"?: PrimitiveOverrideProps<TextProps>;
+    "Rectangle 19"?: PrimitiveOverrideProps<ViewProps>;
+    "Rectangle 20"?: PrimitiveOverrideProps<ViewProps>;
+    "veces goleador de la semana"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardjugadorfutbolProps = React.PropsWithChildren<Partial<ViewProps> & {
-    statsJugadores?: StatsJugadores;
     jugadores?: Jugadores;
 } & {
     overrides?: CardjugadorfutbolOverridesProps | undefined | null;

@@ -7,12 +7,22 @@
 /* eslint-disable */
 import * as React from "react";
 import { Jugadores } from "../models";
+import {
+  createDataStorePredicate,
+  getOverrideProps,
+  useDataStoreBinding,
+} from "./utils";
 import { SortDirection } from "@aws-amplify/datastore";
-import { getOverrideProps, useDataStoreBinding } from "./utils";
 import Cardjugadorbeisbol from "./Cardjugadorbeisbol";
 import { Collection } from "@aws-amplify/ui-react";
 export default function CardjugadorbeisbolCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
+  const itemsFilterObj = {
+    field: "clave_liga",
+    operand: "CLABEISNAY01",
+    operator: "eq",
+  };
+  const itemsFilter = createDataStorePredicate(itemsFilterObj);
   const itemsPagination = {
     sort: (s) =>
       s
@@ -23,6 +33,7 @@ export default function CardjugadorbeisbolCollection(props) {
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Jugadores,
+    criteria: itemsFilter,
     pagination: itemsPagination,
   }).items;
   React.useEffect(() => {

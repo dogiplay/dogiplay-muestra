@@ -43,6 +43,8 @@ export declare type EquiposCreateFormInputValues = {
     patrocinador?: string;
     beicarreras?: number;
     beihr?: number;
+    clave_liga?: string;
+    futdifgoles?: number;
 };
 export declare type EquiposCreateFormValidationValues = {
     idliga?: ValidationFunction<string>;
@@ -66,6 +68,8 @@ export declare type EquiposCreateFormValidationValues = {
     patrocinador?: ValidationFunction<string>;
     beicarreras?: ValidationFunction<number>;
     beihr?: ValidationFunction<number>;
+    clave_liga?: ValidationFunction<string>;
+    futdifgoles?: ValidationFunction<number>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type EquiposCreateFormOverridesProps = {
@@ -91,6 +95,8 @@ export declare type EquiposCreateFormOverridesProps = {
     patrocinador?: PrimitiveOverrideProps<TextFieldProps>;
     beicarreras?: PrimitiveOverrideProps<TextFieldProps>;
     beihr?: PrimitiveOverrideProps<TextFieldProps>;
+    clave_liga?: PrimitiveOverrideProps<TextFieldProps>;
+    futdifgoles?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type EquiposCreateFormProps = React.PropsWithChildren<{
     overrides?: EquiposCreateFormOverridesProps | undefined | null;

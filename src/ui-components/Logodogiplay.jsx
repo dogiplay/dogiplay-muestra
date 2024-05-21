@@ -100,15 +100,15 @@ export default function Logodogiplay(props) {
           >
             <Text
               fontFamily="Inter"
-              fontSize="32px"
+              fontSize="28px"
               fontWeight="700"
               color="rgba(0,0,0,1)"
-              lineHeight="48px"
+              lineHeight="42px"
               textAlign="left"
               display="block"
               direction="column"
               justifyContent="unset"
-              letterSpacing="-0.17px"
+              letterSpacing="-0.13px"
               width="149.43px"
               height="35px"
               gap="unset"
@@ -120,8 +120,8 @@ export default function Logodogiplay(props) {
               right="19.97%"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Dogiplay"
-              {...getOverrideProps(overrides, "Dogiplay")}
+              children="DogiPLAY"
+              {...getOverrideProps(overrides, "DogiPLAY")}
             ></Text>
             <Text
               fontFamily="Inter"
