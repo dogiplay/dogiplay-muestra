@@ -8,6 +8,7 @@ import {
   Logodogiplay,
   CardjugadorbeisbolCollectionHR,
   CardpitcherCollection,
+  CardjugadorbeisbolCollection,
 } from "./ui-components";
 
 
@@ -140,7 +141,7 @@ const NayaritBeisbolLiga1 = () => {
         <BarraFut20JugadoresLiga />
       </div>
       <div class="caja">
-        <CardjugadorfutbolCollectionCedula />
+        <CardjugadorbeisbolCollection/>
       </div>
       <div class="cajaBarra-beis">
         <BarraBeisPitcher/>

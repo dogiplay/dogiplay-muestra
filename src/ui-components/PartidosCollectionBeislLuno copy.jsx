@@ -6,35 +6,29 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Jugadores } from "../models";
-
+import { Partidos as Partidos0 } from "../models";
 import {
   createDataStorePredicate,
   getOverrideProps,
   useDataStoreBinding,
 } from "./utils";
 import { SortDirection } from "@aws-amplify/datastore";
-import Cardjugadorfutbol from "./Cardjugadorfutbol";
+import Partidos from "./Partidos";
 import { Collection } from "@aws-amplify/ui-react";
-export default function CardjugadorfutbolCollectionLigaNayUno(props) {
+export default function PartidosCollectionBeislLuno(props) {
   const miclave = localStorage.getItem('miclave');
-  console.log("Estoy en Collection:",miclave);
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsFilterObj = {
-    field: "idtorneo",
+    field: "clave_liga",
     operand: miclave,
-    //operand: useContext(MiContexto),
-    //operand: "useContext(MiContext)",
     operator: "eq",
   };
-  
-  
   const itemsFilter = createDataStorePredicate(itemsFilterObj);
-  const itemsPagination = { sort: (s) => s.futgoles(SortDirection.DESCENDING) };
+  const itemsPagination = { sort: (s) => s.jornada(SortDirection.ASCENDING) };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Jugadores,
+    model: Partidos0,
     criteria: itemsFilter,
     pagination: itemsPagination,
   }).items;
@@ -45,28 +39,25 @@ export default function CardjugadorfutbolCollectionLigaNayUno(props) {
     }
     setItems(itemsDataStore);
   }, [itemsProp, itemsDataStore]);
-  
   return (
     <Collection
-      type="grid"
-      isSearchable={true}
+      type="list"
+      isSearchable="true"
       isPaginated={true}
-      searchPlaceholder="Search..."
-      itemsPerPage={10}
-      templateColumns="1fr 1fr 1fr 1fr 1fr"
-      autoFlow="row"
-      alignItems="stretch"
-      justifyContent="stretch"
+      searchPlaceholder="Buscar..."
+      itemsPerPage={15}
+      direction="column"
+      justifyContent="left"
       items={items || []}
-      {...getOverrideProps(overrides, "CardjugadorfutbolCollectionLigaNayUno")}
+      {...getOverrideProps(overrides, "PartidosCollectionBeislLuno")}
       {...rest}
     >
       {(item, index) => (
-        <Cardjugadorfutbol
-          jugadores={item}
+        <Partidos
+          partidos={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></Cardjugadorfutbol>
+        ></Partidos>
       )}
     </Collection>
   );

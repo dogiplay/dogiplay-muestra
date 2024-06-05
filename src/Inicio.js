@@ -1,5 +1,5 @@
 import React from 'react'
-import LigasFutbol from './LigasFutbol';
+import Ligas from './Ligas';
 import './stylesLigas.css'
 
 
@@ -8,7 +8,7 @@ export const Inicio = () => {
     
     <div class="contenedor-inicio-ligas" >
       
-              <div class="contenedorInicioDeportes"><LigasFutbol/></div>
+              <div class="contenedorInicioDeportes"><Ligas/></div>
     </div>
 
   )

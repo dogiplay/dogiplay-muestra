@@ -10,7 +10,7 @@ import { getOverrideProps, useNavigateAction } from "./utils";
 import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function CardligaBeisbol(props) {
   const { ligas, overrides, ...rest } = props;
-  const zeroZeroPrimarybuttonOnClick = useNavigateAction({
+  const botonLigaBeisOnClick = useNavigateAction({
     type: "url",
     url: "ligasbeisbol",
   });
@@ -57,15 +57,15 @@ export default function CardligaBeisbol(props) {
         position="absolute"
         top="76.06%"
         bottom="5.16%"
-        left="63.92%"
-        right="5.02%"
+        left="64.24%"
+        right="4.69%"
         borderRadius="8px"
         padding="0px 16px 0px 16px"
         backgroundColor="rgba(191,14,14,1)"
         onClick={() => {
-          zeroZeroPrimarybuttonOnClick();
+          botonLigaBeisOnClick();
         }}
-        {...getOverrideProps(overrides, "00 Primary button")}
+        {...getOverrideProps(overrides, "botonLigaBeis")}
       >
         <Text
           fontFamily="Inter"

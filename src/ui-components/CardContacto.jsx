@@ -60,27 +60,12 @@ export default function CardContacto(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="13.38%"
-        bottom="74.19%"
-        left="54.56%"
-        right="10.27%"
+        top="5.35%"
+        bottom="82.22%"
+        left="31.69%"
+        right="33.14%"
         padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "logodogiplay26181")}
-      ></Logodogiplay>
-      <Logodogiplay
-        width="243px"
-        height="65px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        position="absolute"
-        top="3.82%"
-        bottom="83.75%"
-        left="10.13%"
-        right="54.7%"
-        padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "logodogiplay261122")}
+        {...getOverrideProps(overrides, "logodogiplay")}
       ></Logodogiplay>
       <Icon
         width="228px"

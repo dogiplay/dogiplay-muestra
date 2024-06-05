@@ -23,7 +23,7 @@ export declare type CardligaBeisbolOverridesProps = {
     "3117436503"?: PrimitiveOverrideProps<TextProps>;
     CardligaBeisbol?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 23"?: PrimitiveOverrideProps<ViewProps>;
-    "00 Primary button"?: PrimitiveOverrideProps<FlexProps>;
+    botonLigaBeis?: PrimitiveOverrideProps<FlexProps>;
     "Ver Liga"?: PrimitiveOverrideProps<TextProps>;
     logoequipo?: PrimitiveOverrideProps<ImageProps>;
     Header?: PrimitiveOverrideProps<ViewProps>;

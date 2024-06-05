@@ -301,7 +301,7 @@ export default function Cardliga(props) {
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="160px"
+        top="159px"
         left="82px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"

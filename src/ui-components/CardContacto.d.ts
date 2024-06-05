@@ -21,8 +21,7 @@ export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes
 export declare type CardContactoOverridesProps = {
     CardContacto?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 17"?: PrimitiveOverrideProps<IconProps>;
-    logodogiplay26181?: LogodogiplayProps;
-    logodogiplay261122?: LogodogiplayProps;
+    logodogiplay?: LogodogiplayProps;
     "Star 6"?: PrimitiveOverrideProps<IconProps>;
     "Star 7"?: PrimitiveOverrideProps<IconProps>;
     "Registra tu liga por Whatsapp al"?: PrimitiveOverrideProps<TextProps>;
