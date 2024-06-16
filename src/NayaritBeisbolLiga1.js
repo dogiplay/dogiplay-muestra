@@ -74,8 +74,7 @@ const NayaritBeisbolLiga1 = () => {
             <table>
               <tr className="pos">
                 <td><strong>1</strong></td>
-              </tr>
-             
+              </tr>            
               <tr class="espacio" ></tr>
               <tr className="pos">
                 <td><strong>2</strong></td>

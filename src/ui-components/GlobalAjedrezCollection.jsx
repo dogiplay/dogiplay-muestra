@@ -6,28 +6,30 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Campeonatos } from "../models";
+import { Jugadores } from "../models";
 import {
   createDataStorePredicate,
   getOverrideProps,
   useDataStoreBinding,
 } from "./utils";
 import { SortDirection } from "@aws-amplify/datastore";
-import Campeonato from "./Campeonato";
+import GlobalAjedrez from "./GlobalAjedrez";
 import { Collection } from "@aws-amplify/ui-react";
-export default function CampeonatoCollection(props) {
+export default function GlobalAjedrezCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsFilterObj = {
-    field: "clave_liga",
-    operand: "CLAFUTNAY01",
+    field: "deporte",
+    operand: "ajedrez",
     operator: "eq",
   };
   const itemsFilter = createDataStorePredicate(itemsFilterObj);
-  const itemsPagination = { sort: (s) => s.anoc(SortDirection.DESCENDING) };
+  const itemsPagination = {
+    sort: (s) => s.ajedrezelo(SortDirection.DESCENDING),
+  };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Campeonatos,
+    model: Jugadores,
     criteria: itemsFilter,
     pagination: itemsPagination,
   }).items;
@@ -40,23 +42,25 @@ export default function CampeonatoCollection(props) {
   }, [itemsProp, itemsDataStore]);
   return (
     <Collection
-      type="list"
-      isSearchable="true"
+      type="grid"
+      isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Buscar..."
-      itemsPerPage={5}
-      direction="row"
+      itemsPerPage={10}
+      templateColumns="1fr 1fr 1fr 1fr 1fr"
+      autoFlow="row"
       alignItems="stretch"
+      justifyContent="stretch"
       items={items || []}
-      {...getOverrideProps(overrides, "CampeonatoCollection")}
+      {...getOverrideProps(overrides, "GlobalAjedrezCollection")}
       {...rest}
     >
       {(item, index) => (
-        <Campeonato
-          campeonatos={item}
+        <GlobalAjedrez
+          jugadores={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></Campeonato>
+        ></GlobalAjedrez>
       )}
     </Collection>
   );

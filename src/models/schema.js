@@ -555,6 +555,97 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "boxajecombates": {
+                    "name": "boxajecombates",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "boxajetriunfos": {
+                    "name": "boxajetriunfos",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "boxajederrotas": {
+                    "name": "boxajederrotas",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "boxajeempates": {
+                    "name": "boxajeempates",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "boxKO": {
+                    "name": "boxKO",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "boxgimnasio": {
+                    "name": "boxgimnasio",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "pais": {
+                    "name": "pais",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ciudad": {
+                    "name": "ciudad",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "categoria": {
+                    "name": "categoria",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ajedrezelo": {
+                    "name": "ajedrezelo",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "beipitchervelmax": {
+                    "name": "beipitchervelmax",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "beipitchervelprom": {
+                    "name": "beipitchervelprom",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "telefono": {
+                    "name": "telefono",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -1525,5 +1616,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "fe92a6fe3a204cc9a386616c1913c03b"
+    "version": "67bac7614ae4355c1cefa967d3aac6f4"
 };

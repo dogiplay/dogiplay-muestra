@@ -1,4 +1,4 @@
-import { CardligaBeisbolCollection, CardligaCollectionFutbol, GolesGlobalCollection, HrGlobalCollection } from './ui-components';
+import { CardligaBeisbolCollection, CardligaCollectionFutbol, GlobalBoxCollection, GlobalPitcherCollection, GolesGlobalCollection, HrGlobalCollection } from './ui-components';
 // Archivo: OtroArchivo.js
 import React, { useContext, useState } from "react"; // Importamos React y las funciones necesarias desde la biblioteca 'react'
 
@@ -86,8 +86,13 @@ const Ligas =()  => {
     <center><strong className='colorBlanco'>LIDERES DE HOME RUNS DE TODAS LAS LIGAS</strong></center>
     
     <HrGlobalCollection/>
+    <center><h1 className='colorBlanco'>PITCHERS</h1></center>
+    
+    <GlobalPitcherCollection/>
     <center><strong className='colorBlanco'>LIDERES DE GOLEO DE TODAS LAS LIGAS</strong></center>
     <GolesGlobalCollection/>
+    <center><h1 className='colorBlanco'>BOXEADORES</h1></center>
+    <GlobalBoxCollection/>
     </div>
     </div>
   )

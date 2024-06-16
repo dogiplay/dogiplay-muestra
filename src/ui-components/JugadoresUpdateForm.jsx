@@ -60,6 +60,19 @@ export default function JugadoresUpdateForm(props) {
     beipitjuegosperdidos: "",
     beiporcentajebateo: "",
     clave_liga: "",
+    boxajecombates: "",
+    boxajetriunfos: "",
+    boxajederrotas: "",
+    boxajeempates: "",
+    boxKO: "",
+    boxgimnasio: "",
+    pais: "",
+    ciudad: "",
+    categoria: "",
+    ajedrezelo: "",
+    beipitchervelmax: "",
+    beipitchervelprom: "",
+    telefono: "",
   };
   const [iddeporte, setIddeporte] = React.useState(initialValues.iddeporte);
   const [idequipo, setIdequipo] = React.useState(initialValues.idequipo);
@@ -122,6 +135,33 @@ export default function JugadoresUpdateForm(props) {
     initialValues.beiporcentajebateo
   );
   const [clave_liga, setClave_liga] = React.useState(initialValues.clave_liga);
+  const [boxajecombates, setBoxajecombates] = React.useState(
+    initialValues.boxajecombates
+  );
+  const [boxajetriunfos, setBoxajetriunfos] = React.useState(
+    initialValues.boxajetriunfos
+  );
+  const [boxajederrotas, setBoxajederrotas] = React.useState(
+    initialValues.boxajederrotas
+  );
+  const [boxajeempates, setBoxajeempates] = React.useState(
+    initialValues.boxajeempates
+  );
+  const [boxKO, setBoxKO] = React.useState(initialValues.boxKO);
+  const [boxgimnasio, setBoxgimnasio] = React.useState(
+    initialValues.boxgimnasio
+  );
+  const [pais, setPais] = React.useState(initialValues.pais);
+  const [ciudad, setCiudad] = React.useState(initialValues.ciudad);
+  const [categoria, setCategoria] = React.useState(initialValues.categoria);
+  const [ajedrezelo, setAjedrezelo] = React.useState(initialValues.ajedrezelo);
+  const [beipitchervelmax, setBeipitchervelmax] = React.useState(
+    initialValues.beipitchervelmax
+  );
+  const [beipitchervelprom, setBeipitchervelprom] = React.useState(
+    initialValues.beipitchervelprom
+  );
+  const [telefono, setTelefono] = React.useState(initialValues.telefono);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = jugadoresRecord
@@ -164,6 +204,19 @@ export default function JugadoresUpdateForm(props) {
     setBeipitjuegosperdidos(cleanValues.beipitjuegosperdidos);
     setBeiporcentajebateo(cleanValues.beiporcentajebateo);
     setClave_liga(cleanValues.clave_liga);
+    setBoxajecombates(cleanValues.boxajecombates);
+    setBoxajetriunfos(cleanValues.boxajetriunfos);
+    setBoxajederrotas(cleanValues.boxajederrotas);
+    setBoxajeempates(cleanValues.boxajeempates);
+    setBoxKO(cleanValues.boxKO);
+    setBoxgimnasio(cleanValues.boxgimnasio);
+    setPais(cleanValues.pais);
+    setCiudad(cleanValues.ciudad);
+    setCategoria(cleanValues.categoria);
+    setAjedrezelo(cleanValues.ajedrezelo);
+    setBeipitchervelmax(cleanValues.beipitchervelmax);
+    setBeipitchervelprom(cleanValues.beipitchervelprom);
+    setTelefono(cleanValues.telefono);
     setErrors({});
   };
   const [jugadoresRecord, setJugadoresRecord] =
@@ -216,6 +269,19 @@ export default function JugadoresUpdateForm(props) {
     beipitjuegosperdidos: [],
     beiporcentajebateo: [],
     clave_liga: [],
+    boxajecombates: [],
+    boxajetriunfos: [],
+    boxajederrotas: [],
+    boxajeempates: [],
+    boxKO: [],
+    boxgimnasio: [],
+    pais: [],
+    ciudad: [],
+    categoria: [],
+    ajedrezelo: [],
+    beipitchervelmax: [],
+    beipitchervelprom: [],
+    telefono: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -280,6 +346,19 @@ export default function JugadoresUpdateForm(props) {
           beipitjuegosperdidos,
           beiporcentajebateo,
           clave_liga,
+          boxajecombates,
+          boxajetriunfos,
+          boxajederrotas,
+          boxajeempates,
+          boxKO,
+          boxgimnasio,
+          pais,
+          ciudad,
+          categoria,
+          ajedrezelo,
+          beipitchervelmax,
+          beipitchervelprom,
+          telefono,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -372,6 +451,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.iddeporte ?? value;
@@ -432,6 +524,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.idequipo ?? value;
@@ -492,6 +597,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -552,6 +670,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.idjugador ?? value;
@@ -612,6 +743,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.idtorneo ?? value;
@@ -672,6 +816,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.deporte ?? value;
@@ -732,6 +889,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.user ?? value;
@@ -792,6 +962,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.perfil ?? value;
@@ -852,6 +1035,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.posicion ?? value;
@@ -916,6 +1112,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -980,6 +1189,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.numero ?? value;
@@ -1040,6 +1262,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.equipo ?? value;
@@ -1100,6 +1335,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -1160,6 +1408,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.alias ?? value;
@@ -1224,6 +1485,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.tipocuenta ?? value;
@@ -1288,6 +1562,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.futgoles ?? value;
@@ -1352,6 +1639,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.futasisgol ?? value;
@@ -1416,6 +1716,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasallas ?? value;
@@ -1480,6 +1793,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasrojas ?? value;
@@ -1544,6 +1870,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.futgoleadorsemana ?? value;
@@ -1610,6 +1949,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerashechas ?? value;
@@ -1676,6 +2028,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerasproducid ?? value;
@@ -1742,6 +2107,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beihr ?? value;
@@ -1806,6 +2184,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beihits ?? value;
@@ -1870,6 +2261,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beifly ?? value;
@@ -1934,6 +2338,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beirolas ?? value;
@@ -1998,6 +2415,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beiponches ?? value;
@@ -2062,6 +2492,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.mvp ?? value;
@@ -2126,6 +2569,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beipitentradaslanzadas ?? value;
@@ -2192,6 +2648,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beipitcarreraslimpias ?? value;
@@ -2258,6 +2727,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beipithitstotales ?? value;
@@ -2324,6 +2806,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beipitponchestotales ?? value;
@@ -2390,6 +2885,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beipitera ?? value;
@@ -2454,6 +2962,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosganados ?? value;
@@ -2520,6 +3041,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos: value,
               beiporcentajebateo,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosperdidos ?? value;
@@ -2586,6 +3120,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo: value,
               clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.beiporcentajebateo ?? value;
@@ -2648,6 +3195,19 @@ export default function JugadoresUpdateForm(props) {
               beipitjuegosperdidos,
               beiporcentajebateo,
               clave_liga: value,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.clave_liga ?? value;
@@ -2661,6 +3221,989 @@ export default function JugadoresUpdateForm(props) {
         errorMessage={errors.clave_liga?.errorMessage}
         hasError={errors.clave_liga?.hasError}
         {...getOverrideProps(overrides, "clave_liga")}
+      ></TextField>
+      <TextField
+        label="Boxajecombates"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={boxajecombates}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates: value,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.boxajecombates ?? value;
+          }
+          if (errors.boxajecombates?.hasError) {
+            runValidationTasks("boxajecombates", value);
+          }
+          setBoxajecombates(value);
+        }}
+        onBlur={() => runValidationTasks("boxajecombates", boxajecombates)}
+        errorMessage={errors.boxajecombates?.errorMessage}
+        hasError={errors.boxajecombates?.hasError}
+        {...getOverrideProps(overrides, "boxajecombates")}
+      ></TextField>
+      <TextField
+        label="Boxajetriunfos"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={boxajetriunfos}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos: value,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.boxajetriunfos ?? value;
+          }
+          if (errors.boxajetriunfos?.hasError) {
+            runValidationTasks("boxajetriunfos", value);
+          }
+          setBoxajetriunfos(value);
+        }}
+        onBlur={() => runValidationTasks("boxajetriunfos", boxajetriunfos)}
+        errorMessage={errors.boxajetriunfos?.errorMessage}
+        hasError={errors.boxajetriunfos?.hasError}
+        {...getOverrideProps(overrides, "boxajetriunfos")}
+      ></TextField>
+      <TextField
+        label="Boxajederrotas"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={boxajederrotas}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas: value,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.boxajederrotas ?? value;
+          }
+          if (errors.boxajederrotas?.hasError) {
+            runValidationTasks("boxajederrotas", value);
+          }
+          setBoxajederrotas(value);
+        }}
+        onBlur={() => runValidationTasks("boxajederrotas", boxajederrotas)}
+        errorMessage={errors.boxajederrotas?.errorMessage}
+        hasError={errors.boxajederrotas?.hasError}
+        {...getOverrideProps(overrides, "boxajederrotas")}
+      ></TextField>
+      <TextField
+        label="Boxajeempates"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={boxajeempates}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates: value,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.boxajeempates ?? value;
+          }
+          if (errors.boxajeempates?.hasError) {
+            runValidationTasks("boxajeempates", value);
+          }
+          setBoxajeempates(value);
+        }}
+        onBlur={() => runValidationTasks("boxajeempates", boxajeempates)}
+        errorMessage={errors.boxajeempates?.errorMessage}
+        hasError={errors.boxajeempates?.hasError}
+        {...getOverrideProps(overrides, "boxajeempates")}
+      ></TextField>
+      <TextField
+        label="Box ko"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={boxKO}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO: value,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.boxKO ?? value;
+          }
+          if (errors.boxKO?.hasError) {
+            runValidationTasks("boxKO", value);
+          }
+          setBoxKO(value);
+        }}
+        onBlur={() => runValidationTasks("boxKO", boxKO)}
+        errorMessage={errors.boxKO?.errorMessage}
+        hasError={errors.boxKO?.hasError}
+        {...getOverrideProps(overrides, "boxKO")}
+      ></TextField>
+      <TextField
+        label="Boxgimnasio"
+        isRequired={false}
+        isReadOnly={false}
+        value={boxgimnasio}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio: value,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.boxgimnasio ?? value;
+          }
+          if (errors.boxgimnasio?.hasError) {
+            runValidationTasks("boxgimnasio", value);
+          }
+          setBoxgimnasio(value);
+        }}
+        onBlur={() => runValidationTasks("boxgimnasio", boxgimnasio)}
+        errorMessage={errors.boxgimnasio?.errorMessage}
+        hasError={errors.boxgimnasio?.hasError}
+        {...getOverrideProps(overrides, "boxgimnasio")}
+      ></TextField>
+      <TextField
+        label="Pais"
+        isRequired={false}
+        isReadOnly={false}
+        value={pais}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais: value,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.pais ?? value;
+          }
+          if (errors.pais?.hasError) {
+            runValidationTasks("pais", value);
+          }
+          setPais(value);
+        }}
+        onBlur={() => runValidationTasks("pais", pais)}
+        errorMessage={errors.pais?.errorMessage}
+        hasError={errors.pais?.hasError}
+        {...getOverrideProps(overrides, "pais")}
+      ></TextField>
+      <TextField
+        label="Ciudad"
+        isRequired={false}
+        isReadOnly={false}
+        value={ciudad}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad: value,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.ciudad ?? value;
+          }
+          if (errors.ciudad?.hasError) {
+            runValidationTasks("ciudad", value);
+          }
+          setCiudad(value);
+        }}
+        onBlur={() => runValidationTasks("ciudad", ciudad)}
+        errorMessage={errors.ciudad?.errorMessage}
+        hasError={errors.ciudad?.hasError}
+        {...getOverrideProps(overrides, "ciudad")}
+      ></TextField>
+      <TextField
+        label="Categoria"
+        isRequired={false}
+        isReadOnly={false}
+        value={categoria}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria: value,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.categoria ?? value;
+          }
+          if (errors.categoria?.hasError) {
+            runValidationTasks("categoria", value);
+          }
+          setCategoria(value);
+        }}
+        onBlur={() => runValidationTasks("categoria", categoria)}
+        errorMessage={errors.categoria?.errorMessage}
+        hasError={errors.categoria?.hasError}
+        {...getOverrideProps(overrides, "categoria")}
+      ></TextField>
+      <TextField
+        label="Ajedrezelo"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={ajedrezelo}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo: value,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.ajedrezelo ?? value;
+          }
+          if (errors.ajedrezelo?.hasError) {
+            runValidationTasks("ajedrezelo", value);
+          }
+          setAjedrezelo(value);
+        }}
+        onBlur={() => runValidationTasks("ajedrezelo", ajedrezelo)}
+        errorMessage={errors.ajedrezelo?.errorMessage}
+        hasError={errors.ajedrezelo?.hasError}
+        {...getOverrideProps(overrides, "ajedrezelo")}
+      ></TextField>
+      <TextField
+        label="Beipitchervelmax"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitchervelmax}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax: value,
+              beipitchervelprom,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitchervelmax ?? value;
+          }
+          if (errors.beipitchervelmax?.hasError) {
+            runValidationTasks("beipitchervelmax", value);
+          }
+          setBeipitchervelmax(value);
+        }}
+        onBlur={() => runValidationTasks("beipitchervelmax", beipitchervelmax)}
+        errorMessage={errors.beipitchervelmax?.errorMessage}
+        hasError={errors.beipitchervelmax?.hasError}
+        {...getOverrideProps(overrides, "beipitchervelmax")}
+      ></TextField>
+      <TextField
+        label="Beipitchervelprom"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={beipitchervelprom}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom: value,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.beipitchervelprom ?? value;
+          }
+          if (errors.beipitchervelprom?.hasError) {
+            runValidationTasks("beipitchervelprom", value);
+          }
+          setBeipitchervelprom(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("beipitchervelprom", beipitchervelprom)
+        }
+        errorMessage={errors.beipitchervelprom?.errorMessage}
+        hasError={errors.beipitchervelprom?.hasError}
+        {...getOverrideProps(overrides, "beipitchervelprom")}
+      ></TextField>
+      <TextField
+        label="Telefono"
+        isRequired={false}
+        isReadOnly={false}
+        value={telefono}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.telefono ?? value;
+          }
+          if (errors.telefono?.hasError) {
+            runValidationTasks("telefono", value);
+          }
+          setTelefono(value);
+        }}
+        onBlur={() => runValidationTasks("telefono", telefono)}
+        errorMessage={errors.telefono?.errorMessage}
+        hasError={errors.telefono?.hasError}
+        {...getOverrideProps(overrides, "telefono")}
       ></TextField>
       <Flex
         justifyContent="space-between"

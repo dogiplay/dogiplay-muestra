@@ -16,12 +16,11 @@ import { SortDirection } from "@aws-amplify/datastore";
 import Cardpitcher from "./Cardpitcher";
 import { Collection } from "@aws-amplify/ui-react";
 export default function CardpitcherCollection(props) {
-  const miclave = localStorage.getItem('miclave');
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsFilterObj = {
     and: [
       { field: "posicion", operand: "Pitcher", operator: "eq" },
-      { field: "clave_liga", operand: miclave, operator: "eq" },
+      { field: "clave_liga", operand: "CLABEINAY01", operator: "eq" },
     ],
   };
   const itemsFilter = createDataStorePredicate(itemsFilterObj);

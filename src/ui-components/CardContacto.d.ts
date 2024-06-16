@@ -24,7 +24,7 @@ export declare type CardContactoOverridesProps = {
     logodogiplay?: LogodogiplayProps;
     "Star 6"?: PrimitiveOverrideProps<IconProps>;
     "Star 7"?: PrimitiveOverrideProps<IconProps>;
-    "Registra tu liga por Whatsapp al"?: PrimitiveOverrideProps<TextProps>;
+    "Registra tu equipo o liga por Whatsapp al"?: PrimitiveOverrideProps<TextProps>;
     "Ofrecemos control total de estad\u00EDsticas por equipo y jugadores"?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 18"?: PrimitiveOverrideProps<ViewProps>;
     "311 7436503"?: PrimitiveOverrideProps<TextProps>;

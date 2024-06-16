@@ -71,6 +71,19 @@ type Jugadores @model @auth(rules: [{allow: public}]) {
   beipitjuegosperdidos: Int
   beiporcentajebateo: Float
   clave_liga: String
+  boxajecombates: Int
+  boxajetriunfos: Int
+  boxajederrotas: Int
+  boxajeempates: Int
+  boxKO: Int
+  boxgimnasio: String
+  pais: String
+  ciudad: String
+  categoria: String
+  ajedrezelo: Int
+  beipitchervelmax: Int
+  beipitchervelprom: Int
+  telefono: String
 }
 
 type Torneos @model @auth(rules: [{allow: public}]) {
@@ -179,5 +192,4 @@ type Managers @model @auth(rules: [{allow: public}]) {
   usuario: String
   nombre: String
   idtorneo: ID
-}
- 
+} 

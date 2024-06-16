@@ -68,12 +68,12 @@ export default function CardContacto(props) {
         {...getOverrideProps(overrides, "logodogiplay")}
       ></Logodogiplay>
       <Icon
-        width="228px"
-        height="228px"
-        viewBox={{ minX: 0, minY: 0, width: 228, height: 228 }}
+        width="130px"
+        height="130px"
+        viewBox={{ minX: 0, minY: 0, width: 130, height: 130 }}
         paths={[
           {
-            d: "M114 0L139.595 78.7721L222.42 78.7721L155.413 127.456L181.008 206.228L114 157.544L46.9925 206.228L72.5871 127.456L5.57956 78.7721L88.4054 78.7721L114 0Z",
+            d: "M65 0L79.5934 44.9139L126.819 44.9139L88.6126 72.6722L103.206 117.586L65 89.8278L26.794 117.586L41.3874 72.6722L3.18133 44.9139L50.4066 44.9139L65 0Z",
             fill: "rgba(0,148,255,1)",
             fillRule: "nonzero",
           },
@@ -83,10 +83,10 @@ export default function CardContacto(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="19.31%"
-        bottom="37.09%"
-        left="2.03%"
-        right="64.98%"
+        top="5.35%"
+        bottom="69.79%"
+        left="4.49%"
+        right="76.7%"
         {...getOverrideProps(overrides, "Star 6")}
       ></Icon>
       <Icon
@@ -127,14 +127,17 @@ export default function CardContacto(props) {
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="30.98%"
-        bottom="60.42%"
-        left="32.71%"
-        right="1.88%"
+        top="30.21%"
+        bottom="61.19%"
+        left="9.41%"
+        right="6.37%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Registra tu liga por Whatsapp al"
-        {...getOverrideProps(overrides, "Registra tu liga por Whatsapp al")}
+        children="Registra tu equipo o liga por Whatsapp al"
+        {...getOverrideProps(
+          overrides,
+          "Registra tu equipo o liga por Whatsapp al"
+        )}
       ></Text>
       <Text
         fontFamily="Inter"

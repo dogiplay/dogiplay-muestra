@@ -54,6 +54,19 @@ export declare type NuevoJugadorInputValues = {
     beipitjuegosganados?: number;
     beipitjuegosperdidos?: number;
     clave_liga?: string;
+    boxajecombates?: number;
+    boxajetriunfos?: number;
+    boxajederrotas?: number;
+    boxajeempates?: number;
+    boxKO?: number;
+    boxgimnasio?: string;
+    pais?: string;
+    ciudad?: string;
+    categoria?: string;
+    ajedrezelo?: number;
+    beipitchervelmax?: number;
+    beipitchervelprom?: number;
+    telefono?: string;
 };
 export declare type NuevoJugadorValidationValues = {
     iddeporte?: ValidationFunction<string>;
@@ -88,6 +101,19 @@ export declare type NuevoJugadorValidationValues = {
     beipitjuegosganados?: ValidationFunction<number>;
     beipitjuegosperdidos?: ValidationFunction<number>;
     clave_liga?: ValidationFunction<string>;
+    boxajecombates?: ValidationFunction<number>;
+    boxajetriunfos?: ValidationFunction<number>;
+    boxajederrotas?: ValidationFunction<number>;
+    boxajeempates?: ValidationFunction<number>;
+    boxKO?: ValidationFunction<number>;
+    boxgimnasio?: ValidationFunction<string>;
+    pais?: ValidationFunction<string>;
+    ciudad?: ValidationFunction<string>;
+    categoria?: ValidationFunction<string>;
+    ajedrezelo?: ValidationFunction<number>;
+    beipitchervelmax?: ValidationFunction<number>;
+    beipitchervelprom?: ValidationFunction<number>;
+    telefono?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NuevoJugadorOverridesProps = {
@@ -124,6 +150,19 @@ export declare type NuevoJugadorOverridesProps = {
     beipitjuegosganados?: PrimitiveOverrideProps<TextFieldProps>;
     beipitjuegosperdidos?: PrimitiveOverrideProps<TextFieldProps>;
     clave_liga?: PrimitiveOverrideProps<TextFieldProps>;
+    boxajecombates?: PrimitiveOverrideProps<TextFieldProps>;
+    boxajetriunfos?: PrimitiveOverrideProps<TextFieldProps>;
+    boxajederrotas?: PrimitiveOverrideProps<TextFieldProps>;
+    boxajeempates?: PrimitiveOverrideProps<TextFieldProps>;
+    boxKO?: PrimitiveOverrideProps<TextFieldProps>;
+    boxgimnasio?: PrimitiveOverrideProps<TextFieldProps>;
+    pais?: PrimitiveOverrideProps<TextFieldProps>;
+    ciudad?: PrimitiveOverrideProps<TextFieldProps>;
+    categoria?: PrimitiveOverrideProps<TextFieldProps>;
+    ajedrezelo?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitchervelmax?: PrimitiveOverrideProps<TextFieldProps>;
+    beipitchervelprom?: PrimitiveOverrideProps<TextFieldProps>;
+    telefono?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type NuevoJugadorProps = React.PropsWithChildren<{
     overrides?: NuevoJugadorOverridesProps | undefined | null;

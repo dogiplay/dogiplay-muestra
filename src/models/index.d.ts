@@ -153,6 +153,19 @@ type EagerJugadores = {
   readonly beipitjuegosperdidos?: number | null;
   readonly beiporcentajebateo?: number | null;
   readonly clave_liga?: string | null;
+  readonly boxajecombates?: number | null;
+  readonly boxajetriunfos?: number | null;
+  readonly boxajederrotas?: number | null;
+  readonly boxajeempates?: number | null;
+  readonly boxKO?: number | null;
+  readonly boxgimnasio?: string | null;
+  readonly pais?: string | null;
+  readonly ciudad?: string | null;
+  readonly categoria?: string | null;
+  readonly ajedrezelo?: number | null;
+  readonly beipitchervelmax?: number | null;
+  readonly beipitchervelprom?: number | null;
+  readonly telefono?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -200,6 +213,19 @@ type LazyJugadores = {
   readonly beipitjuegosperdidos?: number | null;
   readonly beiporcentajebateo?: number | null;
   readonly clave_liga?: string | null;
+  readonly boxajecombates?: number | null;
+  readonly boxajetriunfos?: number | null;
+  readonly boxajederrotas?: number | null;
+  readonly boxajeempates?: number | null;
+  readonly boxKO?: number | null;
+  readonly boxgimnasio?: string | null;
+  readonly pais?: string | null;
+  readonly ciudad?: string | null;
+  readonly categoria?: string | null;
+  readonly ajedrezelo?: number | null;
+  readonly beipitchervelmax?: number | null;
+  readonly beipitchervelprom?: number | null;
+  readonly telefono?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
