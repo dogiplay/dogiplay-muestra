@@ -28,13 +28,15 @@ export declare type LigasCreateFormInputValues = {
     foto?: string;
     descripcion?: string;
     nombre?: string;
+    pais?: string;
     estado?: string;
     municipio?: string;
-    telefono?: string;
     equipos?: number;
     presidente?: string;
     deporte?: string;
     categoria?: string;
+    ciudad?: string;
+    telefono?: string;
 };
 export declare type LigasCreateFormValidationValues = {
     idliga?: ValidationFunction<string>;
@@ -43,13 +45,15 @@ export declare type LigasCreateFormValidationValues = {
     foto?: ValidationFunction<string>;
     descripcion?: ValidationFunction<string>;
     nombre?: ValidationFunction<string>;
+    pais?: ValidationFunction<string>;
     estado?: ValidationFunction<string>;
     municipio?: ValidationFunction<string>;
-    telefono?: ValidationFunction<string>;
     equipos?: ValidationFunction<number>;
     presidente?: ValidationFunction<string>;
     deporte?: ValidationFunction<string>;
     categoria?: ValidationFunction<string>;
+    ciudad?: ValidationFunction<string>;
+    telefono?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type LigasCreateFormOverridesProps = {
@@ -60,13 +64,15 @@ export declare type LigasCreateFormOverridesProps = {
     foto?: PrimitiveOverrideProps<TextFieldProps>;
     descripcion?: PrimitiveOverrideProps<TextFieldProps>;
     nombre?: PrimitiveOverrideProps<TextFieldProps>;
+    pais?: PrimitiveOverrideProps<TextFieldProps>;
     estado?: PrimitiveOverrideProps<TextFieldProps>;
     municipio?: PrimitiveOverrideProps<TextFieldProps>;
-    telefono?: PrimitiveOverrideProps<TextFieldProps>;
     equipos?: PrimitiveOverrideProps<TextFieldProps>;
     presidente?: PrimitiveOverrideProps<TextFieldProps>;
     deporte?: PrimitiveOverrideProps<TextFieldProps>;
     categoria?: PrimitiveOverrideProps<TextFieldProps>;
+    ciudad?: PrimitiveOverrideProps<TextFieldProps>;
+    telefono?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type LigasCreateFormProps = React.PropsWithChildren<{
     overrides?: LigasCreateFormOverridesProps | undefined | null;

@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { Jugadores } from "../models";
-import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -19,31 +19,26 @@ export declare type Variant = {
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type GlobalBoxOverridesProps = {
-    "5"?: PrimitiveOverrideProps<TextProps>;
-    "6"?: PrimitiveOverrideProps<TextProps>;
-    "8"?: PrimitiveOverrideProps<TextProps>;
-    "10"?: PrimitiveOverrideProps<TextProps>;
-    "24"?: PrimitiveOverrideProps<TextProps>;
     GlobalBox?: PrimitiveOverrideProps<ViewProps>;
+    "dogiplay.com424186"?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 72"?: PrimitiveOverrideProps<ViewProps>;
-    buttonRecord?: PrimitiveOverrideProps<FlexProps>;
-    Record?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 74"?: PrimitiveOverrideProps<ViewProps>;
-    "CAM01731 1"?: PrimitiveOverrideProps<ViewProps>;
+    "PA\u00CDS : M\u00C9XICO"?: PrimitiveOverrideProps<TextProps>;
+    "CIUDAD: GUADALAJARA"?: PrimitiveOverrideProps<TextProps>;
+    "GIMNASIO NI\u00D1OS HEROES"?: PrimitiveOverrideProps<TextProps>;
+    "CATEGORIA: PESO MOSCA"?: PrimitiveOverrideProps<TextProps>;
+    "PELEAS: 24"?: PrimitiveOverrideProps<TextProps>;
+    "VICTORIAS: 10"?: PrimitiveOverrideProps<TextProps>;
+    "DERROTAS: 8"?: PrimitiveOverrideProps<TextProps>;
+    "EMPATES: 6"?: PrimitiveOverrideProps<TextProps>;
+    "KNOCK OUTS: 5"?: PrimitiveOverrideProps<TextProps>;
+    "boxeador 1"?: PrimitiveOverrideProps<ImageProps>;
+    "Group 22"?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 73"?: PrimitiveOverrideProps<ViewProps>;
     "EL GALLO LOPEZ"?: PrimitiveOverrideProps<TextProps>;
-    COMBATES?: PrimitiveOverrideProps<TextProps>;
-    VICTORIAS?: PrimitiveOverrideProps<TextProps>;
-    DERROTAS?: PrimitiveOverrideProps<TextProps>;
-    EMPATES?: PrimitiveOverrideProps<TextProps>;
-    "KNOCK OUTS"?: PrimitiveOverrideProps<TextProps>;
-    CATEGORIA?: PrimitiveOverrideProps<TextProps>;
-    GIMNASIO?: PrimitiveOverrideProps<TextProps>;
-    CIUDAD?: PrimitiveOverrideProps<TextProps>;
-    GUADALAJARA?: PrimitiveOverrideProps<TextProps>;
-    "NI\u00D1OS HEROES"?: PrimitiveOverrideProps<TextProps>;
-    "PESO MOSCA"?: PrimitiveOverrideProps<TextProps>;
-    "boxeador 1"?: PrimitiveOverrideProps<ImageProps>;
+    "Rectangle 98"?: PrimitiveOverrideProps<ViewProps>;
+    RECORD?: PrimitiveOverrideProps<TextProps>;
+    "dogiplay.com477157"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type GlobalBoxProps = React.PropsWithChildren<Partial<ViewProps> & {
     jugadores?: Jugadores;

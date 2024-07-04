@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Jugadores, StatsJugadores } from "../models";
+import { StatsJugadores, Jugadores } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -19,35 +19,37 @@ export declare type Variant = {
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type CardpitcherOverridesProps = {
-    "4"?: PrimitiveOverrideProps<TextProps>;
-    "2440299"?: PrimitiveOverrideProps<TextProps>;
-    "24402100"?: PrimitiveOverrideProps<TextProps>;
-    "242182297"?: PrimitiveOverrideProps<TextProps>;
-    "242182298"?: PrimitiveOverrideProps<TextProps>;
-    "242182299"?: PrimitiveOverrideProps<TextProps>;
-    "242182300"?: PrimitiveOverrideProps<TextProps>;
+    "8"?: PrimitiveOverrideProps<TextProps>;
+    "9"?: PrimitiveOverrideProps<TextProps>;
+    "11"?: PrimitiveOverrideProps<TextProps>;
+    "14"?: PrimitiveOverrideProps<TextProps>;
+    "16"?: PrimitiveOverrideProps<TextProps>;
+    "24"?: PrimitiveOverrideProps<TextProps>;
     Cardpitcher?: PrimitiveOverrideProps<ViewProps>;
     cardjugadorbeisbol?: PrimitiveOverrideProps<ViewProps>;
-    "Rectangle 9"?: PrimitiveOverrideProps<ViewProps>;
     Carousel?: PrimitiveOverrideProps<FlexProps>;
-    "player1 (1) 1"?: PrimitiveOverrideProps<ImageProps>;
+    "images 2"?: PrimitiveOverrideProps<ImageProps>;
     Header?: PrimitiveOverrideProps<ViewProps>;
-    "Steven Virgen"?: PrimitiveOverrideProps<TextProps>;
+    "Oliver Torres el Gato"?: PrimitiveOverrideProps<TextProps>;
     "Product info"?: PrimitiveOverrideProps<FlexProps>;
-    "Product name2182710"?: PrimitiveOverrideProps<TextProps>;
-    "Product name2182711"?: PrimitiveOverrideProps<TextProps>;
+    "Product name410114"?: PrimitiveOverrideProps<TextProps>;
+    "Product name410116"?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 77"?: PrimitiveOverrideProps<ViewProps>;
-    " Subheading2182712"?: PrimitiveOverrideProps<TextProps>;
-    "Rectangle 10"?: PrimitiveOverrideProps<ViewProps>;
-    "100MPH"?: PrimitiveOverrideProps<TextProps>;
-    "Rectangle 78"?: PrimitiveOverrideProps<ViewProps>;
+    " Subheading410118"?: PrimitiveOverrideProps<TextProps>;
     "90MPH"?: PrimitiveOverrideProps<TextProps>;
-    "San Diego California, EUA"?: PrimitiveOverrideProps<TextProps>;
-    "52 311 7436502"?: PrimitiveOverrideProps<TextProps>;
-    " Subheading2182713"?: PrimitiveOverrideProps<TextProps>;
+    "Rectangle 78"?: PrimitiveOverrideProps<ViewProps>;
+    "88MPH"?: PrimitiveOverrideProps<TextProps>;
+    "Pais: M\u00E9xico"?: PrimitiveOverrideProps<TextProps>;
+    "Edad: 16 a\u00F1os"?: PrimitiveOverrideProps<TextProps>;
+    "Ciudad: San Diego California"?: PrimitiveOverrideProps<TextProps>;
+    " Subheading410128"?: PrimitiveOverrideProps<TextProps>;
+    "Lanzamientos: Recta y curva"?: PrimitiveOverrideProps<TextProps>;
+    "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
+    "Rectangle 10"?: PrimitiveOverrideProps<ViewProps>;
+    "Perfil derecho"?: PrimitiveOverrideProps<TextProps>;
     "Group 13"?: PrimitiveOverrideProps<ViewProps>;
     "ENTRADAS LANZADAS"?: PrimitiveOverrideProps<TextProps>;
-    "HIT TOTALES"?: PrimitiveOverrideProps<TextProps>;
+    "HITS TOTALES"?: PrimitiveOverrideProps<TextProps>;
     "CARRERAS LIMPIAS"?: PrimitiveOverrideProps<TextProps>;
     "PONCHES TOTALES"?: PrimitiveOverrideProps<TextProps>;
     "JUEGOS GANADOS"?: PrimitiveOverrideProps<TextProps>;
@@ -55,10 +57,11 @@ export declare type CardpitcherOverridesProps = {
     "Group 14"?: PrimitiveOverrideProps<ViewProps>;
     Pill?: PrimitiveOverrideProps<FlexProps>;
     ERA?: PrimitiveOverrideProps<TextProps>;
+    "1.2"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardpitcherProps = React.PropsWithChildren<Partial<ViewProps> & {
-    jugadores?: Jugadores;
     statsJugadores?: StatsJugadores;
+    jugadores?: Jugadores;
 } & {
     overrides?: CardpitcherOverridesProps | undefined | null;
 }>;

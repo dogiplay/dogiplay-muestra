@@ -24,7 +24,6 @@ export declare type CardjugadorbeisbolOverridesProps = {
     "4"?: PrimitiveOverrideProps<TextProps>;
     "5"?: PrimitiveOverrideProps<TextProps>;
     Cardjugadorbeisbol?: PrimitiveOverrideProps<ViewProps>;
-    "Rectangle 9"?: PrimitiveOverrideProps<ViewProps>;
     "Product Info"?: PrimitiveOverrideProps<FlexProps>;
     Carousel?: PrimitiveOverrideProps<FlexProps>;
     "player1 (1) 1"?: PrimitiveOverrideProps<ImageProps>;
@@ -46,9 +45,8 @@ export declare type CardjugadorbeisbolOverridesProps = {
     " Subheading170688"?: PrimitiveOverrideProps<TextProps>;
     " Subheading170689"?: PrimitiveOverrideProps<TextProps>;
     " Subheading170690"?: PrimitiveOverrideProps<TextProps>;
-    " Subheading170691"?: PrimitiveOverrideProps<TextProps>;
     HR?: PrimitiveOverrideProps<TextProps>;
-    "Product name1841886"?: PrimitiveOverrideProps<TextProps>;
+    "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardjugadorbeisbolProps = React.PropsWithChildren<Partial<ViewProps> & {
     jugadores?: Jugadores;

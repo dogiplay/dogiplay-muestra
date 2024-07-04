@@ -1,3 +1,29 @@
+type Atletas @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nombre: String
+  foto: AWSURL
+  equipoclub: String
+  disciplina: String
+  edad: Int
+  recordActual: String
+  pais: String
+  ciudad: String
+  telefono: String
+  categoria: String
+  espacio2: String
+  espacio1: String
+  espacio4: String
+  espacio5: String
+  espacio3: String
+  especialidad: Int
+  recordespecialidad: Float
+  estado: String
+  peso: String
+  espacio6fiscul: String
+  espacio7fiscul: String
+  espacio8fiscul: String
+}
+
 type Campeonatos @model @auth(rules: [{allow: public}]) {
   id: ID!
   clave_liga: String
@@ -84,6 +110,7 @@ type Jugadores @model @auth(rules: [{allow: public}]) {
   beipitchervelmax: Int
   beipitchervelprom: Int
   telefono: String
+  beilanzamientos: String
 }
 
 type Torneos @model @auth(rules: [{allow: public}]) {
@@ -115,13 +142,15 @@ type Ligas @model @auth(rules: [{allow: public}]) {
   foto: AWSURL
   descripcion: String
   nombre: String
+  pais: String
   estado: String
   municipio: String
-  telefono: String
   equipos: Int
   presidente: String
   deporte: String
   categoria: String
+  ciudad: String
+  telefono: String
 }
 
 type Statsequipo @model @auth(rules: [{allow: public}]) {
@@ -192,4 +221,5 @@ type Managers @model @auth(rules: [{allow: public}]) {
   usuario: String
   nombre: String
   idtorneo: ID
-} 
+}
+ 

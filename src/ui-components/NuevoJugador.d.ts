@@ -67,6 +67,7 @@ export declare type NuevoJugadorInputValues = {
     beipitchervelmax?: number;
     beipitchervelprom?: number;
     telefono?: string;
+    beilanzamientos?: string;
 };
 export declare type NuevoJugadorValidationValues = {
     iddeporte?: ValidationFunction<string>;
@@ -114,6 +115,7 @@ export declare type NuevoJugadorValidationValues = {
     beipitchervelmax?: ValidationFunction<number>;
     beipitchervelprom?: ValidationFunction<number>;
     telefono?: ValidationFunction<string>;
+    beilanzamientos?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NuevoJugadorOverridesProps = {
@@ -163,6 +165,7 @@ export declare type NuevoJugadorOverridesProps = {
     beipitchervelmax?: PrimitiveOverrideProps<TextFieldProps>;
     beipitchervelprom?: PrimitiveOverrideProps<TextFieldProps>;
     telefono?: PrimitiveOverrideProps<TextFieldProps>;
+    beilanzamientos?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type NuevoJugadorProps = React.PropsWithChildren<{
     overrides?: NuevoJugadorOverridesProps | undefined | null;

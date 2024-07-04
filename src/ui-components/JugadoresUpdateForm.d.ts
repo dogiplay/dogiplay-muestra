@@ -73,6 +73,7 @@ export declare type JugadoresUpdateFormInputValues = {
     beipitchervelmax?: number;
     beipitchervelprom?: number;
     telefono?: string;
+    beilanzamientos?: string;
 };
 export declare type JugadoresUpdateFormValidationValues = {
     iddeporte?: ValidationFunction<string>;
@@ -125,6 +126,7 @@ export declare type JugadoresUpdateFormValidationValues = {
     beipitchervelmax?: ValidationFunction<number>;
     beipitchervelprom?: ValidationFunction<number>;
     telefono?: ValidationFunction<string>;
+    beilanzamientos?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type JugadoresUpdateFormOverridesProps = {
@@ -179,6 +181,7 @@ export declare type JugadoresUpdateFormOverridesProps = {
     beipitchervelmax?: PrimitiveOverrideProps<TextFieldProps>;
     beipitchervelprom?: PrimitiveOverrideProps<TextFieldProps>;
     telefono?: PrimitiveOverrideProps<TextFieldProps>;
+    beilanzamientos?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type JugadoresUpdateFormProps = React.PropsWithChildren<{
     overrides?: JugadoresUpdateFormOverridesProps | undefined | null;

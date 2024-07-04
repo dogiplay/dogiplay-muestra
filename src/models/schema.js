@@ -1,5 +1,211 @@
 export const schema = {
     "models": {
+        "Atletas": {
+            "name": "Atletas",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "nombre": {
+                    "name": "nombre",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "foto": {
+                    "name": "foto",
+                    "isArray": false,
+                    "type": "AWSURL",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "equipoclub": {
+                    "name": "equipoclub",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "disciplina": {
+                    "name": "disciplina",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "edad": {
+                    "name": "edad",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "recordActual": {
+                    "name": "recordActual",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "pais": {
+                    "name": "pais",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ciudad": {
+                    "name": "ciudad",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "telefono": {
+                    "name": "telefono",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "categoria": {
+                    "name": "categoria",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio2": {
+                    "name": "espacio2",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio1": {
+                    "name": "espacio1",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio4": {
+                    "name": "espacio4",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio5": {
+                    "name": "espacio5",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio3": {
+                    "name": "espacio3",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "especialidad": {
+                    "name": "especialidad",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "recordespecialidad": {
+                    "name": "recordespecialidad",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "estado": {
+                    "name": "estado",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "peso": {
+                    "name": "peso",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio6fiscul": {
+                    "name": "espacio6fiscul",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio7fiscul": {
+                    "name": "espacio7fiscul",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "espacio8fiscul": {
+                    "name": "espacio8fiscul",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Atletas",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Campeonatos": {
             "name": "Campeonatos",
             "fields": {
@@ -646,6 +852,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "beilanzamientos": {
+                    "name": "beilanzamientos",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -935,6 +1148,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "pais": {
+                    "name": "pais",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "estado": {
                     "name": "estado",
                     "isArray": false,
@@ -944,13 +1164,6 @@ export const schema = {
                 },
                 "municipio": {
                     "name": "municipio",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "telefono": {
-                    "name": "telefono",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -979,6 +1192,20 @@ export const schema = {
                 },
                 "categoria": {
                     "name": "categoria",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ciudad": {
+                    "name": "ciudad",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "telefono": {
+                    "name": "telefono",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -1616,5 +1843,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "67bac7614ae4355c1cefa967d3aac6f4"
+    "version": "9582727bcff77174f081a4041fa019f5"
 };

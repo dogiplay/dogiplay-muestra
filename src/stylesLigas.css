@@ -10,7 +10,7 @@ padding: 0px;
 
 .grid-layout{
     display:grid;
-    grid-template-rows:  5px 400px 400px 30px 500px 30px 500px;
+    grid-template-rows:  30px 590px 30px 590px 20px 500px 1000px 370px 300px 500px 600px;
     width: 100%;
     background-color: rgb(32, 8, 77);
     padding: 1px;
@@ -19,7 +19,7 @@ padding: 0px;
   }
 
   .contenedor100{
-    margin-left: 15px;
+    margin-left: 35px;
     display:grid;
     
   }

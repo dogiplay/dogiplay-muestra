@@ -67,6 +67,7 @@ export default function NuevoJugador(props) {
     beipitchervelmax: "",
     beipitchervelprom: "",
     telefono: "",
+    beilanzamientos: "",
   };
   const [iddeporte, setIddeporte] = React.useState(initialValues.iddeporte);
   const [idequipo, setIdequipo] = React.useState(initialValues.idequipo);
@@ -147,6 +148,9 @@ export default function NuevoJugador(props) {
     initialValues.beipitchervelprom
   );
   const [telefono, setTelefono] = React.useState(initialValues.telefono);
+  const [beilanzamientos, setBeilanzamientos] = React.useState(
+    initialValues.beilanzamientos
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setIddeporte(initialValues.iddeporte);
@@ -194,6 +198,7 @@ export default function NuevoJugador(props) {
     setBeipitchervelmax(initialValues.beipitchervelmax);
     setBeipitchervelprom(initialValues.beipitchervelprom);
     setTelefono(initialValues.telefono);
+    setBeilanzamientos(initialValues.beilanzamientos);
     setErrors({});
   };
   const validations = {
@@ -242,6 +247,7 @@ export default function NuevoJugador(props) {
     beipitchervelmax: [],
     beipitchervelprom: [],
     telefono: [],
+    beilanzamientos: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -314,6 +320,7 @@ export default function NuevoJugador(props) {
           beipitchervelmax,
           beipitchervelprom,
           telefono,
+          beilanzamientos,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -413,6 +420,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.iddeporte ?? value;
@@ -481,6 +489,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.idequipo ?? value;
@@ -549,6 +558,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -617,6 +627,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.idjugador ?? value;
@@ -685,6 +696,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.idtorneo ?? value;
@@ -753,6 +765,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.deporte ?? value;
@@ -821,6 +834,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.user ?? value;
@@ -889,6 +903,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.perfil ?? value;
@@ -957,6 +972,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.posicion ?? value;
@@ -1029,6 +1045,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -1101,6 +1118,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.numero ?? value;
@@ -1169,6 +1187,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.equipo ?? value;
@@ -1237,6 +1256,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -1305,6 +1325,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.alias ?? value;
@@ -1377,6 +1398,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beiponches ?? value;
@@ -1449,6 +1471,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerashechas ?? value;
@@ -1523,6 +1546,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerasproducid ?? value;
@@ -1597,6 +1621,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beihr ?? value;
@@ -1669,6 +1694,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beihits ?? value;
@@ -1741,6 +1767,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beifly ?? value;
@@ -1813,6 +1840,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beirolas ?? value;
@@ -1885,6 +1913,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beiporcentajebateo ?? value;
@@ -1959,6 +1988,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.mvp ?? value;
@@ -2031,6 +2061,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.futgoleadorsemana ?? value;
@@ -2105,6 +2136,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitentradaslanzadas ?? value;
@@ -2179,6 +2211,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitcarreraslimpias ?? value;
@@ -2253,6 +2286,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipithitstotales ?? value;
@@ -2327,6 +2361,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitponchestotales ?? value;
@@ -2401,6 +2436,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitera ?? value;
@@ -2473,6 +2509,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosganados ?? value;
@@ -2547,6 +2584,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosperdidos ?? value;
@@ -2617,6 +2655,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.clave_liga ?? value;
@@ -2689,6 +2728,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.boxajecombates ?? value;
@@ -2761,6 +2801,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.boxajetriunfos ?? value;
@@ -2833,6 +2874,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.boxajederrotas ?? value;
@@ -2905,6 +2947,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.boxajeempates ?? value;
@@ -2977,6 +3020,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.boxKO ?? value;
@@ -3045,6 +3089,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.boxgimnasio ?? value;
@@ -3113,6 +3158,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.pais ?? value;
@@ -3181,6 +3227,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.ciudad ?? value;
@@ -3249,6 +3296,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.categoria ?? value;
@@ -3321,6 +3369,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.ajedrezelo ?? value;
@@ -3393,6 +3442,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax: value,
               beipitchervelprom,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitchervelmax ?? value;
@@ -3465,6 +3515,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom: value,
               telefono,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.beipitchervelprom ?? value;
@@ -3535,6 +3586,7 @@ export default function NuevoJugador(props) {
               beipitchervelmax,
               beipitchervelprom,
               telefono: value,
+              beilanzamientos,
             };
             const result = onChange(modelFields);
             value = result?.telefono ?? value;
@@ -3548,6 +3600,75 @@ export default function NuevoJugador(props) {
         errorMessage={errors.telefono?.errorMessage}
         hasError={errors.telefono?.hasError}
         {...getOverrideProps(overrides, "telefono")}
+      ></TextField>
+      <TextField
+        label="Beilanzamientos"
+        isRequired={false}
+        isReadOnly={false}
+        value={beilanzamientos}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              beiponches,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiporcentajebateo,
+              mvp,
+              futgoleadorsemana,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+              beilanzamientos: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.beilanzamientos ?? value;
+          }
+          if (errors.beilanzamientos?.hasError) {
+            runValidationTasks("beilanzamientos", value);
+          }
+          setBeilanzamientos(value);
+        }}
+        onBlur={() => runValidationTasks("beilanzamientos", beilanzamientos)}
+        errorMessage={errors.beilanzamientos?.errorMessage}
+        hasError={errors.beilanzamientos?.hasError}
+        {...getOverrideProps(overrides, "beilanzamientos")}
       ></TextField>
       <Flex
         justifyContent="space-between"

@@ -29,13 +29,15 @@ export default function LigasUpdateForm(props) {
     foto: "",
     descripcion: "",
     nombre: "",
+    pais: "",
     estado: "",
     municipio: "",
-    telefono: "",
     equipos: "",
     presidente: "",
     deporte: "",
     categoria: "",
+    ciudad: "",
+    telefono: "",
   };
   const [idliga, setIdliga] = React.useState(initialValues.idliga);
   const [idpresidente, setIdpresidente] = React.useState(
@@ -47,13 +49,15 @@ export default function LigasUpdateForm(props) {
     initialValues.descripcion
   );
   const [nombre, setNombre] = React.useState(initialValues.nombre);
+  const [pais, setPais] = React.useState(initialValues.pais);
   const [estado, setEstado] = React.useState(initialValues.estado);
   const [municipio, setMunicipio] = React.useState(initialValues.municipio);
-  const [telefono, setTelefono] = React.useState(initialValues.telefono);
   const [equipos, setEquipos] = React.useState(initialValues.equipos);
   const [presidente, setPresidente] = React.useState(initialValues.presidente);
   const [deporte, setDeporte] = React.useState(initialValues.deporte);
   const [categoria, setCategoria] = React.useState(initialValues.categoria);
+  const [ciudad, setCiudad] = React.useState(initialValues.ciudad);
+  const [telefono, setTelefono] = React.useState(initialValues.telefono);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = ligasRecord
@@ -65,13 +69,15 @@ export default function LigasUpdateForm(props) {
     setFoto(cleanValues.foto);
     setDescripcion(cleanValues.descripcion);
     setNombre(cleanValues.nombre);
+    setPais(cleanValues.pais);
     setEstado(cleanValues.estado);
     setMunicipio(cleanValues.municipio);
-    setTelefono(cleanValues.telefono);
     setEquipos(cleanValues.equipos);
     setPresidente(cleanValues.presidente);
     setDeporte(cleanValues.deporte);
     setCategoria(cleanValues.categoria);
+    setCiudad(cleanValues.ciudad);
+    setTelefono(cleanValues.telefono);
     setErrors({});
   };
   const [ligasRecord, setLigasRecord] = React.useState(ligasModelProp);
@@ -92,13 +98,15 @@ export default function LigasUpdateForm(props) {
     foto: [{ type: "URL" }],
     descripcion: [],
     nombre: [],
+    pais: [],
     estado: [],
     municipio: [],
-    telefono: [],
     equipos: [],
     presidente: [],
     deporte: [],
     categoria: [],
+    ciudad: [],
+    telefono: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -132,13 +140,15 @@ export default function LigasUpdateForm(props) {
           foto,
           descripcion,
           nombre,
+          pais,
           estado,
           municipio,
-          telefono,
           equipos,
           presidente,
           deporte,
           categoria,
+          ciudad,
+          telefono,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -200,13 +210,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.idliga ?? value;
@@ -236,13 +248,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.idpresidente ?? value;
@@ -272,13 +286,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.clave ?? value;
@@ -308,13 +324,15 @@ export default function LigasUpdateForm(props) {
               foto: value,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -344,13 +362,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion: value,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.descripcion ?? value;
@@ -380,13 +400,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre: value,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -400,6 +422,44 @@ export default function LigasUpdateForm(props) {
         errorMessage={errors.nombre?.errorMessage}
         hasError={errors.nombre?.hasError}
         {...getOverrideProps(overrides, "nombre")}
+      ></TextField>
+      <TextField
+        label="Pais"
+        isRequired={false}
+        isReadOnly={false}
+        value={pais}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              idliga,
+              idpresidente,
+              clave,
+              foto,
+              descripcion,
+              nombre,
+              pais: value,
+              estado,
+              municipio,
+              equipos,
+              presidente,
+              deporte,
+              categoria,
+              ciudad,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.pais ?? value;
+          }
+          if (errors.pais?.hasError) {
+            runValidationTasks("pais", value);
+          }
+          setPais(value);
+        }}
+        onBlur={() => runValidationTasks("pais", pais)}
+        errorMessage={errors.pais?.errorMessage}
+        hasError={errors.pais?.hasError}
+        {...getOverrideProps(overrides, "pais")}
       ></TextField>
       <TextField
         label="Estado"
@@ -416,13 +476,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado: value,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.estado ?? value;
@@ -452,13 +514,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio: value,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.municipio ?? value;
@@ -472,42 +536,6 @@ export default function LigasUpdateForm(props) {
         errorMessage={errors.municipio?.errorMessage}
         hasError={errors.municipio?.hasError}
         {...getOverrideProps(overrides, "municipio")}
-      ></TextField>
-      <TextField
-        label="Telefono"
-        isRequired={false}
-        isReadOnly={false}
-        value={telefono}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              idliga,
-              idpresidente,
-              clave,
-              foto,
-              descripcion,
-              nombre,
-              estado,
-              municipio,
-              telefono: value,
-              equipos,
-              presidente,
-              deporte,
-              categoria,
-            };
-            const result = onChange(modelFields);
-            value = result?.telefono ?? value;
-          }
-          if (errors.telefono?.hasError) {
-            runValidationTasks("telefono", value);
-          }
-          setTelefono(value);
-        }}
-        onBlur={() => runValidationTasks("telefono", telefono)}
-        errorMessage={errors.telefono?.errorMessage}
-        hasError={errors.telefono?.hasError}
-        {...getOverrideProps(overrides, "telefono")}
       ></TextField>
       <TextField
         label="Equipos"
@@ -528,13 +556,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos: value,
               presidente,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.equipos ?? value;
@@ -564,13 +594,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente: value,
               deporte,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.presidente ?? value;
@@ -600,13 +632,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte: value,
               categoria,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.deporte ?? value;
@@ -636,13 +670,15 @@ export default function LigasUpdateForm(props) {
               foto,
               descripcion,
               nombre,
+              pais,
               estado,
               municipio,
-              telefono,
               equipos,
               presidente,
               deporte,
               categoria: value,
+              ciudad,
+              telefono,
             };
             const result = onChange(modelFields);
             value = result?.categoria ?? value;
@@ -656,6 +692,82 @@ export default function LigasUpdateForm(props) {
         errorMessage={errors.categoria?.errorMessage}
         hasError={errors.categoria?.hasError}
         {...getOverrideProps(overrides, "categoria")}
+      ></TextField>
+      <TextField
+        label="Ciudad"
+        isRequired={false}
+        isReadOnly={false}
+        value={ciudad}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              idliga,
+              idpresidente,
+              clave,
+              foto,
+              descripcion,
+              nombre,
+              pais,
+              estado,
+              municipio,
+              equipos,
+              presidente,
+              deporte,
+              categoria,
+              ciudad: value,
+              telefono,
+            };
+            const result = onChange(modelFields);
+            value = result?.ciudad ?? value;
+          }
+          if (errors.ciudad?.hasError) {
+            runValidationTasks("ciudad", value);
+          }
+          setCiudad(value);
+        }}
+        onBlur={() => runValidationTasks("ciudad", ciudad)}
+        errorMessage={errors.ciudad?.errorMessage}
+        hasError={errors.ciudad?.hasError}
+        {...getOverrideProps(overrides, "ciudad")}
+      ></TextField>
+      <TextField
+        label="Telefono"
+        isRequired={false}
+        isReadOnly={false}
+        value={telefono}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              idliga,
+              idpresidente,
+              clave,
+              foto,
+              descripcion,
+              nombre,
+              pais,
+              estado,
+              municipio,
+              equipos,
+              presidente,
+              deporte,
+              categoria,
+              ciudad,
+              telefono: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.telefono ?? value;
+          }
+          if (errors.telefono?.hasError) {
+            runValidationTasks("telefono", value);
+          }
+          setTelefono(value);
+        }}
+        onBlur={() => runValidationTasks("telefono", telefono)}
+        errorMessage={errors.telefono?.errorMessage}
+        hasError={errors.telefono?.hasError}
+        {...getOverrideProps(overrides, "telefono")}
       ></TextField>
       <Flex
         justifyContent="space-between"

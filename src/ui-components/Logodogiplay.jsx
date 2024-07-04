@@ -25,7 +25,7 @@ export default function Logodogiplay(props) {
     >
       <View
         padding="0px 0px 0px 0px"
-        width="261px"
+        width="265px"
         height="65px"
         display="block"
         gap="unset"
@@ -34,12 +34,12 @@ export default function Logodogiplay(props) {
         position="absolute"
         top="0%"
         bottom="0%"
-        left="-4.53%"
-        right="-2.88%"
+        left="-3.29%"
+        right="-5.76%"
         {...getOverrideProps(overrides, "Group 4")}
       >
         <View
-          width="261px"
+          width="265px"
           height="65px"
           display="block"
           gap="unset"
@@ -57,8 +57,8 @@ export default function Logodogiplay(props) {
       </View>
       <View
         padding="0px 0px 0px 0px"
-        width="250.22px"
-        height="60px"
+        width="253.22px"
+        height="59px"
         display="block"
         gap="unset"
         alignItems="unset"
@@ -71,22 +71,22 @@ export default function Logodogiplay(props) {
         <View
           padding="0px 0px 0px 0px"
           width="204.22px"
-          height="58px"
+          height="57px"
           display="block"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
           position="absolute"
-          top="3.33%"
+          top="3.39%"
           bottom="0%"
-          left="18.38%"
+          left="19.35%"
           right="0%"
           {...getOverrideProps(overrides, "Group 3")}
         >
           <View
             padding="0px 0px 0px 0px"
             width="204.22px"
-            height="58px"
+            height="57px"
             display="block"
             gap="unset"
             alignItems="unset"
@@ -115,13 +115,13 @@ export default function Logodogiplay(props) {
               alignItems="unset"
               position="absolute"
               top="0%"
-              bottom="39.66%"
-              left="6.86%"
-              right="19.97%"
+              bottom="38.6%"
+              left="5.39%"
+              right="21.44%"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="DogiPLAY"
-              {...getOverrideProps(overrides, "DogiPLAY")}
+              children="Dogiplay"
+              {...getOverrideProps(overrides, "Dogiplay")}
             ></Text>
             <Text
               fontFamily="Inter"
@@ -139,7 +139,7 @@ export default function Logodogiplay(props) {
               gap="unset"
               alignItems="unset"
               position="absolute"
-              top="65.52%"
+              top="64.91%"
               bottom="0%"
               left="0%"
               right="0%"
@@ -159,10 +159,10 @@ export default function Logodogiplay(props) {
           alignItems="unset"
           justifyContent="unset"
           position="absolute"
-          top="15%"
-          bottom="13.79%"
+          top="15.25%"
+          bottom="12.33%"
           left="0%"
-          right="84.2%"
+          right="84.39%"
           {...getOverrideProps(overrides, "Group 12")}
         >
           <Icon
@@ -779,7 +779,7 @@ export default function Logodogiplay(props) {
           justifyContent="unset"
           position="absolute"
           top="0px"
-          left="199px"
+          left="189px"
           {...getOverrideProps(overrides, "Group 15")}
         >
           <View
@@ -877,7 +877,7 @@ export default function Logodogiplay(props) {
           minX: 0,
           minY: 0,
           width: 15.106025343706847,
-          height: 15.106025343706847,
+          height: 15.106025343706733,
         }}
         paths={[
           {
@@ -958,7 +958,7 @@ export default function Logodogiplay(props) {
           minX: 0,
           minY: 0,
           width: 15.106025343706847,
-          height: 15.106025343706847,
+          height: 15.106025343706733,
         }}
         paths={[
           {
@@ -985,7 +985,7 @@ export default function Logodogiplay(props) {
           minX: 0,
           minY: 0,
           width: 20.24900132843186,
-          height: 20.249001328431973,
+          height: 20.24900132843186,
         }}
         paths={[
           {
@@ -1012,7 +1012,7 @@ export default function Logodogiplay(props) {
           minX: 0,
           minY: 0,
           width: 19.097361670105897,
-          height: 19.09736167010601,
+          height: 19.097361670105784,
         }}
         paths={[
           {

@@ -355,6 +355,31 @@ export default function Cardjugadorfutbol(props) {
         children={jugadores?.futgoleadorsemana}
         {...getOverrideProps(overrides, "4")}
       ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(253,249,249,1)"
+        lineHeight="18px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="55.94%"
+        bottom="39.6%"
+        left="34.83%"
+        right="34.83%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="dogiplay.com"
+        {...getOverrideProps(overrides, "dogiplay.com")}
+      ></Text>
     </View>
   );
 }

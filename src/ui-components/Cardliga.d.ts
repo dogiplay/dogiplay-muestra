@@ -19,26 +19,19 @@ export declare type Variant = {
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type CardligaOverridesProps = {
-    "30"?: PrimitiveOverrideProps<TextProps>;
-    "3117436503"?: PrimitiveOverrideProps<TextProps>;
     Cardliga?: PrimitiveOverrideProps<ViewProps>;
-    Header?: PrimitiveOverrideProps<ViewProps>;
-    "LIGA MUNICIPAL DE FUTBOL"?: PrimitiveOverrideProps<TextProps>;
-    " Subheading"?: PrimitiveOverrideProps<TextProps>;
-    "Product name52677"?: PrimitiveOverrideProps<TextProps>;
-    "Product name1921953"?: PrimitiveOverrideProps<TextProps>;
-    "Product name1921950"?: PrimitiveOverrideProps<TextProps>;
-    "Product name1921949"?: PrimitiveOverrideProps<TextProps>;
     logoequipo?: PrimitiveOverrideProps<ImageProps>;
-    Nayarit?: PrimitiveOverrideProps<TextProps>;
-    Xalisco?: PrimitiveOverrideProps<TextProps>;
-    FUTBOL?: PrimitiveOverrideProps<TextProps>;
-    Contacto?: PrimitiveOverrideProps<TextProps>;
+    "Product name"?: PrimitiveOverrideProps<TextProps>;
+    "Contacto: 311 1122111"?: PrimitiveOverrideProps<TextProps>;
+    "Estado: Nayarit"?: PrimitiveOverrideProps<TextProps>;
+    "Pa\u00EDs: M\u00E9xico"?: PrimitiveOverrideProps<TextProps>;
+    "Ciudad: Xalisco"?: PrimitiveOverrideProps<TextProps>;
+    "Clave: AMEMEXNAYFUT001"?: PrimitiveOverrideProps<TextProps>;
+    "Categor\u00EDa: Primera"?: PrimitiveOverrideProps<TextProps>;
     buttonLiga?: PrimitiveOverrideProps<FlexProps>;
     "Ver liga"?: PrimitiveOverrideProps<TextProps>;
-    Deporte?: PrimitiveOverrideProps<TextProps>;
-    Categoria?: PrimitiveOverrideProps<TextProps>;
-    Primera?: PrimitiveOverrideProps<TextProps>;
+    Header?: PrimitiveOverrideProps<ViewProps>;
+    "LIGA MUNICIPAL DE FUTBOL"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardligaProps = React.PropsWithChildren<Partial<ViewProps> & {
     ligas?: Ligas;

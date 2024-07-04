@@ -36,6 +36,7 @@ export declare type CardjugadorfutbolOverridesProps = {
     "Rectangle 19"?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 20"?: PrimitiveOverrideProps<ViewProps>;
     "veces goleador de la semana"?: PrimitiveOverrideProps<TextProps>;
+    "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardjugadorfutbolProps = React.PropsWithChildren<Partial<ViewProps> & {
     jugadores?: Jugadores;

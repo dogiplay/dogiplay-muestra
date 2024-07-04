@@ -41,7 +41,7 @@ export default function HrGlobalCollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable={true}
+      isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Buscar..."
       itemsPerPage={30}

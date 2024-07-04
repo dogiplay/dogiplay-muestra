@@ -6,29 +6,30 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Partidos as Partidos0 } from "../models";
+import { Atletas } from "../models";
 import {
   createDataStorePredicate,
   getOverrideProps,
   useDataStoreBinding,
 } from "./utils";
 import { SortDirection } from "@aws-amplify/datastore";
-import Partidos from "./Partidos";
+import CardAtletismo from "./CardAtletismo";
 import { Collection } from "@aws-amplify/ui-react";
-export default function PartidosCollectionBeislLuno(props) {
-  const miclave = localStorage.getItem('miclave');
+export default function CardAtletismoCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsFilterObj = {
-    field: "clave_liga",
-    operand: miclave,
-    operator: "eq",
+    field: "disciplina",
+    operand: "fisicoculturismo",
+    operator: "ne",
   };
   const itemsFilter = createDataStorePredicate(itemsFilterObj);
-  const itemsPagination = { sort: (s) => s.jornada(SortDirection.ASCENDING) };
+  const itemsPagination = {
+    sort: (s) => s.recordespecialidad(SortDirection.ASCENDING),
+  };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Partidos0,
+    model: Atletas,
     criteria: itemsFilter,
     pagination: itemsPagination,
   }).items;
@@ -41,23 +42,25 @@ export default function PartidosCollectionBeislLuno(props) {
   }, [itemsProp, itemsDataStore]);
   return (
     <Collection
-      type="list"
+      type="grid"
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Buscar..."
       itemsPerPage={15}
-      direction="column"
-      justifyContent="left"
+      templateColumns="1fr 1fr 1fr 1fr 1fr"
+      autoFlow="row"
+      alignItems="stretch"
+      justifyContent="stretch"
       items={items || []}
-      {...getOverrideProps(overrides, "PartidosCollectionBeislLuno")}
+      {...getOverrideProps(overrides, "CardAtletismoCollection")}
       {...rest}
     >
       {(item, index) => (
-        <Partidos
-          partidos={item}
+        <CardAtletismo
+          atletas={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></Partidos>
+        ></CardAtletismo>
       )}
     </Collection>
   );

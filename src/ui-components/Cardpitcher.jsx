@@ -9,11 +9,11 @@ import * as React from "react";
 import { getOverrideProps } from "./utils";
 import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function Cardpitcher(props) {
-  const { jugadores, statsJugadores, overrides, ...rest } = props;
+  const { statsJugadores, jugadores, overrides, ...rest } = props;
   return (
     <View
       width="260px"
-      height="422px"
+      height="478px"
       display="block"
       gap="unset"
       alignItems="unset"
@@ -25,7 +25,7 @@ export default function Cardpitcher(props) {
     >
       <View
         width="260px"
-        height="422px"
+        height="478px"
         display="block"
         gap="unset"
         alignItems="unset"
@@ -41,20 +41,6 @@ export default function Cardpitcher(props) {
         backgroundColor="rgba(255,255,255,1)"
         {...getOverrideProps(overrides, "cardjugadorbeisbol")}
       >
-        <View
-          width="260px"
-          height="32px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          position="absolute"
-          top="446px"
-          left="0px"
-          padding="0px 0px 0px 0px"
-          backgroundColor="rgba(9,8,8,1)"
-          {...getOverrideProps(overrides, "Rectangle 9")}
-        ></View>
         <Flex
           gap="8px"
           direction="row"
@@ -78,12 +64,11 @@ export default function Cardpitcher(props) {
             justifyContent="unset"
             shrink="0"
             position="relative"
-            border="2px SOLID rgba(243,219,0,1)"
-            borderRadius="11px"
+            border="2px SOLID rgba(0,82,141,1)"
             padding="0px 0px 0px 0px"
             objectFit="cover"
             src={jugadores?.foto}
-            {...getOverrideProps(overrides, "player1 (1) 1")}
+            {...getOverrideProps(overrides, "images 2")}
           ></Image>
         </Flex>
         <View
@@ -98,33 +83,33 @@ export default function Cardpitcher(props) {
           top="9px"
           left="9px"
           border="1px SOLID rgba(243,219,0,1)"
-          borderRadius="9px"
+          borderRadius="2px"
           padding="0px 0px 0px 0px"
-          backgroundColor="rgba(0,0,0,1)"
+          backgroundColor="rgba(0,82,141,1)"
           {...getOverrideProps(overrides, "Header")}
         >
           <Text
             fontFamily="Inter"
-            fontSize="22px"
+            fontSize="15px"
             fontWeight="600"
             color="rgba(255,255,255,1)"
-            lineHeight="30.799999237060547px"
+            lineHeight="21px"
             textAlign="center"
             display="block"
             direction="column"
             justifyContent="unset"
-            letterSpacing="-0.29px"
-            width="unset"
+            letterSpacing="-0.15px"
+            width="217px"
             height="unset"
             gap="unset"
             alignItems="unset"
             position="absolute"
-            top="calc(50% - 15.5px - 2.5px)"
-            left="calc(50% - 72.5px - 0.5px)"
+            top="calc(50% - 10.5px - 0.5px)"
+            left="calc(50% - 108.5px - -2.5px)"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children={jugadores?.nombre}
-            {...getOverrideProps(overrides, "Steven Virgen")}
+            {...getOverrideProps(overrides, "Oliver Torres el Gato")}
           ></Text>
         </View>
         <Flex
@@ -158,8 +143,8 @@ export default function Cardpitcher(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Posición: PITCHER"
-            {...getOverrideProps(overrides, "Product name2182710")}
+            children="PITCHER"
+            {...getOverrideProps(overrides, "Product name410114")}
           ></Text>
         </Flex>
         <Text
@@ -181,8 +166,8 @@ export default function Cardpitcher(props) {
           left="6px"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={jugadores?.equipo}
-          {...getOverrideProps(overrides, "Product name2182711")}
+          children={`${"Equipo: "}${jugadores?.equipo}`}
+          {...getOverrideProps(overrides, "Product name410116")}
         ></Text>
         <View
           width="260px"
@@ -195,14 +180,14 @@ export default function Cardpitcher(props) {
           top="348px"
           left="0px"
           padding="0px 0px 0px 0px"
-          backgroundColor="rgba(0,0,0,1)"
+          backgroundColor="rgba(243,219,0,1)"
           {...getOverrideProps(overrides, "Rectangle 77")}
         ></View>
         <Text
           fontFamily="Inter"
           fontSize="10px"
           fontWeight="700"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
           lineHeight="15px"
           textAlign="left"
           display="block"
@@ -218,28 +203,13 @@ export default function Cardpitcher(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="VELOCIDAD MAXIMA DE PITCHEO"
-          {...getOverrideProps(overrides, " Subheading2182712")}
+          {...getOverrideProps(overrides, " Subheading410118")}
         ></Text>
-        <View
-          width="188px"
-          height="94px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          position="absolute"
-          top="208px"
-          left="38px"
-          borderRadius="7px"
-          padding="0px 0px 0px 0px"
-          backgroundColor="rgba(52,37,37,0.6)"
-          {...getOverrideProps(overrides, "Rectangle 10")}
-        ></View>
         <Text
           fontFamily="Inter"
           fontSize="11px"
           fontWeight="700"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
           lineHeight="16.5px"
           textAlign="center"
           display="block"
@@ -251,11 +221,11 @@ export default function Cardpitcher(props) {
           alignItems="unset"
           position="absolute"
           top="346px"
-          left="199px"
+          left="202px"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={`${jugadores?.beipitchervelmax}${"MPH"}`}
-          {...getOverrideProps(overrides, "100MPH")}
+          children={`${jugadores?.beipitchervelmax}${" Mph"}`}
+          {...getOverrideProps(overrides, "90MPH")}
         ></Text>
         <View
           width="260px"
@@ -267,15 +237,16 @@ export default function Cardpitcher(props) {
           position="absolute"
           top="369px"
           left="0px"
+          border="1px SOLID rgba(0,0,0,1)"
           padding="0px 0px 0px 0px"
-          backgroundColor="rgba(0,0,0,1)"
+          backgroundColor="rgba(243,219,0,1)"
           {...getOverrideProps(overrides, "Rectangle 78")}
         ></View>
         <Text
           fontFamily="Inter"
           fontSize="12px"
           fontWeight="700"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
           lineHeight="18px"
           textAlign="center"
           display="block"
@@ -290,8 +261,8 @@ export default function Cardpitcher(props) {
           left="203px"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={`${jugadores?.beipitchervelprom}${"MPH"}`}
-          {...getOverrideProps(overrides, "90MPH")}
+          children={`${jugadores?.beipitchervelprom}${" Mph"}`}
+          {...getOverrideProps(overrides, "88MPH")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -299,21 +270,21 @@ export default function Cardpitcher(props) {
           fontWeight="700"
           color="rgba(0,0,0,1)"
           lineHeight="15px"
-          textAlign="center"
+          textAlign="left"
           display="block"
           direction="column"
           justifyContent="unset"
-          width="257px"
+          width="242px"
           height="unset"
           gap="unset"
           alignItems="unset"
           position="absolute"
-          top="387px"
-          left="0px"
+          top="440px"
+          left="8px"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={jugadores?.ciudad}
-          {...getOverrideProps(overrides, "San Diego California, EUA")}
+          children={`${"Pais: "}${jugadores?.pais}`}
+          {...getOverrideProps(overrides, "Pais: M\u00E9xico")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -321,27 +292,49 @@ export default function Cardpitcher(props) {
           fontWeight="700"
           color="rgba(0,0,0,1)"
           lineHeight="15px"
-          textAlign="center"
+          textAlign="left"
           display="block"
           direction="column"
           justifyContent="unset"
-          width="257px"
+          width="242px"
           height="unset"
           gap="unset"
           alignItems="unset"
           position="absolute"
-          top="402px"
-          left="0px"
+          top="424px"
+          left="8px"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={jugadores?.telefono}
-          {...getOverrideProps(overrides, "52 311 7436502")}
+          children={`${"Edad:"}${jugadores?.edad}`}
+          {...getOverrideProps(overrides, "Edad: 16 a\u00F1os")}
         ></Text>
         <Text
           fontFamily="Inter"
           fontSize="10px"
           fontWeight="700"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
+          lineHeight="15px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="242px"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          position="absolute"
+          top="456px"
+          left="8px"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={`${"Ciudad: "}${jugadores?.ciudad}`}
+          {...getOverrideProps(overrides, "Ciudad: San Diego California")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="10px"
+          fontWeight="700"
+          color="rgba(0,0,0,1)"
           lineHeight="14px"
           textAlign="center"
           display="block"
@@ -357,7 +350,90 @@ export default function Cardpitcher(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="VELOCIDAD PROMEDIO DE PITCHEO"
-          {...getOverrideProps(overrides, " Subheading2182713")}
+          {...getOverrideProps(overrides, " Subheading410128")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="12px"
+          fontWeight="700"
+          color="rgba(0,0,0,1)"
+          lineHeight="18px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="242px"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          position="absolute"
+          top="391px"
+          left="8px"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={`${"Lanzamientos:"}${jugadores?.beilanzamientos}`}
+          {...getOverrideProps(overrides, "Lanzamientos: Recta y curva")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="12px"
+          fontWeight="900"
+          color="rgba(253,249,249,1)"
+          lineHeight="18px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          letterSpacing="0px"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          position="absolute"
+          top="43px"
+          left="19px"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="dogiplay.com"
+          {...getOverrideProps(overrides, "dogiplay.com")}
+        ></Text>
+        <View
+          width="188px"
+          height="94px"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          position="absolute"
+          top="208px"
+          left="38px"
+          border="1px SOLID rgba(0,82,141,1)"
+          borderRadius="7px"
+          padding="0px 0px 0px 0px"
+          backgroundColor="rgba(52,37,37,0.6)"
+          {...getOverrideProps(overrides, "Rectangle 10")}
+        ></View>
+        <Text
+          fontFamily="Inter"
+          fontSize="10px"
+          fontWeight="700"
+          color="rgba(0,0,0,1)"
+          lineHeight="15px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="242px"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          position="absolute"
+          top="408px"
+          left="8px"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={`${"Telefono: "}${jugadores?.telefono}`}
+          {...getOverrideProps(overrides, "Perfil derecho")}
         ></Text>
       </View>
       <View
@@ -415,11 +491,11 @@ export default function Cardpitcher(props) {
           top="35.06%"
           bottom="50.65%"
           left="20.87%"
-          right="33.91%"
+          right="28.7%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="HIT TOTALES"
-          {...getOverrideProps(overrides, "HIT TOTALES")}
+          children="HITS TOTALES"
+          {...getOverrideProps(overrides, "HITS TOTALES")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -539,7 +615,7 @@ export default function Cardpitcher(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children={jugadores?.beipitentradaslanzadas}
-          {...getOverrideProps(overrides, "242182297")}
+          {...getOverrideProps(overrides, "24")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -562,8 +638,8 @@ export default function Cardpitcher(props) {
           right="82.61%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={jugadores?.beipitcarreraslimpias}
-          {...getOverrideProps(overrides, "242182298")}
+          children={jugadores?.beicarrerashechas}
+          {...getOverrideProps(overrides, "14")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -587,7 +663,7 @@ export default function Cardpitcher(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children={jugadores?.beipithitstotales}
-          {...getOverrideProps(overrides, "242182299")}
+          {...getOverrideProps(overrides, "11")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -611,7 +687,7 @@ export default function Cardpitcher(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children={jugadores?.beipitponchestotales}
-          {...getOverrideProps(overrides, "242182300")}
+          {...getOverrideProps(overrides, "9")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -634,8 +710,8 @@ export default function Cardpitcher(props) {
           right="82.61%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="24"
-          {...getOverrideProps(overrides, "2440299")}
+          children={jugadores?.beipitjuegosganados}
+          {...getOverrideProps(overrides, "16")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -658,8 +734,8 @@ export default function Cardpitcher(props) {
           right="82.61%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="24"
-          {...getOverrideProps(overrides, "24402100")}
+          children={jugadores?.beipitjuegosperdidos}
+          {...getOverrideProps(overrides, "8")}
         ></Text>
       </View>
       <View
@@ -739,7 +815,7 @@ export default function Cardpitcher(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children={jugadores?.beipitera}
-          {...getOverrideProps(overrides, "4")}
+          {...getOverrideProps(overrides, "1.2")}
         ></Text>
       </View>
     </View>

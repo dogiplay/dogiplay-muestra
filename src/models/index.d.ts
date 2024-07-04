@@ -6,6 +6,76 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
+type EagerAtletas = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Atletas, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly foto?: string | null;
+  readonly equipoclub?: string | null;
+  readonly disciplina?: string | null;
+  readonly edad?: number | null;
+  readonly recordActual?: string | null;
+  readonly pais?: string | null;
+  readonly ciudad?: string | null;
+  readonly telefono?: string | null;
+  readonly categoria?: string | null;
+  readonly espacio2?: string | null;
+  readonly espacio1?: string | null;
+  readonly espacio4?: string | null;
+  readonly espacio5?: string | null;
+  readonly espacio3?: string | null;
+  readonly especialidad?: number | null;
+  readonly recordespecialidad?: number | null;
+  readonly estado?: string | null;
+  readonly peso?: string | null;
+  readonly espacio6fiscul?: string | null;
+  readonly espacio7fiscul?: string | null;
+  readonly espacio8fiscul?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyAtletas = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Atletas, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly foto?: string | null;
+  readonly equipoclub?: string | null;
+  readonly disciplina?: string | null;
+  readonly edad?: number | null;
+  readonly recordActual?: string | null;
+  readonly pais?: string | null;
+  readonly ciudad?: string | null;
+  readonly telefono?: string | null;
+  readonly categoria?: string | null;
+  readonly espacio2?: string | null;
+  readonly espacio1?: string | null;
+  readonly espacio4?: string | null;
+  readonly espacio5?: string | null;
+  readonly espacio3?: string | null;
+  readonly especialidad?: number | null;
+  readonly recordespecialidad?: number | null;
+  readonly estado?: string | null;
+  readonly peso?: string | null;
+  readonly espacio6fiscul?: string | null;
+  readonly espacio7fiscul?: string | null;
+  readonly espacio8fiscul?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Atletas = LazyLoading extends LazyLoadingDisabled ? EagerAtletas : LazyAtletas
+
+export declare const Atletas: (new (init: ModelInit<Atletas>) => Atletas) & {
+  copyOf(source: Atletas, mutator: (draft: MutableModel<Atletas>) => MutableModel<Atletas> | void): Atletas;
+}
+
 type EagerCampeonatos = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Campeonatos, 'id'>;
@@ -166,6 +236,7 @@ type EagerJugadores = {
   readonly beipitchervelmax?: number | null;
   readonly beipitchervelprom?: number | null;
   readonly telefono?: string | null;
+  readonly beilanzamientos?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -226,6 +297,7 @@ type LazyJugadores = {
   readonly beipitchervelmax?: number | null;
   readonly beipitchervelprom?: number | null;
   readonly telefono?: string | null;
+  readonly beilanzamientos?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -326,13 +398,15 @@ type EagerLigas = {
   readonly foto?: string | null;
   readonly descripcion?: string | null;
   readonly nombre?: string | null;
+  readonly pais?: string | null;
   readonly estado?: string | null;
   readonly municipio?: string | null;
-  readonly telefono?: string | null;
   readonly equipos?: number | null;
   readonly presidente?: string | null;
   readonly deporte?: string | null;
   readonly categoria?: string | null;
+  readonly ciudad?: string | null;
+  readonly telefono?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -349,13 +423,15 @@ type LazyLigas = {
   readonly foto?: string | null;
   readonly descripcion?: string | null;
   readonly nombre?: string | null;
+  readonly pais?: string | null;
   readonly estado?: string | null;
   readonly municipio?: string | null;
-  readonly telefono?: string | null;
   readonly equipos?: number | null;
   readonly presidente?: string | null;
   readonly deporte?: string | null;
   readonly categoria?: string | null;
+  readonly ciudad?: string | null;
+  readonly telefono?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

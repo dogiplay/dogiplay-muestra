@@ -26,20 +26,6 @@ export default function Cardjugadorbeisbol(props) {
       {...getOverrideProps(overrides, "Cardjugadorbeisbol")}
       {...rest}
     >
-      <View
-        width="260px"
-        height="32px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        position="absolute"
-        top="446px"
-        left="0px"
-        padding="0px 0px 0px 0px"
-        backgroundColor="rgba(9,8,8,1)"
-        {...getOverrideProps(overrides, "Rectangle 9")}
-      ></View>
       <Flex
         gap="5px"
         direction="column"
@@ -76,7 +62,7 @@ export default function Cardjugadorbeisbol(props) {
           justifyContent="unset"
           shrink="0"
           position="relative"
-          border="2px SOLID rgba(243,219,0,1)"
+          border="3px SOLID rgba(243,219,0,1)"
           borderRadius="11px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
@@ -103,22 +89,22 @@ export default function Cardjugadorbeisbol(props) {
       >
         <Text
           fontFamily="Inter"
-          fontSize="22px"
+          fontSize="16px"
           fontWeight="600"
           color="rgba(255,255,255,1)"
-          lineHeight="30.799999237060547px"
+          lineHeight="22.399999618530273px"
           textAlign="center"
           display="block"
           direction="column"
           justifyContent="unset"
-          letterSpacing="-0.29px"
-          width="unset"
+          letterSpacing="-0.17px"
+          width="210px"
           height="unset"
           gap="unset"
           alignItems="unset"
           position="absolute"
-          top="calc(50% - 15.5px - 2.5px)"
-          left="calc(50% - 72.5px - 0.5px)"
+          top="calc(50% - 11px - 1px)"
+          left="calc(50% - 105px - -4px)"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children={jugadores?.nombre}
@@ -371,7 +357,7 @@ export default function Cardjugadorbeisbol(props) {
         gap="3px"
         direction="column"
         width="244px"
-        height="unset"
+        height="174px"
         justifyContent="center"
         alignItems="flex-start"
         position="absolute"
@@ -485,28 +471,6 @@ export default function Cardjugadorbeisbol(props) {
           children={`${"AVG "}${jugadores?.beiporcentajebateo}`}
           {...getOverrideProps(overrides, " Subheading170690")}
         ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="14px"
-          fontWeight="400"
-          color="rgba(0,0,0,1)"
-          lineHeight="19.600000381469727px"
-          textAlign="center"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Alias"
-          {...getOverrideProps(overrides, " Subheading170691")}
-        ></Text>
       </Flex>
       <Text
         fontFamily="Inter"
@@ -554,25 +518,26 @@ export default function Cardjugadorbeisbol(props) {
       ></Text>
       <Text
         fontFamily="Inter"
-        fontSize="20px"
-        fontWeight="600"
-        color="rgba(243,219,0,1)"
-        lineHeight="28px"
-        textAlign="center"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(253,249,249,1)"
+        lineHeight="18px"
+        textAlign="left"
         display="block"
         direction="column"
         justifyContent="unset"
-        width="246px"
-        height="16px"
+        letterSpacing="0px"
+        width="unset"
+        height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="449px"
-        left="7px"
+        top="43px"
+        left="16px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${jugadores?.mvp}${" veces MVP"}`}
-        {...getOverrideProps(overrides, "Product name1841886")}
+        children="dogiplay.com"
+        {...getOverrideProps(overrides, "dogiplay.com")}
       ></Text>
     </View>
   );

@@ -208,7 +208,7 @@ export default function HrGlobal(props) {
         right="42.34%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={jugadores?.futgoles}
+        children={jugadores?.beihr}
         {...getOverrideProps(overrides, "23")}
       ></Text>
     </View>

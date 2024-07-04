@@ -4,11 +4,18 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as AtletasCreateForm } from "./AtletasCreateForm";
+export { default as AtletasUpdateForm } from "./AtletasUpdateForm";
 export { default as Campeonato } from "./Campeonato";
 export { default as CampeonatoCollection } from "./CampeonatoCollection";
 export { default as CampeonatosCreateForm } from "./CampeonatosCreateForm";
 export { default as CampeonatosUpdateForm } from "./CampeonatosUpdateForm";
+export { default as CardAtletismo } from "./CardAtletismo";
+export { default as CardAtletismoCollection } from "./CardAtletismoCollection";
+export { default as CardBasket } from "./CardBasket";
 export { default as CardContacto } from "./CardContacto";
+export { default as CardFisioculturismo } from "./CardFisioculturismo";
+export { default as CardFisioculturismoCollection } from "./CardFisioculturismoCollection";
 export { default as Cardequipo } from "./Cardequipo";
 export { default as CardequipoBeisbolCollection } from "./CardequipoBeisbolCollection";
 export { default as Cardjugadorbeisbol } from "./Cardjugadorbeisbol";
@@ -56,6 +63,7 @@ export { default as PartidosCollectionBeislLuno } from "./PartidosCollectionBeis
 export { default as PartidosUpdateForm } from "./PartidosUpdateForm";
 export { default as Partidosfutbol } from "./Partidosfutbol";
 export { default as PartidosfutbolCollection } from "./PartidosfutbolCollection";
+export { default as PersonajesPelea } from "./PersonajesPelea";
 export { default as PresidentesCreateForm } from "./PresidentesCreateForm";
 export { default as PresidentesUpdateForm } from "./PresidentesUpdateForm";
 export { default as Principal } from "./Principal";
