@@ -876,7 +876,7 @@ export default function Logodogiplay(props) {
         viewBox={{
           minX: 0,
           minY: 0,
-          width: 15.106025343706847,
+          width: 15.106025343706733,
           height: 15.106025343706733,
         }}
         paths={[

@@ -44,6 +44,7 @@ export default function AtletasCreateForm(props) {
     espacio6fiscul: "",
     espacio7fiscul: "",
     espacio8fiscul: "",
+    tipo: "",
   };
   const [nombre, setNombre] = React.useState(initialValues.nombre);
   const [foto, setFoto] = React.useState(initialValues.foto);
@@ -79,6 +80,7 @@ export default function AtletasCreateForm(props) {
   const [espacio8fiscul, setEspacio8fiscul] = React.useState(
     initialValues.espacio8fiscul
   );
+  const [tipo, setTipo] = React.useState(initialValues.tipo);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setNombre(initialValues.nombre);
@@ -103,6 +105,7 @@ export default function AtletasCreateForm(props) {
     setEspacio6fiscul(initialValues.espacio6fiscul);
     setEspacio7fiscul(initialValues.espacio7fiscul);
     setEspacio8fiscul(initialValues.espacio8fiscul);
+    setTipo(initialValues.tipo);
     setErrors({});
   };
   const validations = {
@@ -128,6 +131,7 @@ export default function AtletasCreateForm(props) {
     espacio6fiscul: [],
     espacio7fiscul: [],
     espacio8fiscul: [],
+    tipo: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -177,6 +181,7 @@ export default function AtletasCreateForm(props) {
           espacio6fiscul,
           espacio7fiscul,
           espacio8fiscul,
+          tipo,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -253,6 +258,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -298,6 +304,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -343,6 +350,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.equipoclub ?? value;
@@ -388,6 +396,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.disciplina ?? value;
@@ -437,6 +446,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -482,6 +492,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.recordActual ?? value;
@@ -527,6 +538,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.pais ?? value;
@@ -572,6 +584,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.ciudad ?? value;
@@ -617,6 +630,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.telefono ?? value;
@@ -662,6 +676,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.categoria ?? value;
@@ -707,6 +722,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio2 ?? value;
@@ -752,6 +768,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio1 ?? value;
@@ -797,6 +814,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio4 ?? value;
@@ -842,6 +860,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio5 ?? value;
@@ -887,6 +906,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio3 ?? value;
@@ -936,6 +956,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.especialidad ?? value;
@@ -985,6 +1006,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.recordespecialidad ?? value;
@@ -1032,6 +1054,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.estado ?? value;
@@ -1077,6 +1100,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.peso ?? value;
@@ -1122,6 +1146,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul: value,
               espacio7fiscul,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio6fiscul ?? value;
@@ -1167,6 +1192,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul: value,
               espacio8fiscul,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio7fiscul ?? value;
@@ -1212,6 +1238,7 @@ export default function AtletasCreateForm(props) {
               espacio6fiscul,
               espacio7fiscul,
               espacio8fiscul: value,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.espacio8fiscul ?? value;
@@ -1225,6 +1252,52 @@ export default function AtletasCreateForm(props) {
         errorMessage={errors.espacio8fiscul?.errorMessage}
         hasError={errors.espacio8fiscul?.hasError}
         {...getOverrideProps(overrides, "espacio8fiscul")}
+      ></TextField>
+      <TextField
+        label="Tipo"
+        isRequired={false}
+        isReadOnly={false}
+        value={tipo}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              foto,
+              equipoclub,
+              disciplina,
+              edad,
+              recordActual,
+              pais,
+              ciudad,
+              telefono,
+              categoria,
+              espacio2,
+              espacio1,
+              espacio4,
+              espacio5,
+              espacio3,
+              especialidad,
+              recordespecialidad,
+              estado,
+              peso,
+              espacio6fiscul,
+              espacio7fiscul,
+              espacio8fiscul,
+              tipo: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.tipo ?? value;
+          }
+          if (errors.tipo?.hasError) {
+            runValidationTasks("tipo", value);
+          }
+          setTipo(value);
+        }}
+        onBlur={() => runValidationTasks("tipo", tipo)}
+        errorMessage={errors.tipo?.errorMessage}
+        hasError={errors.tipo?.hasError}
+        {...getOverrideProps(overrides, "tipo")}
       ></TextField>
       <Flex
         justifyContent="space-between"

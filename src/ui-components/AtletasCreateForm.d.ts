@@ -44,6 +44,7 @@ export declare type AtletasCreateFormInputValues = {
     espacio6fiscul?: string;
     espacio7fiscul?: string;
     espacio8fiscul?: string;
+    tipo?: string;
 };
 export declare type AtletasCreateFormValidationValues = {
     nombre?: ValidationFunction<string>;
@@ -68,6 +69,7 @@ export declare type AtletasCreateFormValidationValues = {
     espacio6fiscul?: ValidationFunction<string>;
     espacio7fiscul?: ValidationFunction<string>;
     espacio8fiscul?: ValidationFunction<string>;
+    tipo?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type AtletasCreateFormOverridesProps = {
@@ -94,6 +96,7 @@ export declare type AtletasCreateFormOverridesProps = {
     espacio6fiscul?: PrimitiveOverrideProps<TextFieldProps>;
     espacio7fiscul?: PrimitiveOverrideProps<TextFieldProps>;
     espacio8fiscul?: PrimitiveOverrideProps<TextFieldProps>;
+    tipo?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type AtletasCreateFormProps = React.PropsWithChildren<{
     overrides?: AtletasCreateFormOverridesProps | undefined | null;

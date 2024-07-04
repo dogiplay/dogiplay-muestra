@@ -34,6 +34,7 @@ type EagerAtletas = {
   readonly espacio6fiscul?: string | null;
   readonly espacio7fiscul?: string | null;
   readonly espacio8fiscul?: string | null;
+  readonly tipo?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -66,6 +67,7 @@ type LazyAtletas = {
   readonly espacio6fiscul?: string | null;
   readonly espacio7fiscul?: string | null;
   readonly espacio8fiscul?: string | null;
+  readonly tipo?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
