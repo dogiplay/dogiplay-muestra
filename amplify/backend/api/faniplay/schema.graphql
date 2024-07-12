@@ -1,3 +1,16 @@
+type SalonFama @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nombre: String
+  pais: String
+  estado: String
+  deporte: String
+  logros: String
+  foto: AWSURL
+  descripcion1: String
+  descripcion2: String
+  fotopais: AWSURL
+}
+
 type Atletas @model @auth(rules: [{allow: public}]) {
   id: ID!
   nombre: String
@@ -23,6 +36,7 @@ type Atletas @model @auth(rules: [{allow: public}]) {
   espacio7fiscul: String
   espacio8fiscul: String
   tipo: String
+  fotopais: AWSURL
 }
 
 type Campeonatos @model @auth(rules: [{allow: public}]) {
@@ -112,6 +126,7 @@ type Jugadores @model @auth(rules: [{allow: public}]) {
   beipitchervelprom: Int
   telefono: String
   beilanzamientos: String
+  fotopais: AWSURL
 }
 
 type Torneos @model @auth(rules: [{allow: public}]) {

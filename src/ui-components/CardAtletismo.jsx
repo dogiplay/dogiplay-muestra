@@ -87,23 +87,23 @@ export default function CardAtletismo(props) {
       ></Icon>
       <Text
         fontFamily="Inter"
-        fontSize="15px"
+        fontSize="12px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
-        lineHeight="18.15340805053711px"
+        lineHeight="14.522727012634277px"
         textAlign="center"
         display="block"
         direction="column"
         justifyContent="unset"
-        width="155px"
+        width="184px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="67.15%"
-        bottom="29.08%"
-        left="20.38%"
-        right="20%"
+        top="67.57%"
+        bottom="29.29%"
+        left="14.62%"
+        right="14.62%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children={atletas?.nombre}
@@ -145,10 +145,10 @@ export default function CardAtletismo(props) {
       ></View>
       <Text
         fontFamily="Inter"
-        fontSize="11px"
+        fontSize="10px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
-        lineHeight="13.3125px"
+        lineHeight="12.102272033691406px"
         textAlign="center"
         display="block"
         direction="column"
@@ -159,9 +159,9 @@ export default function CardAtletismo(props) {
         alignItems="unset"
         position="absolute"
         top="50.42%"
-        bottom="46.86%"
-        left="15.77%"
-        right="62.31%"
+        bottom="47.07%"
+        left="15%"
+        right="65.38%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="Disciplina:"
@@ -169,10 +169,10 @@ export default function CardAtletismo(props) {
       ></Text>
       <Text
         fontFamily="Inter"
-        fontSize="12px"
+        fontSize="8px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
-        lineHeight="14.522727012634277px"
+        lineHeight="9.681818008422852px"
         textAlign="center"
         display="block"
         direction="column"
@@ -183,7 +183,7 @@ export default function CardAtletismo(props) {
         alignItems="unset"
         position="absolute"
         top="46.03%"
-        bottom="50.84%"
+        bottom="51.88%"
         left="15.77%"
         right="16.15%"
         padding="0px 0px 0px 0px"
@@ -193,10 +193,10 @@ export default function CardAtletismo(props) {
       ></Text>
       <Text
         fontFamily="Inter"
-        fontSize="11px"
+        fontSize="10px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
-        lineHeight="13.3125px"
+        lineHeight="12.102272033691406px"
         textAlign="center"
         display="block"
         direction="column"
@@ -207,9 +207,9 @@ export default function CardAtletismo(props) {
         alignItems="unset"
         position="absolute"
         top="53.77%"
-        bottom="43.51%"
-        left="15.77%"
-        right="62.31%"
+        bottom="43.72%"
+        left="14.62%"
+        right="65.38%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="Categoría:"
@@ -217,10 +217,10 @@ export default function CardAtletismo(props) {
       ></Text>
       <Text
         fontFamily="Inter"
-        fontSize="11px"
+        fontSize="10px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
-        lineHeight="13.3125px"
+        lineHeight="12.102272033691406px"
         textAlign="center"
         display="block"
         direction="column"
@@ -231,9 +231,9 @@ export default function CardAtletismo(props) {
         alignItems="unset"
         position="absolute"
         top="57.11%"
-        bottom="40.17%"
-        left="16.15%"
-        right="71.92%"
+        bottom="40.38%"
+        left="15%"
+        right="74.23%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="Edad:"
@@ -241,10 +241,10 @@ export default function CardAtletismo(props) {
       ></Text>
       <Text
         fontFamily="Inter"
-        fontSize="11px"
+        fontSize="8px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
-        lineHeight="13.3125px"
+        lineHeight="9.681818008422852px"
         textAlign="center"
         display="block"
         direction="column"
@@ -254,10 +254,10 @@ export default function CardAtletismo(props) {
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="60.46%"
+        top="61.09%"
         bottom="36.82%"
-        left="16.15%"
-        right="53.85%"
+        left="15%"
+        right="63.08%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children="Record actual:"
@@ -273,14 +273,14 @@ export default function CardAtletismo(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="87px"
+        width="122px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
         top="50.42%"
         bottom="46.86%"
-        left="50.38%"
+        left="36.92%"
         right="16.15%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
@@ -297,14 +297,14 @@ export default function CardAtletismo(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="87px"
+        width="122px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
         top="53.77%"
         bottom="43.51%"
-        left="50.38%"
+        left="36.92%"
         right="16.15%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
@@ -321,14 +321,14 @@ export default function CardAtletismo(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="91px"
+        width="122px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
         top="57.11%"
         bottom="40.17%"
-        left="48.85%"
+        left="36.92%"
         right="16.15%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
@@ -337,22 +337,22 @@ export default function CardAtletismo(props) {
       ></Text>
       <Text
         fontFamily="Inter"
-        fontSize="11px"
+        fontSize="9px"
         fontWeight="700"
         color="rgba(0,0,0,1)"
-        lineHeight="13.3125px"
+        lineHeight="10.892045021057129px"
         textAlign="center"
         display="block"
         direction="column"
         justifyContent="unset"
-        width="91px"
+        width="122px"
         height="unset"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="60.46%"
+        top="60.88%"
         bottom="36.82%"
-        left="48.85%"
+        left="36.92%"
         right="16.15%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
@@ -537,7 +537,7 @@ export default function CardAtletismo(props) {
         paths={[
           {
             d: "M7.5 0L9.18386 5.18237L14.6329 5.18237L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237L5.81614 5.18237L7.5 0Z",
-            fill: "rgba(0,0,0,0.9)",
+            fill: "rgba(255,199,0,0.9)",
             fillRule: "nonzero",
           },
         ]}
@@ -559,7 +559,7 @@ export default function CardAtletismo(props) {
         paths={[
           {
             d: "M7.5 0L9.18386 5.18237L14.6329 5.18237L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237L5.81614 5.18237L7.5 0Z",
-            fill: "rgba(0,0,0,0.9)",
+            fill: "rgba(255,199,0,0.9)",
             fillRule: "nonzero",
           },
         ]}
@@ -599,6 +599,23 @@ export default function CardAtletismo(props) {
         children="dogiplay.com"
         {...getOverrideProps(overrides, "dogiplay.com")}
       ></Text>
+      <Image
+        width="13.08%"
+        height="4.18%"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="4.39%"
+        bottom="91.42%"
+        left="77.69%"
+        right="9.23%"
+        padding="0px 0px 0px 0px"
+        objectFit="cover"
+        src={atletas?.fotopais}
+        {...getOverrideProps(overrides, "file 2")}
+      ></Image>
     </View>
   );
 }

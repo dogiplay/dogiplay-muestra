@@ -58,6 +58,7 @@ export declare type CardpitcherOverridesProps = {
     Pill?: PrimitiveOverrideProps<FlexProps>;
     ERA?: PrimitiveOverrideProps<TextProps>;
     "1.2"?: PrimitiveOverrideProps<TextProps>;
+    "file 3"?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type CardpitcherProps = React.PropsWithChildren<Partial<ViewProps> & {
     statsJugadores?: StatsJugadores;

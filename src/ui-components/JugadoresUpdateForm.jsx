@@ -74,6 +74,7 @@ export default function JugadoresUpdateForm(props) {
     beipitchervelprom: "",
     telefono: "",
     beilanzamientos: "",
+    fotopais: "",
   };
   const [iddeporte, setIddeporte] = React.useState(initialValues.iddeporte);
   const [idequipo, setIdequipo] = React.useState(initialValues.idequipo);
@@ -166,6 +167,7 @@ export default function JugadoresUpdateForm(props) {
   const [beilanzamientos, setBeilanzamientos] = React.useState(
     initialValues.beilanzamientos
   );
+  const [fotopais, setFotopais] = React.useState(initialValues.fotopais);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = jugadoresRecord
@@ -222,6 +224,7 @@ export default function JugadoresUpdateForm(props) {
     setBeipitchervelprom(cleanValues.beipitchervelprom);
     setTelefono(cleanValues.telefono);
     setBeilanzamientos(cleanValues.beilanzamientos);
+    setFotopais(cleanValues.fotopais);
     setErrors({});
   };
   const [jugadoresRecord, setJugadoresRecord] =
@@ -288,6 +291,7 @@ export default function JugadoresUpdateForm(props) {
     beipitchervelprom: [],
     telefono: [],
     beilanzamientos: [],
+    fotopais: [{ type: "URL" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -366,6 +370,7 @@ export default function JugadoresUpdateForm(props) {
           beipitchervelprom,
           telefono,
           beilanzamientos,
+          fotopais,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -472,6 +477,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.iddeporte ?? value;
@@ -546,6 +552,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.idequipo ?? value;
@@ -620,6 +627,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -694,6 +702,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.idjugador ?? value;
@@ -768,6 +777,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.idtorneo ?? value;
@@ -842,6 +852,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.deporte ?? value;
@@ -916,6 +927,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.user ?? value;
@@ -990,6 +1002,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.perfil ?? value;
@@ -1064,6 +1077,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.posicion ?? value;
@@ -1142,6 +1156,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -1220,6 +1235,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.numero ?? value;
@@ -1294,6 +1310,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.equipo ?? value;
@@ -1368,6 +1385,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -1442,6 +1460,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.alias ?? value;
@@ -1520,6 +1539,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.tipocuenta ?? value;
@@ -1598,6 +1618,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.futgoles ?? value;
@@ -1676,6 +1697,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.futasisgol ?? value;
@@ -1754,6 +1776,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasallas ?? value;
@@ -1832,6 +1855,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.futtarjetasrojas ?? value;
@@ -1910,6 +1934,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.futgoleadorsemana ?? value;
@@ -1990,6 +2015,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerashechas ?? value;
@@ -2070,6 +2096,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beicarrerasproducid ?? value;
@@ -2150,6 +2177,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beihr ?? value;
@@ -2228,6 +2256,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beihits ?? value;
@@ -2306,6 +2335,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beifly ?? value;
@@ -2384,6 +2414,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beirolas ?? value;
@@ -2462,6 +2493,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beiponches ?? value;
@@ -2540,6 +2572,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.mvp ?? value;
@@ -2618,6 +2651,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitentradaslanzadas ?? value;
@@ -2698,6 +2732,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitcarreraslimpias ?? value;
@@ -2778,6 +2813,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipithitstotales ?? value;
@@ -2858,6 +2894,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitponchestotales ?? value;
@@ -2938,6 +2975,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitera ?? value;
@@ -3016,6 +3054,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosganados ?? value;
@@ -3096,6 +3135,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitjuegosperdidos ?? value;
@@ -3176,6 +3216,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beiporcentajebateo ?? value;
@@ -3252,6 +3293,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.clave_liga ?? value;
@@ -3330,6 +3372,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.boxajecombates ?? value;
@@ -3408,6 +3451,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.boxajetriunfos ?? value;
@@ -3486,6 +3530,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.boxajederrotas ?? value;
@@ -3564,6 +3609,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.boxajeempates ?? value;
@@ -3642,6 +3688,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.boxKO ?? value;
@@ -3716,6 +3763,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.boxgimnasio ?? value;
@@ -3790,6 +3838,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.pais ?? value;
@@ -3864,6 +3913,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.ciudad ?? value;
@@ -3938,6 +3988,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.categoria ?? value;
@@ -4016,6 +4067,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.ajedrezelo ?? value;
@@ -4094,6 +4146,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitchervelmax ?? value;
@@ -4172,6 +4225,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom: value,
               telefono,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beipitchervelprom ?? value;
@@ -4248,6 +4302,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono: value,
               beilanzamientos,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.telefono ?? value;
@@ -4322,6 +4377,7 @@ export default function JugadoresUpdateForm(props) {
               beipitchervelprom,
               telefono,
               beilanzamientos: value,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.beilanzamientos ?? value;
@@ -4335,6 +4391,81 @@ export default function JugadoresUpdateForm(props) {
         errorMessage={errors.beilanzamientos?.errorMessage}
         hasError={errors.beilanzamientos?.hasError}
         {...getOverrideProps(overrides, "beilanzamientos")}
+      ></TextField>
+      <TextField
+        label="Fotopais"
+        isRequired={false}
+        isReadOnly={false}
+        value={fotopais}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              iddeporte,
+              idequipo,
+              nombre,
+              idjugador,
+              idtorneo,
+              deporte,
+              user,
+              perfil,
+              posicion,
+              edad,
+              numero,
+              equipo,
+              foto,
+              alias,
+              tipocuenta,
+              futgoles,
+              futasisgol,
+              futtarjetasallas,
+              futtarjetasrojas,
+              futgoleadorsemana,
+              beicarrerashechas,
+              beicarrerasproducid,
+              beihr,
+              beihits,
+              beifly,
+              beirolas,
+              beiponches,
+              mvp,
+              beipitentradaslanzadas,
+              beipitcarreraslimpias,
+              beipithitstotales,
+              beipitponchestotales,
+              beipitera,
+              beipitjuegosganados,
+              beipitjuegosperdidos,
+              beiporcentajebateo,
+              clave_liga,
+              boxajecombates,
+              boxajetriunfos,
+              boxajederrotas,
+              boxajeempates,
+              boxKO,
+              boxgimnasio,
+              pais,
+              ciudad,
+              categoria,
+              ajedrezelo,
+              beipitchervelmax,
+              beipitchervelprom,
+              telefono,
+              beilanzamientos,
+              fotopais: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.fotopais ?? value;
+          }
+          if (errors.fotopais?.hasError) {
+            runValidationTasks("fotopais", value);
+          }
+          setFotopais(value);
+        }}
+        onBlur={() => runValidationTasks("fotopais", fotopais)}
+        errorMessage={errors.fotopais?.errorMessage}
+        hasError={errors.fotopais?.hasError}
+        {...getOverrideProps(overrides, "fotopais")}
       ></TextField>
       <Flex
         justifyContent="space-between"

@@ -46,6 +46,7 @@ export default function AtletasUpdateForm(props) {
     espacio7fiscul: "",
     espacio8fiscul: "",
     tipo: "",
+    fotopais: "",
   };
   const [nombre, setNombre] = React.useState(initialValues.nombre);
   const [foto, setFoto] = React.useState(initialValues.foto);
@@ -82,6 +83,7 @@ export default function AtletasUpdateForm(props) {
     initialValues.espacio8fiscul
   );
   const [tipo, setTipo] = React.useState(initialValues.tipo);
+  const [fotopais, setFotopais] = React.useState(initialValues.fotopais);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = atletasRecord
@@ -110,6 +112,7 @@ export default function AtletasUpdateForm(props) {
     setEspacio7fiscul(cleanValues.espacio7fiscul);
     setEspacio8fiscul(cleanValues.espacio8fiscul);
     setTipo(cleanValues.tipo);
+    setFotopais(cleanValues.fotopais);
     setErrors({});
   };
   const [atletasRecord, setAtletasRecord] = React.useState(atletasModelProp);
@@ -147,6 +150,7 @@ export default function AtletasUpdateForm(props) {
     espacio7fiscul: [],
     espacio8fiscul: [],
     tipo: [],
+    fotopais: [{ type: "URL" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -197,6 +201,7 @@ export default function AtletasUpdateForm(props) {
           espacio7fiscul,
           espacio8fiscul,
           tipo,
+          fotopais,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -275,6 +280,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -321,6 +327,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -367,6 +374,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.equipoclub ?? value;
@@ -413,6 +421,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.disciplina ?? value;
@@ -463,6 +472,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.edad ?? value;
@@ -509,6 +519,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.recordActual ?? value;
@@ -555,6 +566,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.pais ?? value;
@@ -601,6 +613,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.ciudad ?? value;
@@ -647,6 +660,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.telefono ?? value;
@@ -693,6 +707,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.categoria ?? value;
@@ -739,6 +754,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio2 ?? value;
@@ -785,6 +801,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio1 ?? value;
@@ -831,6 +848,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio4 ?? value;
@@ -877,6 +895,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio5 ?? value;
@@ -923,6 +942,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio3 ?? value;
@@ -973,6 +993,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.especialidad ?? value;
@@ -1023,6 +1044,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.recordespecialidad ?? value;
@@ -1071,6 +1093,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.estado ?? value;
@@ -1117,6 +1140,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.peso ?? value;
@@ -1163,6 +1187,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio6fiscul ?? value;
@@ -1209,6 +1234,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul: value,
               espacio8fiscul,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio7fiscul ?? value;
@@ -1255,6 +1281,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul: value,
               tipo,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.espacio8fiscul ?? value;
@@ -1301,6 +1328,7 @@ export default function AtletasUpdateForm(props) {
               espacio7fiscul,
               espacio8fiscul,
               tipo: value,
+              fotopais,
             };
             const result = onChange(modelFields);
             value = result?.tipo ?? value;
@@ -1314,6 +1342,53 @@ export default function AtletasUpdateForm(props) {
         errorMessage={errors.tipo?.errorMessage}
         hasError={errors.tipo?.hasError}
         {...getOverrideProps(overrides, "tipo")}
+      ></TextField>
+      <TextField
+        label="Fotopais"
+        isRequired={false}
+        isReadOnly={false}
+        value={fotopais}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              foto,
+              equipoclub,
+              disciplina,
+              edad,
+              recordActual,
+              pais,
+              ciudad,
+              telefono,
+              categoria,
+              espacio2,
+              espacio1,
+              espacio4,
+              espacio5,
+              espacio3,
+              especialidad,
+              recordespecialidad,
+              estado,
+              peso,
+              espacio6fiscul,
+              espacio7fiscul,
+              espacio8fiscul,
+              tipo,
+              fotopais: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.fotopais ?? value;
+          }
+          if (errors.fotopais?.hasError) {
+            runValidationTasks("fotopais", value);
+          }
+          setFotopais(value);
+        }}
+        onBlur={() => runValidationTasks("fotopais", fotopais)}
+        errorMessage={errors.fotopais?.errorMessage}
+        hasError={errors.fotopais?.hasError}
+        {...getOverrideProps(overrides, "fotopais")}
       ></TextField>
       <Flex
         justifyContent="space-between"

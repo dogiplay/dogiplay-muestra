@@ -818,6 +818,21 @@ export default function Cardpitcher(props) {
           {...getOverrideProps(overrides, "1.2")}
         ></Text>
       </View>
+      <Image
+        width="34px"
+        height="20px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="43px"
+        left="211px"
+        padding="0px 0px 0px 0px"
+        objectFit="cover"
+        src={jugadores?.fotopais}
+        {...getOverrideProps(overrides, "file 3")}
+      ></Image>
     </View>
   );
 }

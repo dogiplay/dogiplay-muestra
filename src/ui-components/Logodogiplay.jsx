@@ -57,8 +57,8 @@ export default function Logodogiplay(props) {
       </View>
       <View
         padding="0px 0px 0px 0px"
-        width="253.22px"
-        height="59px"
+        width="244.22px"
+        height="60px"
         display="block"
         gap="unset"
         alignItems="unset"
@@ -71,22 +71,22 @@ export default function Logodogiplay(props) {
         <View
           padding="0px 0px 0px 0px"
           width="204.22px"
-          height="57px"
+          height="58px"
           display="block"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
           position="absolute"
-          top="3.39%"
+          top="3.33%"
           bottom="0%"
-          left="19.35%"
+          left="16.38%"
           right="0%"
           {...getOverrideProps(overrides, "Group 3")}
         >
           <View
             padding="0px 0px 0px 0px"
             width="204.22px"
-            height="57px"
+            height="58px"
             display="block"
             gap="unset"
             alignItems="unset"
@@ -115,9 +115,9 @@ export default function Logodogiplay(props) {
               alignItems="unset"
               position="absolute"
               top="0%"
-              bottom="38.6%"
-              left="5.39%"
-              right="21.44%"
+              bottom="39.66%"
+              left="9.79%"
+              right="17.04%"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
               children="Dogiplay"
@@ -139,14 +139,14 @@ export default function Logodogiplay(props) {
               gap="unset"
               alignItems="unset"
               position="absolute"
-              top="64.91%"
+              top="65.52%"
               bottom="0%"
               left="0%"
               right="0%"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Los mas perros del deporte"
-              {...getOverrideProps(overrides, "Los mas perros del deporte")}
+              children="Las estrellas del deporte"
+              {...getOverrideProps(overrides, "Las estrellas del deporte")}
             ></Text>
           </View>
         </View>
@@ -159,10 +159,10 @@ export default function Logodogiplay(props) {
           alignItems="unset"
           justifyContent="unset"
           position="absolute"
-          top="15.25%"
-          bottom="12.33%"
+          top="15%"
+          bottom="13.79%"
           left="0%"
-          right="84.39%"
+          right="83.81%"
           {...getOverrideProps(overrides, "Group 12")}
         >
           <Icon

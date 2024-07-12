@@ -6,28 +6,16 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Jugadores } from "../models";
-import {
-  createDataStorePredicate,
-  getOverrideProps,
-  useDataStoreBinding,
-} from "./utils";
-import { SortDirection } from "@aws-amplify/datastore";
-import GlobalBox from "./GlobalBox";
+import { SalonFama } from "../models";
+import { getOverrideProps, useDataStoreBinding } from "./utils";
+import SalondelaFama from "./SalondelaFama";
 import { Collection } from "@aws-amplify/ui-react";
-export default function GlobalBoxCollection(props) {
+export default function SalondelaFamaCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsFilterObj = { field: "deporte", operand: "box", operator: "eq" };
-  const itemsFilter = createDataStorePredicate(itemsFilterObj);
-  const itemsPagination = {
-    sort: (s) => s.boxajetriunfos(SortDirection.DESCENDING),
-  };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Jugadores,
-    criteria: itemsFilter,
-    pagination: itemsPagination,
+    model: SalonFama,
   }).items;
   React.useEffect(() => {
     if (itemsProp !== undefined) {
@@ -39,25 +27,24 @@ export default function GlobalBoxCollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable="true"
+      isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Buscar..."
-      itemsPerPage={10}
+      itemsPerPage={6}
       templateColumns="1fr 1fr 1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
       justifyContent="stretch"
       items={items || []}
-      {...getOverrideProps(overrides, "GlobalBoxCollection")}
+      {...getOverrideProps(overrides, "SalondelaFamaCollection")}
       {...rest}
     >
       {(item, index) => (
-        <GlobalBox
-          jugadores={item}
-          margin="5px 0 5px 0"
+        <SalondelaFama
+          salonFama={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></GlobalBox>
+        ></SalondelaFama>
       )}
     </Collection>
   );

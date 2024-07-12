@@ -10,7 +10,7 @@ padding: 0px;
 
 .grid-layout{
     display:grid;
-    grid-template-rows:  30px 590px 30px 590px 20px 500px 1000px 370px 300px 500px 600px;
+    grid-template-rows:  30px 590px 30px 590px 20px 500px 1000px 370px 300px;
     width: 100%;
     background-color: rgb(32, 8, 77);
     padding: 1px;

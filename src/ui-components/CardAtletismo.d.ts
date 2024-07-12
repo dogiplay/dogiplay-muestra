@@ -45,6 +45,7 @@ export declare type CardAtletismoOverridesProps = {
     "Star 8"?: PrimitiveOverrideProps<IconProps>;
     "Star 9"?: PrimitiveOverrideProps<IconProps>;
     "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
+    "file 2"?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type CardAtletismoProps = React.PropsWithChildren<Partial<ViewProps> & {
     atletas?: Atletas;

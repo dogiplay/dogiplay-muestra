@@ -6,6 +6,50 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
+type EagerSalonFama = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<SalonFama, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly pais?: string | null;
+  readonly estado?: string | null;
+  readonly deporte?: string | null;
+  readonly logros?: string | null;
+  readonly foto?: string | null;
+  readonly descripcion1?: string | null;
+  readonly descripcion2?: string | null;
+  readonly fotopais?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazySalonFama = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<SalonFama, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly pais?: string | null;
+  readonly estado?: string | null;
+  readonly deporte?: string | null;
+  readonly logros?: string | null;
+  readonly foto?: string | null;
+  readonly descripcion1?: string | null;
+  readonly descripcion2?: string | null;
+  readonly fotopais?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type SalonFama = LazyLoading extends LazyLoadingDisabled ? EagerSalonFama : LazySalonFama
+
+export declare const SalonFama: (new (init: ModelInit<SalonFama>) => SalonFama) & {
+  copyOf(source: SalonFama, mutator: (draft: MutableModel<SalonFama>) => MutableModel<SalonFama> | void): SalonFama;
+}
+
 type EagerAtletas = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Atletas, 'id'>;
@@ -35,6 +79,7 @@ type EagerAtletas = {
   readonly espacio7fiscul?: string | null;
   readonly espacio8fiscul?: string | null;
   readonly tipo?: string | null;
+  readonly fotopais?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -68,6 +113,7 @@ type LazyAtletas = {
   readonly espacio7fiscul?: string | null;
   readonly espacio8fiscul?: string | null;
   readonly tipo?: string | null;
+  readonly fotopais?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -239,6 +285,7 @@ type EagerJugadores = {
   readonly beipitchervelprom?: number | null;
   readonly telefono?: string | null;
   readonly beilanzamientos?: string | null;
+  readonly fotopais?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -300,6 +347,7 @@ type LazyJugadores = {
   readonly beipitchervelprom?: number | null;
   readonly telefono?: string | null;
   readonly beilanzamientos?: string | null;
+  readonly fotopais?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

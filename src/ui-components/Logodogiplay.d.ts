@@ -25,7 +25,7 @@ export declare type LogodogiplayOverridesProps = {
     "Group 3"?: PrimitiveOverrideProps<ViewProps>;
     "Group 10"?: PrimitiveOverrideProps<ViewProps>;
     Dogiplay?: PrimitiveOverrideProps<TextProps>;
-    "Los mas perros del deporte"?: PrimitiveOverrideProps<TextProps>;
+    "Las estrellas del deporte"?: PrimitiveOverrideProps<TextProps>;
     "Group 12"?: PrimitiveOverrideProps<ViewProps>;
     "Vector 37"?: PrimitiveOverrideProps<IconProps>;
     "Vector 38"?: PrimitiveOverrideProps<IconProps>;

@@ -4,9 +4,10 @@ import { schema } from './schema';
 
 
 
-const { Atletas, Campeonatos, StatsJugadores, Jugadores, Torneos, Presidentes, Ligas, Statsequipo, Partidos, Equipos, Managers } = initSchema(schema);
+const { SalonFama, Atletas, Campeonatos, StatsJugadores, Jugadores, Torneos, Presidentes, Ligas, Statsequipo, Partidos, Equipos, Managers } = initSchema(schema);
 
 export {
+  SalonFama,
   Atletas,
   Campeonatos,
   StatsJugadores,

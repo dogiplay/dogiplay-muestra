@@ -39,6 +39,7 @@ export declare type GlobalBoxOverridesProps = {
     "Rectangle 98"?: PrimitiveOverrideProps<ViewProps>;
     RECORD?: PrimitiveOverrideProps<TextProps>;
     "dogiplay.com477157"?: PrimitiveOverrideProps<TextProps>;
+    "file 2"?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type GlobalBoxProps = React.PropsWithChildren<Partial<ViewProps> & {
     jugadores?: Jugadores;

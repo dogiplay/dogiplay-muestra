@@ -31,7 +31,7 @@ export const RutasPrincipal = () => {
           
           </ul>
      
-          <strong class='derecha'>Estadísticas verificadas solo en DOGIPLAY</strong>
+          <strong class='derecha'>Los Mejores Deportistas/ Estadísticas Certificadas</strong>
       </nav>
     </header>
    

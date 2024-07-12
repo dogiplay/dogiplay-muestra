@@ -615,6 +615,23 @@ export default function CardFisioculturismo(props) {
         children="dogiplay.com"
         {...getOverrideProps(overrides, "dogiplay.com")}
       ></Text>
+      <Image
+        width="13.08%"
+        height="4.18%"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="3.14%"
+        bottom="92.68%"
+        left="63.46%"
+        right="23.46%"
+        padding="0px 0px 0px 0px"
+        objectFit="cover"
+        src={atletas?.fotopais}
+        {...getOverrideProps(overrides, "file 1")}
+      ></Image>
     </View>
   );
 }
