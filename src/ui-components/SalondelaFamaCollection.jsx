@@ -30,7 +30,7 @@ export default function SalondelaFamaCollection(props) {
       isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Buscar..."
-      itemsPerPage={6}
+      itemsPerPage={10}
       templateColumns="1fr 1fr 1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
