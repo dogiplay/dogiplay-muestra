@@ -7,13 +7,13 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { SalonFama } from "../models";
+import { Asociaciones } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { DataStore } from "aws-amplify/datastore";
-export default function SalonFamaUpdateForm(props) {
+export default function AsociacionesUpdateForm(props) {
   const {
     id: idProp,
-    salonFama: salonFamaModelProp,
+    asociaciones: asociacionesModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -25,69 +25,54 @@ export default function SalonFamaUpdateForm(props) {
   const initialValues = {
     nombre: "",
     pais: "",
-    estado: "",
-    deporte: "",
-    logros: "",
     foto: "",
-    descripcion1: "",
-    descripcion2: "",
     fotopais: "",
-    prioridad: "",
+    telefono: "",
+    presidente: "",
+    sitio: "",
   };
   const [nombre, setNombre] = React.useState(initialValues.nombre);
   const [pais, setPais] = React.useState(initialValues.pais);
-  const [estado, setEstado] = React.useState(initialValues.estado);
-  const [deporte, setDeporte] = React.useState(initialValues.deporte);
-  const [logros, setLogros] = React.useState(initialValues.logros);
   const [foto, setFoto] = React.useState(initialValues.foto);
-  const [descripcion1, setDescripcion1] = React.useState(
-    initialValues.descripcion1
-  );
-  const [descripcion2, setDescripcion2] = React.useState(
-    initialValues.descripcion2
-  );
   const [fotopais, setFotopais] = React.useState(initialValues.fotopais);
-  const [prioridad, setPrioridad] = React.useState(initialValues.prioridad);
+  const [telefono, setTelefono] = React.useState(initialValues.telefono);
+  const [presidente, setPresidente] = React.useState(initialValues.presidente);
+  const [sitio, setSitio] = React.useState(initialValues.sitio);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    const cleanValues = salonFamaRecord
-      ? { ...initialValues, ...salonFamaRecord }
+    const cleanValues = asociacionesRecord
+      ? { ...initialValues, ...asociacionesRecord }
       : initialValues;
     setNombre(cleanValues.nombre);
     setPais(cleanValues.pais);
-    setEstado(cleanValues.estado);
-    setDeporte(cleanValues.deporte);
-    setLogros(cleanValues.logros);
     setFoto(cleanValues.foto);
-    setDescripcion1(cleanValues.descripcion1);
-    setDescripcion2(cleanValues.descripcion2);
     setFotopais(cleanValues.fotopais);
-    setPrioridad(cleanValues.prioridad);
+    setTelefono(cleanValues.telefono);
+    setPresidente(cleanValues.presidente);
+    setSitio(cleanValues.sitio);
     setErrors({});
   };
-  const [salonFamaRecord, setSalonFamaRecord] =
-    React.useState(salonFamaModelProp);
+  const [asociacionesRecord, setAsociacionesRecord] = React.useState(
+    asociacionesModelProp
+  );
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(SalonFama, idProp)
-        : salonFamaModelProp;
-      setSalonFamaRecord(record);
+        ? await DataStore.query(Asociaciones, idProp)
+        : asociacionesModelProp;
+      setAsociacionesRecord(record);
     };
     queryData();
-  }, [idProp, salonFamaModelProp]);
-  React.useEffect(resetStateValues, [salonFamaRecord]);
+  }, [idProp, asociacionesModelProp]);
+  React.useEffect(resetStateValues, [asociacionesRecord]);
   const validations = {
     nombre: [],
     pais: [],
-    estado: [],
-    deporte: [],
-    logros: [],
     foto: [{ type: "URL" }],
-    descripcion1: [],
-    descripcion2: [],
     fotopais: [{ type: "URL" }],
-    prioridad: [],
+    telefono: [],
+    presidente: [],
+    sitio: [{ type: "URL" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -117,14 +102,11 @@ export default function SalonFamaUpdateForm(props) {
         let modelFields = {
           nombre,
           pais,
-          estado,
-          deporte,
-          logros,
           foto,
-          descripcion1,
-          descripcion2,
           fotopais,
-          prioridad,
+          telefono,
+          presidente,
+          sitio,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -155,7 +137,7 @@ export default function SalonFamaUpdateForm(props) {
             }
           });
           await DataStore.save(
-            SalonFama.copyOf(salonFamaRecord, (updated) => {
+            Asociaciones.copyOf(asociacionesRecord, (updated) => {
               Object.assign(updated, modelFields);
             })
           );
@@ -168,7 +150,7 @@ export default function SalonFamaUpdateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "SalonFamaUpdateForm")}
+      {...getOverrideProps(overrides, "AsociacionesUpdateForm")}
       {...rest}
     >
       <TextField
@@ -182,14 +164,11 @@ export default function SalonFamaUpdateForm(props) {
             const modelFields = {
               nombre: value,
               pais,
-              estado,
-              deporte,
-              logros,
               foto,
-              descripcion1,
-              descripcion2,
               fotopais,
-              prioridad,
+              telefono,
+              presidente,
+              sitio,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -215,14 +194,11 @@ export default function SalonFamaUpdateForm(props) {
             const modelFields = {
               nombre,
               pais: value,
-              estado,
-              deporte,
-              logros,
               foto,
-              descripcion1,
-              descripcion2,
               fotopais,
-              prioridad,
+              telefono,
+              presidente,
+              sitio,
             };
             const result = onChange(modelFields);
             value = result?.pais ?? value;
@@ -238,105 +214,6 @@ export default function SalonFamaUpdateForm(props) {
         {...getOverrideProps(overrides, "pais")}
       ></TextField>
       <TextField
-        label="Estado"
-        isRequired={false}
-        isReadOnly={false}
-        value={estado}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              pais,
-              estado: value,
-              deporte,
-              logros,
-              foto,
-              descripcion1,
-              descripcion2,
-              fotopais,
-              prioridad,
-            };
-            const result = onChange(modelFields);
-            value = result?.estado ?? value;
-          }
-          if (errors.estado?.hasError) {
-            runValidationTasks("estado", value);
-          }
-          setEstado(value);
-        }}
-        onBlur={() => runValidationTasks("estado", estado)}
-        errorMessage={errors.estado?.errorMessage}
-        hasError={errors.estado?.hasError}
-        {...getOverrideProps(overrides, "estado")}
-      ></TextField>
-      <TextField
-        label="Deporte"
-        isRequired={false}
-        isReadOnly={false}
-        value={deporte}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              pais,
-              estado,
-              deporte: value,
-              logros,
-              foto,
-              descripcion1,
-              descripcion2,
-              fotopais,
-              prioridad,
-            };
-            const result = onChange(modelFields);
-            value = result?.deporte ?? value;
-          }
-          if (errors.deporte?.hasError) {
-            runValidationTasks("deporte", value);
-          }
-          setDeporte(value);
-        }}
-        onBlur={() => runValidationTasks("deporte", deporte)}
-        errorMessage={errors.deporte?.errorMessage}
-        hasError={errors.deporte?.hasError}
-        {...getOverrideProps(overrides, "deporte")}
-      ></TextField>
-      <TextField
-        label="Logros"
-        isRequired={false}
-        isReadOnly={false}
-        value={logros}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              pais,
-              estado,
-              deporte,
-              logros: value,
-              foto,
-              descripcion1,
-              descripcion2,
-              fotopais,
-              prioridad,
-            };
-            const result = onChange(modelFields);
-            value = result?.logros ?? value;
-          }
-          if (errors.logros?.hasError) {
-            runValidationTasks("logros", value);
-          }
-          setLogros(value);
-        }}
-        onBlur={() => runValidationTasks("logros", logros)}
-        errorMessage={errors.logros?.errorMessage}
-        hasError={errors.logros?.hasError}
-        {...getOverrideProps(overrides, "logros")}
-      ></TextField>
-      <TextField
         label="Foto"
         isRequired={false}
         isReadOnly={false}
@@ -347,14 +224,11 @@ export default function SalonFamaUpdateForm(props) {
             const modelFields = {
               nombre,
               pais,
-              estado,
-              deporte,
-              logros,
               foto: value,
-              descripcion1,
-              descripcion2,
               fotopais,
-              prioridad,
+              telefono,
+              presidente,
+              sitio,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -370,72 +244,6 @@ export default function SalonFamaUpdateForm(props) {
         {...getOverrideProps(overrides, "foto")}
       ></TextField>
       <TextField
-        label="Descripcion1"
-        isRequired={false}
-        isReadOnly={false}
-        value={descripcion1}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              pais,
-              estado,
-              deporte,
-              logros,
-              foto,
-              descripcion1: value,
-              descripcion2,
-              fotopais,
-              prioridad,
-            };
-            const result = onChange(modelFields);
-            value = result?.descripcion1 ?? value;
-          }
-          if (errors.descripcion1?.hasError) {
-            runValidationTasks("descripcion1", value);
-          }
-          setDescripcion1(value);
-        }}
-        onBlur={() => runValidationTasks("descripcion1", descripcion1)}
-        errorMessage={errors.descripcion1?.errorMessage}
-        hasError={errors.descripcion1?.hasError}
-        {...getOverrideProps(overrides, "descripcion1")}
-      ></TextField>
-      <TextField
-        label="Descripcion2"
-        isRequired={false}
-        isReadOnly={false}
-        value={descripcion2}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              pais,
-              estado,
-              deporte,
-              logros,
-              foto,
-              descripcion1,
-              descripcion2: value,
-              fotopais,
-              prioridad,
-            };
-            const result = onChange(modelFields);
-            value = result?.descripcion2 ?? value;
-          }
-          if (errors.descripcion2?.hasError) {
-            runValidationTasks("descripcion2", value);
-          }
-          setDescripcion2(value);
-        }}
-        onBlur={() => runValidationTasks("descripcion2", descripcion2)}
-        errorMessage={errors.descripcion2?.errorMessage}
-        hasError={errors.descripcion2?.hasError}
-        {...getOverrideProps(overrides, "descripcion2")}
-      ></TextField>
-      <TextField
         label="Fotopais"
         isRequired={false}
         isReadOnly={false}
@@ -446,14 +254,11 @@ export default function SalonFamaUpdateForm(props) {
             const modelFields = {
               nombre,
               pais,
-              estado,
-              deporte,
-              logros,
               foto,
-              descripcion1,
-              descripcion2,
               fotopais: value,
-              prioridad,
+              telefono,
+              presidente,
+              sitio,
             };
             const result = onChange(modelFields);
             value = result?.fotopais ?? value;
@@ -469,41 +274,94 @@ export default function SalonFamaUpdateForm(props) {
         {...getOverrideProps(overrides, "fotopais")}
       ></TextField>
       <TextField
-        label="Prioridad"
+        label="Telefono"
         isRequired={false}
         isReadOnly={false}
-        type="number"
-        step="any"
-        value={prioridad}
+        value={telefono}
         onChange={(e) => {
-          let value = isNaN(parseInt(e.target.value))
-            ? e.target.value
-            : parseInt(e.target.value);
+          let { value } = e.target;
           if (onChange) {
             const modelFields = {
               nombre,
               pais,
-              estado,
-              deporte,
-              logros,
               foto,
-              descripcion1,
-              descripcion2,
               fotopais,
-              prioridad: value,
+              telefono: value,
+              presidente,
+              sitio,
             };
             const result = onChange(modelFields);
-            value = result?.prioridad ?? value;
+            value = result?.telefono ?? value;
           }
-          if (errors.prioridad?.hasError) {
-            runValidationTasks("prioridad", value);
+          if (errors.telefono?.hasError) {
+            runValidationTasks("telefono", value);
           }
-          setPrioridad(value);
+          setTelefono(value);
         }}
-        onBlur={() => runValidationTasks("prioridad", prioridad)}
-        errorMessage={errors.prioridad?.errorMessage}
-        hasError={errors.prioridad?.hasError}
-        {...getOverrideProps(overrides, "prioridad")}
+        onBlur={() => runValidationTasks("telefono", telefono)}
+        errorMessage={errors.telefono?.errorMessage}
+        hasError={errors.telefono?.hasError}
+        {...getOverrideProps(overrides, "telefono")}
+      ></TextField>
+      <TextField
+        label="Presidente"
+        isRequired={false}
+        isReadOnly={false}
+        value={presidente}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              pais,
+              foto,
+              fotopais,
+              telefono,
+              presidente: value,
+              sitio,
+            };
+            const result = onChange(modelFields);
+            value = result?.presidente ?? value;
+          }
+          if (errors.presidente?.hasError) {
+            runValidationTasks("presidente", value);
+          }
+          setPresidente(value);
+        }}
+        onBlur={() => runValidationTasks("presidente", presidente)}
+        errorMessage={errors.presidente?.errorMessage}
+        hasError={errors.presidente?.hasError}
+        {...getOverrideProps(overrides, "presidente")}
+      ></TextField>
+      <TextField
+        label="Sitio"
+        isRequired={false}
+        isReadOnly={false}
+        value={sitio}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              pais,
+              foto,
+              fotopais,
+              telefono,
+              presidente,
+              sitio: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.sitio ?? value;
+          }
+          if (errors.sitio?.hasError) {
+            runValidationTasks("sitio", value);
+          }
+          setSitio(value);
+        }}
+        onBlur={() => runValidationTasks("sitio", sitio)}
+        errorMessage={errors.sitio?.errorMessage}
+        hasError={errors.sitio?.hasError}
+        {...getOverrideProps(overrides, "sitio")}
       ></TextField>
       <Flex
         justifyContent="space-between"
@@ -516,7 +374,7 @@ export default function SalonFamaUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || salonFamaModelProp)}
+          isDisabled={!(idProp || asociacionesModelProp)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -528,7 +386,7 @@ export default function SalonFamaUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || salonFamaModelProp) ||
+              !(idProp || asociacionesModelProp) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}

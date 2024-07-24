@@ -6,6 +6,136 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
+type EagerAsociaciones = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Asociaciones, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly pais?: string | null;
+  readonly foto?: string | null;
+  readonly fotopais?: string | null;
+  readonly telefono?: string | null;
+  readonly presidente?: string | null;
+  readonly sitio?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyAsociaciones = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Asociaciones, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly pais?: string | null;
+  readonly foto?: string | null;
+  readonly fotopais?: string | null;
+  readonly telefono?: string | null;
+  readonly presidente?: string | null;
+  readonly sitio?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Asociaciones = LazyLoading extends LazyLoadingDisabled ? EagerAsociaciones : LazyAsociaciones
+
+export declare const Asociaciones: (new (init: ModelInit<Asociaciones>) => Asociaciones) & {
+  copyOf(source: Asociaciones, mutator: (draft: MutableModel<Asociaciones>) => MutableModel<Asociaciones> | void): Asociaciones;
+}
+
+type EagerUniversidades = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Universidades, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombreuniversidad?: string | null;
+  readonly pais?: string | null;
+  readonly estado?: string | null;
+  readonly telefono?: string | null;
+  readonly fotopais?: string | null;
+  readonly foto?: string | null;
+  readonly nombredeportista?: string | null;
+  readonly logouniversidad?: string | null;
+  readonly carrera?: string | null;
+  readonly deporte?: string | null;
+  readonly descripcion?: string | null;
+  readonly tipo?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyUniversidades = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Universidades, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombreuniversidad?: string | null;
+  readonly pais?: string | null;
+  readonly estado?: string | null;
+  readonly telefono?: string | null;
+  readonly fotopais?: string | null;
+  readonly foto?: string | null;
+  readonly nombredeportista?: string | null;
+  readonly logouniversidad?: string | null;
+  readonly carrera?: string | null;
+  readonly deporte?: string | null;
+  readonly descripcion?: string | null;
+  readonly tipo?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Universidades = LazyLoading extends LazyLoadingDisabled ? EagerUniversidades : LazyUniversidades
+
+export declare const Universidades: (new (init: ModelInit<Universidades>) => Universidades) & {
+  copyOf(source: Universidades, mutator: (draft: MutableModel<Universidades>) => MutableModel<Universidades> | void): Universidades;
+}
+
+type EagerPatrocinadores = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Patrocinadores, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly telefono?: string | null;
+  readonly foto?: string | null;
+  readonly sitio?: string | null;
+  readonly pais?: string | null;
+  readonly contacto?: string | null;
+  readonly textoboton?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyPatrocinadores = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Patrocinadores, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly telefono?: string | null;
+  readonly foto?: string | null;
+  readonly sitio?: string | null;
+  readonly pais?: string | null;
+  readonly contacto?: string | null;
+  readonly textoboton?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Patrocinadores = LazyLoading extends LazyLoadingDisabled ? EagerPatrocinadores : LazyPatrocinadores
+
+export declare const Patrocinadores: (new (init: ModelInit<Patrocinadores>) => Patrocinadores) & {
+  copyOf(source: Patrocinadores, mutator: (draft: MutableModel<Patrocinadores>) => MutableModel<Patrocinadores> | void): Patrocinadores;
+}
+
 type EagerSalonFama = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<SalonFama, 'id'>;
@@ -21,6 +151,7 @@ type EagerSalonFama = {
   readonly descripcion1?: string | null;
   readonly descripcion2?: string | null;
   readonly fotopais?: string | null;
+  readonly prioridad?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -40,6 +171,7 @@ type LazySalonFama = {
   readonly descripcion1?: string | null;
   readonly descripcion2?: string | null;
   readonly fotopais?: string | null;
+  readonly prioridad?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

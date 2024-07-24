@@ -35,6 +35,7 @@ export declare type SalondelaFamaOverridesProps = {
     "Equipo principal: Chivas"?: PrimitiveOverrideProps<TextProps>;
     "Otros equipos: America y Coras de Tepic"?: PrimitiveOverrideProps<TextProps>;
     "file 3"?: PrimitiveOverrideProps<ImageProps>;
+    "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type SalondelaFamaProps = React.PropsWithChildren<Partial<ViewProps> & {
     salonFama?: SalonFama;

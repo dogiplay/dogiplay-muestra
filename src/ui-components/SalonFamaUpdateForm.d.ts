@@ -32,6 +32,7 @@ export declare type SalonFamaUpdateFormInputValues = {
     descripcion1?: string;
     descripcion2?: string;
     fotopais?: string;
+    prioridad?: number;
 };
 export declare type SalonFamaUpdateFormValidationValues = {
     nombre?: ValidationFunction<string>;
@@ -43,6 +44,7 @@ export declare type SalonFamaUpdateFormValidationValues = {
     descripcion1?: ValidationFunction<string>;
     descripcion2?: ValidationFunction<string>;
     fotopais?: ValidationFunction<string>;
+    prioridad?: ValidationFunction<number>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type SalonFamaUpdateFormOverridesProps = {
@@ -56,6 +58,7 @@ export declare type SalonFamaUpdateFormOverridesProps = {
     descripcion1?: PrimitiveOverrideProps<TextFieldProps>;
     descripcion2?: PrimitiveOverrideProps<TextFieldProps>;
     fotopais?: PrimitiveOverrideProps<TextFieldProps>;
+    prioridad?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type SalonFamaUpdateFormProps = React.PropsWithChildren<{
     overrides?: SalonFamaUpdateFormOverridesProps | undefined | null;

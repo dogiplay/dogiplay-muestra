@@ -4,7 +4,7 @@ align-items: center;
 display:grid;
 grid-template-rows:  650px;
 width: 97%;
-background-color: rgb(32, 8, 77);
+background-color: #191919;
 padding: 0px;
 }
 
@@ -12,7 +12,7 @@ padding: 0px;
     display:grid;
     grid-template-rows:  30px 590px 30px 590px 20px 500px 1000px 370px 300px;
     width: 100%;
-    background-color: rgb(32, 8, 77);
+    background-color:#191919;
     padding: 1px;
     margin: 0px;
    

@@ -4,9 +4,12 @@ import { schema } from './schema';
 
 
 
-const { SalonFama, Atletas, Campeonatos, StatsJugadores, Jugadores, Torneos, Presidentes, Ligas, Statsequipo, Partidos, Equipos, Managers } = initSchema(schema);
+const { Asociaciones, Universidades, Patrocinadores, SalonFama, Atletas, Campeonatos, StatsJugadores, Jugadores, Torneos, Presidentes, Ligas, Statsequipo, Partidos, Equipos, Managers } = initSchema(schema);
 
 export {
+  Asociaciones,
+  Universidades,
+  Patrocinadores,
   SalonFama,
   Atletas,
   Campeonatos,

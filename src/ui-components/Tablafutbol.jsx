@@ -209,6 +209,7 @@ export default function Tablafutbol(props) {
           borderRadius="11px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
+          src={equipos?.logo}
           {...getOverrideProps(overrides, "logotipo 1")}
         ></Image>
         <Text

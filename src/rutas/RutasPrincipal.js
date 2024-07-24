@@ -26,8 +26,11 @@ export const RutasPrincipal = () => {
             <NavLink to="/"><strong>Inicio</strong></NavLink>
           </li> 
           <li>
-            <NavLink to="/contacto"><strong>Contacto</strong></NavLink>
+            <NavLink to="/contacto"><strong>Universidades</strong></NavLink>
           </li>  
+          <li>
+            <NavLink to="/contacto"><strong>Contacto</strong></NavLink>
+          </li> 
           
           </ul>
      

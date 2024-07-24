@@ -4,6 +4,9 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as Asociaciones } from "./Asociaciones";
+export { default as AsociacionesCreateForm } from "./AsociacionesCreateForm";
+export { default as AsociacionesUpdateForm } from "./AsociacionesUpdateForm";
 export { default as AtletasCreateForm } from "./AtletasCreateForm";
 export { default as AtletasUpdateForm } from "./AtletasUpdateForm";
 export { default as Campeonato } from "./Campeonato";
@@ -63,6 +66,9 @@ export { default as PartidosCollectionBeislLuno } from "./PartidosCollectionBeis
 export { default as PartidosUpdateForm } from "./PartidosUpdateForm";
 export { default as Partidosfutbol } from "./Partidosfutbol";
 export { default as PartidosfutbolCollection } from "./PartidosfutbolCollection";
+export { default as Patrocinador } from "./Patrocinador";
+export { default as PatrocinadoresCreateForm } from "./PatrocinadoresCreateForm";
+export { default as PatrocinadoresUpdateForm } from "./PatrocinadoresUpdateForm";
 export { default as PersonajesPelea } from "./PersonajesPelea";
 export { default as PresidentesCreateForm } from "./PresidentesCreateForm";
 export { default as PresidentesUpdateForm } from "./PresidentesUpdateForm";
@@ -71,6 +77,7 @@ export { default as SalonFamaCreateForm } from "./SalonFamaCreateForm";
 export { default as SalonFamaUpdateForm } from "./SalonFamaUpdateForm";
 export { default as SalondelaFama } from "./SalondelaFama";
 export { default as SalondelaFamaCollection } from "./SalondelaFamaCollection";
+export { default as SalondelaFamaUniversidad } from "./SalondelaFamaUniversidad";
 export { default as StatsJugadoresCreateForm } from "./StatsJugadoresCreateForm";
 export { default as StatsJugadoresUpdateForm } from "./StatsJugadoresUpdateForm";
 export { default as StatsequipoUpdateForm } from "./StatsequipoUpdateForm";
@@ -80,4 +87,7 @@ export { default as Tablafutbol } from "./Tablafutbol";
 export { default as TablafutbolCollection } from "./TablafutbolCollection";
 export { default as TorneosCreateForm } from "./TorneosCreateForm";
 export { default as TorneosUpdateForm } from "./TorneosUpdateForm";
+export { default as Universidad } from "./Universidad";
+export { default as UniversidadesCreateForm } from "./UniversidadesCreateForm";
+export { default as UniversidadesUpdateForm } from "./UniversidadesUpdateForm";
 export { default as studioTheme } from "./studioTheme";

@@ -11,6 +11,7 @@
     "aws-amplify": "^6.3.1",
     "aws-sdk": "^2.1638.0",
     "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.5",
     "downloadjs": "^1.4.7",
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",

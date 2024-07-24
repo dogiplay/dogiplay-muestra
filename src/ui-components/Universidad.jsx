@@ -1,0 +1,301 @@
+/***************************************************************************
+ * The contents of this file were generated with Amplify Studio.           *
+ * Please refrain from making any modifications to this file.              *
+ * Any changes to this file will be overwritten when running amplify pull. *
+ **************************************************************************/
+
+/* eslint-disable */
+import * as React from "react";
+import { getOverrideProps } from "./utils";
+import { Image, Text, View } from "@aws-amplify/ui-react";
+export default function Universidad(props) {
+  const { overrides, ...rest } = props;
+  return (
+    <View
+      width="260px"
+      height="496px"
+      display="block"
+      gap="unset"
+      alignItems="unset"
+      justifyContent="unset"
+      position="relative"
+      padding="0px 0px 0px 0px"
+      {...getOverrideProps(overrides, "Universidad")}
+      {...rest}
+    >
+      <View
+        width="260px"
+        height="460px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="7.26%"
+        bottom="0%"
+        left="0%"
+        right="0%"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(0,82,141,1)"
+        {...getOverrideProps(overrides, "Rectangle 105")}
+      ></View>
+      <View
+        width="245px"
+        height="443px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="9.07%"
+        bottom="1.61%"
+        left="2.69%"
+        right="3.08%"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(255,255,255,1)"
+        {...getOverrideProps(overrides, "Rectangle 106")}
+      ></View>
+      <Text
+        fontFamily="Inika"
+        fontSize="55px"
+        fontWeight="700"
+        color="rgba(0,148,255,1)"
+        lineHeight="71.66500091552734px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="unset"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="-0.4%"
+        bottom="85.08%"
+        left="25%"
+        right="25%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="UAN"
+        {...getOverrideProps(overrides, "UAN")}
+      ></Text>
+      <Image
+        width="88.85%"
+        height="66.53%"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="11.9%"
+        bottom="21.57%"
+        left="5%"
+        right="6.15%"
+        border="3px SOLID rgba(0,82,141,1)"
+        padding="0px 0px 0px 0px"
+        objectFit="cover"
+        {...getOverrideProps(overrides, "pruebauan 1")}
+      ></Image>
+      <View
+        width="225px"
+        height="29px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="51.21%"
+        bottom="42.94%"
+        left="6.15%"
+        right="7.31%"
+        border="1px SOLID rgba(0,82,141,1)"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(0,148,255,0.6)"
+        {...getOverrideProps(overrides, "Rectangle 107")}
+      ></View>
+      <Image
+        width="13.08%"
+        height="3.83%"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="13.31%"
+        bottom="82.86%"
+        left="77.69%"
+        right="9.23%"
+        padding="0px 0px 0px 0px"
+        objectFit="cover"
+        {...getOverrideProps(overrides, "file 4")}
+      ></Image>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(253,249,249,1)"
+        lineHeight="18px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="118px"
+        height="17.1px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="13.31%"
+        bottom="83.25%"
+        left="8.08%"
+        right="46.54%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="dogiplay.com"
+        {...getOverrideProps(overrides, "dogiplay.com")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(255,255,255,1)"
+        lineHeight="18px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="215px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="52.22%"
+        bottom="44.15%"
+        left="8.08%"
+        right="9.23%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="FATIMA GARCÍA"
+        {...getOverrideProps(overrides, "FATIMA GARC\u00CDA")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(0,82,141,1)"
+        lineHeight="18px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="228px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="89.31%"
+        bottom="7.06%"
+        left="5%"
+        right="7.31%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Deporte: Carrera con vallas"
+        {...getOverrideProps(overrides, "Deporte: Carrera con vallas")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(0,82,141,1)"
+        lineHeight="18px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="228px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="92.94%"
+        bottom="3.43%"
+        left="5%"
+        right="7.31%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Dos competencias nacionales"
+        {...getOverrideProps(overrides, "Dos competencias nacionales")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(0,82,141,1)"
+        lineHeight="18px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="228px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="82.26%"
+        bottom="14.11%"
+        left="5.77%"
+        right="6.54%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Universidad Autonoma de Nayarit"
+        {...getOverrideProps(overrides, "Universidad Autonoma de Nayarit")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(0,82,141,1)"
+        lineHeight="18px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="228px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="85.69%"
+        bottom="10.69%"
+        left="5.77%"
+        right="6.54%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Facultad de Derecho"
+        {...getOverrideProps(overrides, "Facultad de Derecho")}
+      ></Text>
+      <Image
+        width="14.62%"
+        height="8.27%"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="73.39%"
+        bottom="18.35%"
+        left="41.54%"
+        right="43.85%"
+        border="3px SOLID rgba(0,82,141,1)"
+        padding="0px 0px 0px 0px"
+        objectFit="cover"
+        {...getOverrideProps(overrides, "logo 1")}
+      ></Image>
+    </View>
+  );
+}

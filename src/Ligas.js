@@ -34,7 +34,7 @@ const Ligas = () => {
     <div className='grid-layout'>
        <div className='contenedor100'>
        <div class="cajaBarra">
-       <center><h1 className='colorBlanco'>SALÓN DE LA FAMA</h1></center>
+       <center><h1 className='colorDorado'>SALÓN DE LA FAMA</h1></center>
        <SalondelaFamaCollection/>
        <center><h1 className='colorBlanco'>BASE DE DATOS NACIONAL DE PITCHERS</h1></center>
        </div>
@@ -49,53 +49,7 @@ const Ligas = () => {
        
        
      
-      {/* <div>
-        <center><h1 className='colorBlanco'>LIGAS DE FUTBOL</h1></center>
-        <p className='colorBlanco'><strong>Busca tu liga por nombre, estado, municipio o clave de liga</strong></p>
 
-        <CardligaCollectionFutbol marginLeft={"20px"}
-          overrideItems={({ item, index }) => ({
-            overrides: {
-              buttonLiga: {
-                onClick: () => guardarClavefutbol(`${item.clave}`, `${item.nombre}`, `${item.estado}`, `${item.categoria}`),
-                //onClick: () => alert(`${item.clave}`),
-
-
-              }
-
-            }
-          }
-
-          )
-
-          }
-        />
-
-      </div>
-
-      <div>
-        <center><h1 className='colorBlanco'>LIGAS DE BEISBOL</h1></center>
-        <p className='colorBlanco'><strong>Busca tu liga por nombre, estado, municipio o clave de liga</strong></p>
-
-        <CardligaBeisbolCollection marginLeft={"20px"}
-          overrideItems={({ item, index }) => ({
-            overrides: {
-              botonLigaBeis: {
-                onClick: () => guardarClavebeisbol(`${item.clave}`, `${item.nombre}`, `${item.estado}`, `${item.categoria}`),
-                //onClick: () => alert(`${item.clave}`),
-
-
-              }
-
-            }
-          }
-
-          )
-
-          }
-        />
-
-       </div>*/}
       </div> 
     </div>
   )

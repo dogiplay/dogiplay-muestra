@@ -154,7 +154,7 @@ export default function SalondelaFama(props) {
         left="29px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${"Pa\u00EDs: "}${salonFama?.pais}`}
+        children={`${"Pa\u00EDs/Country: "}${salonFama?.pais}`}
         {...getOverrideProps(overrides, "Pa\u00EDs: M\u00E9xico")}
       ></Text>
       <Text
@@ -176,7 +176,7 @@ export default function SalondelaFama(props) {
         left="29px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${"Estado/Ciudad: "}${salonFama?.estado}`}
+        children={`${"Estado/Cd/City: "}${salonFama?.estado}`}
         {...getOverrideProps(overrides, "Estado: Nayarit")}
       ></Text>
       <Text
@@ -198,7 +198,7 @@ export default function SalondelaFama(props) {
         left="29px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${"Deporte: "}${salonFama?.deporte}`}
+        children={`${"Deporte/Sport: "}${salonFama?.deporte}`}
         {...getOverrideProps(overrides, "Deporte: Futbol")}
       ></Text>
       <Icon
@@ -307,6 +307,31 @@ export default function SalondelaFama(props) {
         src={salonFama?.fotopais}
         {...getOverrideProps(overrides, "file 3")}
       ></Image>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(253,249,249,1)"
+        lineHeight="18px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        letterSpacing="0px"
+        width="118px"
+        height="17.1px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="5.02%"
+        bottom="91.4%"
+        left="11.15%"
+        right="43.46%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="dogiplay.com"
+        {...getOverrideProps(overrides, "dogiplay.com")}
+      ></Text>
     </View>
   );
 }
