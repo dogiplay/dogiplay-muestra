@@ -7,9 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Atletas } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { createAtletas } from "../graphql/mutations";
+const client = generateClient();
 export default function AtletasCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -216,7 +217,14 @@ export default function AtletasCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Atletas(modelFields));
+          await client.graphql({
+            query: createAtletas.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -225,7 +233,8 @@ export default function AtletasCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

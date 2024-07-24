@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Managers } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getManagers } from "../graphql/queries";
+import { updateManagers } from "../graphql/mutations";
+const client = generateClient();
 export default function ManagersUpdateForm(props) {
   const {
     id: idProp,
@@ -68,7 +70,12 @@ export default function ManagersUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Managers, idProp)
+        ? (
+            await client.graphql({
+              query: getManagers.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getManagers
         : managersModelProp;
       setManagersRecord(record);
     };
@@ -114,17 +121,17 @@ export default function ManagersUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idliga,
-          idmanager,
-          idequipo,
-          alias,
-          foto,
-          deporte,
-          telefono,
-          clave,
-          usuario,
-          nombre,
-          idtorneo,
+          idliga: idliga ?? null,
+          idmanager: idmanager ?? null,
+          idequipo: idequipo ?? null,
+          alias: alias ?? null,
+          foto: foto ?? null,
+          deporte: deporte ?? null,
+          telefono: telefono ?? null,
+          clave: clave ?? null,
+          usuario: usuario ?? null,
+          nombre: nombre ?? null,
+          idtorneo: idtorneo ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -154,17 +161,22 @@ export default function ManagersUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Managers.copyOf(managersRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateManagers.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: managersRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

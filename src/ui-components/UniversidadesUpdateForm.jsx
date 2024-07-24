@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Universidades } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getUniversidades } from "../graphql/queries";
+import { updateUniversidades } from "../graphql/mutations";
+const client = generateClient();
 export default function UniversidadesUpdateForm(props) {
   const {
     id: idProp,
@@ -81,7 +83,12 @@ export default function UniversidadesUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Universidades, idProp)
+        ? (
+            await client.graphql({
+              query: getUniversidades.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getUniversidades
         : universidadesModelProp;
       setUniversidadesRecord(record);
     };
@@ -128,18 +135,18 @@ export default function UniversidadesUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          nombreuniversidad,
-          pais,
-          estado,
-          telefono,
-          fotopais,
-          foto,
-          nombredeportista,
-          logouniversidad,
-          carrera,
-          deporte,
-          descripcion,
-          tipo,
+          nombreuniversidad: nombreuniversidad ?? null,
+          pais: pais ?? null,
+          estado: estado ?? null,
+          telefono: telefono ?? null,
+          fotopais: fotopais ?? null,
+          foto: foto ?? null,
+          nombredeportista: nombredeportista ?? null,
+          logouniversidad: logouniversidad ?? null,
+          carrera: carrera ?? null,
+          deporte: deporte ?? null,
+          descripcion: descripcion ?? null,
+          tipo: tipo ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -169,17 +176,22 @@ export default function UniversidadesUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Universidades.copyOf(universidadesRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateUniversidades.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: universidadesRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

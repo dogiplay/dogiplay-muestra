@@ -7,9 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Torneos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { createTorneos } from "../graphql/mutations";
+const client = generateClient();
 export default function TorneosCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -113,7 +114,14 @@ export default function TorneosCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Torneos(modelFields));
+          await client.graphql({
+            query: createTorneos.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -122,7 +130,8 @@ export default function TorneosCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

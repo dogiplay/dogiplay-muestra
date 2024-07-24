@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Presidentes } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getPresidentes } from "../graphql/queries";
+import { updatePresidentes } from "../graphql/mutations";
+const client = generateClient();
 export default function PresidentesUpdateForm(props) {
   const {
     id: idProp,
@@ -60,7 +62,12 @@ export default function PresidentesUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Presidentes, idProp)
+        ? (
+            await client.graphql({
+              query: getPresidentes.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getPresidentes
         : presidentesModelProp;
       setPresidentesRecord(record);
     };
@@ -103,14 +110,14 @@ export default function PresidentesUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idliga,
-          nombre,
-          alias,
-          user,
-          clave,
-          telefono,
-          foto,
-          notorneos,
+          idliga: idliga ?? null,
+          nombre: nombre ?? null,
+          alias: alias ?? null,
+          user: user ?? null,
+          clave: clave ?? null,
+          telefono: telefono ?? null,
+          foto: foto ?? null,
+          notorneos: notorneos ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -140,17 +147,22 @@ export default function PresidentesUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Presidentes.copyOf(presidentesRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updatePresidentes.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: presidentesRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

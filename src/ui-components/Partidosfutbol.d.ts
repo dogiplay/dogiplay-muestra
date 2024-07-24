@@ -5,7 +5,6 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Partidos } from "../models";
 import { TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -32,7 +31,7 @@ export declare type PartidosfutbolOverridesProps = {
     "Rectangle 16"?: PrimitiveOverrideProps<ViewProps>;
 } & EscapeHatchProps;
 export declare type PartidosfutbolProps = React.PropsWithChildren<Partial<ViewProps> & {
-    partidos?: Partidos;
+    partidos?: any;
 } & {
     overrides?: PartidosfutbolOverridesProps | undefined | null;
 }>;

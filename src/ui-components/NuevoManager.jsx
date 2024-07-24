@@ -15,9 +15,10 @@ import {
   SelectField,
   TextField,
 } from "@aws-amplify/ui-react";
-import { Managers } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { createManagers } from "../graphql/mutations";
+const client = generateClient();
 export default function NuevoManager(props) {
   const {
     clearOnSuccess = true,
@@ -137,7 +138,14 @@ export default function NuevoManager(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Managers(modelFields));
+          await client.graphql({
+            query: createManagers.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -146,7 +154,8 @@ export default function NuevoManager(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

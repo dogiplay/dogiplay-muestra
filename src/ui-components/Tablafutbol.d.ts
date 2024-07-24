@@ -5,7 +5,6 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Equipos } from "../models";
 import { TablabeisbolProps } from "./Tablabeisbol";
 import { ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
@@ -37,7 +36,7 @@ export declare type TablafutbolOverridesProps = {
     DG?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type TablafutbolProps = React.PropsWithChildren<Partial<ViewProps> & {
-    equipos?: Equipos;
+    equipos?: any;
 } & {
     overrides?: TablafutbolOverridesProps | undefined | null;
 }>;

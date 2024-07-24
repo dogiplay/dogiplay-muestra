@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Statsequipo } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getStatsequipo } from "../graphql/queries";
+import { updateStatsequipo } from "../graphql/mutations";
+const client = generateClient();
 export default function StatsequipoUpdateForm(props) {
   const {
     id: idProp,
@@ -62,7 +64,12 @@ export default function StatsequipoUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Statsequipo, idProp)
+        ? (
+            await client.graphql({
+              query: getStatsequipo.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getStatsequipo
         : statsequipoModelProp;
       setStatsequipoRecord(record);
     };
@@ -105,14 +112,14 @@ export default function StatsequipoUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idtorneo,
-          idequipo,
-          partidosg,
-          partidosp,
-          partidose,
-          puntos,
-          partigosj,
-          posiciontabla,
+          idtorneo: idtorneo ?? null,
+          idequipo: idequipo ?? null,
+          partidosg: partidosg ?? null,
+          partidosp: partidosp ?? null,
+          partidose: partidose ?? null,
+          puntos: puntos ?? null,
+          partigosj: partigosj ?? null,
+          posiciontabla: posiciontabla ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -142,17 +149,22 @@ export default function StatsequipoUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Statsequipo.copyOf(statsequipoRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateStatsequipo.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: statsequipoRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

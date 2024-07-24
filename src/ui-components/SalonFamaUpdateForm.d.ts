@@ -6,7 +6,6 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { SalonFama } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -64,7 +63,7 @@ export declare type SalonFamaUpdateFormProps = React.PropsWithChildren<{
     overrides?: SalonFamaUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    salonFama?: SalonFama;
+    salonFama?: any;
     onSubmit?: (fields: SalonFamaUpdateFormInputValues) => SalonFamaUpdateFormInputValues;
     onSuccess?: (fields: SalonFamaUpdateFormInputValues) => void;
     onError?: (fields: SalonFamaUpdateFormInputValues, errorMessage: string) => void;

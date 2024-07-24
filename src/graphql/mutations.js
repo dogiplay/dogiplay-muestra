@@ -1,6 +1,444 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createAsociaciones = /* GraphQL */ `
+  mutation CreateAsociaciones(
+    $input: CreateAsociacionesInput!
+    $condition: ModelAsociacionesConditionInput
+  ) {
+    createAsociaciones(input: $input, condition: $condition) {
+      id
+      nombre
+      pais
+      foto
+      fotopais
+      telefono
+      presidente
+      sitio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateAsociaciones = /* GraphQL */ `
+  mutation UpdateAsociaciones(
+    $input: UpdateAsociacionesInput!
+    $condition: ModelAsociacionesConditionInput
+  ) {
+    updateAsociaciones(input: $input, condition: $condition) {
+      id
+      nombre
+      pais
+      foto
+      fotopais
+      telefono
+      presidente
+      sitio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteAsociaciones = /* GraphQL */ `
+  mutation DeleteAsociaciones(
+    $input: DeleteAsociacionesInput!
+    $condition: ModelAsociacionesConditionInput
+  ) {
+    deleteAsociaciones(input: $input, condition: $condition) {
+      id
+      nombre
+      pais
+      foto
+      fotopais
+      telefono
+      presidente
+      sitio
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createUniversidades = /* GraphQL */ `
+  mutation CreateUniversidades(
+    $input: CreateUniversidadesInput!
+    $condition: ModelUniversidadesConditionInput
+  ) {
+    createUniversidades(input: $input, condition: $condition) {
+      id
+      nombreuniversidad
+      pais
+      estado
+      telefono
+      fotopais
+      foto
+      nombredeportista
+      logouniversidad
+      carrera
+      deporte
+      descripcion
+      tipo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateUniversidades = /* GraphQL */ `
+  mutation UpdateUniversidades(
+    $input: UpdateUniversidadesInput!
+    $condition: ModelUniversidadesConditionInput
+  ) {
+    updateUniversidades(input: $input, condition: $condition) {
+      id
+      nombreuniversidad
+      pais
+      estado
+      telefono
+      fotopais
+      foto
+      nombredeportista
+      logouniversidad
+      carrera
+      deporte
+      descripcion
+      tipo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteUniversidades = /* GraphQL */ `
+  mutation DeleteUniversidades(
+    $input: DeleteUniversidadesInput!
+    $condition: ModelUniversidadesConditionInput
+  ) {
+    deleteUniversidades(input: $input, condition: $condition) {
+      id
+      nombreuniversidad
+      pais
+      estado
+      telefono
+      fotopais
+      foto
+      nombredeportista
+      logouniversidad
+      carrera
+      deporte
+      descripcion
+      tipo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createPatrocinadores = /* GraphQL */ `
+  mutation CreatePatrocinadores(
+    $input: CreatePatrocinadoresInput!
+    $condition: ModelPatrocinadoresConditionInput
+  ) {
+    createPatrocinadores(input: $input, condition: $condition) {
+      id
+      nombre
+      telefono
+      foto
+      sitio
+      pais
+      contacto
+      textoboton
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updatePatrocinadores = /* GraphQL */ `
+  mutation UpdatePatrocinadores(
+    $input: UpdatePatrocinadoresInput!
+    $condition: ModelPatrocinadoresConditionInput
+  ) {
+    updatePatrocinadores(input: $input, condition: $condition) {
+      id
+      nombre
+      telefono
+      foto
+      sitio
+      pais
+      contacto
+      textoboton
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deletePatrocinadores = /* GraphQL */ `
+  mutation DeletePatrocinadores(
+    $input: DeletePatrocinadoresInput!
+    $condition: ModelPatrocinadoresConditionInput
+  ) {
+    deletePatrocinadores(input: $input, condition: $condition) {
+      id
+      nombre
+      telefono
+      foto
+      sitio
+      pais
+      contacto
+      textoboton
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createSalonFama = /* GraphQL */ `
+  mutation CreateSalonFama(
+    $input: CreateSalonFamaInput!
+    $condition: ModelSalonFamaConditionInput
+  ) {
+    createSalonFama(input: $input, condition: $condition) {
+      id
+      nombre
+      pais
+      estado
+      deporte
+      logros
+      foto
+      descripcion1
+      descripcion2
+      fotopais
+      prioridad
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateSalonFama = /* GraphQL */ `
+  mutation UpdateSalonFama(
+    $input: UpdateSalonFamaInput!
+    $condition: ModelSalonFamaConditionInput
+  ) {
+    updateSalonFama(input: $input, condition: $condition) {
+      id
+      nombre
+      pais
+      estado
+      deporte
+      logros
+      foto
+      descripcion1
+      descripcion2
+      fotopais
+      prioridad
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteSalonFama = /* GraphQL */ `
+  mutation DeleteSalonFama(
+    $input: DeleteSalonFamaInput!
+    $condition: ModelSalonFamaConditionInput
+  ) {
+    deleteSalonFama(input: $input, condition: $condition) {
+      id
+      nombre
+      pais
+      estado
+      deporte
+      logros
+      foto
+      descripcion1
+      descripcion2
+      fotopais
+      prioridad
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createAtletas = /* GraphQL */ `
+  mutation CreateAtletas(
+    $input: CreateAtletasInput!
+    $condition: ModelAtletasConditionInput
+  ) {
+    createAtletas(input: $input, condition: $condition) {
+      id
+      nombre
+      foto
+      equipoclub
+      disciplina
+      edad
+      recordActual
+      pais
+      ciudad
+      telefono
+      categoria
+      espacio2
+      espacio1
+      espacio4
+      espacio5
+      espacio3
+      especialidad
+      recordespecialidad
+      estado
+      peso
+      espacio6fiscul
+      espacio7fiscul
+      espacio8fiscul
+      tipo
+      fotopais
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateAtletas = /* GraphQL */ `
+  mutation UpdateAtletas(
+    $input: UpdateAtletasInput!
+    $condition: ModelAtletasConditionInput
+  ) {
+    updateAtletas(input: $input, condition: $condition) {
+      id
+      nombre
+      foto
+      equipoclub
+      disciplina
+      edad
+      recordActual
+      pais
+      ciudad
+      telefono
+      categoria
+      espacio2
+      espacio1
+      espacio4
+      espacio5
+      espacio3
+      especialidad
+      recordespecialidad
+      estado
+      peso
+      espacio6fiscul
+      espacio7fiscul
+      espacio8fiscul
+      tipo
+      fotopais
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteAtletas = /* GraphQL */ `
+  mutation DeleteAtletas(
+    $input: DeleteAtletasInput!
+    $condition: ModelAtletasConditionInput
+  ) {
+    deleteAtletas(input: $input, condition: $condition) {
+      id
+      nombre
+      foto
+      equipoclub
+      disciplina
+      edad
+      recordActual
+      pais
+      ciudad
+      telefono
+      categoria
+      espacio2
+      espacio1
+      espacio4
+      espacio5
+      espacio3
+      especialidad
+      recordespecialidad
+      estado
+      peso
+      espacio6fiscul
+      espacio7fiscul
+      espacio8fiscul
+      tipo
+      fotopais
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createCampeonatos = /* GraphQL */ `
+  mutation CreateCampeonatos(
+    $input: CreateCampeonatosInput!
+    $condition: ModelCampeonatosConditionInput
+  ) {
+    createCampeonatos(input: $input, condition: $condition) {
+      id
+      clave_liga
+      equipo
+      logo
+      manager
+      temporada
+      numero_campeonato
+      categoria
+      anoc
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateCampeonatos = /* GraphQL */ `
+  mutation UpdateCampeonatos(
+    $input: UpdateCampeonatosInput!
+    $condition: ModelCampeonatosConditionInput
+  ) {
+    updateCampeonatos(input: $input, condition: $condition) {
+      id
+      clave_liga
+      equipo
+      logo
+      manager
+      temporada
+      numero_campeonato
+      categoria
+      anoc
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteCampeonatos = /* GraphQL */ `
+  mutation DeleteCampeonatos(
+    $input: DeleteCampeonatosInput!
+    $condition: ModelCampeonatosConditionInput
+  ) {
+    deleteCampeonatos(input: $input, condition: $condition) {
+      id
+      clave_liga
+      equipo
+      logo
+      manager
+      temporada
+      numero_campeonato
+      categoria
+      anoc
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createStatsJugadores = /* GraphQL */ `
   mutation CreateStatsJugadores(
     $input: CreateStatsJugadoresInput!
@@ -28,9 +466,6 @@ export const createStatsJugadores = /* GraphQL */ `
       futtarjetasrojas
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -62,9 +497,6 @@ export const updateStatsJugadores = /* GraphQL */ `
       futtarjetasrojas
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -96,9 +528,6 @@ export const deleteStatsJugadores = /* GraphQL */ `
       futtarjetasrojas
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -129,14 +558,14 @@ export const createJugadores = /* GraphQL */ `
       futasisgol
       futtarjetasallas
       futtarjetasrojas
-      beiponches
+      futgoleadorsemana
       beicarrerashechas
       beicarrerasproducid
       beihr
       beihits
       beifly
       beirolas
-      beiporcentajebateo
+      beiponches
       mvp
       beipitentradaslanzadas
       beipitcarreraslimpias
@@ -145,11 +574,25 @@ export const createJugadores = /* GraphQL */ `
       beipitera
       beipitjuegosganados
       beipitjuegosperdidos
+      beiporcentajebateo
+      clave_liga
+      boxajecombates
+      boxajetriunfos
+      boxajederrotas
+      boxajeempates
+      boxKO
+      boxgimnasio
+      pais
+      ciudad
+      categoria
+      ajedrezelo
+      beipitchervelmax
+      beipitchervelprom
+      telefono
+      beilanzamientos
+      fotopais
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -180,14 +623,14 @@ export const updateJugadores = /* GraphQL */ `
       futasisgol
       futtarjetasallas
       futtarjetasrojas
-      beiponches
+      futgoleadorsemana
       beicarrerashechas
       beicarrerasproducid
       beihr
       beihits
       beifly
       beirolas
-      beiporcentajebateo
+      beiponches
       mvp
       beipitentradaslanzadas
       beipitcarreraslimpias
@@ -196,11 +639,25 @@ export const updateJugadores = /* GraphQL */ `
       beipitera
       beipitjuegosganados
       beipitjuegosperdidos
+      beiporcentajebateo
+      clave_liga
+      boxajecombates
+      boxajetriunfos
+      boxajederrotas
+      boxajeempates
+      boxKO
+      boxgimnasio
+      pais
+      ciudad
+      categoria
+      ajedrezelo
+      beipitchervelmax
+      beipitchervelprom
+      telefono
+      beilanzamientos
+      fotopais
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -231,14 +688,14 @@ export const deleteJugadores = /* GraphQL */ `
       futasisgol
       futtarjetasallas
       futtarjetasrojas
-      beiponches
+      futgoleadorsemana
       beicarrerashechas
       beicarrerasproducid
       beihr
       beihits
       beifly
       beirolas
-      beiporcentajebateo
+      beiponches
       mvp
       beipitentradaslanzadas
       beipitcarreraslimpias
@@ -247,11 +704,25 @@ export const deleteJugadores = /* GraphQL */ `
       beipitera
       beipitjuegosganados
       beipitjuegosperdidos
+      beiporcentajebateo
+      clave_liga
+      boxajecombates
+      boxajetriunfos
+      boxajederrotas
+      boxajeempates
+      boxKO
+      boxgimnasio
+      pais
+      ciudad
+      categoria
+      ajedrezelo
+      beipitchervelmax
+      beipitchervelprom
+      telefono
+      beilanzamientos
+      fotopais
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -270,9 +741,6 @@ export const createTorneos = /* GraphQL */ `
       nombredeporte
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -291,9 +759,6 @@ export const updateTorneos = /* GraphQL */ `
       nombredeporte
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -312,9 +777,6 @@ export const deleteTorneos = /* GraphQL */ `
       nombredeporte
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -336,9 +798,6 @@ export const createPresidentes = /* GraphQL */ `
       notorneos
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -360,9 +819,6 @@ export const updatePresidentes = /* GraphQL */ `
       notorneos
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -384,9 +840,6 @@ export const deletePresidentes = /* GraphQL */ `
       notorneos
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -404,11 +857,17 @@ export const createLigas = /* GraphQL */ `
       foto
       descripcion
       nombre
+      pais
+      estado
+      municipio
+      equipos
+      presidente
+      deporte
+      categoria
+      ciudad
+      telefono
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -426,11 +885,17 @@ export const updateLigas = /* GraphQL */ `
       foto
       descripcion
       nombre
+      pais
+      estado
+      municipio
+      equipos
+      presidente
+      deporte
+      categoria
+      ciudad
+      telefono
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -448,11 +913,17 @@ export const deleteLigas = /* GraphQL */ `
       foto
       descripcion
       nombre
+      pais
+      estado
+      municipio
+      equipos
+      presidente
+      deporte
+      categoria
+      ciudad
+      telefono
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -474,9 +945,6 @@ export const createStatsequipo = /* GraphQL */ `
       posiciontabla
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -498,9 +966,6 @@ export const updateStatsequipo = /* GraphQL */ `
       posiciontabla
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -522,9 +987,6 @@ export const deleteStatsequipo = /* GraphQL */ `
       posiciontabla
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -547,11 +1009,9 @@ export const createPartidos = /* GraphQL */ `
       jugador_partido
       jornada
       fecha
+      clave_liga
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -574,11 +1034,9 @@ export const updatePartidos = /* GraphQL */ `
       jugador_partido
       jornada
       fecha
+      clave_liga
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -601,11 +1059,9 @@ export const deletePartidos = /* GraphQL */ `
       jugador_partido
       jornada
       fecha
+      clave_liga
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -638,11 +1094,10 @@ export const createEquipos = /* GraphQL */ `
       patrocinador
       beicarreras
       beihr
+      clave_liga
+      futdifgoles
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -675,11 +1130,10 @@ export const updateEquipos = /* GraphQL */ `
       patrocinador
       beicarreras
       beihr
+      clave_liga
+      futdifgoles
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -712,11 +1166,10 @@ export const deleteEquipos = /* GraphQL */ `
       patrocinador
       beicarreras
       beihr
+      clave_liga
+      futdifgoles
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -741,9 +1194,6 @@ export const createManagers = /* GraphQL */ `
       idtorneo
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -768,9 +1218,6 @@ export const updateManagers = /* GraphQL */ `
       idtorneo
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -795,9 +1242,6 @@ export const deleteManagers = /* GraphQL */ `
       idtorneo
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }

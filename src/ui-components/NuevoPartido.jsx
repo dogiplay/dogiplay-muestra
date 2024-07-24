@@ -14,9 +14,10 @@ import {
   Heading,
   TextField,
 } from "@aws-amplify/ui-react";
-import { Partidos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { createPartidos } from "../graphql/mutations";
+const client = generateClient();
 export default function NuevoPartido(props) {
   const {
     clearOnSuccess = true,
@@ -186,7 +187,14 @@ export default function NuevoPartido(props) {
             resultado_equipo2: modelFields.resultado_equipo2,
             clave_liga: modelFields.clave_liga,
           };
-          await DataStore.save(new Partidos(modelFieldsToSave));
+          await client.graphql({
+            query: createPartidos.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFieldsToSave,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -195,7 +203,8 @@ export default function NuevoPartido(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

@@ -6,7 +6,6 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { Patrocinadores } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -55,7 +54,7 @@ export declare type PatrocinadoresUpdateFormProps = React.PropsWithChildren<{
     overrides?: PatrocinadoresUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    patrocinadores?: Patrocinadores;
+    patrocinadores?: any;
     onSubmit?: (fields: PatrocinadoresUpdateFormInputValues) => PatrocinadoresUpdateFormInputValues;
     onSuccess?: (fields: PatrocinadoresUpdateFormInputValues) => void;
     onError?: (fields: PatrocinadoresUpdateFormInputValues, errorMessage: string) => void;

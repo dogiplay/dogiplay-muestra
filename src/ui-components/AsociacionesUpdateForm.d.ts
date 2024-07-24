@@ -6,7 +6,6 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { Asociaciones } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -55,7 +54,7 @@ export declare type AsociacionesUpdateFormProps = React.PropsWithChildren<{
     overrides?: AsociacionesUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    asociaciones?: Asociaciones;
+    asociaciones?: any;
     onSubmit?: (fields: AsociacionesUpdateFormInputValues) => AsociacionesUpdateFormInputValues;
     onSuccess?: (fields: AsociacionesUpdateFormInputValues) => void;
     onError?: (fields: AsociacionesUpdateFormInputValues, errorMessage: string) => void;

@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Ligas } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getLigas } from "../graphql/queries";
+import { updateLigas } from "../graphql/mutations";
+const client = generateClient();
 export default function LigasUpdateForm(props) {
   const {
     id: idProp,
@@ -84,7 +86,12 @@ export default function LigasUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Ligas, idProp)
+        ? (
+            await client.graphql({
+              query: getLigas.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getLigas
         : ligasModelProp;
       setLigasRecord(record);
     };
@@ -134,21 +141,21 @@ export default function LigasUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idliga,
-          idpresidente,
-          clave,
-          foto,
-          descripcion,
-          nombre,
-          pais,
-          estado,
-          municipio,
-          equipos,
-          presidente,
-          deporte,
-          categoria,
-          ciudad,
-          telefono,
+          idliga: idliga ?? null,
+          idpresidente: idpresidente ?? null,
+          clave: clave ?? null,
+          foto: foto ?? null,
+          descripcion: descripcion ?? null,
+          nombre: nombre ?? null,
+          pais: pais ?? null,
+          estado: estado ?? null,
+          municipio: municipio ?? null,
+          equipos: equipos ?? null,
+          presidente: presidente ?? null,
+          deporte: deporte ?? null,
+          categoria: categoria ?? null,
+          ciudad: ciudad ?? null,
+          telefono: telefono ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -178,17 +185,22 @@ export default function LigasUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Ligas.copyOf(ligasRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateLigas.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: ligasRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

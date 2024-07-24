@@ -6,7 +6,6 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
-import { Ligas } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -79,7 +78,7 @@ export declare type LigasUpdateFormProps = React.PropsWithChildren<{
     overrides?: LigasUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    ligas?: Ligas;
+    ligas?: any;
     onSubmit?: (fields: LigasUpdateFormInputValues) => LigasUpdateFormInputValues;
     onSuccess?: (fields: LigasUpdateFormInputValues) => void;
     onError?: (fields: LigasUpdateFormInputValues, errorMessage: string) => void;

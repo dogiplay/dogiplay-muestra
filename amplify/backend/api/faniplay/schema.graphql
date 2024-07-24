@@ -277,4 +277,4 @@ type Managers @model @auth(rules: [{allow: public}]) {
   nombre: String
   idtorneo: ID
 }
- 
+  

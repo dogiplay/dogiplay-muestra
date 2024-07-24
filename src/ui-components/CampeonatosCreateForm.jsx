@@ -7,9 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Campeonatos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { createCampeonatos } from "../graphql/mutations";
+const client = generateClient();
 export default function CampeonatosCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -126,7 +127,14 @@ export default function CampeonatosCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Campeonatos(modelFields));
+          await client.graphql({
+            query: createCampeonatos.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -135,7 +143,8 @@ export default function CampeonatosCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

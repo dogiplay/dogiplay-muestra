@@ -7,9 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Asociaciones } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { createAsociaciones } from "../graphql/mutations";
+const client = generateClient();
 export default function AsociacionesCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -119,7 +120,14 @@ export default function AsociacionesCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Asociaciones(modelFields));
+          await client.graphql({
+            query: createAsociaciones.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -128,7 +136,8 @@ export default function AsociacionesCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

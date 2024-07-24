@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { StatsJugadores } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getStatsJugadores } from "../graphql/queries";
+import { updateStatsJugadores } from "../graphql/mutations";
+const client = generateClient();
 export default function StatsJugadoresUpdateForm(props) {
   const {
     id: idProp,
@@ -101,7 +103,12 @@ export default function StatsJugadoresUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(StatsJugadores, idProp)
+        ? (
+            await client.graphql({
+              query: getStatsJugadores.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getStatsJugadores
         : statsJugadoresModelProp;
       setStatsJugadoresRecord(record);
     };
@@ -154,24 +161,24 @@ export default function StatsJugadoresUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idjugador,
-          idpartido,
-          iddeporte,
-          idtorneo,
-          tipocuenta,
-          futgoles,
-          bascanastas,
-          baspuntos,
-          beicarrerashechas,
-          beiponches,
-          beihr,
-          beihits,
-          beifly,
-          beirolas,
-          futasisgol,
-          beicarrerasproducidas,
-          futtarjetasamarillas,
-          futtarjetasrojas,
+          idjugador: idjugador ?? null,
+          idpartido: idpartido ?? null,
+          iddeporte: iddeporte ?? null,
+          idtorneo: idtorneo ?? null,
+          tipocuenta: tipocuenta ?? null,
+          futgoles: futgoles ?? null,
+          bascanastas: bascanastas ?? null,
+          baspuntos: baspuntos ?? null,
+          beicarrerashechas: beicarrerashechas ?? null,
+          beiponches: beiponches ?? null,
+          beihr: beihr ?? null,
+          beihits: beihits ?? null,
+          beifly: beifly ?? null,
+          beirolas: beirolas ?? null,
+          futasisgol: futasisgol ?? null,
+          beicarrerasproducidas: beicarrerasproducidas ?? null,
+          futtarjetasamarillas: futtarjetasamarillas ?? null,
+          futtarjetasrojas: futtarjetasrojas ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -201,17 +208,22 @@ export default function StatsJugadoresUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            StatsJugadores.copyOf(statsJugadoresRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateStatsJugadores.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: statsJugadoresRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

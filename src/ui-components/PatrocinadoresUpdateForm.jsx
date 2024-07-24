@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Patrocinadores } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getPatrocinadores } from "../graphql/queries";
+import { updatePatrocinadores } from "../graphql/mutations";
+const client = generateClient();
 export default function PatrocinadoresUpdateForm(props) {
   const {
     id: idProp,
@@ -58,7 +60,12 @@ export default function PatrocinadoresUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Patrocinadores, idProp)
+        ? (
+            await client.graphql({
+              query: getPatrocinadores.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getPatrocinadores
         : patrocinadoresModelProp;
       setPatrocinadoresRecord(record);
     };
@@ -100,13 +107,13 @@ export default function PatrocinadoresUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          nombre,
-          telefono,
-          foto,
-          sitio,
-          pais,
-          contacto,
-          textoboton,
+          nombre: nombre ?? null,
+          telefono: telefono ?? null,
+          foto: foto ?? null,
+          sitio: sitio ?? null,
+          pais: pais ?? null,
+          contacto: contacto ?? null,
+          textoboton: textoboton ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -136,17 +143,22 @@ export default function PatrocinadoresUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Patrocinadores.copyOf(patrocinadoresRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updatePatrocinadores.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: patrocinadoresRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

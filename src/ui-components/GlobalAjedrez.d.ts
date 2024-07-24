@@ -5,7 +5,6 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Jugadores } from "../models";
 import { ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -38,7 +37,7 @@ export declare type GlobalAjedrezOverridesProps = {
     ELO?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type GlobalAjedrezProps = React.PropsWithChildren<Partial<ViewProps> & {
-    jugadores?: Jugadores;
+    jugadores?: any;
 } & {
     overrides?: GlobalAjedrezOverridesProps | undefined | null;
 }>;

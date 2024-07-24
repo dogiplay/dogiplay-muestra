@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { SalonFama } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getSalonFama } from "../graphql/queries";
+import { updateSalonFama } from "../graphql/mutations";
+const client = generateClient();
 export default function SalonFamaUpdateForm(props) {
   const {
     id: idProp,
@@ -70,7 +72,12 @@ export default function SalonFamaUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(SalonFama, idProp)
+        ? (
+            await client.graphql({
+              query: getSalonFama.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getSalonFama
         : salonFamaModelProp;
       setSalonFamaRecord(record);
     };
@@ -115,16 +122,16 @@ export default function SalonFamaUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          nombre,
-          pais,
-          estado,
-          deporte,
-          logros,
-          foto,
-          descripcion1,
-          descripcion2,
-          fotopais,
-          prioridad,
+          nombre: nombre ?? null,
+          pais: pais ?? null,
+          estado: estado ?? null,
+          deporte: deporte ?? null,
+          logros: logros ?? null,
+          foto: foto ?? null,
+          descripcion1: descripcion1 ?? null,
+          descripcion2: descripcion2 ?? null,
+          fotopais: fotopais ?? null,
+          prioridad: prioridad ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -154,17 +161,22 @@ export default function SalonFamaUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            SalonFama.copyOf(salonFamaRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateSalonFama.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: salonFamaRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

@@ -7,9 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Presidentes } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { createPresidentes } from "../graphql/mutations";
+const client = generateClient();
 export default function PresidentesCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -124,7 +125,14 @@ export default function PresidentesCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Presidentes(modelFields));
+          await client.graphql({
+            query: createPresidentes.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -133,7 +141,8 @@ export default function PresidentesCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

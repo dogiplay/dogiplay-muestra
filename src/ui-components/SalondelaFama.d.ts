@@ -5,7 +5,6 @@
  **************************************************************************/
 
 import * as React from "react";
-import { SalonFama } from "../models";
 import { IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -38,7 +37,7 @@ export declare type SalondelaFamaOverridesProps = {
     "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type SalondelaFamaProps = React.PropsWithChildren<Partial<ViewProps> & {
-    salonFama?: SalonFama;
+    salonFama?: any;
 } & {
     overrides?: SalondelaFamaOverridesProps | undefined | null;
 }>;

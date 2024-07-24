@@ -49,7 +49,53 @@ const Ligas = () => {
        
        
      
+      <div>
+        <center><h1 className='colorBlanco'>LIGAS DE FUTBOL</h1></center>
+        <p className='colorBlanco'><strong>Busca tu liga por nombre, estado, municipio o clave de liga</strong></p>
 
+        <CardligaCollectionFutbol marginLeft={"20px"}
+          overrideItems={({ item, index }) => ({
+            overrides: {
+              buttonLiga: {
+                onClick: () => guardarClavefutbol(`${item.clave}`, `${item.nombre}`, `${item.estado}`, `${item.categoria}`),
+                //onClick: () => alert(`${item.clave}`),
+
+
+              }
+
+            }
+          }
+
+          )
+
+          }
+        />
+
+      </div>
+
+      <div>
+        <center><h1 className='colorBlanco'>LIGAS DE BEISBOL</h1></center>
+        <p className='colorBlanco'><strong>Busca tu liga por nombre, estado, municipio o clave de liga</strong></p>
+
+        <CardligaBeisbolCollection marginLeft={"20px"}
+          overrideItems={({ item, index }) => ({
+            overrides: {
+              botonLigaBeis: {
+                onClick: () => guardarClavebeisbol(`${item.clave}`, `${item.nombre}`, `${item.estado}`, `${item.categoria}`),
+                //onClick: () => alert(`${item.clave}`),
+
+
+              }
+
+            }
+          }
+
+          )
+
+          }
+        />
+
+       </div>
       </div> 
     </div>
   )

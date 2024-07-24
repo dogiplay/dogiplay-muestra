@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Asociaciones } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getAsociaciones } from "../graphql/queries";
+import { updateAsociaciones } from "../graphql/mutations";
+const client = generateClient();
 export default function AsociacionesUpdateForm(props) {
   const {
     id: idProp,
@@ -58,7 +60,12 @@ export default function AsociacionesUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Asociaciones, idProp)
+        ? (
+            await client.graphql({
+              query: getAsociaciones.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getAsociaciones
         : asociacionesModelProp;
       setAsociacionesRecord(record);
     };
@@ -100,13 +107,13 @@ export default function AsociacionesUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          nombre,
-          pais,
-          foto,
-          fotopais,
-          telefono,
-          presidente,
-          sitio,
+          nombre: nombre ?? null,
+          pais: pais ?? null,
+          foto: foto ?? null,
+          fotopais: fotopais ?? null,
+          telefono: telefono ?? null,
+          presidente: presidente ?? null,
+          sitio: sitio ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -136,17 +143,22 @@ export default function AsociacionesUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Asociaciones.copyOf(asociacionesRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateAsociaciones.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: asociacionesRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}

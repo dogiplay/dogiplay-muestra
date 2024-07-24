@@ -7,9 +7,11 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Torneos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { DataStore } from "aws-amplify/datastore";
+import { generateClient } from "aws-amplify/api";
+import { getTorneos } from "../graphql/queries";
+import { updateTorneos } from "../graphql/mutations";
+const client = generateClient();
 export default function TorneosUpdateForm(props) {
   const {
     id: idProp,
@@ -54,7 +56,12 @@ export default function TorneosUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? await DataStore.query(Torneos, idProp)
+        ? (
+            await client.graphql({
+              query: getTorneos.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getTorneos
         : torneosModelProp;
       setTorneosRecord(record);
     };
@@ -94,11 +101,11 @@ export default function TorneosUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idliga,
-          iddeporte,
-          idtorneo,
-          nombretorneo,
-          nombredeporte,
+          idliga: idliga ?? null,
+          iddeporte: iddeporte ?? null,
+          idtorneo: idtorneo ?? null,
+          nombretorneo: nombretorneo ?? null,
+          nombredeporte: nombredeporte ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -128,17 +135,22 @@ export default function TorneosUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(
-            Torneos.copyOf(torneosRecord, (updated) => {
-              Object.assign(updated, modelFields);
-            })
-          );
+          await client.graphql({
+            query: updateTorneos.replaceAll("__typename", ""),
+            variables: {
+              input: {
+                id: torneosRecord.id,
+                ...modelFields,
+              },
+            },
+          });
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            onError(modelFields, err.message);
+            const messages = err.errors.map((e) => e.message).join("\n");
+            onError(modelFields, messages);
           }
         }
       }}
