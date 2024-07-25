@@ -6,10 +6,15 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useNavigateAction } from "./utils";
 import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function Asociaciones(props) {
-  const { overrides, ...rest } = props;
+  const { milpas, overrides, ...rest } = props;
+  const buttonLigaOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: milpas?.sitio,
+  });
   return (
     <View
       width="260px"
@@ -72,6 +77,7 @@ export default function Asociaciones(props) {
         border="3px SOLID rgba(182,165,17,1)"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={milpas?.foto}
         {...getOverrideProps(
           overrides,
           "WhatsApp Image 2024-06-26 at 2.38.00 PM 1"
@@ -98,7 +104,7 @@ export default function Asociaciones(props) {
         right="4.62%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Presidente: Arturo Gonzalez"
+        children={milpas?.presidenterector}
         {...getOverrideProps(overrides, "Presidente: Arturo Gonzalez")}
       ></Text>
       <Text
@@ -122,7 +128,7 @@ export default function Asociaciones(props) {
         right="5%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Contacto: 52 311553344"
+        children={milpas?.telefono}
         {...getOverrideProps(overrides, "Contacto: 52 311553344")}
       ></Text>
       <Text
@@ -146,7 +152,7 @@ export default function Asociaciones(props) {
         right="4.62%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Tepic, Nayarit, México"
+        children={milpas?.pais}
         {...getOverrideProps(overrides, "Tepic, Nayarit, M\u00E9xico")}
       ></Text>
       <Text
@@ -170,7 +176,7 @@ export default function Asociaciones(props) {
         right="5%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Asociación de Fisicoculturismo del Estado de  Nayarit"
+        children={milpas?.nombre}
         {...getOverrideProps(
           overrides,
           "Asociaci\u00F3n de Fisicoculturismo del Estado de Nayarit"
@@ -190,6 +196,7 @@ export default function Asociaciones(props) {
         right="6.54%"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={milpas?.fotopais}
         {...getOverrideProps(overrides, "file 4")}
       ></Image>
       <Flex
@@ -207,6 +214,9 @@ export default function Asociaciones(props) {
         borderRadius="8px"
         padding="0px 16px 0px 16px"
         backgroundColor="rgba(182,165,17,1)"
+        onClick={() => {
+          buttonLigaOnClick();
+        }}
         {...getOverrideProps(overrides, "buttonLiga")}
       >
         <Text

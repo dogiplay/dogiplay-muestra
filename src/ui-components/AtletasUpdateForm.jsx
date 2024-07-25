@@ -7,11 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Atletas } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { getAtletas } from "../graphql/queries";
-import { updateAtletas } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function AtletasUpdateForm(props) {
   const {
     id: idProp,
@@ -121,12 +119,7 @@ export default function AtletasUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await client.graphql({
-              query: getAtletas.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getAtletas
+        ? await DataStore.query(Atletas, idProp)
         : atletasModelProp;
       setAtletasRecord(record);
     };
@@ -185,30 +178,30 @@ export default function AtletasUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          nombre: nombre ?? null,
-          foto: foto ?? null,
-          equipoclub: equipoclub ?? null,
-          disciplina: disciplina ?? null,
-          edad: edad ?? null,
-          recordActual: recordActual ?? null,
-          pais: pais ?? null,
-          ciudad: ciudad ?? null,
-          telefono: telefono ?? null,
-          categoria: categoria ?? null,
-          espacio2: espacio2 ?? null,
-          espacio1: espacio1 ?? null,
-          espacio4: espacio4 ?? null,
-          espacio5: espacio5 ?? null,
-          espacio3: espacio3 ?? null,
-          especialidad: especialidad ?? null,
-          recordespecialidad: recordespecialidad ?? null,
-          estado: estado ?? null,
-          peso: peso ?? null,
-          espacio6fiscul: espacio6fiscul ?? null,
-          espacio7fiscul: espacio7fiscul ?? null,
-          espacio8fiscul: espacio8fiscul ?? null,
-          tipo: tipo ?? null,
-          fotopais: fotopais ?? null,
+          nombre,
+          foto,
+          equipoclub,
+          disciplina,
+          edad,
+          recordActual,
+          pais,
+          ciudad,
+          telefono,
+          categoria,
+          espacio2,
+          espacio1,
+          espacio4,
+          espacio5,
+          espacio3,
+          especialidad,
+          recordespecialidad,
+          estado,
+          peso,
+          espacio6fiscul,
+          espacio7fiscul,
+          espacio8fiscul,
+          tipo,
+          fotopais,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -238,22 +231,17 @@ export default function AtletasUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: updateAtletas.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: atletasRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Atletas.copyOf(atletasRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

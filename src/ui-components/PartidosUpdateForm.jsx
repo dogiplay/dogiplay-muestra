@@ -7,11 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Partidos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { getPartidos } from "../graphql/queries";
-import { updatePartidos } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function PartidosUpdateForm(props) {
   const {
     id: idProp,
@@ -81,12 +79,7 @@ export default function PartidosUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await client.graphql({
-              query: getPartidos.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getPartidos
+        ? await DataStore.query(Partidos, idProp)
         : partidosModelProp;
       setPartidosRecord(record);
     };
@@ -133,18 +126,18 @@ export default function PartidosUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idequipo: idequipo ?? null,
-          equipo1: equipo1 ?? null,
-          equipo2: equipo2 ?? null,
-          hora: hora ?? null,
-          resultado_equipo1: resultado_equipo1 ?? null,
-          resultado_equipo2: resultado_equipo2 ?? null,
-          lugar: lugar ?? null,
-          observaciones: observaciones ?? null,
-          jugador_partido: jugador_partido ?? null,
-          jornada: jornada ?? null,
-          fecha: fecha ?? null,
-          clave_liga: clave_liga ?? null,
+          idequipo,
+          equipo1,
+          equipo2,
+          hora,
+          resultado_equipo1,
+          resultado_equipo2,
+          lugar,
+          observaciones,
+          jugador_partido,
+          jornada,
+          fecha,
+          clave_liga,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -174,22 +167,17 @@ export default function PartidosUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: updatePartidos.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: partidosRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Partidos.copyOf(partidosRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

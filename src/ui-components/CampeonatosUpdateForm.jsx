@@ -7,11 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Campeonatos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { getCampeonatos } from "../graphql/queries";
-import { updateCampeonatos } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function CampeonatosUpdateForm(props) {
   const {
     id: idProp,
@@ -64,12 +62,7 @@ export default function CampeonatosUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await client.graphql({
-              query: getCampeonatos.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getCampeonatos
+        ? await DataStore.query(Campeonatos, idProp)
         : campeonatosModelProp;
       setCampeonatosRecord(record);
     };
@@ -112,14 +105,14 @@ export default function CampeonatosUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          clave_liga: clave_liga ?? null,
-          equipo: equipo ?? null,
-          logo: logo ?? null,
-          manager: manager ?? null,
-          temporada: temporada ?? null,
-          numero_campeonato: numero_campeonato ?? null,
-          categoria: categoria ?? null,
-          anoc: anoc ?? null,
+          clave_liga,
+          equipo,
+          logo,
+          manager,
+          temporada,
+          numero_campeonato,
+          categoria,
+          anoc,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -149,22 +142,17 @@ export default function CampeonatosUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: updateCampeonatos.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: campeonatosRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Campeonatos.copyOf(campeonatosRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

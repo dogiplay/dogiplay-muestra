@@ -7,11 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Torneos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { getTorneos } from "../graphql/queries";
-import { updateTorneos } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function TorneosUpdateForm(props) {
   const {
     id: idProp,
@@ -56,12 +54,7 @@ export default function TorneosUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await client.graphql({
-              query: getTorneos.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getTorneos
+        ? await DataStore.query(Torneos, idProp)
         : torneosModelProp;
       setTorneosRecord(record);
     };
@@ -101,11 +94,11 @@ export default function TorneosUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idliga: idliga ?? null,
-          iddeporte: iddeporte ?? null,
-          idtorneo: idtorneo ?? null,
-          nombretorneo: nombretorneo ?? null,
-          nombredeporte: nombredeporte ?? null,
+          idliga,
+          iddeporte,
+          idtorneo,
+          nombretorneo,
+          nombredeporte,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -135,22 +128,17 @@ export default function TorneosUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: updateTorneos.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: torneosRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Torneos.copyOf(torneosRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

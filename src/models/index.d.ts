@@ -6,44 +6,48 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
-type EagerAsociaciones = {
+type EagerMilpas = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Asociaciones, 'id'>;
+    identifier: ManagedIdentifier<Milpas, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
   readonly nombre?: string | null;
-  readonly pais?: string | null;
+  readonly presidenterector?: string | null;
   readonly foto?: string | null;
   readonly fotopais?: string | null;
   readonly telefono?: string | null;
-  readonly presidente?: string | null;
+  readonly pais?: string | null;
   readonly sitio?: string | null;
+  readonly ciudad?: string | null;
+  readonly tipo?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-type LazyAsociaciones = {
+type LazyMilpas = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Asociaciones, 'id'>;
+    identifier: ManagedIdentifier<Milpas, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
   readonly nombre?: string | null;
-  readonly pais?: string | null;
+  readonly presidenterector?: string | null;
   readonly foto?: string | null;
   readonly fotopais?: string | null;
   readonly telefono?: string | null;
-  readonly presidente?: string | null;
+  readonly pais?: string | null;
   readonly sitio?: string | null;
+  readonly ciudad?: string | null;
+  readonly tipo?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-export declare type Asociaciones = LazyLoading extends LazyLoadingDisabled ? EagerAsociaciones : LazyAsociaciones
+export declare type Milpas = LazyLoading extends LazyLoadingDisabled ? EagerMilpas : LazyMilpas
 
-export declare const Asociaciones: (new (init: ModelInit<Asociaciones>) => Asociaciones) & {
-  copyOf(source: Asociaciones, mutator: (draft: MutableModel<Asociaciones>) => MutableModel<Asociaciones> | void): Asociaciones;
+export declare const Milpas: (new (init: ModelInit<Milpas>) => Milpas) & {
+  copyOf(source: Milpas, mutator: (draft: MutableModel<Milpas>) => MutableModel<Milpas> | void): Milpas;
 }
 
 type EagerUniversidades = {

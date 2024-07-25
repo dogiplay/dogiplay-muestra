@@ -7,10 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Ligas } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { createLigas } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function LigasCreateForm(props) {
   const {
     clearOnSuccess = true,
@@ -164,14 +163,7 @@ export default function LigasCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: createLigas.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(new Ligas(modelFields));
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -180,8 +172,7 @@ export default function LigasCreateForm(props) {
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

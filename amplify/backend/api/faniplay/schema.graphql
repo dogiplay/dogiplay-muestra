@@ -1,12 +1,14 @@
-type Asociaciones @model @auth(rules: [{allow: public}]) {
+type Milpas @model @auth(rules: [{allow: public}]) {
   id: ID!
   nombre: String
-  pais: String
+  presidenterector: String
   foto: AWSURL
   fotopais: AWSURL
   telefono: String
-  presidente: String
+  pais: String
   sitio: AWSURL
+  ciudad: String
+  tipo: String
 }
 
 type Universidades @model @auth(rules: [{allow: public}]) {
@@ -276,4 +278,5 @@ type Managers @model @auth(rules: [{allow: public}]) {
   usuario: String
   nombre: String
   idtorneo: ID
-} 
+}
+ 

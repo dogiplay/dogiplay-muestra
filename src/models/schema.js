@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Asociaciones": {
-            "name": "Asociaciones",
+        "Milpas": {
+            "name": "Milpas",
             "fields": {
                 "id": {
                     "name": "id",
@@ -17,8 +17,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "pais": {
-                    "name": "pais",
+                "presidenterector": {
+                    "name": "presidenterector",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -45,8 +45,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "presidente": {
-                    "name": "presidente",
+                "pais": {
+                    "name": "pais",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -56,6 +56,20 @@ export const schema = {
                     "name": "sitio",
                     "isArray": false,
                     "type": "AWSURL",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ciudad": {
+                    "name": "ciudad",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "tipo": {
+                    "name": "tipo",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -77,7 +91,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Asociaciones",
+            "pluralName": "Milpas",
             "attributes": [
                 {
                     "type": "model",
@@ -2324,5 +2338,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "b19a2b75cce49eac5e43cc1a895cd67c"
+    "version": "de95fbc98651cee7d10cecf67533e832"
 };

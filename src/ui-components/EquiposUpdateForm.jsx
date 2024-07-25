@@ -7,11 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Equipos } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { getEquipos } from "../graphql/queries";
-import { updateEquipos } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function EquiposUpdateForm(props) {
   const {
     id: idProp,
@@ -128,12 +126,7 @@ export default function EquiposUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await client.graphql({
-              query: getEquipos.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getEquipos
+        ? await DataStore.query(Equipos, idProp)
         : equiposModelProp;
       setEquiposRecord(record);
     };
@@ -191,29 +184,29 @@ export default function EquiposUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          idliga: idliga ?? null,
-          idtorneo: idtorneo ?? null,
-          club: club ?? null,
-          categoria: categoria ?? null,
-          torneo: torneo ?? null,
-          nombre: nombre ?? null,
-          logo: logo ?? null,
-          idmanager: idmanager ?? null,
-          idcategoria: idcategoria ?? null,
-          manager: manager ?? null,
-          futgolesfavor: futgolesfavor ?? null,
-          futgolescontra: futgolescontra ?? null,
-          partidosjugados: partidosjugados ?? null,
-          partidosganados: partidosganados ?? null,
-          partidosperdidos: partidosperdidos ?? null,
-          partidosempatados: partidosempatados ?? null,
-          puntos: puntos ?? null,
-          posiciontabla: posiciontabla ?? null,
-          patrocinador: patrocinador ?? null,
-          beicarreras: beicarreras ?? null,
-          beihr: beihr ?? null,
-          clave_liga: clave_liga ?? null,
-          futdifgoles: futdifgoles ?? null,
+          idliga,
+          idtorneo,
+          club,
+          categoria,
+          torneo,
+          nombre,
+          logo,
+          idmanager,
+          idcategoria,
+          manager,
+          futgolesfavor,
+          futgolescontra,
+          partidosjugados,
+          partidosganados,
+          partidosperdidos,
+          partidosempatados,
+          puntos,
+          posiciontabla,
+          patrocinador,
+          beicarreras,
+          beihr,
+          clave_liga,
+          futdifgoles,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -243,22 +236,17 @@ export default function EquiposUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: updateEquipos.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: equiposRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Equipos.copyOf(equiposRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

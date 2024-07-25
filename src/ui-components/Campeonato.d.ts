@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Campeonatos } from "../models";
 import { IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -31,7 +32,7 @@ export declare type CampeonatoOverridesProps = {
     "A\u00D1O"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CampeonatoProps = React.PropsWithChildren<Partial<ViewProps> & {
-    campeonatos?: any;
+    campeonatos?: Campeonatos;
 } & {
     overrides?: CampeonatoOverridesProps | undefined | null;
 }>;

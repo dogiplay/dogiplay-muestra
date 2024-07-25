@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { Managers } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -66,7 +67,7 @@ export declare type ManagersUpdateFormProps = React.PropsWithChildren<{
     overrides?: ManagersUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    managers?: any;
+    managers?: Managers;
     onSubmit?: (fields: ManagersUpdateFormInputValues) => ManagersUpdateFormInputValues;
     onSuccess?: (fields: ManagersUpdateFormInputValues) => void;
     onError?: (fields: ManagersUpdateFormInputValues, errorMessage: string) => void;

@@ -7,11 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Patrocinadores } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { getPatrocinadores } from "../graphql/queries";
-import { updatePatrocinadores } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function PatrocinadoresUpdateForm(props) {
   const {
     id: idProp,
@@ -60,12 +58,7 @@ export default function PatrocinadoresUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await client.graphql({
-              query: getPatrocinadores.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getPatrocinadores
+        ? await DataStore.query(Patrocinadores, idProp)
         : patrocinadoresModelProp;
       setPatrocinadoresRecord(record);
     };
@@ -107,13 +100,13 @@ export default function PatrocinadoresUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          nombre: nombre ?? null,
-          telefono: telefono ?? null,
-          foto: foto ?? null,
-          sitio: sitio ?? null,
-          pais: pais ?? null,
-          contacto: contacto ?? null,
-          textoboton: textoboton ?? null,
+          nombre,
+          telefono,
+          foto,
+          sitio,
+          pais,
+          contacto,
+          textoboton,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -143,22 +136,17 @@ export default function PatrocinadoresUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: updatePatrocinadores.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: patrocinadoresRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Patrocinadores.copyOf(patrocinadoresRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

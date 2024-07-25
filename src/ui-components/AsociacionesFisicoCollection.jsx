@@ -6,31 +6,27 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Partidos as Partidos0 } from "../models";
+import { Milpas } from "../models";
 import {
   createDataStorePredicate,
   getOverrideProps,
   useDataStoreBinding,
 } from "./utils";
-import { SortDirection } from "@aws-amplify/datastore";
-import Partidos from "./Partidos";
+import Asociaciones from "./Asociaciones";
 import { Collection } from "@aws-amplify/ui-react";
-export default function PartidosCollectionBeislLuno(props) {
-  const miclave = localStorage.getItem('miclave');
+export default function AsociacionesFisicoCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsFilterObj = {
-    field: "clave_liga",
-    operand: miclave,
+    field: "tipo",
+    operand: "fisicoculturismo",
     operator: "eq",
   };
   const itemsFilter = createDataStorePredicate(itemsFilterObj);
-  const itemsPagination = { sort: (s) => s.jornada(SortDirection.ASCENDING) };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Partidos0,
+    model: Milpas,
     criteria: itemsFilter,
-    pagination: itemsPagination,
   }).items;
   React.useEffect(() => {
     if (itemsProp !== undefined) {
@@ -41,23 +37,25 @@ export default function PartidosCollectionBeislLuno(props) {
   }, [itemsProp, itemsDataStore]);
   return (
     <Collection
-      type="list"
+      type="grid"
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Buscar..."
-      itemsPerPage={15}
-      direction="column"
-      justifyContent="left"
+      itemsPerPage={5}
+      templateColumns="1fr 1fr 1fr 1fr 1fr"
+      autoFlow="row"
+      alignItems="stretch"
+      justifyContent="stretch"
       items={items || []}
-      {...getOverrideProps(overrides, "PartidosCollectionBeislLuno")}
+      {...getOverrideProps(overrides, "AsociacionesFisicoCollection")}
       {...rest}
     >
       {(item, index) => (
-        <Partidos
-          partidos={item}
+        <Asociaciones
+          milpas={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></Partidos>
+        ></Asociaciones>
       )}
     </Collection>
   );

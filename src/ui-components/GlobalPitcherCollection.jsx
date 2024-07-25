@@ -6,117 +6,57 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { listJugadores } from "../graphql/queries";
+import { Jugadores } from "../models";
+import {
+  createDataStorePredicate,
+  getOverrideProps,
+  useDataStoreBinding,
+} from "./utils";
 import Cardpitcher from "./Cardpitcher";
-import { getOverrideProps } from "./utils";
-import { Collection, Pagination, Placeholder } from "@aws-amplify/ui-react";
-import { generateClient } from "aws-amplify/api";
-const nextToken = {};
-const apiCache = {};
-const client = generateClient();
+import { Collection } from "@aws-amplify/ui-react";
 export default function GlobalPitcherCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const [pageIndex, setPageIndex] = React.useState(1);
-  const [hasMorePages, setHasMorePages] = React.useState(true);
-  const [items, setItems] = React.useState([]);
-  const [isApiPagination, setIsApiPagination] = React.useState(false);
-  const [instanceKey, setInstanceKey] = React.useState("newGuid");
-  const [loading, setLoading] = React.useState(true);
-  const [maxViewed, setMaxViewed] = React.useState(1);
-  const pageSize = 10;
-  const isPaginated = true;
+  const itemsFilterObj = {
+    field: "posicion",
+    operand: "Pitcher",
+    operator: "eq",
+  };
+  const itemsFilter = createDataStorePredicate(itemsFilterObj);
+  const [items, setItems] = React.useState(undefined);
+  const itemsDataStore = useDataStoreBinding({
+    type: "collection",
+    model: Jugadores,
+    criteria: itemsFilter,
+  }).items;
   React.useEffect(() => {
-    nextToken[instanceKey] = "";
-    apiCache[instanceKey] = [];
-  }, [instanceKey]);
-  React.useEffect(() => {
-    setIsApiPagination(!!!itemsProp);
-  }, [itemsProp]);
-  const handlePreviousPage = () => {
-    setPageIndex(pageIndex - 1);
-  };
-  const handleNextPage = () => {
-    setPageIndex(pageIndex + 1);
-  };
-  const jumpToPage = (pageNum) => {
-    setPageIndex(pageNum);
-  };
-  const loadPage = async (page) => {
-    const cacheUntil = page * pageSize + 1;
-    const newCache = apiCache[instanceKey].slice();
-    let newNext = nextToken[instanceKey];
-    while ((newCache.length < cacheUntil || !isPaginated) && newNext != null) {
-      setLoading(true);
-      const variables = {
-        limit: pageSize,
-        filter: { posicion: { eq: "Pitcher" } },
-      };
-      if (newNext) {
-        variables["nextToken"] = newNext;
-      }
-      const result = (
-        await client.graphql({
-          query: listJugadores.replaceAll("__typename", ""),
-          variables,
-        })
-      ).data.listJugadores;
-      newCache.push(...result.items);
-      newNext = result.nextToken;
+    if (itemsProp !== undefined) {
+      setItems(itemsProp);
+      return;
     }
-    const cacheSlice = isPaginated
-      ? newCache.slice((page - 1) * pageSize, page * pageSize)
-      : newCache;
-    setItems(cacheSlice);
-    setHasMorePages(!!newNext);
-    setLoading(false);
-    apiCache[instanceKey] = newCache;
-    nextToken[instanceKey] = newNext;
-  };
-  React.useEffect(() => {
-    loadPage(pageIndex);
-  }, [pageIndex]);
-  React.useEffect(() => {
-    setMaxViewed(Math.max(maxViewed, pageIndex));
-  }, [pageIndex, maxViewed, setMaxViewed]);
+    setItems(itemsDataStore);
+  }, [itemsProp, itemsDataStore]);
   return (
-    <div>
-      <Collection
-        type="grid"
-        isSearchable="true"
-        searchPlaceholder="Buscar..."
-        templateColumns="1fr 1fr 1fr 1fr 1fr"
-        autoFlow="row"
-        alignItems="stretch"
-        justifyContent="stretch"
-        itemsPerPage={pageSize}
-        isPaginated={!isApiPagination && isPaginated}
-        items={itemsProp || (loading ? new Array(pageSize).fill({}) : items)}
-        {...getOverrideProps(overrides, "GlobalPitcherCollection")}
-        {...rest}
-      >
-        {(item, index) => {
-          if (loading) {
-            return <Placeholder key={index} size="large" />;
-          }
-          return (
-            <Cardpitcher
-              jugadores={item}
-              key={item.id}
-              {...(overrideItems && overrideItems({ item, index }))}
-            ></Cardpitcher>
-          );
-        }}
-      </Collection>
-      {isApiPagination && isPaginated && (
-        <Pagination
-          currentPage={pageIndex}
-          totalPages={maxViewed}
-          hasMorePages={hasMorePages}
-          onNext={handleNextPage}
-          onPrevious={handlePreviousPage}
-          onChange={jumpToPage}
-        />
+    <Collection
+      type="grid"
+      isSearchable="true"
+      isPaginated={true}
+      searchPlaceholder="Buscar..."
+      itemsPerPage={10}
+      templateColumns="1fr 1fr 1fr 1fr 1fr"
+      autoFlow="row"
+      alignItems="stretch"
+      justifyContent="stretch"
+      items={items || []}
+      {...getOverrideProps(overrides, "GlobalPitcherCollection")}
+      {...rest}
+    >
+      {(item, index) => (
+        <Cardpitcher
+          jugadores={item}
+          key={item.id}
+          {...(overrideItems && overrideItems({ item, index }))}
+        ></Cardpitcher>
       )}
-    </div>
+    </Collection>
   );
 }

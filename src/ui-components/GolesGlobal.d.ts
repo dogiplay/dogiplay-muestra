@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Jugadores } from "../models";
 import { IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -29,7 +30,7 @@ export declare type GolesGlobalOverridesProps = {
     "Ellipse 2"?: PrimitiveOverrideProps<IconProps>;
 } & EscapeHatchProps;
 export declare type GolesGlobalProps = React.PropsWithChildren<Partial<ViewProps> & {
-    jugadores?: any;
+    jugadores?: Jugadores;
 } & {
     overrides?: GolesGlobalOverridesProps | undefined | null;
 }>;

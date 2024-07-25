@@ -5,8 +5,7 @@
  **************************************************************************/
 
 export { default as Asociaciones } from "./Asociaciones";
-export { default as AsociacionesCreateForm } from "./AsociacionesCreateForm";
-export { default as AsociacionesUpdateForm } from "./AsociacionesUpdateForm";
+export { default as AsociacionesFisicoCollection } from "./AsociacionesFisicoCollection";
 export { default as AtletasCreateForm } from "./AtletasCreateForm";
 export { default as AtletasUpdateForm } from "./AtletasUpdateForm";
 export { default as Campeonato } from "./Campeonato";
@@ -56,6 +55,8 @@ export { default as Logodogiplay } from "./Logodogiplay";
 export { default as ManagersCreateForm } from "./ManagersCreateForm";
 export { default as ManagersUpdateForm } from "./ManagersUpdateForm";
 export { default as Menudeportes } from "./Menudeportes";
+export { default as MilpasCreateForm } from "./MilpasCreateForm";
+export { default as MilpasUpdateForm } from "./MilpasUpdateForm";
 export { default as NuevaEstadistica } from "./NuevaEstadistica";
 export { default as NuevoEquipo } from "./NuevoEquipo";
 export { default as NuevoJugador } from "./NuevoJugador";

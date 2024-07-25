@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { Equipos } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -102,7 +103,7 @@ export declare type EquiposUpdateFormProps = React.PropsWithChildren<{
     overrides?: EquiposUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    equipos?: any;
+    equipos?: Equipos;
     onSubmit?: (fields: EquiposUpdateFormInputValues) => EquiposUpdateFormInputValues;
     onSuccess?: (fields: EquiposUpdateFormInputValues) => void;
     onError?: (fields: EquiposUpdateFormInputValues, errorMessage: string) => void;

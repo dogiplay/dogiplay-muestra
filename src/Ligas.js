@@ -1,4 +1,4 @@
-import { CardAtletismoCollection, CardFisioculturismoCollection, CardligaBeisbolCollection, CardligaCollectionFutbol, GlobalBoxCollection, GlobalPitcherCollection, GolesGlobalCollection, HrGlobalCollection, SalondelaFamaCollection } from './ui-components';
+import { AsociacionesFisicoCollection, CardAtletismoCollection, CardFisioculturismoCollection, CardligaBeisbolCollection, CardligaCollectionFutbol, GlobalBoxCollection, GlobalPitcherCollection, GolesGlobalCollection, HrGlobalCollection, SalondelaFamaCollection } from './ui-components';
 // Archivo: OtroArchivo.js
 import React, { useContext, useState } from "react"; // Importamos React y las funciones necesarias desde la biblioteca 'react'
 
@@ -39,6 +39,8 @@ const Ligas = () => {
        <center><h1 className='colorBlanco'>BASE DE DATOS NACIONAL DE PITCHERS</h1></center>
        </div>
        <GlobalPitcherCollection />
+       <center><h1 className='colorBlanco'>ASOCIACIONES DE FISICOCULTURISMO</h1></center>
+       <AsociacionesFisicoCollection/>
        <center><h1 className='colorBlanco'>BASE DE DATOS NACIONAL DE ATLETAS FISICOCULTURISMO</h1></center>
        <CardFisioculturismoCollection/>
        <center><h1 className='colorBlanco'>BASE DE DATOS NACIONAL DE BOXEADORES</h1></center>
@@ -49,53 +51,7 @@ const Ligas = () => {
        
        
      
-      <div>
-        <center><h1 className='colorBlanco'>LIGAS DE FUTBOL</h1></center>
-        <p className='colorBlanco'><strong>Busca tu liga por nombre, estado, municipio o clave de liga</strong></p>
-
-        <CardligaCollectionFutbol marginLeft={"20px"}
-          overrideItems={({ item, index }) => ({
-            overrides: {
-              buttonLiga: {
-                onClick: () => guardarClavefutbol(`${item.clave}`, `${item.nombre}`, `${item.estado}`, `${item.categoria}`),
-                //onClick: () => alert(`${item.clave}`),
-
-
-              }
-
-            }
-          }
-
-          )
-
-          }
-        />
-
-      </div>
-
-      <div>
-        <center><h1 className='colorBlanco'>LIGAS DE BEISBOL</h1></center>
-        <p className='colorBlanco'><strong>Busca tu liga por nombre, estado, municipio o clave de liga</strong></p>
-
-        <CardligaBeisbolCollection marginLeft={"20px"}
-          overrideItems={({ item, index }) => ({
-            overrides: {
-              botonLigaBeis: {
-                onClick: () => guardarClavebeisbol(`${item.clave}`, `${item.nombre}`, `${item.estado}`, `${item.categoria}`),
-                //onClick: () => alert(`${item.clave}`),
-
-
-              }
-
-            }
-          }
-
-          )
-
-          }
-        />
-
-       </div>
+      
       </div> 
     </div>
   )

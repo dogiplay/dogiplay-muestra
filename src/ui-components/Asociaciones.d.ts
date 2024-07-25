@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Milpas } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -31,6 +32,8 @@ export declare type AsociacionesOverridesProps = {
     "Ver sitio"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type AsociacionesProps = React.PropsWithChildren<Partial<ViewProps> & {
+    milpas?: Milpas;
+} & {
     overrides?: AsociacionesOverridesProps | undefined | null;
 }>;
 export default function Asociaciones(props: AsociacionesProps): React.ReactElement;

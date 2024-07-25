@@ -14,10 +14,9 @@ import {
   Heading,
   TextField,
 } from "@aws-amplify/ui-react";
+import { Statsequipo } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { createStatsequipo } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function NuevaEstadistica(props) {
   const {
     clearOnSuccess = true,
@@ -117,14 +116,7 @@ export default function NuevaEstadistica(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: createStatsequipo.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(new Statsequipo(modelFields));
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -133,8 +125,7 @@ export default function NuevaEstadistica(props) {
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

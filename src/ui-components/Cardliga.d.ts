@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Ligas } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -33,7 +34,7 @@ export declare type CardligaOverridesProps = {
     "LIGA MUNICIPAL DE FUTBOL"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardligaProps = React.PropsWithChildren<Partial<ViewProps> & {
-    ligas?: any;
+    ligas?: Ligas;
     nayaritfutbolliga1?: String;
 } & {
     overrides?: CardligaOverridesProps | undefined | null;

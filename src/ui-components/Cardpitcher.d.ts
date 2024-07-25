@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { StatsJugadores, Jugadores } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -60,8 +61,8 @@ export declare type CardpitcherOverridesProps = {
     "file 3"?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type CardpitcherProps = React.PropsWithChildren<Partial<ViewProps> & {
-    statsJugadores?: any;
-    jugadores?: any;
+    statsJugadores?: StatsJugadores;
+    jugadores?: Jugadores;
 } & {
     overrides?: CardpitcherOverridesProps | undefined | null;
 }>;

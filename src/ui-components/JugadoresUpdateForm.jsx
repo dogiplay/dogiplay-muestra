@@ -7,11 +7,9 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { Jugadores } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
-import { generateClient } from "aws-amplify/api";
-import { getJugadores } from "../graphql/queries";
-import { updateJugadores } from "../graphql/mutations";
-const client = generateClient();
+import { DataStore } from "aws-amplify/datastore";
 export default function JugadoresUpdateForm(props) {
   const {
     id: idProp,
@@ -234,12 +232,7 @@ export default function JugadoresUpdateForm(props) {
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
-        ? (
-            await client.graphql({
-              query: getJugadores.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getJugadores
+        ? await DataStore.query(Jugadores, idProp)
         : jugadoresModelProp;
       setJugadoresRecord(record);
     };
@@ -326,58 +319,58 @@ export default function JugadoresUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          iddeporte: iddeporte ?? null,
-          idequipo: idequipo ?? null,
-          nombre: nombre ?? null,
-          idjugador: idjugador ?? null,
-          idtorneo: idtorneo ?? null,
-          deporte: deporte ?? null,
-          user: user ?? null,
-          perfil: perfil ?? null,
-          posicion: posicion ?? null,
-          edad: edad ?? null,
-          numero: numero ?? null,
-          equipo: equipo ?? null,
-          foto: foto ?? null,
-          alias: alias ?? null,
-          tipocuenta: tipocuenta ?? null,
-          futgoles: futgoles ?? null,
-          futasisgol: futasisgol ?? null,
-          futtarjetasallas: futtarjetasallas ?? null,
-          futtarjetasrojas: futtarjetasrojas ?? null,
-          futgoleadorsemana: futgoleadorsemana ?? null,
-          beicarrerashechas: beicarrerashechas ?? null,
-          beicarrerasproducid: beicarrerasproducid ?? null,
-          beihr: beihr ?? null,
-          beihits: beihits ?? null,
-          beifly: beifly ?? null,
-          beirolas: beirolas ?? null,
-          beiponches: beiponches ?? null,
-          mvp: mvp ?? null,
-          beipitentradaslanzadas: beipitentradaslanzadas ?? null,
-          beipitcarreraslimpias: beipitcarreraslimpias ?? null,
-          beipithitstotales: beipithitstotales ?? null,
-          beipitponchestotales: beipitponchestotales ?? null,
-          beipitera: beipitera ?? null,
-          beipitjuegosganados: beipitjuegosganados ?? null,
-          beipitjuegosperdidos: beipitjuegosperdidos ?? null,
-          beiporcentajebateo: beiporcentajebateo ?? null,
-          clave_liga: clave_liga ?? null,
-          boxajecombates: boxajecombates ?? null,
-          boxajetriunfos: boxajetriunfos ?? null,
-          boxajederrotas: boxajederrotas ?? null,
-          boxajeempates: boxajeempates ?? null,
-          boxKO: boxKO ?? null,
-          boxgimnasio: boxgimnasio ?? null,
-          pais: pais ?? null,
-          ciudad: ciudad ?? null,
-          categoria: categoria ?? null,
-          ajedrezelo: ajedrezelo ?? null,
-          beipitchervelmax: beipitchervelmax ?? null,
-          beipitchervelprom: beipitchervelprom ?? null,
-          telefono: telefono ?? null,
-          beilanzamientos: beilanzamientos ?? null,
-          fotopais: fotopais ?? null,
+          iddeporte,
+          idequipo,
+          nombre,
+          idjugador,
+          idtorneo,
+          deporte,
+          user,
+          perfil,
+          posicion,
+          edad,
+          numero,
+          equipo,
+          foto,
+          alias,
+          tipocuenta,
+          futgoles,
+          futasisgol,
+          futtarjetasallas,
+          futtarjetasrojas,
+          futgoleadorsemana,
+          beicarrerashechas,
+          beicarrerasproducid,
+          beihr,
+          beihits,
+          beifly,
+          beirolas,
+          beiponches,
+          mvp,
+          beipitentradaslanzadas,
+          beipitcarreraslimpias,
+          beipithitstotales,
+          beipitponchestotales,
+          beipitera,
+          beipitjuegosganados,
+          beipitjuegosperdidos,
+          beiporcentajebateo,
+          clave_liga,
+          boxajecombates,
+          boxajetriunfos,
+          boxajederrotas,
+          boxajeempates,
+          boxKO,
+          boxgimnasio,
+          pais,
+          ciudad,
+          categoria,
+          ajedrezelo,
+          beipitchervelmax,
+          beipitchervelprom,
+          telefono,
+          beilanzamientos,
+          fotopais,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -407,22 +400,17 @@ export default function JugadoresUpdateForm(props) {
               modelFields[key] = null;
             }
           });
-          await client.graphql({
-            query: updateJugadores.replaceAll("__typename", ""),
-            variables: {
-              input: {
-                id: jugadoresRecord.id,
-                ...modelFields,
-              },
-            },
-          });
+          await DataStore.save(
+            Jugadores.copyOf(jugadoresRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
           }
         } catch (err) {
           if (onError) {
-            const messages = err.errors.map((e) => e.message).join("\n");
-            onError(modelFields, messages);
+            onError(modelFields, err.message);
           }
         }
       }}

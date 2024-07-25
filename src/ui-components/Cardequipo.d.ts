@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Equipos } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -43,7 +44,7 @@ export declare type CardequipoOverridesProps = {
     Label?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardequipoProps = React.PropsWithChildren<Partial<ViewProps> & {
-    equipos?: any;
+    equipos?: Equipos;
 } & {
     overrides?: CardequipoOverridesProps | undefined | null;
 }>;

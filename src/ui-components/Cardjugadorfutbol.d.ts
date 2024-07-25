@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Jugadores } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -38,7 +39,7 @@ export declare type CardjugadorfutbolOverridesProps = {
     "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CardjugadorfutbolProps = React.PropsWithChildren<Partial<ViewProps> & {
-    jugadores?: any;
+    jugadores?: Jugadores;
 } & {
     overrides?: CardjugadorfutbolOverridesProps | undefined | null;
 }>;

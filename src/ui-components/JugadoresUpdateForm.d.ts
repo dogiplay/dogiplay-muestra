@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { Jugadores } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -189,7 +190,7 @@ export declare type JugadoresUpdateFormProps = React.PropsWithChildren<{
     overrides?: JugadoresUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    jugadores?: any;
+    jugadores?: Jugadores;
     onSubmit?: (fields: JugadoresUpdateFormInputValues) => JugadoresUpdateFormInputValues;
     onSuccess?: (fields: JugadoresUpdateFormInputValues) => void;
     onError?: (fields: JugadoresUpdateFormInputValues, errorMessage: string) => void;
