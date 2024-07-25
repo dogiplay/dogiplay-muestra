@@ -6,59 +6,115 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Campeonatos } from "../models";
-import {
-  createDataStorePredicate,
-  getOverrideProps,
-  useDataStoreBinding,
-} from "./utils";
-import { SortDirection } from "@aws-amplify/datastore";
+import { listCampeonatos } from "../graphql/queries";
 import Campeonato from "./Campeonato";
-import { Collection } from "@aws-amplify/ui-react";
+import { getOverrideProps } from "./utils";
+import { Collection, Pagination, Placeholder } from "@aws-amplify/ui-react";
+import { generateClient } from "aws-amplify/api";
+const nextToken = {};
+const apiCache = {};
+const client = generateClient();
 export default function CampeonatoCollection(props) {
-  const miclave = localStorage.getItem('miclave');
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsFilterObj = {
-    field: "clave_liga",
-    operand: miclave,
-    operator: "eq",
-  };
-  const itemsFilter = createDataStorePredicate(itemsFilterObj);
-  const itemsPagination = { sort: (s) => s.anoc(SortDirection.DESCENDING) };
-  const [items, setItems] = React.useState(undefined);
-  const itemsDataStore = useDataStoreBinding({
-    type: "collection",
-    model: Campeonatos,
-    criteria: itemsFilter,
-    pagination: itemsPagination,
-  }).items;
+  const [pageIndex, setPageIndex] = React.useState(1);
+  const [hasMorePages, setHasMorePages] = React.useState(true);
+  const [items, setItems] = React.useState([]);
+  const [isApiPagination, setIsApiPagination] = React.useState(false);
+  const [instanceKey, setInstanceKey] = React.useState("newGuid");
+  const [loading, setLoading] = React.useState(true);
+  const [maxViewed, setMaxViewed] = React.useState(1);
+  const pageSize = 5;
+  const isPaginated = true;
   React.useEffect(() => {
-    if (itemsProp !== undefined) {
-      setItems(itemsProp);
-      return;
+    nextToken[instanceKey] = "";
+    apiCache[instanceKey] = [];
+  }, [instanceKey]);
+  React.useEffect(() => {
+    setIsApiPagination(!!!itemsProp);
+  }, [itemsProp]);
+  const handlePreviousPage = () => {
+    setPageIndex(pageIndex - 1);
+  };
+  const handleNextPage = () => {
+    setPageIndex(pageIndex + 1);
+  };
+  const jumpToPage = (pageNum) => {
+    setPageIndex(pageNum);
+  };
+  const loadPage = async (page) => {
+    const cacheUntil = page * pageSize + 1;
+    const newCache = apiCache[instanceKey].slice();
+    let newNext = nextToken[instanceKey];
+    while ((newCache.length < cacheUntil || !isPaginated) && newNext != null) {
+      setLoading(true);
+      const variables = {
+        limit: pageSize,
+        filter: { clave_liga: { eq: "CLAFUTNAY01" } },
+      };
+      if (newNext) {
+        variables["nextToken"] = newNext;
+      }
+      const result = (
+        await client.graphql({
+          query: listCampeonatos.replaceAll("__typename", ""),
+          variables,
+        })
+      ).data.listCampeonatos;
+      newCache.push(...result.items);
+      newNext = result.nextToken;
     }
-    setItems(itemsDataStore);
-  }, [itemsProp, itemsDataStore]);
+    const cacheSlice = isPaginated
+      ? newCache.slice((page - 1) * pageSize, page * pageSize)
+      : newCache;
+    setItems(cacheSlice);
+    setHasMorePages(!!newNext);
+    setLoading(false);
+    apiCache[instanceKey] = newCache;
+    nextToken[instanceKey] = newNext;
+  };
+  React.useEffect(() => {
+    loadPage(pageIndex);
+  }, [pageIndex]);
+  React.useEffect(() => {
+    setMaxViewed(Math.max(maxViewed, pageIndex));
+  }, [pageIndex, maxViewed, setMaxViewed]);
   return (
-    <Collection
-      type="list"
-      isSearchable="true"
-      isPaginated={true}
-      searchPlaceholder="Buscar..."
-      itemsPerPage={5}
-      direction="row"
-      alignItems="stretch"
-      items={items || []}
-      {...getOverrideProps(overrides, "CampeonatoCollection")}
-      {...rest}
-    >
-      {(item, index) => (
-        <Campeonato
-          campeonatos={item}
-          key={item.id}
-          {...(overrideItems && overrideItems({ item, index }))}
-        ></Campeonato>
+    <div>
+      <Collection
+        type="list"
+        isSearchable="true"
+        searchPlaceholder="Buscar..."
+        direction="row"
+        alignItems="stretch"
+        itemsPerPage={pageSize}
+        isPaginated={!isApiPagination && isPaginated}
+        items={itemsProp || (loading ? new Array(pageSize).fill({}) : items)}
+        {...getOverrideProps(overrides, "CampeonatoCollection")}
+        {...rest}
+      >
+        {(item, index) => {
+          if (loading) {
+            return <Placeholder key={index} size="large" />;
+          }
+          return (
+            <Campeonato
+              campeonatos={item}
+              key={item.id}
+              {...(overrideItems && overrideItems({ item, index }))}
+            ></Campeonato>
+          );
+        }}
+      </Collection>
+      {isApiPagination && isPaginated && (
+        <Pagination
+          currentPage={pageIndex}
+          totalPages={maxViewed}
+          hasMorePages={hasMorePages}
+          onNext={handleNextPage}
+          onPrevious={handlePreviousPage}
+          onChange={jumpToPage}
+        />
       )}
-    </Collection>
+    </div>
   );
 }

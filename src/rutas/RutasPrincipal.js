@@ -29,6 +29,9 @@ export const RutasPrincipal = () => {
             <NavLink to="/contacto"><strong>Universidades</strong></NavLink>
           </li>  
           <li>
+            <NavLink to="/contacto"><strong>Ligas</strong></NavLink>
+          </li>  
+          <li>
             <NavLink to="/contacto"><strong>Contacto</strong></NavLink>
           </li> 
           

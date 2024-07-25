@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "faniplay",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-07-25T02:42:40.267Z"
 }
