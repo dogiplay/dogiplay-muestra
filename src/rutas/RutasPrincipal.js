@@ -26,7 +26,7 @@ export const RutasPrincipal = () => {
             <NavLink to="/"><strong>Inicio</strong></NavLink>
           </li> 
           <li>
-            <NavLink to="/contacto"><strong>Universidades</strong></NavLink>
+            <NavLink to="/contacto"><strong>Escuelas</strong></NavLink>
           </li>  
           <li>
             <NavLink to="/contacto"><strong>Ligas</strong></NavLink>
@@ -37,7 +37,7 @@ export const RutasPrincipal = () => {
           
           </ul>
      
-          <strong class='derecha'>Los Mejores Deportistas/ Estadísticas Certificadas</strong>
+          <strong class='derecha'>Los mejores deportistas / Las mejores escuelas</strong>
       </nav>
     </header>
    

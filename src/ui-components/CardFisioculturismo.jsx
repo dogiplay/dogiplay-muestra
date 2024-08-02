@@ -13,19 +13,20 @@ export default function CardFisioculturismo(props) {
   return (
     <View
       width="260px"
-      height="478px"
+      height="450px"
       display="block"
       gap="unset"
       alignItems="unset"
       justifyContent="unset"
       position="relative"
+      border="2px SOLID rgba(243,219,0,1)"
       padding="0px 0px 0px 0px"
       {...getOverrideProps(overrides, "CardFisioculturismo")}
       {...rest}
     >
       <View
         width="260px"
-        height="478px"
+        height="450px"
         display="block"
         gap="unset"
         alignItems="unset"
@@ -35,50 +36,11 @@ export default function CardFisioculturismo(props) {
         bottom="0%"
         left="0%"
         right="0%"
+        border="2px SOLID rgba(243,219,0,1)"
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(0,0,0,1)"
         {...getOverrideProps(overrides, "Rectangle 83")}
       ></View>
-      <View
-        width="247px"
-        height="26px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        position="absolute"
-        top="66.95%"
-        bottom="27.62%"
-        left="2.31%"
-        right="2.69%"
-        padding="0px 0px 0px 0px"
-        backgroundColor="rgba(243,219,0,1)"
-        {...getOverrideProps(overrides, "Rectangle 84")}
-      ></View>
-      <Text
-        fontFamily="Inter"
-        fontSize="12px"
-        fontWeight="900"
-        color="rgba(0,0,0,1)"
-        lineHeight="14.522727012634277px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="232px"
-        height="unset"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="68.2%"
-        bottom="28.66%"
-        left="5%"
-        right="5.77%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.nombre}
-        {...getOverrideProps(overrides, "ABRAHAM ARREOLA")}
-      ></Text>
       <Text
         fontFamily="Inter"
         fontSize="7px"
@@ -89,18 +51,18 @@ export default function CardFisioculturismo(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="44px"
-        height="unset"
+        width="105px"
+        height="8px"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="59%"
-        bottom="39.33%"
-        left="81.54%"
-        right="1.54%"
+        top="87.33%"
+        bottom="10.89%"
+        left="4.23%"
+        right="55.38%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${"Edad: "}${atletas?.edad}`}
+        children={`${atletas?.edad}${" a\u00F1os"}`}
         {...getOverrideProps(overrides, "EDAD: 23")}
       ></Text>
       <Text
@@ -113,92 +75,32 @@ export default function CardFisioculturismo(props) {
         display="block"
         direction="column"
         justifyContent="unset"
-        width="39px"
-        height="unset"
+        width="101px"
+        height="8px"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="61.92%"
-        bottom="36.4%"
-        left="82.31%"
-        right="2.69%"
+        top="87.56%"
+        bottom="10.67%"
+        left="56.15%"
+        right="5%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children={atletas?.pais}
         {...getOverrideProps(overrides, "M\u00C9XICO")}
       ></Text>
-      <View
-        padding="0px 0px 0px 0px"
-        width="44px"
-        height="258px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        position="absolute"
-        top="2.72%"
-        bottom="43.31%"
-        left="81.54%"
-        right="1.54%"
-        {...getOverrideProps(overrides, "Group 21")}
-      >
-        <View
-          width="257.97px"
-          height="30px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          position="absolute"
-          top="100%"
-          bottom="-11.63%"
-          left="0.75%"
-          right="-487.06%"
-          transformOrigin="top left"
-          transform="rotate(-90.07deg)"
-          padding="0px 0px 0px 0px"
-          backgroundColor="rgba(16,0,0,0.7)"
-          {...getOverrideProps(overrides, "Rectangle 85")}
-        ></View>
-        <Text
-          fontFamily="Inter"
-          fontSize="28px"
-          fontWeight="900"
-          color="rgba(255,255,255,1)"
-          lineHeight="33.8863639831543px"
-          textAlign="center"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="243.09px"
-          height="40px"
-          gap="unset"
-          alignItems="unset"
-          position="absolute"
-          top="97.71%"
-          bottom="-13.21%"
-          left="9.09%"
-          right="-461.56%"
-          transformOrigin="top left"
-          transform="rotate(-90deg)"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children={atletas?.tipo}
-          {...getOverrideProps(overrides, "ATLETA")}
-        ></Text>
-      </View>
       <Image
-        width="76.54%"
-        height="62.34%"
+        width="94.62%"
+        height="83.56%"
         display="block"
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="2.09%"
-        bottom="35.56%"
+        top="2%"
+        bottom="14.44%"
         left="2.69%"
-        right="20.77%"
+        right="2.69%"
         border="1px SOLID rgba(243,219,0,1)"
         padding="0px 0px 0px 0px"
         objectFit="cover"
@@ -211,21 +113,21 @@ export default function CardFisioculturismo(props) {
       <View
         padding="0px 0px 0px 0px"
         width="68px"
-        height="22px"
+        height="20.71px"
         display="block"
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="58.79%"
-        bottom="36.61%"
-        left="3.08%"
-        right="70.77%"
+        top="79.11%"
+        bottom="16.29%"
+        left="2.69%"
+        right="71.15%"
         {...getOverrideProps(overrides, "Group 20")}
       >
         <View
           width="68px"
-          height="22px"
+          height="20.71px"
           display="block"
           gap="unset"
           alignItems="unset"
@@ -236,7 +138,7 @@ export default function CardFisioculturismo(props) {
           left="0%"
           right="0%"
           padding="0px 0px 0px 0px"
-          backgroundColor="rgba(243,219,0,1)"
+          backgroundColor="rgba(243,219,0,0.66)"
           {...getOverrideProps(overrides, "Rectangle 89")}
         ></View>
         <Text
@@ -250,7 +152,7 @@ export default function CardFisioculturismo(props) {
           direction="column"
           justifyContent="unset"
           width="61px"
-          height="unset"
+          height="11.3px"
           gap="unset"
           alignItems="unset"
           position="absolute"
@@ -266,14 +168,14 @@ export default function CardFisioculturismo(props) {
       </View>
       <View
         width="247px"
-        height="118px"
+        height="39px"
         display="block"
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="74.06%"
-        bottom="1.26%"
+        top="90.44%"
+        bottom="0.89%"
         left="2.31%"
         right="2.69%"
         border="1px SOLID rgba(175,173,173,1)"
@@ -283,14 +185,14 @@ export default function CardFisioculturismo(props) {
       ></View>
       <View
         width="242px"
-        height="112px"
+        height="31px"
         display="block"
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="74.69%"
-        bottom="1.88%"
+        top="91.33%"
+        bottom="1.78%"
         left="3.08%"
         right="3.85%"
         padding="0px 0px 0px 0px"
@@ -299,131 +201,23 @@ export default function CardFisioculturismo(props) {
       ></View>
       <Text
         fontFamily="Inter"
-        fontSize="7px"
+        fontSize="9px"
         fontWeight="400"
         color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
+        lineHeight="10.892045021057129px"
         textAlign="center"
         display="block"
         direction="column"
         justifyContent="unset"
         width="235px"
-        height="9px"
+        height="18.83px"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="95.61%"
-        bottom="2.51%"
+        top="92.44%"
+        bottom="3.37%"
         left="3.85%"
         right="5.77%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio8fiscul}
-        {...getOverrideProps(
-          overrides,
-          "1er lugar juvenil en 11o cl\u00E1sico juvenil y veteranos"
-        )}
-      ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="86.4%"
-        bottom="11.72%"
-        left="4.23%"
-        right="5.38%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio4}
-        {...getOverrideProps(
-          overrides,
-          "1er lugar juvenil en 12 Cl\u00E1sico Juvenil y Veteranos Nayarit 2024"
-        )}
-      ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="81.8%"
-        bottom="16.32%"
-        left="4.23%"
-        right="5.38%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio2}
-        {...getOverrideProps(
-          overrides,
-          "1er lugar juvenil en 12o campeonato selectivo 2024"
-        )}
-      ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="79.5%"
-        bottom="18.62%"
-        left="4.23%"
-        right="5.38%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio1}
-        {...getOverrideProps(
-          overrides,
-          "\u20601er lugar classic physique en 12o campeonato selectivo 2024"
-        )}
-      ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="77.2%"
-        bottom="20.92%"
-        left="4.23%"
-        right="5.38%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         children={atletas?.recordActual}
@@ -432,127 +226,19 @@ export default function CardFisioculturismo(props) {
           "\u20601er lugar clasificados en 12o campeonato selectivo 2024"
         )}
       ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="84.1%"
-        bottom="14.02%"
-        left="4.23%"
-        right="5.38%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio3}
-        {...getOverrideProps(
-          overrides,
-          "2do lugar clasificados en 12 Cl\u00E1sico Juvenil y Veteranos Nayarit 2024"
-        )}
-      ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="93.51%"
-        bottom="4.6%"
-        left="3.85%"
-        right="5.77%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio7fiscul}
-        {...getOverrideProps(
-          overrides,
-          "1er lugar novatos en 11o cl\u00E1sico juvenil y veteranos"
-        )}
-      ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="91.21%"
-        bottom="6.9%"
-        left="3.85%"
-        right="5.77%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio6fiscul}
-        {...getOverrideProps(
-          overrides,
-          "2do lugar juvenil en 12o cl\u00E1sico Mr y Miss Nayarit"
-        )}
-      ></Text>
-      <Text
-        fontFamily="Inter"
-        fontSize="7px"
-        fontWeight="400"
-        color="rgba(255,255,255,1)"
-        lineHeight="8.471590995788574px"
-        textAlign="center"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="235px"
-        height="9px"
-        gap="unset"
-        alignItems="unset"
-        position="absolute"
-        top="88.7%"
-        bottom="9.41%"
-        left="3.85%"
-        right="5.77%"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={atletas?.espacio5}
-        {...getOverrideProps(
-          overrides,
-          "2do lugar novatos en 12o cl\u00E1sico Mr y Miss Nayarit"
-        )}
-      ></Text>
       <Icon
         width="17px"
-        height="17px"
-        viewBox={{ minX: 0, minY: 0, width: 17, height: 17 }}
+        height="16px"
+        viewBox={{ minX: 0, minY: 0, width: 17, height: 16.00418472290039 }}
         paths={[
           {
-            d: "M16 8.5C16 12.6421 12.6421 16 8.5 16L8.5 18C13.7467 18 18 13.7467 18 8.5L16 8.5ZM8.5 16C4.35786 16 1 12.6421 1 8.5L-1 8.5C-1 13.7467 3.25329 18 8.5 18L8.5 16ZM1 8.5C1 4.35786 4.35786 1 8.5 1L8.5 -1C3.25329 -1 -1 3.25329 -1 8.5L1 8.5ZM8.5 1C12.6421 1 16 4.35786 16 8.5L18 8.5C18 3.25329 13.7467 -1 8.5 -1L8.5 1Z",
+            d: "M16 8.00209C16 11.8132 12.6999 15.0042 8.5 15.0042L8.5 17.0042C13.689 17.0042 18 13.0298 18 8.00209L16 8.00209ZM8.5 15.0042C4.30014 15.0042 1 11.8132 1 8.00209L-1 8.00209C-1 13.0298 3.31102 17.0042 8.5 17.0042L8.5 15.0042ZM1 8.00209C1 4.19095 4.30014 1 8.5 1L8.5 -1C3.31102 -1 -1 2.97436 -1 8.00209L1 8.00209ZM8.5 1C12.6999 1 16 4.19095 16 8.00209L18 8.00209C18 2.97436 13.689 -1 8.5 -1L8.5 1Z",
             stroke: "rgba(255,255,255,1)",
             fillRule: "nonzero",
             strokeWidth: 1,
           },
           {
-            d: "M17 8.5C17 13.1944 13.1944 17 8.5 17C3.80558 17 0 13.1944 0 8.5C0 3.80558 3.80558 0 8.5 0C13.1944 0 17 3.80558 17 8.5Z",
+            d: "M17 8.00209C17 12.4215 13.1944 16.0042 8.5 16.0042C3.80558 16.0042 0 12.4215 0 8.00209C0 3.58266 3.80558 0 8.5 0C13.1944 0 17 3.58266 17 8.00209Z",
             fill: "rgba(0,0,0,1)",
             fillRule: "nonzero",
           },
@@ -562,19 +248,19 @@ export default function CardFisioculturismo(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="73.01%"
-        bottom="23.43%"
-        left="45.77%"
-        right="47.69%"
+        top="88.44%"
+        bottom="8%"
+        left="46.15%"
+        right="47.31%"
         {...getOverrideProps(overrides, "Ellipse 3")}
       ></Icon>
       <Icon
         width="11px"
-        height="11px"
-        viewBox={{ minX: 0, minY: 0, width: 11, height: 11 }}
+        height="10.36px"
+        viewBox={{ minX: 0, minY: 0, width: 11, height: 10.3556489944458 }}
         paths={[
           {
-            d: "M5.5 0L6.73483 3.80041L10.7308 3.80041L7.49799 6.14919L8.73282 9.94959L5.5 7.60081L2.26718 9.94959L3.50201 6.14919L0.269189 3.80041L4.26517 3.80041L5.5 0Z",
+            d: "M5.5 0L6.73483 3.57779L10.7308 3.57779L7.49799 5.78898L8.73282 9.36677L5.5 7.15558L2.26718 9.36677L3.50201 5.78898L0.269189 3.57779L4.26517 3.57779L5.5 0Z",
             fill: "rgba(243,219,0,1)",
             fillRule: "nonzero",
           },
@@ -584,10 +270,10 @@ export default function CardFisioculturismo(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="73.64%"
-        bottom="24.06%"
-        left="46.92%"
-        right="48.85%"
+        top="89.07%"
+        bottom="8.63%"
+        left="47.31%"
+        right="48.46%"
         {...getOverrideProps(overrides, "Star 10")}
       ></Icon>
       <Text
@@ -602,7 +288,7 @@ export default function CardFisioculturismo(props) {
         justifyContent="unset"
         letterSpacing="0px"
         width="118px"
-        height="unset"
+        height="16.95px"
         gap="unset"
         alignItems="unset"
         position="absolute"
@@ -623,15 +309,115 @@ export default function CardFisioculturismo(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="3.14%"
-        bottom="92.68%"
-        left="63.46%"
-        right="23.46%"
+        top="3.56%"
+        bottom="92.26%"
+        left="81.15%"
+        right="5.77%"
         padding="0px 0px 0px 0px"
         objectFit="cover"
         src={atletas?.fotopais}
         {...getOverrideProps(overrides, "file 1")}
       ></Image>
+      <View
+        width="122.43px"
+        height="30px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="47.11%"
+        bottom="46.22%"
+        left="3.2%"
+        right="49.71%"
+        transformOrigin="top left"
+        transform="rotate(0.54deg)"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(16,0,0,0.7)"
+        {...getOverrideProps(overrides, "Rectangle 85")}
+      ></View>
+      <View
+        width="232px"
+        height="24px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="71.33%"
+        bottom="23.33%"
+        left="5%"
+        right="5.77%"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(243,219,0,0.66)"
+        {...getOverrideProps(overrides, "Rectangle 84")}
+      ></View>
+      <Text
+        fontFamily="Inter"
+        fontSize="12px"
+        fontWeight="900"
+        color="rgba(0,0,0,1)"
+        lineHeight="14.522727012634277px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="232px"
+        height="14.12px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="72.2%"
+        bottom="24.66%"
+        left="5%"
+        right="5.77%"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={atletas?.nombre}
+        {...getOverrideProps(overrides, "ABRAHAM ARREOLA")}
+      ></Text>
+      <View
+        padding="0px 0px 0px 0px"
+        width="120px"
+        height="18.02px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="48.66%"
+        bottom="47.33%"
+        left="3.85%"
+        right="50%"
+        {...getOverrideProps(overrides, "Group 21")}
+      >
+        <Text
+          fontFamily="Inter"
+          fontSize="12px"
+          fontWeight="900"
+          color="rgba(255,255,255,1)"
+          lineHeight="14.522727012634277px"
+          textAlign="center"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="119.93px"
+          height="17.43px"
+          gap="unset"
+          alignItems="unset"
+          position="absolute"
+          top="3.28%"
+          bottom="0%"
+          left="0%"
+          right="0.06%"
+          transformOrigin="top left"
+          transform="rotate(-0.28deg)"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={atletas?.tipo}
+          {...getOverrideProps(overrides, "ATLETA")}
+        ></Text>
+      </View>
     </View>
   );
 }

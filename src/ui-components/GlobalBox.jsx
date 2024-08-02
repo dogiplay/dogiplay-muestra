@@ -60,6 +60,7 @@ export default function GlobalBox(props) {
         bottom="0%"
         left="-0.38%"
         right="0.38%"
+        border="2px SOLID rgba(0,82,141,1)"
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(0,0,0,1)"
         {...getOverrideProps(overrides, "Rectangle 72")}

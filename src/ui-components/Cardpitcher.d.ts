@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { StatsJugadores, Jugadores } from "../models";
+import { Jugadores } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -35,25 +35,17 @@ export declare type CardpitcherOverridesProps = {
     "Product name410114"?: PrimitiveOverrideProps<TextProps>;
     "Product name410116"?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 77"?: PrimitiveOverrideProps<ViewProps>;
-    " Subheading410118"?: PrimitiveOverrideProps<TextProps>;
     "90MPH"?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 78"?: PrimitiveOverrideProps<ViewProps>;
     "88MPH"?: PrimitiveOverrideProps<TextProps>;
     "Pais: M\u00E9xico"?: PrimitiveOverrideProps<TextProps>;
     "Edad: 16 a\u00F1os"?: PrimitiveOverrideProps<TextProps>;
     "Ciudad: San Diego California"?: PrimitiveOverrideProps<TextProps>;
-    " Subheading410128"?: PrimitiveOverrideProps<TextProps>;
     "Lanzamientos: Recta y curva"?: PrimitiveOverrideProps<TextProps>;
     "dogiplay.com"?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 10"?: PrimitiveOverrideProps<ViewProps>;
     "Perfil derecho"?: PrimitiveOverrideProps<TextProps>;
     "Group 13"?: PrimitiveOverrideProps<ViewProps>;
-    "ENTRADAS LANZADAS"?: PrimitiveOverrideProps<TextProps>;
-    "HITS TOTALES"?: PrimitiveOverrideProps<TextProps>;
-    "CARRERAS LIMPIAS"?: PrimitiveOverrideProps<TextProps>;
-    "PONCHES TOTALES"?: PrimitiveOverrideProps<TextProps>;
-    "JUEGOS GANADOS"?: PrimitiveOverrideProps<TextProps>;
-    "JUEGOS PERDIDOS"?: PrimitiveOverrideProps<TextProps>;
     "Group 14"?: PrimitiveOverrideProps<ViewProps>;
     Pill?: PrimitiveOverrideProps<FlexProps>;
     ERA?: PrimitiveOverrideProps<TextProps>;
@@ -61,7 +53,6 @@ export declare type CardpitcherOverridesProps = {
     "file 3"?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type CardpitcherProps = React.PropsWithChildren<Partial<ViewProps> & {
-    statsJugadores?: StatsJugadores;
     jugadores?: Jugadores;
 } & {
     overrides?: CardpitcherOverridesProps | undefined | null;

@@ -30,6 +30,7 @@ export declare type PatrocinadoresUpdateFormInputValues = {
     pais?: string;
     contacto?: string;
     textoboton?: string;
+    tipo?: string;
 };
 export declare type PatrocinadoresUpdateFormValidationValues = {
     nombre?: ValidationFunction<string>;
@@ -39,6 +40,7 @@ export declare type PatrocinadoresUpdateFormValidationValues = {
     pais?: ValidationFunction<string>;
     contacto?: ValidationFunction<string>;
     textoboton?: ValidationFunction<string>;
+    tipo?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type PatrocinadoresUpdateFormOverridesProps = {
@@ -50,6 +52,7 @@ export declare type PatrocinadoresUpdateFormOverridesProps = {
     pais?: PrimitiveOverrideProps<TextFieldProps>;
     contacto?: PrimitiveOverrideProps<TextFieldProps>;
     textoboton?: PrimitiveOverrideProps<TextFieldProps>;
+    tipo?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type PatrocinadoresUpdateFormProps = React.PropsWithChildren<{
     overrides?: PatrocinadoresUpdateFormOverridesProps | undefined | null;

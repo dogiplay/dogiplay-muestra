@@ -16,11 +16,10 @@ import { SortDirection } from "@aws-amplify/datastore";
 import Tablafutbol from "./Tablafutbol";
 import { Collection } from "@aws-amplify/ui-react";
 export default function TablafutbolCollection(props) {
-  const miclave = localStorage.getItem('miclave');
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsFilterObj = {
     field: "clave_liga",
-    operand: miclave,
+    operand: "CLAFUTNAY01",
     operator: "eq",
   };
   const itemsFilter = createDataStorePredicate(itemsFilterObj);

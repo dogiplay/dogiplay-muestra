@@ -24,7 +24,7 @@ export default function Cardliga(props) {
       justifyContent="unset"
       overflow="hidden"
       position="relative"
-      border="2px SOLID rgba(134,133,133,1)"
+      border="2px SOLID rgba(227,220,220,1)"
       borderRadius="11px"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"

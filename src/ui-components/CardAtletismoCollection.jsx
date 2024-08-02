@@ -46,7 +46,7 @@ export default function CardAtletismoCollection(props) {
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Buscar..."
-      itemsPerPage={15}
+      itemsPerPage={5}
       templateColumns="1fr 1fr 1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"

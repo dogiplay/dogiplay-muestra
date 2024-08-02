@@ -42,7 +42,7 @@ export default function GlobalBoxCollection(props) {
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Buscar..."
-      itemsPerPage={10}
+      itemsPerPage={5}
       templateColumns="1fr 1fr 1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"

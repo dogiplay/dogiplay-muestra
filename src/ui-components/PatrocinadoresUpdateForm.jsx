@@ -30,6 +30,7 @@ export default function PatrocinadoresUpdateForm(props) {
     pais: "",
     contacto: "",
     textoboton: "",
+    tipo: "",
   };
   const [nombre, setNombre] = React.useState(initialValues.nombre);
   const [telefono, setTelefono] = React.useState(initialValues.telefono);
@@ -38,6 +39,7 @@ export default function PatrocinadoresUpdateForm(props) {
   const [pais, setPais] = React.useState(initialValues.pais);
   const [contacto, setContacto] = React.useState(initialValues.contacto);
   const [textoboton, setTextoboton] = React.useState(initialValues.textoboton);
+  const [tipo, setTipo] = React.useState(initialValues.tipo);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = patrocinadoresRecord
@@ -50,6 +52,7 @@ export default function PatrocinadoresUpdateForm(props) {
     setPais(cleanValues.pais);
     setContacto(cleanValues.contacto);
     setTextoboton(cleanValues.textoboton);
+    setTipo(cleanValues.tipo);
     setErrors({});
   };
   const [patrocinadoresRecord, setPatrocinadoresRecord] = React.useState(
@@ -73,6 +76,7 @@ export default function PatrocinadoresUpdateForm(props) {
     pais: [],
     contacto: [],
     textoboton: [],
+    tipo: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -107,6 +111,7 @@ export default function PatrocinadoresUpdateForm(props) {
           pais,
           contacto,
           textoboton,
+          tipo,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -169,6 +174,7 @@ export default function PatrocinadoresUpdateForm(props) {
               pais,
               contacto,
               textoboton,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.nombre ?? value;
@@ -199,6 +205,7 @@ export default function PatrocinadoresUpdateForm(props) {
               pais,
               contacto,
               textoboton,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.telefono ?? value;
@@ -229,6 +236,7 @@ export default function PatrocinadoresUpdateForm(props) {
               pais,
               contacto,
               textoboton,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.foto ?? value;
@@ -259,6 +267,7 @@ export default function PatrocinadoresUpdateForm(props) {
               pais,
               contacto,
               textoboton,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.sitio ?? value;
@@ -289,6 +298,7 @@ export default function PatrocinadoresUpdateForm(props) {
               pais: value,
               contacto,
               textoboton,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.pais ?? value;
@@ -319,6 +329,7 @@ export default function PatrocinadoresUpdateForm(props) {
               pais,
               contacto: value,
               textoboton,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.contacto ?? value;
@@ -349,6 +360,7 @@ export default function PatrocinadoresUpdateForm(props) {
               pais,
               contacto,
               textoboton: value,
+              tipo,
             };
             const result = onChange(modelFields);
             value = result?.textoboton ?? value;
@@ -362,6 +374,37 @@ export default function PatrocinadoresUpdateForm(props) {
         errorMessage={errors.textoboton?.errorMessage}
         hasError={errors.textoboton?.hasError}
         {...getOverrideProps(overrides, "textoboton")}
+      ></TextField>
+      <TextField
+        label="Tipo"
+        isRequired={false}
+        isReadOnly={false}
+        value={tipo}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              telefono,
+              foto,
+              sitio,
+              pais,
+              contacto,
+              textoboton,
+              tipo: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.tipo ?? value;
+          }
+          if (errors.tipo?.hasError) {
+            runValidationTasks("tipo", value);
+          }
+          setTipo(value);
+        }}
+        onBlur={() => runValidationTasks("tipo", tipo)}
+        errorMessage={errors.tipo?.errorMessage}
+        hasError={errors.tipo?.hasError}
+        {...getOverrideProps(overrides, "tipo")}
       ></TextField>
       <Flex
         justifyContent="space-between"

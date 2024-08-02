@@ -6,6 +6,48 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
+type EagerMuilpasPray = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<MuilpasPray, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly presidenterector?: string | null;
+  readonly foto?: string | null;
+  readonly fotopais?: string | null;
+  readonly telefono?: string | null;
+  readonly paisciudad?: string | null;
+  readonly sitio?: string | null;
+  readonly tipo?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyMuilpasPray = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<MuilpasPray, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly nombre?: string | null;
+  readonly presidenterector?: string | null;
+  readonly foto?: string | null;
+  readonly fotopais?: string | null;
+  readonly telefono?: string | null;
+  readonly paisciudad?: string | null;
+  readonly sitio?: string | null;
+  readonly tipo?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type MuilpasPray = LazyLoading extends LazyLoadingDisabled ? EagerMuilpasPray : LazyMuilpasPray
+
+export declare const MuilpasPray: (new (init: ModelInit<MuilpasPray>) => MuilpasPray) & {
+  copyOf(source: MuilpasPray, mutator: (draft: MutableModel<MuilpasPray>) => MutableModel<MuilpasPray> | void): MuilpasPray;
+}
+
 type EagerMilpas = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Milpas, 'id'>;
@@ -113,6 +155,7 @@ type EagerPatrocinadores = {
   readonly pais?: string | null;
   readonly contacto?: string | null;
   readonly textoboton?: string | null;
+  readonly tipo?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -130,6 +173,7 @@ type LazyPatrocinadores = {
   readonly pais?: string | null;
   readonly contacto?: string | null;
   readonly textoboton?: string | null;
+  readonly tipo?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

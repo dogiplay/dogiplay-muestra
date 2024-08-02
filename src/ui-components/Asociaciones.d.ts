@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Milpas } from "../models";
+import { MuilpasPray } from "../models";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -32,7 +32,7 @@ export declare type AsociacionesOverridesProps = {
     "Ver sitio"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type AsociacionesProps = React.PropsWithChildren<Partial<ViewProps> & {
-    milpas?: Milpas;
+    muilpasPray?: MuilpasPray;
 } & {
     overrides?: AsociacionesOverridesProps | undefined | null;
 }>;

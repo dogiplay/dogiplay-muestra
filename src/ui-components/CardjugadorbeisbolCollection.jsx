@@ -16,11 +16,10 @@ import { SortDirection } from "@aws-amplify/datastore";
 import Cardjugadorbeisbol from "./Cardjugadorbeisbol";
 import { Collection } from "@aws-amplify/ui-react";
 export default function CardjugadorbeisbolCollection(props) {
-  const miclave = localStorage.getItem('miclave');
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsFilterObj = {
     field: "clave_liga",
-    operand: miclave,
+    operand: "CLABEISNAY01",
     operator: "eq",
   };
   const itemsFilter = createDataStorePredicate(itemsFilterObj);

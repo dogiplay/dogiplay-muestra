@@ -9,7 +9,7 @@ import * as React from "react";
 import { getOverrideProps } from "./utils";
 import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function Patrocinador(props) {
-  const { overrides, ...rest } = props;
+  const { patrocinadores, overrides, ...rest } = props;
   return (
     <View
       width="260px"
@@ -53,6 +53,7 @@ export default function Patrocinador(props) {
         right="1.92%"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={patrocinadores?.foto}
         {...getOverrideProps(overrides, "ANUANCIATE AQUI 1")}
       ></Image>
       <Flex
@@ -90,7 +91,7 @@ export default function Patrocinador(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Ver sitio"
+          children={patrocinadores?.textoboton}
           {...getOverrideProps(overrides, "Ver sitio")}
         ></Text>
       </Flex>

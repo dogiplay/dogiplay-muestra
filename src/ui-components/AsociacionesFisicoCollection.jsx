@@ -6,7 +6,7 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Milpas } from "../models";
+import { MuilpasPray } from "../models";
 import {
   createDataStorePredicate,
   getOverrideProps,
@@ -25,7 +25,7 @@ export default function AsociacionesFisicoCollection(props) {
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Milpas,
+    model: MuilpasPray,
     criteria: itemsFilter,
   }).items;
   React.useEffect(() => {
@@ -38,7 +38,7 @@ export default function AsociacionesFisicoCollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable="true"
+      isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Buscar..."
       itemsPerPage={5}
@@ -52,7 +52,7 @@ export default function AsociacionesFisicoCollection(props) {
     >
       {(item, index) => (
         <Asociaciones
-          milpas={item}
+          muilpasPray={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></Asociaciones>

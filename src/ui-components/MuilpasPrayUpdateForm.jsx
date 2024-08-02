@@ -7,12 +7,13 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { Patrocinadores } from "../models";
+import { MuilpasPray } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { DataStore } from "aws-amplify/datastore";
-export default function PatrocinadoresCreateForm(props) {
+export default function MuilpasPrayUpdateForm(props) {
   const {
-    clearOnSuccess = true,
+    id: idProp,
+    muilpasPray: muilpasPrayModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -23,42 +24,59 @@ export default function PatrocinadoresCreateForm(props) {
   } = props;
   const initialValues = {
     nombre: "",
-    telefono: "",
+    presidenterector: "",
     foto: "",
+    fotopais: "",
+    telefono: "",
+    paisciudad: "",
     sitio: "",
-    pais: "",
-    contacto: "",
-    textoboton: "",
     tipo: "",
   };
   const [nombre, setNombre] = React.useState(initialValues.nombre);
-  const [telefono, setTelefono] = React.useState(initialValues.telefono);
+  const [presidenterector, setPresidenterector] = React.useState(
+    initialValues.presidenterector
+  );
   const [foto, setFoto] = React.useState(initialValues.foto);
+  const [fotopais, setFotopais] = React.useState(initialValues.fotopais);
+  const [telefono, setTelefono] = React.useState(initialValues.telefono);
+  const [paisciudad, setPaisciudad] = React.useState(initialValues.paisciudad);
   const [sitio, setSitio] = React.useState(initialValues.sitio);
-  const [pais, setPais] = React.useState(initialValues.pais);
-  const [contacto, setContacto] = React.useState(initialValues.contacto);
-  const [textoboton, setTextoboton] = React.useState(initialValues.textoboton);
   const [tipo, setTipo] = React.useState(initialValues.tipo);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    setNombre(initialValues.nombre);
-    setTelefono(initialValues.telefono);
-    setFoto(initialValues.foto);
-    setSitio(initialValues.sitio);
-    setPais(initialValues.pais);
-    setContacto(initialValues.contacto);
-    setTextoboton(initialValues.textoboton);
-    setTipo(initialValues.tipo);
+    const cleanValues = muilpasPrayRecord
+      ? { ...initialValues, ...muilpasPrayRecord }
+      : initialValues;
+    setNombre(cleanValues.nombre);
+    setPresidenterector(cleanValues.presidenterector);
+    setFoto(cleanValues.foto);
+    setFotopais(cleanValues.fotopais);
+    setTelefono(cleanValues.telefono);
+    setPaisciudad(cleanValues.paisciudad);
+    setSitio(cleanValues.sitio);
+    setTipo(cleanValues.tipo);
     setErrors({});
   };
+  const [muilpasPrayRecord, setMuilpasPrayRecord] =
+    React.useState(muilpasPrayModelProp);
+  React.useEffect(() => {
+    const queryData = async () => {
+      const record = idProp
+        ? await DataStore.query(MuilpasPray, idProp)
+        : muilpasPrayModelProp;
+      setMuilpasPrayRecord(record);
+    };
+    queryData();
+  }, [idProp, muilpasPrayModelProp]);
+  React.useEffect(resetStateValues, [muilpasPrayRecord]);
   const validations = {
     nombre: [],
-    telefono: [],
+    presidenterector: [],
     foto: [{ type: "URL" }],
+    fotopais: [{ type: "URL" }],
+    telefono: [],
+    paisciudad: [],
     sitio: [{ type: "URL" }],
-    pais: [],
-    contacto: [],
-    textoboton: [],
     tipo: [],
   };
   const runValidationTasks = async (
@@ -88,12 +106,12 @@ export default function PatrocinadoresCreateForm(props) {
         event.preventDefault();
         let modelFields = {
           nombre,
-          telefono,
+          presidenterector,
           foto,
+          fotopais,
+          telefono,
+          paisciudad,
           sitio,
-          pais,
-          contacto,
-          textoboton,
           tipo,
         };
         const validationResponses = await Promise.all(
@@ -124,12 +142,13 @@ export default function PatrocinadoresCreateForm(props) {
               modelFields[key] = null;
             }
           });
-          await DataStore.save(new Patrocinadores(modelFields));
+          await DataStore.save(
+            MuilpasPray.copyOf(muilpasPrayRecord, (updated) => {
+              Object.assign(updated, modelFields);
+            })
+          );
           if (onSuccess) {
             onSuccess(modelFields);
-          }
-          if (clearOnSuccess) {
-            resetStateValues();
           }
         } catch (err) {
           if (onError) {
@@ -137,7 +156,7 @@ export default function PatrocinadoresCreateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "PatrocinadoresCreateForm")}
+      {...getOverrideProps(overrides, "MuilpasPrayUpdateForm")}
       {...rest}
     >
       <TextField
@@ -150,12 +169,12 @@ export default function PatrocinadoresCreateForm(props) {
           if (onChange) {
             const modelFields = {
               nombre: value,
-              telefono,
+              presidenterector,
               foto,
+              fotopais,
+              telefono,
+              paisciudad,
               sitio,
-              pais,
-              contacto,
-              textoboton,
               tipo,
             };
             const result = onChange(modelFields);
@@ -172,35 +191,35 @@ export default function PatrocinadoresCreateForm(props) {
         {...getOverrideProps(overrides, "nombre")}
       ></TextField>
       <TextField
-        label="Telefono"
+        label="Presidenterector"
         isRequired={false}
         isReadOnly={false}
-        value={telefono}
+        value={presidenterector}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               nombre,
-              telefono: value,
+              presidenterector: value,
               foto,
+              fotopais,
+              telefono,
+              paisciudad,
               sitio,
-              pais,
-              contacto,
-              textoboton,
               tipo,
             };
             const result = onChange(modelFields);
-            value = result?.telefono ?? value;
+            value = result?.presidenterector ?? value;
           }
-          if (errors.telefono?.hasError) {
-            runValidationTasks("telefono", value);
+          if (errors.presidenterector?.hasError) {
+            runValidationTasks("presidenterector", value);
           }
-          setTelefono(value);
+          setPresidenterector(value);
         }}
-        onBlur={() => runValidationTasks("telefono", telefono)}
-        errorMessage={errors.telefono?.errorMessage}
-        hasError={errors.telefono?.hasError}
-        {...getOverrideProps(overrides, "telefono")}
+        onBlur={() => runValidationTasks("presidenterector", presidenterector)}
+        errorMessage={errors.presidenterector?.errorMessage}
+        hasError={errors.presidenterector?.hasError}
+        {...getOverrideProps(overrides, "presidenterector")}
       ></TextField>
       <TextField
         label="Foto"
@@ -212,12 +231,12 @@ export default function PatrocinadoresCreateForm(props) {
           if (onChange) {
             const modelFields = {
               nombre,
-              telefono,
+              presidenterector,
               foto: value,
+              fotopais,
+              telefono,
+              paisciudad,
               sitio,
-              pais,
-              contacto,
-              textoboton,
               tipo,
             };
             const result = onChange(modelFields);
@@ -234,6 +253,99 @@ export default function PatrocinadoresCreateForm(props) {
         {...getOverrideProps(overrides, "foto")}
       ></TextField>
       <TextField
+        label="Fotopais"
+        isRequired={false}
+        isReadOnly={false}
+        value={fotopais}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              presidenterector,
+              foto,
+              fotopais: value,
+              telefono,
+              paisciudad,
+              sitio,
+              tipo,
+            };
+            const result = onChange(modelFields);
+            value = result?.fotopais ?? value;
+          }
+          if (errors.fotopais?.hasError) {
+            runValidationTasks("fotopais", value);
+          }
+          setFotopais(value);
+        }}
+        onBlur={() => runValidationTasks("fotopais", fotopais)}
+        errorMessage={errors.fotopais?.errorMessage}
+        hasError={errors.fotopais?.hasError}
+        {...getOverrideProps(overrides, "fotopais")}
+      ></TextField>
+      <TextField
+        label="Telefono"
+        isRequired={false}
+        isReadOnly={false}
+        value={telefono}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              presidenterector,
+              foto,
+              fotopais,
+              telefono: value,
+              paisciudad,
+              sitio,
+              tipo,
+            };
+            const result = onChange(modelFields);
+            value = result?.telefono ?? value;
+          }
+          if (errors.telefono?.hasError) {
+            runValidationTasks("telefono", value);
+          }
+          setTelefono(value);
+        }}
+        onBlur={() => runValidationTasks("telefono", telefono)}
+        errorMessage={errors.telefono?.errorMessage}
+        hasError={errors.telefono?.hasError}
+        {...getOverrideProps(overrides, "telefono")}
+      ></TextField>
+      <TextField
+        label="Paisciudad"
+        isRequired={false}
+        isReadOnly={false}
+        value={paisciudad}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              nombre,
+              presidenterector,
+              foto,
+              fotopais,
+              telefono,
+              paisciudad: value,
+              sitio,
+              tipo,
+            };
+            const result = onChange(modelFields);
+            value = result?.paisciudad ?? value;
+          }
+          if (errors.paisciudad?.hasError) {
+            runValidationTasks("paisciudad", value);
+          }
+          setPaisciudad(value);
+        }}
+        onBlur={() => runValidationTasks("paisciudad", paisciudad)}
+        errorMessage={errors.paisciudad?.errorMessage}
+        hasError={errors.paisciudad?.hasError}
+        {...getOverrideProps(overrides, "paisciudad")}
+      ></TextField>
+      <TextField
         label="Sitio"
         isRequired={false}
         isReadOnly={false}
@@ -243,12 +355,12 @@ export default function PatrocinadoresCreateForm(props) {
           if (onChange) {
             const modelFields = {
               nombre,
-              telefono,
+              presidenterector,
               foto,
+              fotopais,
+              telefono,
+              paisciudad,
               sitio: value,
-              pais,
-              contacto,
-              textoboton,
               tipo,
             };
             const result = onChange(modelFields);
@@ -265,99 +377,6 @@ export default function PatrocinadoresCreateForm(props) {
         {...getOverrideProps(overrides, "sitio")}
       ></TextField>
       <TextField
-        label="Pais"
-        isRequired={false}
-        isReadOnly={false}
-        value={pais}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              telefono,
-              foto,
-              sitio,
-              pais: value,
-              contacto,
-              textoboton,
-              tipo,
-            };
-            const result = onChange(modelFields);
-            value = result?.pais ?? value;
-          }
-          if (errors.pais?.hasError) {
-            runValidationTasks("pais", value);
-          }
-          setPais(value);
-        }}
-        onBlur={() => runValidationTasks("pais", pais)}
-        errorMessage={errors.pais?.errorMessage}
-        hasError={errors.pais?.hasError}
-        {...getOverrideProps(overrides, "pais")}
-      ></TextField>
-      <TextField
-        label="Contacto"
-        isRequired={false}
-        isReadOnly={false}
-        value={contacto}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              telefono,
-              foto,
-              sitio,
-              pais,
-              contacto: value,
-              textoboton,
-              tipo,
-            };
-            const result = onChange(modelFields);
-            value = result?.contacto ?? value;
-          }
-          if (errors.contacto?.hasError) {
-            runValidationTasks("contacto", value);
-          }
-          setContacto(value);
-        }}
-        onBlur={() => runValidationTasks("contacto", contacto)}
-        errorMessage={errors.contacto?.errorMessage}
-        hasError={errors.contacto?.hasError}
-        {...getOverrideProps(overrides, "contacto")}
-      ></TextField>
-      <TextField
-        label="Textoboton"
-        isRequired={false}
-        isReadOnly={false}
-        value={textoboton}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              nombre,
-              telefono,
-              foto,
-              sitio,
-              pais,
-              contacto,
-              textoboton: value,
-              tipo,
-            };
-            const result = onChange(modelFields);
-            value = result?.textoboton ?? value;
-          }
-          if (errors.textoboton?.hasError) {
-            runValidationTasks("textoboton", value);
-          }
-          setTextoboton(value);
-        }}
-        onBlur={() => runValidationTasks("textoboton", textoboton)}
-        errorMessage={errors.textoboton?.errorMessage}
-        hasError={errors.textoboton?.hasError}
-        {...getOverrideProps(overrides, "textoboton")}
-      ></TextField>
-      <TextField
         label="Tipo"
         isRequired={false}
         isReadOnly={false}
@@ -367,12 +386,12 @@ export default function PatrocinadoresCreateForm(props) {
           if (onChange) {
             const modelFields = {
               nombre,
-              telefono,
+              presidenterector,
               foto,
+              fotopais,
+              telefono,
+              paisciudad,
               sitio,
-              pais,
-              contacto,
-              textoboton,
               tipo: value,
             };
             const result = onChange(modelFields);
@@ -393,13 +412,14 @@ export default function PatrocinadoresCreateForm(props) {
         {...getOverrideProps(overrides, "CTAFlex")}
       >
         <Button
-          children="Clear"
+          children="Reset"
           type="reset"
           onClick={(event) => {
             event.preventDefault();
             resetStateValues();
           }}
-          {...getOverrideProps(overrides, "ClearButton")}
+          isDisabled={!(idProp || muilpasPrayModelProp)}
+          {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
           gap="15px"
@@ -409,7 +429,10 @@ export default function PatrocinadoresCreateForm(props) {
             children="Submit"
             type="submit"
             variation="primary"
-            isDisabled={Object.values(errors).some((e) => e?.hasError)}
+            isDisabled={
+              !(idProp || muilpasPrayModelProp) ||
+              Object.values(errors).some((e) => e?.hasError)
+            }
             {...getOverrideProps(overrides, "SubmitButton")}
           ></Button>
         </Flex>

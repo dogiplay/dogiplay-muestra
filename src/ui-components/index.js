@@ -5,7 +5,7 @@
  **************************************************************************/
 
 export { default as Asociaciones } from "./Asociaciones";
-export { default as AsociacionesFisicoCollection } from "./AsociacionesFisicoCollection";
+export { default as AsociacionesEscuelasAcademiasCollection } from "./AsociacionesEscuelasAcademiasCollection";
 export { default as AtletasCreateForm } from "./AtletasCreateForm";
 export { default as AtletasUpdateForm } from "./AtletasUpdateForm";
 export { default as Campeonato } from "./Campeonato";
@@ -42,7 +42,6 @@ export { default as GlobalAjedrez } from "./GlobalAjedrez";
 export { default as GlobalAjedrezCollection } from "./GlobalAjedrezCollection";
 export { default as GlobalBox } from "./GlobalBox";
 export { default as GlobalBoxCollection } from "./GlobalBoxCollection";
-export { default as GlobalPitcherCollection } from "./GlobalPitcherCollection";
 export { default as GolesGlobal } from "./GolesGlobal";
 export { default as GolesGlobalCollection } from "./GolesGlobalCollection";
 export { default as HrGlobal } from "./HrGlobal";
@@ -57,6 +56,8 @@ export { default as ManagersUpdateForm } from "./ManagersUpdateForm";
 export { default as Menudeportes } from "./Menudeportes";
 export { default as MilpasCreateForm } from "./MilpasCreateForm";
 export { default as MilpasUpdateForm } from "./MilpasUpdateForm";
+export { default as MuilpasPrayCreateForm } from "./MuilpasPrayCreateForm";
+export { default as MuilpasPrayUpdateForm } from "./MuilpasPrayUpdateForm";
 export { default as NuevaEstadistica } from "./NuevaEstadistica";
 export { default as NuevoEquipo } from "./NuevoEquipo";
 export { default as NuevoJugador } from "./NuevoJugador";
@@ -68,6 +69,7 @@ export { default as PartidosUpdateForm } from "./PartidosUpdateForm";
 export { default as Partidosfutbol } from "./Partidosfutbol";
 export { default as PartidosfutbolCollection } from "./PartidosfutbolCollection";
 export { default as Patrocinador } from "./Patrocinador";
+export { default as PatrocinadorCollection } from "./PatrocinadorCollection";
 export { default as PatrocinadoresCreateForm } from "./PatrocinadoresCreateForm";
 export { default as PatrocinadoresUpdateForm } from "./PatrocinadoresUpdateForm";
 export { default as PersonajesPelea } from "./PersonajesPelea";

@@ -6,27 +6,16 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Jugadores } from "../models";
-import {
-  createDataStorePredicate,
-  getOverrideProps,
-  useDataStoreBinding,
-} from "./utils";
+import { StatsJugadores } from "../models";
+import { getOverrideProps, useDataStoreBinding } from "./utils";
 import Cardpitcher from "./Cardpitcher";
 import { Collection } from "@aws-amplify/ui-react";
 export default function GlobalPitcherCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsFilterObj = {
-    field: "posicion",
-    operand: "Pitcher",
-    operator: "eq",
-  };
-  const itemsFilter = createDataStorePredicate(itemsFilterObj);
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Jugadores,
-    criteria: itemsFilter,
+    model: StatsJugadores,
   }).items;
   React.useEffect(() => {
     if (itemsProp !== undefined) {
@@ -53,6 +42,7 @@ export default function GlobalPitcherCollection(props) {
       {(item, index) => (
         <Cardpitcher
           jugadores={item}
+          margin="15px 0 0 0"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></Cardpitcher>

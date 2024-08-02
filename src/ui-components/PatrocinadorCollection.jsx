@@ -6,27 +6,16 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Jugadores } from "../models";
-import {
-  createDataStorePredicate,
-  getOverrideProps,
-  useDataStoreBinding,
-} from "./utils";
-import Cardpitcher from "./Cardpitcher";
+import { Patrocinadores } from "../models";
+import { getOverrideProps, useDataStoreBinding } from "./utils";
+import Patrocinador from "./Patrocinador";
 import { Collection } from "@aws-amplify/ui-react";
-export default function CardpitcherCollection(props) {
+export default function PatrocinadorCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsFilterObj = {
-    field: "posicion",
-    operand: "Pitcher",
-    operator: "eq",
-  };
-  const itemsFilter = createDataStorePredicate(itemsFilterObj);
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Jugadores,
-    criteria: itemsFilter,
+    model: Patrocinadores,
   }).items;
   React.useEffect(() => {
     if (itemsProp !== undefined) {
@@ -38,24 +27,21 @@ export default function CardpitcherCollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable={true}
-      isPaginated={true}
-      searchPlaceholder="Buscar..."
-      itemsPerPage={5}
+      searchPlaceholder="Search..."
       templateColumns="1fr 1fr 1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
       justifyContent="stretch"
       items={items || []}
-      {...getOverrideProps(overrides, "CardpitcherCollection")}
+      {...getOverrideProps(overrides, "PatrocinadorCollection")}
       {...rest}
     >
       {(item, index) => (
-        <Cardpitcher
-          jugadores={item}
+        <Patrocinador
+          patrocinadores={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></Cardpitcher>
+        ></Patrocinador>
       )}
     </Collection>
   );

@@ -1,3 +1,15 @@
+type MuilpasPray @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nombre: String
+  presidenterector: String
+  foto: AWSURL
+  fotopais: AWSURL
+  telefono: String
+  paisciudad: String
+  sitio: AWSURL
+  tipo: String
+}
+
 type Milpas @model @auth(rules: [{allow: public}]) {
   id: ID!
   nombre: String
@@ -36,6 +48,7 @@ type Patrocinadores @model @auth(rules: [{allow: public}]) {
   pais: String
   contacto: String
   textoboton: String
+  tipo: String
 }
 
 type SalonFama @model @auth(rules: [{allow: public}]) {

@@ -5,8 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Patrocinadores } from "../models";
-import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { AsociacionesProps } from "./Asociaciones";
+import { CollectionProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,16 +18,17 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type PatrocinadorOverridesProps = {
-    Patrocinador?: PrimitiveOverrideProps<ViewProps>;
-    "Rectangle 113"?: PrimitiveOverrideProps<ViewProps>;
-    "ANUANCIATE AQUI 1"?: PrimitiveOverrideProps<ImageProps>;
-    buttonLiga?: PrimitiveOverrideProps<FlexProps>;
-    "Ver sitio"?: PrimitiveOverrideProps<TextProps>;
+export declare type AsociacionesEscuelasAcademiasCollectionOverridesProps = {
+    AsociacionesEscuelasAcademiasCollection?: PrimitiveOverrideProps<CollectionProps>;
+    Asociaciones?: AsociacionesProps;
 } & EscapeHatchProps;
-export declare type PatrocinadorProps = React.PropsWithChildren<Partial<ViewProps> & {
-    patrocinadores?: Patrocinadores;
+export declare type AsociacionesEscuelasAcademiasCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
+    items?: any[];
+    overrideItems?: (collectionItem: {
+        item: any;
+        index: number;
+    }) => AsociacionesProps;
 } & {
-    overrides?: PatrocinadorOverridesProps | undefined | null;
+    overrides?: AsociacionesEscuelasAcademiasCollectionOverridesProps | undefined | null;
 }>;
-export default function Patrocinador(props: PatrocinadorProps): React.ReactElement;
+export default function AsociacionesEscuelasAcademiasCollection(props: AsociacionesEscuelasAcademiasCollectionProps): React.ReactElement;

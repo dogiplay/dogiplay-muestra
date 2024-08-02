@@ -9,11 +9,11 @@ import * as React from "react";
 import { getOverrideProps, useNavigateAction } from "./utils";
 import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function Asociaciones(props) {
-  const { milpas, overrides, ...rest } = props;
+  const { muilpasPray, overrides, ...rest } = props;
   const buttonLigaOnClick = useNavigateAction({
     target: "_blank",
     type: "url",
-    url: milpas?.sitio,
+    url: muilpasPray?.sitio,
   });
   return (
     <View
@@ -24,6 +24,7 @@ export default function Asociaciones(props) {
       alignItems="unset"
       justifyContent="unset"
       position="relative"
+      border="2px SOLID rgba(243,219,0,1)"
       padding="0px 0px 0px 0px"
       {...getOverrideProps(overrides, "Asociaciones")}
       {...rest}
@@ -77,7 +78,7 @@ export default function Asociaciones(props) {
         border="3px SOLID rgba(182,165,17,1)"
         padding="0px 0px 0px 0px"
         objectFit="cover"
-        src={milpas?.foto}
+        src={muilpasPray?.foto}
         {...getOverrideProps(
           overrides,
           "WhatsApp Image 2024-06-26 at 2.38.00 PM 1"
@@ -94,17 +95,17 @@ export default function Asociaciones(props) {
         direction="column"
         justifyContent="unset"
         width="233px"
-        height="unset"
+        height="29px"
         gap="unset"
         alignItems="unset"
         position="absolute"
         top="76.15%"
-        bottom="20.5%"
+        bottom="17.78%"
         left="5.77%"
         right="4.62%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={milpas?.presidenterector}
+        children={muilpasPray?.presidenterector}
         {...getOverrideProps(overrides, "Presidente: Arturo Gonzalez")}
       ></Text>
       <Text
@@ -128,7 +129,7 @@ export default function Asociaciones(props) {
         right="5%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={milpas?.telefono}
+        children={muilpasPray?.telefono}
         {...getOverrideProps(overrides, "Contacto: 52 311553344")}
       ></Text>
       <Text
@@ -152,7 +153,7 @@ export default function Asociaciones(props) {
         right="4.62%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={milpas?.pais}
+        children={muilpasPray?.paisciudad}
         {...getOverrideProps(overrides, "Tepic, Nayarit, M\u00E9xico")}
       ></Text>
       <Text
@@ -176,7 +177,7 @@ export default function Asociaciones(props) {
         right="5%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={milpas?.nombre}
+        children={muilpasPray?.nombre}
         {...getOverrideProps(
           overrides,
           "Asociaci\u00F3n de Fisicoculturismo del Estado de Nayarit"
@@ -196,7 +197,7 @@ export default function Asociaciones(props) {
         right="6.54%"
         padding="0px 0px 0px 0px"
         objectFit="cover"
-        src={milpas?.fotopais}
+        src={muilpasPray?.fotopais}
         {...getOverrideProps(overrides, "file 4")}
       ></Image>
       <Flex

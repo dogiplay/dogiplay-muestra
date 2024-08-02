@@ -4,9 +4,10 @@ import { schema } from './schema';
 
 
 
-const { Milpas, Universidades, Patrocinadores, SalonFama, Atletas, Campeonatos, StatsJugadores, Jugadores, Torneos, Presidentes, Ligas, Statsequipo, Partidos, Equipos, Managers } = initSchema(schema);
+const { MuilpasPray, Milpas, Universidades, Patrocinadores, SalonFama, Atletas, Campeonatos, StatsJugadores, Jugadores, Torneos, Presidentes, Ligas, Statsequipo, Partidos, Equipos, Managers } = initSchema(schema);
 
 export {
+  MuilpasPray,
   Milpas,
   Universidades,
   Patrocinadores,

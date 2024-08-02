@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { MuilpasPray } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -21,46 +22,47 @@ export declare type ValidationResponse = {
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type PatrocinadoresCreateFormInputValues = {
+export declare type MuilpasPrayUpdateFormInputValues = {
     nombre?: string;
-    telefono?: string;
+    presidenterector?: string;
     foto?: string;
+    fotopais?: string;
+    telefono?: string;
+    paisciudad?: string;
     sitio?: string;
-    pais?: string;
-    contacto?: string;
-    textoboton?: string;
     tipo?: string;
 };
-export declare type PatrocinadoresCreateFormValidationValues = {
+export declare type MuilpasPrayUpdateFormValidationValues = {
     nombre?: ValidationFunction<string>;
-    telefono?: ValidationFunction<string>;
+    presidenterector?: ValidationFunction<string>;
     foto?: ValidationFunction<string>;
+    fotopais?: ValidationFunction<string>;
+    telefono?: ValidationFunction<string>;
+    paisciudad?: ValidationFunction<string>;
     sitio?: ValidationFunction<string>;
-    pais?: ValidationFunction<string>;
-    contacto?: ValidationFunction<string>;
-    textoboton?: ValidationFunction<string>;
     tipo?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type PatrocinadoresCreateFormOverridesProps = {
-    PatrocinadoresCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+export declare type MuilpasPrayUpdateFormOverridesProps = {
+    MuilpasPrayUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     nombre?: PrimitiveOverrideProps<TextFieldProps>;
-    telefono?: PrimitiveOverrideProps<TextFieldProps>;
+    presidenterector?: PrimitiveOverrideProps<TextFieldProps>;
     foto?: PrimitiveOverrideProps<TextFieldProps>;
+    fotopais?: PrimitiveOverrideProps<TextFieldProps>;
+    telefono?: PrimitiveOverrideProps<TextFieldProps>;
+    paisciudad?: PrimitiveOverrideProps<TextFieldProps>;
     sitio?: PrimitiveOverrideProps<TextFieldProps>;
-    pais?: PrimitiveOverrideProps<TextFieldProps>;
-    contacto?: PrimitiveOverrideProps<TextFieldProps>;
-    textoboton?: PrimitiveOverrideProps<TextFieldProps>;
     tipo?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type PatrocinadoresCreateFormProps = React.PropsWithChildren<{
-    overrides?: PatrocinadoresCreateFormOverridesProps | undefined | null;
+export declare type MuilpasPrayUpdateFormProps = React.PropsWithChildren<{
+    overrides?: MuilpasPrayUpdateFormOverridesProps | undefined | null;
 } & {
-    clearOnSuccess?: boolean;
-    onSubmit?: (fields: PatrocinadoresCreateFormInputValues) => PatrocinadoresCreateFormInputValues;
-    onSuccess?: (fields: PatrocinadoresCreateFormInputValues) => void;
-    onError?: (fields: PatrocinadoresCreateFormInputValues, errorMessage: string) => void;
-    onChange?: (fields: PatrocinadoresCreateFormInputValues) => PatrocinadoresCreateFormInputValues;
-    onValidate?: PatrocinadoresCreateFormValidationValues;
+    id?: string;
+    muilpasPray?: MuilpasPray;
+    onSubmit?: (fields: MuilpasPrayUpdateFormInputValues) => MuilpasPrayUpdateFormInputValues;
+    onSuccess?: (fields: MuilpasPrayUpdateFormInputValues) => void;
+    onError?: (fields: MuilpasPrayUpdateFormInputValues, errorMessage: string) => void;
+    onChange?: (fields: MuilpasPrayUpdateFormInputValues) => MuilpasPrayUpdateFormInputValues;
+    onValidate?: MuilpasPrayUpdateFormValidationValues;
 } & React.CSSProperties>;
-export default function PatrocinadoresCreateForm(props: PatrocinadoresCreateFormProps): React.ReactElement;
+export default function MuilpasPrayUpdateForm(props: MuilpasPrayUpdateFormProps): React.ReactElement;

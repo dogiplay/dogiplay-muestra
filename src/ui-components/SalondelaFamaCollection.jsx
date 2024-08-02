@@ -45,7 +45,7 @@ export default function SalondelaFamaCollection(props) {
       {(item, index) => (
         <SalondelaFama
           salonFama={item}
-          margin="5px 0 0 3px"
+          margin="15px 0 0 3px"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></SalondelaFama>
