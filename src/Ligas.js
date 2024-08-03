@@ -38,9 +38,9 @@ const Ligas = () => {
        <SalondelaFamaCollection/>
        <center><h1 className='colorBlanco'>PROMOTORES DEPORTIVOS</h1></center>
        <PatrocinadorCollection />
-       
+       <div className='espacio'></div>
       
-       <center><h1 className='colorBlanco'>LIGAS, ESCUELAS, ACADEMIAS Y ASOCIACIONES DEPORTIVAS</h1></center>
+       <center><h1 className='colorBlanco'>LIGAS, ESCUELAS, GIMNASIOS, ACADEMIAS Y ASOCIACIONES DEPORTIVAS</h1></center>
       <AsociacionesEscuelasAcademiasCollection/>
       <center><h1 className='colorBlanco'>BASE DE DATOS NACIONAL DE PITCHERS</h1></center>
        </div>

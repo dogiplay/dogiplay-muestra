@@ -35,6 +35,7 @@ export default function CardAtletismo(props) {
         bottom="0%"
         left="0%"
         right="0%"
+        border="1px SOLID rgba(255,255,255,1)"
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(182,165,17,1)"
         {...getOverrideProps(overrides, "Rectangle 79")}
@@ -51,7 +52,7 @@ export default function CardAtletismo(props) {
         bottom="26.57%"
         left="6.92%"
         right="6.92%"
-        border="1px SOLID rgba(255,255,255,1)"
+        border="3px SOLID rgba(255,255,255,1)"
         padding="0px 0px 0px 0px"
         objectFit="cover"
         src={atletas?.foto}
@@ -121,7 +122,7 @@ export default function CardAtletismo(props) {
         bottom="2.3%"
         left="6.92%"
         right="6.92%"
-        border="1px SOLID rgba(255,245,0,1)"
+        border="2px SOLID rgba(255,255,255,1)"
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(163,216,255,1)"
         {...getOverrideProps(overrides, "Rectangle 81")}
